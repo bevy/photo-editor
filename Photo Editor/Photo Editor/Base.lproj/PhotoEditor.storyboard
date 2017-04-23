@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Eventtus-Icons.ttf">
+            <string>Eventtus-Icons</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Photo Editor View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="PhotoEditorViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="PhotoEditorViewController" customModule="iOSPhotoEditor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HAu-hz-9Kf" userLabel="canvas">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="666"/>
+                                <subviews>
+                                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lxq-nF-QoP">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="666"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="666" id="xCY-eE-Er1"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="llw-np-Mdx">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="666"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" secondItem="lxq-nF-QoP" secondAttribute="height" id="7ch-y7-vb3"/>
+                                    <constraint firstItem="llw-np-Mdx" firstAttribute="top" secondItem="lxq-nF-QoP" secondAttribute="top" id="FVQ-Ny-5vZ"/>
+                                    <constraint firstItem="lxq-nF-QoP" firstAttribute="width" secondItem="HAu-hz-9Kf" secondAttribute="width" id="HPv-MH-AFV"/>
+                                    <constraint firstItem="llw-np-Mdx" firstAttribute="trailing" secondItem="lxq-nF-QoP" secondAttribute="trailing" id="NiP-Vq-4wz"/>
+                                    <constraint firstItem="lxq-nF-QoP" firstAttribute="centerX" secondItem="HAu-hz-9Kf" secondAttribute="centerX" id="QrE-8y-SgW"/>
+                                    <constraint firstItem="llw-np-Mdx" firstAttribute="leading" secondItem="lxq-nF-QoP" secondAttribute="leading" id="UAU-2V-lca"/>
+                                    <constraint firstItem="llw-np-Mdx" firstAttribute="width" secondItem="lxq-nF-QoP" secondAttribute="width" id="Xu8-1J-XoW"/>
+                                    <constraint firstItem="llw-np-Mdx" firstAttribute="height" secondItem="lxq-nF-QoP" secondAttribute="height" id="fXt-rp-hQa"/>
+                                    <constraint firstItem="lxq-nF-QoP" firstAttribute="centerY" secondItem="HAu-hz-9Kf" secondAttribute="centerY" id="yo1-si-XvO"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jyi-oX-JZf" customClass="GradientView" customModule="iOSPhotoEditor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="QsD-U8-TRF"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cv9-aV-7mo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="bJY-5j-abz">
+                                        <rect key="frame" x="243" y="0.0" width="120" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjj-Vy-rYA">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="60"/>
+                                                <fontDescription key="fontDescription" name="Eventtus-Icons" family="Eventtus-Icons" pointSize="25"/>
+                                                <size key="titleShadowOffset" width="1" height="0.0"/>
+                                                <state key="normal" title="">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.1532266695" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="stickersButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tDN-Hj-fMn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBM-2P-ZnU">
+                                                <rect key="frame" x="45" y="0.0" width="30" height="60"/>
+                                                <fontDescription key="fontDescription" name="Eventtus-Icons" family="Eventtus-Icons" pointSize="25"/>
+                                                <size key="titleShadowOffset" width="1" height="0.0"/>
+                                                <state key="normal" title="">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.15322666952054798" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pencilButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zcl-r1-LcT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qm-ew-B7Y">
+                                                <rect key="frame" x="90" y="0.0" width="30" height="60"/>
+                                                <fontDescription key="fontDescription" name="Eventtus-Icons" family="Eventtus-Icons" pointSize="25"/>
+                                                <size key="titleShadowOffset" width="1" height="0.0"/>
+                                                <state key="normal" title="">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.1532266695" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="textButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PSc-ak-9Ur"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTx-Eo-0By">
+                                        <rect key="frame" x="12" y="14" width="30" height="32"/>
+                                        <fontDescription key="fontDescription" name="Eventtus-Icons" family="Eventtus-Icons" pointSize="20"/>
+                                        <size key="titleShadowOffset" width="1" height="0.0"/>
+                                        <state key="normal" title="">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.1532266695" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZVV-VZ-9Ys"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="bJY-5j-abz" firstAttribute="top" secondItem="cv9-aV-7mo" secondAttribute="top" id="6Vb-QW-4JG"/>
+                                    <constraint firstItem="gTx-Eo-0By" firstAttribute="leading" secondItem="cv9-aV-7mo" secondAttribute="leading" constant="12" id="8N8-Xx-hd0"/>
+                                    <constraint firstAttribute="height" constant="60" id="OHc-Y3-bdi"/>
+                                    <constraint firstAttribute="bottom" secondItem="bJY-5j-abz" secondAttribute="bottom" id="al2-IA-Dfm"/>
+                                    <constraint firstItem="gTx-Eo-0By" firstAttribute="centerY" secondItem="cv9-aV-7mo" secondAttribute="centerY" id="dVn-aQ-hIp"/>
+                                    <constraint firstAttribute="trailing" secondItem="bJY-5j-abz" secondAttribute="trailing" constant="12" id="rRL-Np-thq"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pL5-L8-gdH" customClass="GradientView" customModule="iOSPhotoEditor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="zHL-OO-96d"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="gradientFromtop" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tbX-X9-udE">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="r7L-uN-oyn">
+                                        <rect key="frame" x="12" y="0.0" width="93" height="52"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ciu-YA-Rq8">
+                                                <rect key="frame" x="0.0" y="0.0" width="40.5" height="52"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwx-1K-8Bb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="40.5" height="40"/>
+                                                        <fontDescription key="fontDescription" name="Eventtus-Icons" family="Eventtus-Icons" pointSize="25"/>
+                                                        <size key="titleShadowOffset" width="1" height="0.0"/>
+                                                        <state key="normal" title="">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.1532266695" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="saveButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5PZ-Ag-iff"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDA-wW-SoX">
+                                                        <rect key="frame" x="0.0" y="40" width="40.5" height="12"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xgn-Mb-qTU">
+                                                <rect key="frame" x="52.5" y="0.0" width="40.5" height="52"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOG-vv-w1s">
+                                                        <rect key="frame" x="0.0" y="0.0" width="40.5" height="40"/>
+                                                        <fontDescription key="fontDescription" name="Eventtus-Icons" family="Eventtus-Icons" pointSize="25"/>
+                                                        <size key="titleShadowOffset" width="1" height="0.0"/>
+                                                        <state key="normal" title="">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.1532266695" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="clearButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6CL-Ak-40z"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear All" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zv-c7-Z2b">
+                                                        <rect key="frame" x="0.0" y="40" width="40.5" height="12"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYb-uI-9hZ">
+                                        <rect key="frame" x="313" y="-14" width="50" height="62"/>
+                                        <fontDescription key="fontDescription" name="Eventtus-Icons" family="Eventtus-Icons" pointSize="50"/>
+                                        <size key="titleShadowOffset" width="1" height="0.0"/>
+                                        <state key="normal" title="">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.1532266695" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="continueButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="woN-Wh-ybv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="HYb-uI-9hZ" secondAttribute="bottom" constant="12" id="0mY-Mf-w0o"/>
+                                    <constraint firstItem="r7L-uN-oyn" firstAttribute="top" secondItem="tbX-X9-udE" secondAttribute="top" id="D2o-nP-rVP"/>
+                                    <constraint firstAttribute="height" constant="60" id="La2-Bb-NLg"/>
+                                    <constraint firstAttribute="trailing" secondItem="HYb-uI-9hZ" secondAttribute="trailing" constant="12" id="W6w-l9-VIk"/>
+                                    <constraint firstAttribute="bottom" secondItem="r7L-uN-oyn" secondAttribute="bottom" constant="8" id="fRW-dw-m9Y"/>
+                                    <constraint firstItem="r7L-uN-oyn" firstAttribute="leading" secondItem="tbX-X9-udE" secondAttribute="leading" constant="12" id="vZd-9A-tfu"/>
+                                </constraints>
+                            </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuD-M1-XFQ">
+                                <rect key="frame" x="323" y="12" width="40" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <size key="titleShadowOffset" width="1" height="0.0"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.1532266695" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Kt-Xo-yV8"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSz-Wc-G7X">
+                                <rect key="frame" x="162" y="605" width="50" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7t3-Jp-nxf">
+                                        <rect key="frame" x="10" y="10" width="31" height="30"/>
+                                        <fontDescription key="fontDescription" name="Eventtus-Icons" family="Eventtus-Icons" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.1532266695" colorSpace="calibratedRGB"/>
+                                        <size key="shadowOffset" width="1" height="0.0"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="7t3-Jp-nxf" firstAttribute="centerY" secondItem="uSz-Wc-G7X" secondAttribute="centerY" id="2Le-HY-zlc"/>
+                                    <constraint firstItem="7t3-Jp-nxf" firstAttribute="centerX" secondItem="uSz-Wc-G7X" secondAttribute="centerX" id="6CT-Qf-kyX"/>
+                                    <constraint firstAttribute="width" constant="50" id="K4L-fc-RIm"/>
+                                    <constraint firstAttribute="height" constant="50" id="aD9-YS-YNc"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z08-Zt-Kld" userLabel="Color Picker">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mek-F2-K2m">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="s10-lX-XN7"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="N1o-Eb-5ai">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="mek-F2-K2m" secondAttribute="trailing" id="7Hw-dj-3Xs"/>
+                                    <constraint firstItem="mek-F2-K2m" firstAttribute="leading" secondItem="Z08-Zt-Kld" secondAttribute="leading" id="kNq-uq-WlG"/>
+                                    <constraint firstAttribute="height" constant="50" id="kZr-rF-b96"/>
+                                    <constraint firstItem="mek-F2-K2m" firstAttribute="top" secondItem="Z08-Zt-Kld" secondAttribute="top" id="qsk-2y-8sC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="pL5-L8-gdH" secondAttribute="trailing" id="2YY-Ou-pFO"/>
+                            <constraint firstItem="pL5-L8-gdH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9OX-Fy-5Fo"/>
+                            <constraint firstItem="HAu-hz-9Kf" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="9bu-EF-BeD"/>
+                            <constraint firstItem="HAu-hz-9Kf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Abj-UW-icf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Z08-Zt-Kld" secondAttribute="bottom" id="E1x-pN-k6s"/>
+                            <constraint firstAttribute="trailing" secondItem="tbX-X9-udE" secondAttribute="trailing" id="F6p-zZ-uA4"/>
+                            <constraint firstItem="Z08-Zt-Kld" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FVU-Mw-BAh"/>
+                            <constraint firstItem="tbX-X9-udE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SGj-w0-JO6"/>
+                            <constraint firstAttribute="trailing" secondItem="cv9-aV-7mo" secondAttribute="trailing" id="ScM-jA-Ug7"/>
+                            <constraint firstItem="WuD-M1-XFQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="12" id="V9o-s1-paP"/>
+                            <constraint firstAttribute="trailing" secondItem="WuD-M1-XFQ" secondAttribute="trailing" constant="12" id="VKi-FC-pga"/>
+                            <constraint firstAttribute="trailing" secondItem="Z08-Zt-Kld" secondAttribute="trailing" id="VsV-FC-fYl"/>
+                            <constraint firstItem="Z08-Zt-Kld" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W3L-y0-rXX"/>
+                            <constraint firstItem="jyi-oX-JZf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="WaF-Pa-tGH"/>
+                            <constraint firstItem="cv9-aV-7mo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="by1-C9-8fv"/>
+                            <constraint firstItem="jyi-oX-JZf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eB3-xJ-iG5"/>
+                            <constraint firstAttribute="trailing" secondItem="jyi-oX-JZf" secondAttribute="trailing" id="eww-FV-BcB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pL5-L8-gdH" secondAttribute="bottom" id="g1D-3z-ALC"/>
+                            <constraint firstItem="uSz-Wc-G7X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hg9-cU-pBg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uSz-Wc-G7X" secondAttribute="bottom" constant="12" id="keE-3A-rtx"/>
+                            <constraint firstItem="HAu-hz-9Kf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wnP-GP-F2C"/>
+                            <constraint firstAttribute="bottom" secondItem="tbX-X9-udE" secondAttribute="bottom" id="yhV-he-QeJ"/>
+                            <constraint firstItem="cv9-aV-7mo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zG9-qs-g2A"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomGradient" destination="pL5-L8-gdH" id="2I3-J0-iSj"/>
+                        <outlet property="bottomToolbar" destination="tbX-X9-udE" id="ZT3-z5-UHE"/>
+                        <outlet property="canvasView" destination="HAu-hz-9Kf" id="aho-C3-fID"/>
+                        <outlet property="colorPickerView" destination="Z08-Zt-Kld" id="OMR-Zm-Il4"/>
+                        <outlet property="colorPickerViewBottomConstraint" destination="E1x-pN-k6s" id="AQG-Gd-9Xs"/>
+                        <outlet property="colorsCollectionView" destination="mek-F2-K2m" id="hYQ-Y2-65p"/>
+                        <outlet property="deleteView" destination="uSz-Wc-G7X" id="rwA-4x-2OK"/>
+                        <outlet property="doneButton" destination="WuD-M1-XFQ" id="6s3-aq-Ec3"/>
+                        <outlet property="imageView" destination="lxq-nF-QoP" id="61W-VU-lAw"/>
+                        <outlet property="imageViewHeightConstraint" destination="xCY-eE-Er1" id="Yhb-fk-w3m"/>
+                        <outlet property="tempImageView" destination="llw-np-Mdx" id="lWf-wJ-SM0"/>
+                        <outlet property="topGradient" destination="jyi-oX-JZf" id="dNY-JX-2HK"/>
+                        <outlet property="topToolbar" destination="cv9-aV-7mo" id="VzW-QV-H0c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="228" y="160.56971514242881"/>
+        </scene>
+    </scenes>
+</document>
