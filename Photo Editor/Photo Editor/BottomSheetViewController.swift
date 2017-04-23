@@ -74,7 +74,9 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
 
         let y = self.view.frame.minY
         if y + translation.y >= fullView {
-            self.view.frame = CGRect(x: 0, y: y + translation.y, width: view.frame.width, height: view.frame.height)
+            let newMinY = y + translation.y
+            self.view.frame = CGRect(x: 0, y: newMinY, width: view.frame.width, height: UIScreen.main.bounds.height - newMinY )
+            self.view.layoutIfNeeded()
             recognizer.setTranslation(CGPoint.zero, in: self.view)
         }
         
@@ -88,13 +90,15 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
                         self.removeBottomSheetView()
                     } else {
                         self.view.frame = CGRect(x: 0, y: self.partialView, width: self.view.frame.width, height: UIScreen.main.bounds.height - self.partialView)
+                        self.view.layoutIfNeeded()
                     }
                 } else {
                     if y + translation.y >= self.partialView  {
                         self.view.frame = CGRect(x: 0, y: self.partialView, width: self.view.frame.width, height: UIScreen.main.bounds.height - self.partialView)
-                        
+                        self.view.layoutIfNeeded()
                     } else {
                         self.view.frame = CGRect(x: 0, y: self.fullView, width: self.view.frame.width, height: UIScreen.main.bounds.height - self.fullView)
+                        self.view.layoutIfNeeded()
                     }
                 }
                 
