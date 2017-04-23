@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
     //
     var lastPoint:CGPoint!
@@ -18,6 +18,31 @@ class ViewController: UIViewController {
     var blue:CGFloat!
     //
     @IBOutlet var imageView: UIImageView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        imageView.image = UIImage(named: "img.jpg")
+        // Do any additional setup after loading the view, typically from a nib.
+        red   = (0.0/255.0)
+        green = (0.0/255.0)
+        blue  = (0.0/255.0)
+        
+        let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
+        edgePan.edges = .bottom
+        edgePan.delegate = self
+        self.view.addGestureRecognizer(edgePan)
+    }
+    
+    func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
+        if recognizer.state == .recognized {
+            addBottomSheetView()
+        }
+    }
+    
+    // to Override Control Center screen edge pan from bottom
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     @IBAction func saveImage(_ sender: AnyObject) {
         if self.imageView.image == nil{
             return
@@ -36,39 +61,34 @@ class ViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        imageView.image = UIImage(named: "img.jpg")
-        // Do any additional setup after loading the view, typically from a nib.
-        red   = (0.0/255.0)
-        green = (0.0/255.0)
-        blue  = (0.0/255.0)
-    }
+
     
     @IBAction func stickersButtonTapped(_ sender: Any) {
-        addBottomSheetView(scrollable: false)
+        addBottomSheetView()
     }
-    func addBottomSheetView(scrollable: Bool? = true) {
-//        let bottomSheetVC = scrollable! ? ScrollableBottomSheetViewController() : BottomSheetViewController()
-                let bottomSheetVC =  BottomSheetViewController()
-        
+
+    let bottomSheetVC =  BottomSheetViewController()
+
+    func addBottomSheetView() {
         self.addChildViewController(bottomSheetVC)
         self.view.addSubview(bottomSheetVC.view)
         bottomSheetVC.didMove(toParentViewController: self)
-        
         let height = view.frame.height
         let width  = view.frame.width
         bottomSheetVC.view.frame = CGRect(x: 0, y: self.view.frame.maxY, width: width, height: height)
     }
     
-
+    func removeBottomSheetView() {
+        self.bottomSheetVC.view.removeFromSuperview()
+        bottomSheetVC.removeFromParentViewController()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    //MARK: Touch events
+    //MARK: Pencil
+    
     override func touchesBegan(_ touches: Set<UITouch>,
                                with event: UIEvent?){
         isSwiping    = false
@@ -113,7 +133,6 @@ class ViewController: UIViewController {
             UIGraphicsEndImageContext()
         }
     }
-    
     
 }
 

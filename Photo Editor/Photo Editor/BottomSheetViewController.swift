@@ -20,12 +20,12 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         holdView.layer.cornerRadius = 3
-        
         let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(BottomSheetViewController.panGesture))
         gesture.delegate = self
         view.addGestureRecognizer(gesture)
+        
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,9 +49,10 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    //MARK: Pan Gesture 
+       
     func panGesture(_ recognizer: UIPanGestureRecognizer) {
         
         let translation = recognizer.translation(in: self.view)
@@ -79,7 +80,6 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    
     func prepareBackgroundView(){
         let blurEffect = UIBlurEffect.init(style: .light)
         let visualEffect = UIVisualEffectView.init(effect: blurEffect)
@@ -92,22 +92,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
 
 }
 
-extension BottomSheetViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: "default")!
-    }
-}
+//extension BottomSheetViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+// 
+//}
 
