@@ -80,8 +80,18 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func removeBottomSheetView() {
-        self.bottomSheetVC.view.removeFromSuperview()
-        bottomSheetVC.removeFromParentViewController()
+        UIView.animate(withDuration: 0.3,
+                       delay: 0,
+                       options: UIViewAnimationOptions.curveEaseIn,
+                       animations: { () -> Void in
+                        var frame = self.bottomSheetVC.view.frame
+                        frame.origin.y = UIScreen.main.bounds.maxY
+                        self.bottomSheetVC.view.frame = frame
+                        
+        }, completion: { (finished) -> Void in
+            self.bottomSheetVC.view.removeFromSuperview()
+            self.bottomSheetVC.removeFromParentViewController()
+        })
     }
     
     override func didReceiveMemoryWarning() {
