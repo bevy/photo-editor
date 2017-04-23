@@ -12,9 +12,11 @@
 		059EA7221EACB8790072C0FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 059EA7201EACB8790072C0FE /* Main.storyboard */; };
 		059EA7241EACB8790072C0FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 059EA7231EACB8790072C0FE /* Assets.xcassets */; };
 		059EA7271EACB8790072C0FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 059EA7251EACB8790072C0FE /* LaunchScreen.storyboard */; };
-		059EA72F1EACBA870072C0FE /* UIView+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EA72E1EACBA870072C0FE /* UIView+Image.swift */; };
 		059EA7311EACBBF30072C0FE /* img.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 059EA7301EACBBF30072C0FE /* img.jpg */; };
-		059EA7331EACBDF90072C0FE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EA7321EACBDF90072C0FE /* GradientView.swift */; };
+		059EA73A1EACD9620072C0FE /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EA7381EACD9620072C0FE /* BottomSheetViewController.swift */; };
+		059EA73B1EACD9620072C0FE /* BottomSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 059EA7391EACD9620072C0FE /* BottomSheetViewController.xib */; };
+		059EA7431EACF4730072C0FE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EA7411EACF4730072C0FE /* GradientView.swift */; };
+		059EA7441EACF4730072C0FE /* UIView+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EA7421EACF4730072C0FE /* UIView+Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +27,11 @@
 		059EA7231EACB8790072C0FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		059EA7261EACB8790072C0FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		059EA7281EACB8790072C0FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		059EA72E1EACBA870072C0FE /* UIView+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Image.swift"; sourceTree = "<group>"; };
 		059EA7301EACBBF30072C0FE /* img.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img.jpg; sourceTree = "<group>"; };
-		059EA7321EACBDF90072C0FE /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		059EA7381EACD9620072C0FE /* BottomSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		059EA7391EACD9620072C0FE /* BottomSheetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottomSheetViewController.xib; sourceTree = "<group>"; };
+		059EA7411EACF4730072C0FE /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		059EA7421EACF4730072C0FE /* UIView+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Image.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +64,7 @@
 		059EA71B1EACB8790072C0FE /* Photo Editor */ = {
 			isa = PBXGroup;
 			children = (
-				059EA7321EACBDF90072C0FE /* GradientView.swift */,
+				059EA7401EACF4470072C0FE /* Extensions */,
 				059EA71C1EACB8790072C0FE /* AppDelegate.swift */,
 				059EA71E1EACB8790072C0FE /* ViewController.swift */,
 				059EA7301EACBBF30072C0FE /* img.jpg */,
@@ -68,9 +72,19 @@
 				059EA7231EACB8790072C0FE /* Assets.xcassets */,
 				059EA7251EACB8790072C0FE /* LaunchScreen.storyboard */,
 				059EA7281EACB8790072C0FE /* Info.plist */,
-				059EA72E1EACBA870072C0FE /* UIView+Image.swift */,
+				059EA7381EACD9620072C0FE /* BottomSheetViewController.swift */,
+				059EA7391EACD9620072C0FE /* BottomSheetViewController.xib */,
 			);
 			path = "Photo Editor";
+			sourceTree = "<group>";
+		};
+		059EA7401EACF4470072C0FE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				059EA7411EACF4730072C0FE /* GradientView.swift */,
+				059EA7421EACF4730072C0FE /* UIView+Image.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				059EA7271EACB8790072C0FE /* LaunchScreen.storyboard in Resources */,
+				059EA73B1EACD9620072C0FE /* BottomSheetViewController.xib in Resources */,
 				059EA7241EACB8790072C0FE /* Assets.xcassets in Resources */,
 				059EA7221EACB8790072C0FE /* Main.storyboard in Resources */,
 				059EA7311EACBBF30072C0FE /* img.jpg in Resources */,
@@ -148,8 +163,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				059EA71F1EACB8790072C0FE /* ViewController.swift in Sources */,
-				059EA72F1EACBA870072C0FE /* UIView+Image.swift in Sources */,
-				059EA7331EACBDF90072C0FE /* GradientView.swift in Sources */,
+				059EA7431EACF4730072C0FE /* GradientView.swift in Sources */,
+				059EA7441EACF4730072C0FE /* UIView+Image.swift in Sources */,
+				059EA73A1EACD9620072C0FE /* BottomSheetViewController.swift in Sources */,
 				059EA71D1EACB8790072C0FE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

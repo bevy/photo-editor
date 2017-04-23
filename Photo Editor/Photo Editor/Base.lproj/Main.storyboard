@@ -35,6 +35,9 @@
                                                 <state key="normal" title="Image">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="stickersButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tDN-Hj-fMn"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBM-2P-ZnU">
                                                 <rect key="frame" x="54" y="0.0" width="42" height="80"/>
