@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BottomSheetViewController">
             <connections>
+                <outlet property="collectioView" destination="q7f-qz-2j5" id="LIa-7j-JjF"/>
                 <outlet property="headerView" destination="Jqb-lC-sL5" id="2Bt-iO-hyv"/>
                 <outlet property="holdView" destination="caC-0e-fET" id="T8J-gB-ag8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
