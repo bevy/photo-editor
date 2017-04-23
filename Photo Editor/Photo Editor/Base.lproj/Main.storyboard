@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Photo_Editor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,120 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lxq-nF-QoP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cv9-aV-7mo" customClass="GradientView" customModule="Photo_Editor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="bJY-5j-abz">
+                                        <rect key="frame" x="213" y="0.0" width="150" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjj-Vy-rYA">
+                                                <rect key="frame" x="0.0" y="0.0" width="42" height="80"/>
+                                                <state key="normal" title="Image">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBM-2P-ZnU">
+                                                <rect key="frame" x="54" y="0.0" width="42" height="80"/>
+                                                <state key="normal" title="Pencil">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qm-ew-B7Y">
+                                                <rect key="frame" x="108" y="0.0" width="42" height="80"/>
+                                                <state key="normal" title="Text">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTx-Eo-0By">
+                                        <rect key="frame" x="12" y="25" width="39" height="30"/>
+                                        <state key="normal" title="Close">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="bJY-5j-abz" firstAttribute="top" secondItem="cv9-aV-7mo" secondAttribute="top" id="6Vb-QW-4JG"/>
+                                    <constraint firstItem="gTx-Eo-0By" firstAttribute="leading" secondItem="cv9-aV-7mo" secondAttribute="leading" constant="12" id="8N8-Xx-hd0"/>
+                                    <constraint firstAttribute="height" constant="80" id="OHc-Y3-bdi"/>
+                                    <constraint firstAttribute="bottom" secondItem="bJY-5j-abz" secondAttribute="bottom" id="al2-IA-Dfm"/>
+                                    <constraint firstItem="gTx-Eo-0By" firstAttribute="centerY" secondItem="cv9-aV-7mo" secondAttribute="centerY" id="dVn-aQ-hIp"/>
+                                    <constraint firstAttribute="trailing" secondItem="bJY-5j-abz" secondAttribute="trailing" constant="12" id="rRL-Np-thq"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientColor">
+                                        <color key="value" red="0.99215686270000003" green="0.6705882353" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tbX-X9-udE" customClass="GradientView" customModule="Photo_Editor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="r7L-uN-oyn">
+                                        <rect key="frame" x="12" y="0.0" width="84" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwx-1K-8Bb">
+                                                <rect key="frame" x="0.0" y="0.0" width="36" height="60"/>
+                                                <state key="normal" title="Save">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOG-vv-w1s">
+                                                <rect key="frame" x="48" y="0.0" width="36" height="60"/>
+                                                <state key="normal" title="Clear">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYb-uI-9hZ">
+                                        <rect key="frame" x="301" y="15" width="62" height="30"/>
+                                        <state key="normal" title="Continue">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="r7L-uN-oyn" firstAttribute="top" secondItem="tbX-X9-udE" secondAttribute="top" id="D2o-nP-rVP"/>
+                                    <constraint firstAttribute="height" constant="60" id="La2-Bb-NLg"/>
+                                    <constraint firstAttribute="trailing" secondItem="HYb-uI-9hZ" secondAttribute="trailing" constant="12" id="W6w-l9-VIk"/>
+                                    <constraint firstAttribute="bottom" secondItem="r7L-uN-oyn" secondAttribute="bottom" id="fRW-dw-m9Y"/>
+                                    <constraint firstItem="HYb-uI-9hZ" firstAttribute="centerY" secondItem="tbX-X9-udE" secondAttribute="centerY" id="kmX-6N-HOx"/>
+                                    <constraint firstItem="r7L-uN-oyn" firstAttribute="leading" secondItem="tbX-X9-udE" secondAttribute="leading" constant="12" id="vZd-9A-tfu"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="gradientFromtop" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="tbX-X9-udE" secondAttribute="trailing" id="F6p-zZ-uA4"/>
+                            <constraint firstAttribute="bottom" secondItem="lxq-nF-QoP" secondAttribute="bottom" id="GqE-sE-WeU"/>
+                            <constraint firstAttribute="trailing" secondItem="lxq-nF-QoP" secondAttribute="trailing" id="H8f-uO-fEX"/>
+                            <constraint firstItem="lxq-nF-QoP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HAc-mc-pIb"/>
+                            <constraint firstItem="lxq-nF-QoP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Jvp-zt-owj"/>
+                            <constraint firstItem="tbX-X9-udE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SGj-w0-JO6"/>
+                            <constraint firstAttribute="trailing" secondItem="cv9-aV-7mo" secondAttribute="trailing" id="ScM-jA-Ug7"/>
+                            <constraint firstItem="cv9-aV-7mo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="by1-C9-8fv"/>
+                            <constraint firstAttribute="bottom" secondItem="tbX-X9-udE" secondAttribute="bottom" id="yhV-he-QeJ"/>
+                            <constraint firstItem="cv9-aV-7mo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zG9-qs-g2A"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="lxq-nF-QoP" id="61W-VU-lAw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="228" y="161"/>
         </scene>
     </scenes>
 </document>
