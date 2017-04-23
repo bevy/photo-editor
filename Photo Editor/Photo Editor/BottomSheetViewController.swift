@@ -1,18 +1,23 @@
 //
-//  ScrollableBottomSheetViewController.swift
-//  BottomSheet
+//  BottomSheetViewController.swift
+//  Photo Editor
 //
-//  Created by Ahmed Elassuty on 10/15/16.
-//  Copyright © 2016 Ahmed Elassuty. All rights reserved.
+//  Created by Mohamed Hamed on 4/23/17.
+//  Copyright © 2017 Mohamed Hamed. All rights reserved.
 //
-
 import UIKit
+
+protocol StickerDelegate {
+    func imageTapped(image: UIImage)
+}
 
 class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var holdView: UIView!
     @IBOutlet weak var collectioView: UICollectionView!
 
+    var stickers : [UIImage] = []
+    var stickerDelegate : StickerDelegate?
     
     let fullView: CGFloat = 100 // remainder of screen height
     var partialView: CGFloat {
@@ -24,6 +29,9 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         collectioView.delegate = self
         collectioView.dataSource = self
         
+        for _ in 1...25 {
+            stickers.append(UIImage(named: "img.jpg")!)
+        }
         holdView.layer.cornerRadius = 3
         let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(BottomSheetViewController.panGesture))
         gesture.delegate = self
@@ -113,11 +121,12 @@ extension BottomSheetViewController: UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 25
+        return stickers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //The magic here
+        stickerDelegate?.imageTapped(image: stickers[indexPath.item])
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -127,6 +136,7 @@ extension BottomSheetViewController: UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = "StickerCollectionViewCell"
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! StickerCollectionViewCell
+        cell.stickerImage.image = stickers[indexPath.item]
         return cell
     }
     

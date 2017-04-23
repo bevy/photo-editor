@@ -30,6 +30,9 @@
                 <constraint firstItem="KOC-sF-DQ7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Zq3-3X-uWQ"/>
             </constraints>
             <size key="customSize" width="139" height="81"/>
+            <connections>
+                <outlet property="stickerImage" destination="KOC-sF-DQ7" id="qYt-m0-cB8"/>
+            </connections>
             <point key="canvasLocation" x="78.5" y="76.5"/>
         </collectionViewCell>
     </objects>
