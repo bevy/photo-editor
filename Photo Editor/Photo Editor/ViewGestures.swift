@@ -11,12 +11,12 @@ import UIKit
 
 extension ViewController {
 //Translation is moving object 
-    
-    func imageTapped(image: UIImage) {
-        self.removeBottomSheetView()
-        let rect = CGRect(x: UIScreen.main.bounds.width / 2 - 50, y: UIScreen.main.bounds.height / 2 - 50, width: 100, height: 100)
-        let view = UIView(frame: rect)
-        view.backgroundColor = UIColor(patternImage: image)
-        self.view.addSubview(view)
+    func panGesture(_ recognizer: UIPanGestureRecognizer) {
+        let view = recognizer.view!
+        let point = recognizer.location(in: self.view) //recognizer.translation(in: view)
+        view.center = point// CGPoint(x: view.center.x + point.x, y: view.center.y + point.y)
+        
     }
+
+    
 }
