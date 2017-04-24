@@ -16,6 +16,7 @@ extension ViewController {
         let point = recognizer.location(in: self.view) //recognizer.translation(in: view)
         view.center = point// CGPoint(x: view.center.x + point.x, y: view.center.y + point.y)
     }
+
     func pinchGesture(_ recognizer: UIPinchGestureRecognizer) {
         let view = recognizer.view!
         view.transform = CGAffineTransform(scaleX: recognizer.scale, y: recognizer.scale)
@@ -24,4 +25,8 @@ extension ViewController {
         }
     }
     
+    func rotationGesture(_ recognizer: UIRotationGestureRecognizer) {
+        let view = recognizer.view!
+        view.transform = CGAffineTransform(rotationAngle: recognizer.rotation)
+    }
 }
