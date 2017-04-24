@@ -9,24 +9,39 @@
 import UIKit
 
 
-extension ViewController {
+extension ViewController  {
 //Translation is moving object 
     func panGesture(_ recognizer: UIPanGestureRecognizer) {
         let view = recognizer.view!
         let point = recognizer.location(in: self.view) //recognizer.translation(in: view)
         view.center = point// CGPoint(x: view.center.x + point.x, y: view.center.y + point.y)
+        recognizer.setTranslation(CGPoint.zero, in: self.view)
     }
 
     func pinchGesture(_ recognizer: UIPinchGestureRecognizer) {
-        let view = recognizer.view!
-        view.transform = CGAffineTransform(scaleX: recognizer.scale, y: recognizer.scale)
-        if recognizer.state == .ended {
-            recognizer.scale = 1.0
+        if let view = recognizer.view {
+            view.transform = view.transform.scaledBy(x: recognizer.scale, y: recognizer.scale)
+            recognizer.scale = 1
         }
     }
     
     func rotationGesture(_ recognizer: UIRotationGestureRecognizer) {
-        let view = recognizer.view!
-        view.transform = CGAffineTransform(rotationAngle: recognizer.rotation)
+        if let view = recognizer.view {
+            view.transform = view.transform.rotated(by: recognizer.rotation)
+            recognizer.rotation = 0
+        }
     }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return false
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return false
+    }
+    
 }

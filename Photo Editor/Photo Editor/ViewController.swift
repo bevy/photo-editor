@@ -158,14 +158,19 @@ extension ViewController: StickerDelegate {
         
         let panGesture = UIPanGestureRecognizer(target: self,
                                                 action: #selector(ViewController.panGesture))
+        panGesture.minimumNumberOfTouches = 1
+        panGesture.maximumNumberOfTouches = 1
+        panGesture.delegate = self
         newView.addGestureRecognizer(panGesture)
         
         let pinchGesture = UIPinchGestureRecognizer(target: self,
                                                     action: #selector(ViewController.pinchGesture))
+        pinchGesture.delegate = self
         newView.addGestureRecognizer(pinchGesture)
         
         let rotationGestureRecognizer = UIRotationGestureRecognizer(target: self,
                                                                     action:#selector(ViewController.rotationGesture) )
+        rotationGestureRecognizer.delegate = self
         newView.addGestureRecognizer(rotationGestureRecognizer)
 
     }
