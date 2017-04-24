@@ -8,7 +8,7 @@
 import UIKit
 
 protocol StickerDelegate {
-    func imageTapped(image: UIImage)
+    func viewTapped(view: UIView)
 }
 
 class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
@@ -152,8 +152,8 @@ extension BottomSheetViewController: UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //The magic here
-        stickerDelegate?.imageTapped(image: stickers[indexPath.item])
+        let cell = collectionView.cellForItem(at: indexPath)
+        stickerDelegate?.viewTapped(view: cell!.contentView)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
