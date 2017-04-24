@@ -152,11 +152,15 @@ extension ViewController: StickerDelegate {
         let newView = view.toImageView()
         self.removeBottomSheetView()
         newView.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
-        self.view.addSubview(newView)
-        //Gesture
+        self.imageView.addSubview(newView)
+        //Gestures
         newView.isUserInteractionEnabled = true
+        
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(ViewController.panGesture))
         newView.addGestureRecognizer(panGesture)
+        
+        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(ViewController.pinchGesture))
+        newView.addGestureRecognizer(pinchGesture)
     }
 }
 

@@ -15,8 +15,13 @@ extension ViewController {
         let view = recognizer.view!
         let point = recognizer.location(in: self.view) //recognizer.translation(in: view)
         view.center = point// CGPoint(x: view.center.x + point.x, y: view.center.y + point.y)
-        
     }
-
+    func pinchGesture(_ recognizer: UIPinchGestureRecognizer) {
+        let view = recognizer.view!
+        view.transform = CGAffineTransform(scaleX: recognizer.scale, y: recognizer.scale)
+        if recognizer.state == .ended {
+            recognizer.scale = 1.0
+        }
+    }
     
 }
