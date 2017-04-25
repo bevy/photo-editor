@@ -81,7 +81,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         textView.layer.backgroundColor = UIColor.clear.cgColor
         //
         textView.isScrollEnabled = false
-        
+        textView.delegate = self
         self.imageView.addSubview(textView)
         addGestures(view: textView)
         textView.becomeFirstResponder()
@@ -167,6 +167,14 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 //        }
 //    }
     
+}
+
+extension ViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        let oldFrame = textView.frame
+        let sizeToFit = textView.sizeThatFits(CGSize(width: oldFrame.width, height:CGFloat.greatestFiniteMagnitude))
+        textView.frame = CGRect(x: oldFrame.minX, y: oldFrame.minY, width: oldFrame.width, height: sizeToFit.height)
+    }
 }
 
 extension ViewController: StickerDelegate {
