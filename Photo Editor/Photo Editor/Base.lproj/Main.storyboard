@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -50,6 +49,9 @@
                                                 <state key="normal" title="Text">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="textButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PSc-ak-9Ur"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

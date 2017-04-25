@@ -66,6 +66,28 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBAction func stickersButtonTapped(_ sender: Any) {
         addBottomSheetView()
     }
+    
+    @IBAction func textButtonTapped(_ sender: Any) {
+        let textView = UITextView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height / 2,
+                                                  width: UIScreen.main.bounds.width, height: 30))
+        //Text Attributes
+        textView.textAlignment = .center
+        textView.font = UIFont(name: "Helvetica", size: 20)
+        textView.textColor = .white
+        textView.layer.shadowColor = UIColor.black.cgColor
+        textView.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        textView.layer.shadowOpacity = 1.0
+        textView.layer.shadowRadius = 2.0
+        textView.layer.backgroundColor = UIColor.clear.cgColor
+        //
+        textView.isScrollEnabled = false
+        
+        self.imageView.addSubview(textView)
+        addGestures(view: textView)
+        textView.becomeFirstResponder()
+    }
+    
+    
 
     let bottomSheetVC =  BottomSheetViewController()
 
@@ -154,24 +176,29 @@ extension ViewController: StickerDelegate {
         newView.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
         self.imageView.addSubview(newView)
         //Gestures
-        newView.isUserInteractionEnabled = true
+        addGestures(view: newView)
+    }
+    
+    func addGestures(view: UIView) {
+        //Gestures
+        view.isUserInteractionEnabled = true
         
         let panGesture = UIPanGestureRecognizer(target: self,
                                                 action: #selector(ViewController.panGesture))
         panGesture.minimumNumberOfTouches = 1
         panGesture.maximumNumberOfTouches = 1
         panGesture.delegate = self
-        newView.addGestureRecognizer(panGesture)
+        view.addGestureRecognizer(panGesture)
         
         let pinchGesture = UIPinchGestureRecognizer(target: self,
                                                     action: #selector(ViewController.pinchGesture))
         pinchGesture.delegate = self
-        newView.addGestureRecognizer(pinchGesture)
+        view.addGestureRecognizer(pinchGesture)
         
         let rotationGestureRecognizer = UIRotationGestureRecognizer(target: self,
                                                                     action:#selector(ViewController.rotationGesture) )
         rotationGestureRecognizer.delegate = self
-        newView.addGestureRecognizer(rotationGestureRecognizer)
+        view.addGestureRecognizer(rotationGestureRecognizer)
 
     }
 }
