@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIGestureRecognizerDelegate {
+class ViewController: UIViewController {
 
     //
     var lastPoint:CGPoint!
@@ -32,11 +32,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         self.view.addGestureRecognizer(edgePan)
     }
     
-    func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
-        if recognizer.state == .recognized {
-            addBottomSheetView()
-        }
-    }
+    
     
     // to Override Control Center screen edge pan from bottom
     override var prefersStatusBarHidden: Bool {

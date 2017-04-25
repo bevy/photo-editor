@@ -9,7 +9,7 @@
 import UIKit
 
 
-extension ViewController  {
+extension ViewController : UIGestureRecognizerDelegate  {
 //Translation is moving object 
     func panGesture(_ recognizer: UIPanGestureRecognizer) {
         let view = recognizer.view!
@@ -44,4 +44,9 @@ extension ViewController  {
         return false
     }
     
+    func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
+        if recognizer.state == .recognized {
+            addBottomSheetView()
+        }
+    }
 }
