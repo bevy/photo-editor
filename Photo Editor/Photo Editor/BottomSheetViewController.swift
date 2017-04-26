@@ -34,8 +34,8 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         stickers.append(UIImage(named: "android")!)
         stickers.append(UIImage(named: "monster")!)
         stickers.append(UIImage(named: "event")!)
+        stickers.append(UIImage(named: "mustach")!)
         stickers.append(UIImage(named: "img.jpg")!)
-        
         
         holdView.layer.cornerRadius = 3
         let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(BottomSheetViewController.panGesture))
