@@ -28,10 +28,14 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         collectioView.delegate = self
         collectioView.dataSource = self
+
+        stickers.append(UIImage(named: "crown")!)
+        stickers.append(UIImage(named: "android")!)
+        stickers.append(UIImage(named: "monster")!)
+        stickers.append(UIImage(named: "event")!)
+        stickers.append(UIImage(named: "img.jpg")!)
         
-        for _ in 1...25 {
-            stickers.append(UIImage(named: "img.jpg")!)
-        }
+        
         holdView.layer.cornerRadius = 3
         let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(BottomSheetViewController.panGesture))
         gesture.delegate = self
@@ -152,8 +156,8 @@ extension BottomSheetViewController: UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath)
-        stickerDelegate?.viewTapped(view: cell!.contentView)
+        let cell = collectionView.cellForItem(at: indexPath) as! StickerCollectionViewCell
+        stickerDelegate?.viewTapped(view: cell.stickerImage)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
