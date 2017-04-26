@@ -49,4 +49,10 @@ extension ViewController : UIGestureRecognizerDelegate  {
             addBottomSheetView()
         }
     }
+    
+    // to Override Control Center screen edge pan from bottom
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
 }

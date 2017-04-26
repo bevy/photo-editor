@@ -18,27 +18,16 @@ class ViewController: UIViewController {
     //
     var lastPoint:CGPoint!
     var isSwiping:Bool!
-    var red:CGFloat!
-    var green:CGFloat!
-    var blue:CGFloat!
     //
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = UIImage(named: "img.jpg")
-        red   = (0.0/255.0)
-        green = (0.0/255.0)
-        blue  = (0.0/255.0)
-        
+
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
         edgePan.edges = .bottom
         edgePan.delegate = self
         self.view.addGestureRecognizer(edgePan)
-    }
-    
-    // to Override Control Center screen edge pan from bottom
-    override var prefersStatusBarHidden: Bool {
-        return true
     }
     
     @IBAction func saveButtonTapped(_ sender: AnyObject) {
@@ -141,7 +130,7 @@ class ViewController: UIViewController {
             UIGraphicsGetCurrentContext()?.addLine(to: CGPoint(x: currentPoint.x, y: currentPoint.y))
             UIGraphicsGetCurrentContext()?.setLineCap(CGLineCap.round)
             UIGraphicsGetCurrentContext()?.setLineWidth(5.0)
-            UIGraphicsGetCurrentContext()?.setStrokeColor(red: red, green: green, blue: blue, alpha: 1.0)
+            UIGraphicsGetCurrentContext()?.setStrokeColor(UIColor.black.cgColor)
             UIGraphicsGetCurrentContext()?.strokePath()
             self.imageView.image = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
@@ -157,7 +146,7 @@ class ViewController: UIViewController {
             self.imageView.image?.draw(in: CGRect(x: 0, y: 0, width: self.imageView.frame.size.width, height: self.imageView.frame.size.height))
             UIGraphicsGetCurrentContext()?.setLineCap(CGLineCap.round)
             UIGraphicsGetCurrentContext()?.setLineWidth(9.0)
-            UIGraphicsGetCurrentContext()?.setStrokeColor(red: red, green: green, blue: blue, alpha: 1.0)
+            UIGraphicsGetCurrentContext()?.setStrokeColor(UIColor.black.cgColor)
             UIGraphicsGetCurrentContext()?.move(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
             UIGraphicsGetCurrentContext()?.addLine(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
             UIGraphicsGetCurrentContext()?.strokePath()
