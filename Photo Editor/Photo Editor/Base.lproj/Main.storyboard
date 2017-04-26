@@ -123,6 +123,18 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="gradientFromtop" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuD-M1-XFQ">
+                                <rect key="frame" x="323" y="12" width="40" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <size key="titleShadowOffset" width="2" height="2"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Kt-Xo-yV8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -133,6 +145,8 @@
                             <constraint firstItem="lxq-nF-QoP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Jvp-zt-owj"/>
                             <constraint firstItem="tbX-X9-udE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SGj-w0-JO6"/>
                             <constraint firstAttribute="trailing" secondItem="cv9-aV-7mo" secondAttribute="trailing" id="ScM-jA-Ug7"/>
+                            <constraint firstItem="WuD-M1-XFQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="12" id="V9o-s1-paP"/>
+                            <constraint firstAttribute="trailing" secondItem="WuD-M1-XFQ" secondAttribute="trailing" constant="12" id="VKi-FC-pga"/>
                             <constraint firstItem="cv9-aV-7mo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="by1-C9-8fv"/>
                             <constraint firstAttribute="bottom" secondItem="tbX-X9-udE" secondAttribute="bottom" id="yhV-he-QeJ"/>
                             <constraint firstItem="cv9-aV-7mo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zG9-qs-g2A"/>
@@ -140,6 +154,7 @@
                     </view>
                     <connections>
                         <outlet property="bottomToolbar" destination="tbX-X9-udE" id="ZT3-z5-UHE"/>
+                        <outlet property="doneButton" destination="WuD-M1-XFQ" id="6s3-aq-Ec3"/>
                         <outlet property="imageView" destination="lxq-nF-QoP" id="61W-VU-lAw"/>
                         <outlet property="topToolbar" destination="cv9-aV-7mo" id="VzW-QV-H0c"/>
                     </connections>

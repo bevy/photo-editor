@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var topToolbar: UIView!
     @IBOutlet weak var bottomToolbar: UIView!
+    @IBOutlet weak var doneButton: UIButton!
 
     //
     var lastPoint:CGPoint!
@@ -28,6 +29,10 @@ class ViewController: UIViewController {
         edgePan.edges = .bottom
         edgePan.delegate = self
         self.view.addGestureRecognizer(edgePan)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
+
     }
     
     @IBAction func saveButtonTapped(_ sender: AnyObject) {
@@ -36,6 +41,7 @@ class ViewController: UIViewController {
         }
         UIImageWriteToSavedPhotosAlbum(self.imageView.toImage(),self, #selector(ViewController.image(_:withPotentialError:contextInfo:)), nil)
     }
+    
     @IBAction func clearButtonTapped(_ sender: AnyObject) {
         //clear drawing
         imageView.image = UIImage(named: "img.jpg")
@@ -44,6 +50,21 @@ class ViewController: UIViewController {
             subview.removeFromSuperview()
         }
     }
+    
+    @IBAction func doneButtonTapped(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        doneButton.isHidden = false
+        hideToolbar()
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        doneButton.isHidden = true
+        hideToolbar()
+    }
+    
     func image(_ image: UIImage, withPotentialError error: NSErrorPointer, contextInfo: UnsafeRawPointer) {
         let alert = UIAlertController(title: "Image Saved", message: "Image successfully saved to Photos library", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
@@ -56,8 +77,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func textButtonTapped(_ sender: Any) {
-        
-        hideToolbar()
         
         let textView = UITextView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height / 2,
                                                   width: UIScreen.main.bounds.width, height: 30))
