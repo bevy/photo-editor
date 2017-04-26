@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		056DAAA21EADFEF70007D7F0 /* ViewGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056DAAA11EADFEF70007D7F0 /* ViewGestures.swift */; };
+		0588E6011EB0AEB600BC8300 /* Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0588E6001EB0AEB600BC8300 /* Pencil.swift */; };
 		059EA71D1EACB8790072C0FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EA71C1EACB8790072C0FE /* AppDelegate.swift */; };
 		059EA71F1EACB8790072C0FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EA71E1EACB8790072C0FE /* ViewController.swift */; };
 		059EA7221EACB8790072C0FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 059EA7201EACB8790072C0FE /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		056DAAA11EADFEF70007D7F0 /* ViewGestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewGestures.swift; sourceTree = "<group>"; };
+		0588E6001EB0AEB600BC8300 /* Pencil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pencil.swift; sourceTree = "<group>"; };
 		059EA7191EACB8790072C0FE /* Photo Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		059EA71C1EACB8790072C0FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		059EA71E1EACB8790072C0FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				059EA7451EAD1B550072C0FE /* StickerCollectionViewCell.swift */,
 				059EA7461EAD1B550072C0FE /* StickerCollectionViewCell.xib */,
 				056DAAA11EADFEF70007D7F0 /* ViewGestures.swift */,
+				0588E6001EB0AEB600BC8300 /* Pencil.swift */,
 			);
 			path = "Photo Editor";
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			files = (
 				059EA7471EAD1B550072C0FE /* StickerCollectionViewCell.swift in Sources */,
 				059EA71F1EACB8790072C0FE /* ViewController.swift in Sources */,
+				0588E6011EB0AEB600BC8300 /* Pencil.swift in Sources */,
 				059EA7431EACF4730072C0FE /* GradientView.swift in Sources */,
 				056DAAA21EADFEF70007D7F0 /* ViewGestures.swift in Sources */,
 				059EA7441EACF4730072C0FE /* UIView+Image.swift in Sources */,

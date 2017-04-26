@@ -9,6 +9,7 @@ import UIKit
 
 protocol StickerDelegate {
     func viewTapped(view: UIView)
+    func bottomSheetDidDisappear()
 }
 
 class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
@@ -122,6 +123,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         }, completion: { (finished) -> Void in
             self.view.removeFromSuperview()
             self.removeFromParentViewController()
+            self.stickerDelegate?.bottomSheetDidDisappear()
         })
     }
     
