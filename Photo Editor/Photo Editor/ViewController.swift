@@ -17,8 +17,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var doneButton: UIButton!
 
     //
-    var lastPoint:CGPoint!
-    var isSwiping:Bool!
+    var isDrawing: Bool = false
+    var lastPoint: CGPoint!
+    var isSwiping: Bool!
     //
 
     override func viewDidLoad() {
@@ -56,6 +57,7 @@ class ViewController: UIViewController {
         doneButton.isHidden = true
         imageView.isUserInteractionEnabled = true
         hideToolbar(hide: false)
+        isDrawing = false
     }
     
     func keyboardWillShow(notification: NSNotification) {
@@ -101,6 +103,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func pencilButtonTapped(_ sender: Any) {
+        isDrawing = true
         imageView.isUserInteractionEnabled = false
         doneButton.isHidden = false
         hideToolbar(hide: true)
