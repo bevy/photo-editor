@@ -13,6 +13,7 @@ extension ViewController : UIGestureRecognizerDelegate  {
 //Translation is moving object 
     func panGesture(_ recognizer: UIPanGestureRecognizer) {
         let view = recognizer.view!
+        view.superview?.bringSubview(toFront: view)
         let point = recognizer.location(in: self.view) //recognizer.translation(in: view)
         view.center = point// CGPoint(x: view.center.x + point.x, y: view.center.y + point.y)
         recognizer.setTranslation(CGPoint.zero, in: self.view)
@@ -35,6 +36,16 @@ extension ViewController : UIGestureRecognizerDelegate  {
     func tapGesture(_ recognizer: UITapGestureRecognizer) {
         if let view = recognizer.view {
             view.superview?.bringSubview(toFront: view)
+            let previouTransform =  view.transform
+            UIView.animate(withDuration: 0.2,
+                           animations: {
+                            view.transform = view.transform.scaledBy(x: 1.2, y: 1.2)
+            },
+                           completion: { _ in
+                            UIView.animate(withDuration: 0.2) {
+                                view.transform  = previouTransform//CGAffineTransform.identity
+                            }
+            })
         }
     }
     
