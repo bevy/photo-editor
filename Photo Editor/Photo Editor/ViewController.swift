@@ -53,16 +53,19 @@ class ViewController: UIViewController {
     
     @IBAction func doneButtonTapped(_ sender: Any) {
         view.endEditing(true)
+        doneButton.isHidden = true
+        imageView.isUserInteractionEnabled = true
+        hideToolbar(hide: false)
     }
     
     func keyboardWillShow(notification: NSNotification) {
         doneButton.isHidden = false
-        hideToolbar()
+        hideToolbar(hide: true)
     }
     
     func keyboardWillHide(notification: NSNotification) {
         doneButton.isHidden = true
-        hideToolbar()
+        hideToolbar(hide: false)
     }
     
     func image(_ image: UIImage, withPotentialError error: NSErrorPointer, contextInfo: UnsafeRawPointer) {
@@ -97,12 +100,17 @@ class ViewController: UIViewController {
         textView.becomeFirstResponder()
     }
     
+    @IBAction func pencilButtonTapped(_ sender: Any) {
+        imageView.isUserInteractionEnabled = false
+        doneButton.isHidden = false
+        hideToolbar(hide: true)
+    }
     
 
     let bottomSheetVC =  BottomSheetViewController()
 
     func addBottomSheetView() {
-        hideToolbar()
+        hideToolbar(hide: true)
         
         bottomSheetVC.stickerDelegate = self
         self.addChildViewController(bottomSheetVC)
@@ -125,26 +133,16 @@ class ViewController: UIViewController {
         }, completion: { (finished) -> Void in
             self.bottomSheetVC.view.removeFromSuperview()
             self.bottomSheetVC.removeFromParentViewController()
-            self.hideToolbar()
+            self.hideToolbar(hide: false)
         })
     }
     
-    func hideToolbar(hide: Bool? = nil) {
-        guard hide != nil else {
-            topToolbar.isHidden = !topToolbar.isHidden
-            bottomToolbar.isHidden = !bottomToolbar.isHidden
-            return
-        }
-        
-        topToolbar.isHidden = hide!
-        bottomToolbar.isHidden = hide!
+    func hideToolbar(hide: Bool) {
+        topToolbar.isHidden = hide
+        bottomToolbar.isHidden = hide
     }
     
 }
-
-
-
-
 
 extension ViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
@@ -166,7 +164,7 @@ extension ViewController: StickerDelegate {
     }
     
     func bottomSheetDidDisappear() {
-        hideToolbar()
+        hideToolbar(hide: false)
     }
     
     func addGestures(view: UIView) {

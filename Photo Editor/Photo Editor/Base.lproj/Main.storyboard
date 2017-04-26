@@ -43,6 +43,9 @@
                                                 <state key="normal" title="Pencil">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="pencilButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zcl-r1-LcT"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qm-ew-B7Y">
                                                 <rect key="frame" x="108" y="0.0" width="42" height="80"/>
