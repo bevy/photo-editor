@@ -88,12 +88,18 @@
                                                 <state key="normal" title="Save">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="saveButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5PZ-Ag-iff"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOG-vv-w1s">
                                                 <rect key="frame" x="48" y="0.0" width="36" height="60"/>
                                                 <state key="normal" title="Clear">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="clearButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6CL-Ak-40z"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -133,7 +139,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomToolbar" destination="tbX-X9-udE" id="ZT3-z5-UHE"/>
                         <outlet property="imageView" destination="lxq-nF-QoP" id="61W-VU-lAw"/>
+                        <outlet property="topToolbar" destination="cv9-aV-7mo" id="VzW-QV-H0c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
