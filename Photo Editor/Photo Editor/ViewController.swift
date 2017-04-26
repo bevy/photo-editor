@@ -189,6 +189,9 @@ extension ViewController: StickerDelegate {
                                                                     action:#selector(ViewController.rotationGesture) )
         rotationGestureRecognizer.delegate = self
         view.addGestureRecognizer(rotationGestureRecognizer)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.tapGesture))
+        view.addGestureRecognizer(tapGesture)
 
     }
 }

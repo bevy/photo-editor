@@ -32,6 +32,12 @@ extension ViewController : UIGestureRecognizerDelegate  {
         }
     }
     
+    func tapGesture(_ recognizer: UITapGestureRecognizer) {
+        if let view = recognizer.view {
+            view.superview?.bringSubview(toFront: view)
+        }
+    }
+    
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
@@ -49,6 +55,7 @@ extension ViewController : UIGestureRecognizerDelegate  {
             addBottomSheetView()
         }
     }
+    
     
     // to Override Control Center screen edge pan from bottom
     override var prefersStatusBarHidden: Bool {
