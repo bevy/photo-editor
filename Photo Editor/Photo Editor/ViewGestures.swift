@@ -26,8 +26,12 @@ extension ViewController : UIGestureRecognizerDelegate  {
             if let previousPoint = lastPanPoint {
                 //View is going into deleteView
                 if deleteView.frame.contains(point) && !deleteView.frame.contains(previousPoint) {
+                    if #available(iOS 10.0, *) {
+                        let generator = UIImpactFeedbackGenerator(style: .heavy)
+                        generator.impactOccurred()
+                    }
                     UIView.animate(withDuration: 0.3, animations: {
-                        view.transform = view.transform.scaledBy(x: 0.5, y: 0.5)
+                        view.transform = view.transform.scaledBy(x: 0.25, y: 0.25)
                         view.center = point
                     })
                 }
@@ -35,7 +39,7 @@ extension ViewController : UIGestureRecognizerDelegate  {
                  else if deleteView.frame.contains(previousPoint) && !deleteView.frame.contains(point) {
                         //Scale to original Size
                         UIView.animate(withDuration: 0.3, animations: {
-                            view.transform = view.transform.scaledBy(x: 2, y: 2)
+                            view.transform = view.transform.scaledBy(x: 4, y: 4)
                             view.center = point
                         })
                     }
@@ -79,7 +83,6 @@ extension ViewController : UIGestureRecognizerDelegate  {
                 let generator = UIImpactFeedbackGenerator(style: .heavy)
                 generator.impactOccurred()
             }
-            
             let previouTransform =  view.transform
             UIView.animate(withDuration: 0.2,
                            animations: {
