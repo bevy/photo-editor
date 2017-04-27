@@ -11,12 +11,37 @@ import UIKit
 
 extension ViewController : UIGestureRecognizerDelegate  {
 //Translation is moving object 
+    
+    
     func panGesture(_ recognizer: UIPanGestureRecognizer) {
-        let view = recognizer.view!
-        view.superview?.bringSubview(toFront: view)
-        let point = recognizer.location(in: self.view) //recognizer.translation(in: view)
-        view.center = point// CGPoint(x: view.center.x + point.x, y: view.center.y + point.y)
-        recognizer.setTranslation(CGPoint.zero, in: self.view)
+        if let view = recognizer.view {
+            hideToolbar(hide: true)
+            deleteView.isHidden = false
+            //
+            view.superview?.bringSubview(toFront: view)
+            let point = recognizer.location(in: self.view)
+            view.center = point
+            recognizer.setTranslation(CGPoint.zero, in: self.view)
+            
+//            if deleteView.frame.contains(point) {
+//                UIView.animate(withDuration: 0.3, animations: {
+//                    view.transform =  view.transform.scaledBy(x: 1.2, y: 1.2)
+//                })
+//            }
+            
+            if recognizer.state == .ended {
+                hideToolbar(hide: false)
+                deleteView.isHidden = true
+                let point = recognizer.location(in: self.view)
+                if deleteView.frame.contains(point) {
+                    view.removeFromSuperview()
+                    if #available(iOS 10.0, *) {
+                        let generator = UINotificationFeedbackGenerator()
+                        generator.notificationOccurred(.success)
+                    }
+                }
+            }
+        }
     }
 
     func pinchGesture(_ recognizer: UIPinchGestureRecognizer) {
@@ -36,6 +61,11 @@ extension ViewController : UIGestureRecognizerDelegate  {
     func tapGesture(_ recognizer: UITapGestureRecognizer) {
         if let view = recognizer.view {
             view.superview?.bringSubview(toFront: view)
+            if #available(iOS 10.0, *) {
+                let generator = UIImpactFeedbackGenerator(style: .heavy)
+                generator.impactOccurred()
+            }
+            
             let previouTransform =  view.transform
             UIView.animate(withDuration: 0.2,
                            animations: {
@@ -43,7 +73,7 @@ extension ViewController : UIGestureRecognizerDelegate  {
             },
                            completion: { _ in
                             UIView.animate(withDuration: 0.2) {
-                                view.transform  = previouTransform//CGAffineTransform.identity
+                                view.transform  = previouTransform
                             }
             })
         }

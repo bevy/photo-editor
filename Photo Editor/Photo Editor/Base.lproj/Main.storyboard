@@ -24,33 +24,39 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cv9-aV-7mo" customClass="GradientView" customModule="Photo_Editor" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="bJY-5j-abz">
-                                        <rect key="frame" x="213" y="0.0" width="150" height="80"/>
+                                        <rect key="frame" x="213" y="0.0" width="150" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjj-Vy-rYA">
-                                                <rect key="frame" x="0.0" y="0.0" width="42" height="80"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="42" height="60"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
                                                 <state key="normal" title="Image">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="stickersButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tDN-Hj-fMn"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBM-2P-ZnU">
-                                                <rect key="frame" x="54" y="0.0" width="42" height="80"/>
+                                                <rect key="frame" x="54" y="0.0" width="42" height="60"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
                                                 <state key="normal" title="Pencil">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="pencilButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zcl-r1-LcT"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qm-ew-B7Y">
-                                                <rect key="frame" x="108" y="0.0" width="42" height="80"/>
+                                                <rect key="frame" x="108" y="0.0" width="42" height="60"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
                                                 <state key="normal" title="Text">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="textButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PSc-ak-9Ur"/>
@@ -59,9 +65,11 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTx-Eo-0By">
-                                        <rect key="frame" x="12" y="25" width="39" height="30"/>
+                                        <rect key="frame" x="12" y="15" width="39" height="30"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="Close">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                 </subviews>
@@ -69,7 +77,7 @@
                                 <constraints>
                                     <constraint firstItem="bJY-5j-abz" firstAttribute="top" secondItem="cv9-aV-7mo" secondAttribute="top" id="6Vb-QW-4JG"/>
                                     <constraint firstItem="gTx-Eo-0By" firstAttribute="leading" secondItem="cv9-aV-7mo" secondAttribute="leading" constant="12" id="8N8-Xx-hd0"/>
-                                    <constraint firstAttribute="height" constant="80" id="OHc-Y3-bdi"/>
+                                    <constraint firstAttribute="height" constant="60" id="OHc-Y3-bdi"/>
                                     <constraint firstAttribute="bottom" secondItem="bJY-5j-abz" secondAttribute="bottom" id="al2-IA-Dfm"/>
                                     <constraint firstItem="gTx-Eo-0By" firstAttribute="centerY" secondItem="cv9-aV-7mo" secondAttribute="centerY" id="dVn-aQ-hIp"/>
                                     <constraint firstAttribute="trailing" secondItem="bJY-5j-abz" secondAttribute="trailing" constant="12" id="rRL-Np-thq"/>
@@ -88,8 +96,10 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwx-1K-8Bb">
                                                 <rect key="frame" x="0.0" y="0.0" width="36" height="60"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
                                                 <state key="normal" title="Save">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="saveButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5PZ-Ag-iff"/>
@@ -97,8 +107,10 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOG-vv-w1s">
                                                 <rect key="frame" x="48" y="0.0" width="36" height="60"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
                                                 <state key="normal" title="Clear">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="clearButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6CL-Ak-40z"/>
@@ -108,8 +120,10 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYb-uI-9hZ">
                                         <rect key="frame" x="301" y="15" width="62" height="30"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="Continue">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                 </subviews>
@@ -129,7 +143,7 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuD-M1-XFQ">
                                 <rect key="frame" x="323" y="12" width="40" height="32"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                <size key="titleShadowOffset" width="2" height="2"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -138,6 +152,14 @@
                                     <action selector="doneButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Kt-Xo-yV8"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSz-Wc-G7X">
+                                <rect key="frame" x="162" y="605" width="50" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="K4L-fc-RIm"/>
+                                    <constraint firstAttribute="height" constant="50" id="aD9-YS-YNc"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -151,12 +173,15 @@
                             <constraint firstItem="WuD-M1-XFQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="12" id="V9o-s1-paP"/>
                             <constraint firstAttribute="trailing" secondItem="WuD-M1-XFQ" secondAttribute="trailing" constant="12" id="VKi-FC-pga"/>
                             <constraint firstItem="cv9-aV-7mo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="by1-C9-8fv"/>
+                            <constraint firstItem="uSz-Wc-G7X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hg9-cU-pBg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uSz-Wc-G7X" secondAttribute="bottom" constant="12" id="keE-3A-rtx"/>
                             <constraint firstAttribute="bottom" secondItem="tbX-X9-udE" secondAttribute="bottom" id="yhV-he-QeJ"/>
                             <constraint firstItem="cv9-aV-7mo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zG9-qs-g2A"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bottomToolbar" destination="tbX-X9-udE" id="ZT3-z5-UHE"/>
+                        <outlet property="deleteView" destination="uSz-Wc-G7X" id="rwA-4x-2OK"/>
                         <outlet property="doneButton" destination="WuD-M1-XFQ" id="6s3-aq-Ec3"/>
                         <outlet property="imageView" destination="lxq-nF-QoP" id="61W-VU-lAw"/>
                         <outlet property="topToolbar" destination="cv9-aV-7mo" id="VzW-QV-H0c"/>
@@ -164,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="228" y="161"/>
+            <point key="canvasLocation" x="228" y="160.56971514242881"/>
         </scene>
     </scenes>
 </document>

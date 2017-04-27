@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var topToolbar: UIView!
     @IBOutlet weak var bottomToolbar: UIView!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var deleteView: UIView!
 
     //
     var isDrawing: Bool = false
@@ -26,6 +27,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         imageView.image = UIImage(named: "img.jpg")
 
+        
+        deleteView.layer.cornerRadius = deleteView.bounds.height / 2
+        deleteView.clipsToBounds = true
+        
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
         edgePan.edges = .bottom
         edgePan.delegate = self
