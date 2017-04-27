@@ -103,6 +103,7 @@ class ViewController: UIViewController {
         textView.layer.shadowRadius = 2.0
         textView.layer.backgroundColor = UIColor.clear.cgColor
         //
+        textView.autocorrectionType = .no
         textView.isScrollEnabled = false
         textView.delegate = self
         self.imageView.addSubview(textView)
@@ -166,11 +167,9 @@ extension ViewController: UITextViewDelegate {
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-
         lastTextViewTransform =  textView.transform
         lastTextViewTransCenter = textView.center
         
-        ///
         UIView.animate(withDuration: 0.4,
                        animations: {
                         textView.transform = CGAffineTransform.identity
@@ -183,8 +182,6 @@ extension ViewController: UITextViewDelegate {
         guard lastTextViewTransform != nil && lastTextViewTransCenter != nil else {
             return
         }
-        // Use Last Location and transform animated
-        // Update Size
         UIView.animate(withDuration: 0.4,
                        animations: {
                         textView.transform = self.lastTextViewTransform!
