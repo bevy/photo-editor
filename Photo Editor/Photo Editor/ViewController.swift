@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     var lastPoint: CGPoint!
     var isSwiping: Bool!
     var lastPanPoint: CGPoint?
+    var lastTextViewTransform: CGAffineTransform?
+    var lastTextViewTransCenter: CGPoint?
     //
 
     override func viewDidLoad() {
@@ -164,13 +166,30 @@ extension ViewController: UITextViewDelegate {
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        // Save Last Location and transform
-        // TODO Animate and transform identity make it in center
+
+        lastTextViewTransform =  view.transform
+        lastTextViewTransCenter = textView.center
+        
+        ///
+        UIView.animate(withDuration: 0.4,
+                       animations: {
+                        textView.transform = CGAffineTransform.identity
+                        textView.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: 100)
+        }, completion: nil)
+
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
+        guard lastTextViewTransform != nil && lastTextViewTransCenter != nil else {
+            return
+        }
         // Use Last Location and transform animated
         // Update Size
+        UIView.animate(withDuration: 0.4,
+                       animations: {
+                        textView.transform = self.lastTextViewTransform!
+                        textView.center = self.lastTextViewTransCenter!
+        }, completion: nil)
     }
     
 }
