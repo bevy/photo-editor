@@ -162,6 +162,17 @@ extension ViewController: UITextViewDelegate {
             textView.frame.size = CGSize(width: oldFrame.width, height: sizeToFit.height)
         }
     }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        // Save Last Location and transform
+        // TODO Animate and transform identity make it in center
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        // Use Last Location and transform animated
+        // Update Size
+    }
+    
 }
 
 extension ViewController: StickerDelegate {
