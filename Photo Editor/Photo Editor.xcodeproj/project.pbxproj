@@ -21,6 +21,7 @@
 		059EA7441EACF4730072C0FE /* UIView+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EA7421EACF4730072C0FE /* UIView+Image.swift */; };
 		059EA7471EAD1B550072C0FE /* StickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EA7451EAD1B550072C0FE /* StickerCollectionViewCell.swift */; };
 		059EA7481EAD1B550072C0FE /* StickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 059EA7461EAD1B550072C0FE /* StickerCollectionViewCell.xib */; };
+		05F986D01EB2151600F51F3B /* Eventtus-Icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05F986CF1EB214BF00F51F3B /* Eventtus-Icons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		059EA7421EACF4730072C0FE /* UIView+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Image.swift"; sourceTree = "<group>"; };
 		059EA7451EAD1B550072C0FE /* StickerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		059EA7461EAD1B550072C0FE /* StickerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StickerCollectionViewCell.xib; sourceTree = "<group>"; };
+		05F986CF1EB214BF00F51F3B /* Eventtus-Icons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Eventtus-Icons.ttf"; path = "Extensions/Eventtus-Icons.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		059EA71B1EACB8790072C0FE /* Photo Editor */ = {
 			isa = PBXGroup;
 			children = (
+				05F986CF1EB214BF00F51F3B /* Eventtus-Icons.ttf */,
 				059EA7401EACF4470072C0FE /* Extensions */,
 				059EA71C1EACB8790072C0FE /* AppDelegate.swift */,
 				059EA71E1EACB8790072C0FE /* ViewController.swift */,
@@ -164,6 +167,7 @@
 				059EA7241EACB8790072C0FE /* Assets.xcassets in Resources */,
 				059EA7221EACB8790072C0FE /* Main.storyboard in Resources */,
 				059EA7481EAD1B550072C0FE /* StickerCollectionViewCell.xib in Resources */,
+				05F986D01EB2151600F51F3B /* Eventtus-Icons.ttf in Resources */,
 				059EA7311EACBBF30072C0FE /* img.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

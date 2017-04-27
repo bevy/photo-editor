@@ -7,6 +7,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Eventtus-Icons.ttf">
+            <string>Eventtus-Icons</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -27,12 +32,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="bJY-5j-abz">
-                                        <rect key="frame" x="213" y="0.0" width="150" height="60"/>
+                                        <rect key="frame" x="249" y="0.0" width="114" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjj-Vy-rYA">
-                                                <rect key="frame" x="0.0" y="0.0" width="42" height="60"/>
-                                                <size key="titleShadowOffset" width="1" height="1"/>
-                                                <state key="normal" title="Image">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="60"/>
+                                                <fontDescription key="fontDescription" name="Eventtus-Icons" family="Eventtus-Icons" pointSize="20"/>
+                                                <size key="titleShadowOffset" width="0.0" height="1"/>
+                                                <state key="normal" title="">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -41,9 +47,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBM-2P-ZnU">
-                                                <rect key="frame" x="54" y="0.0" width="42" height="60"/>
-                                                <size key="titleShadowOffset" width="1" height="1"/>
-                                                <state key="normal" title="Pencil">
+                                                <rect key="frame" x="42" y="0.0" width="30" height="60"/>
+                                                <fontDescription key="fontDescription" name="Eventtus-Icons" family="Eventtus-Icons" pointSize="20"/>
+                                                <size key="titleShadowOffset" width="0.0" height="1"/>
+                                                <state key="normal" title="">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -52,9 +59,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qm-ew-B7Y">
-                                                <rect key="frame" x="108" y="0.0" width="42" height="60"/>
-                                                <size key="titleShadowOffset" width="1" height="1"/>
-                                                <state key="normal" title="Text">
+                                                <rect key="frame" x="84" y="0.0" width="30" height="60"/>
+                                                <fontDescription key="fontDescription" name="Eventtus-Icons" family="Eventtus-Icons" pointSize="20"/>
+                                                <size key="titleShadowOffset" width="0.0" height="1"/>
+                                                <state key="normal" title="">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -65,9 +73,10 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTx-Eo-0By">
-                                        <rect key="frame" x="12" y="15" width="39" height="30"/>
-                                        <size key="titleShadowOffset" width="1" height="1"/>
-                                        <state key="normal" title="Close">
+                                        <rect key="frame" x="12" y="14" width="30" height="32"/>
+                                        <fontDescription key="fontDescription" name="Eventtus-Icons" family="Eventtus-Icons" pointSize="20"/>
+                                        <size key="titleShadowOffset" width="0.0" height="1"/>
+                                        <state key="normal" title="">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -92,12 +101,13 @@
                                 <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="r7L-uN-oyn">
-                                        <rect key="frame" x="12" y="0.0" width="84" height="60"/>
+                                        <rect key="frame" x="12" y="0.0" width="72" height="52"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwx-1K-8Bb">
-                                                <rect key="frame" x="0.0" y="0.0" width="36" height="60"/>
-                                                <size key="titleShadowOffset" width="1" height="1"/>
-                                                <state key="normal" title="Save">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="52"/>
+                                                <fontDescription key="fontDescription" name="Eventtus-Icons" family="Eventtus-Icons" pointSize="20"/>
+                                                <size key="titleShadowOffset" width="0.0" height="1"/>
+                                                <state key="normal" title="">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -106,9 +116,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOG-vv-w1s">
-                                                <rect key="frame" x="48" y="0.0" width="36" height="60"/>
-                                                <size key="titleShadowOffset" width="1" height="1"/>
-                                                <state key="normal" title="Clear">
+                                                <rect key="frame" x="42" y="0.0" width="30" height="52"/>
+                                                <fontDescription key="fontDescription" name="Eventtus-Icons" family="Eventtus-Icons" pointSize="20"/>
+                                                <size key="titleShadowOffset" width="0.0" height="1"/>
+                                                <state key="normal" title="">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -119,9 +130,10 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYb-uI-9hZ">
-                                        <rect key="frame" x="301" y="15" width="62" height="30"/>
-                                        <size key="titleShadowOffset" width="1" height="1"/>
-                                        <state key="normal" title="Continue">
+                                        <rect key="frame" x="313" y="-1" width="50" height="62"/>
+                                        <fontDescription key="fontDescription" name="Eventtus-Icons" family="Eventtus-Icons" pointSize="50"/>
+                                        <size key="titleShadowOffset" width="0.0" height="1"/>
+                                        <state key="normal" title="">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -132,7 +144,7 @@
                                     <constraint firstItem="r7L-uN-oyn" firstAttribute="top" secondItem="tbX-X9-udE" secondAttribute="top" id="D2o-nP-rVP"/>
                                     <constraint firstAttribute="height" constant="60" id="La2-Bb-NLg"/>
                                     <constraint firstAttribute="trailing" secondItem="HYb-uI-9hZ" secondAttribute="trailing" constant="12" id="W6w-l9-VIk"/>
-                                    <constraint firstAttribute="bottom" secondItem="r7L-uN-oyn" secondAttribute="bottom" id="fRW-dw-m9Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="r7L-uN-oyn" secondAttribute="bottom" constant="8" id="fRW-dw-m9Y"/>
                                     <constraint firstItem="HYb-uI-9hZ" firstAttribute="centerY" secondItem="tbX-X9-udE" secondAttribute="centerY" id="kmX-6N-HOx"/>
                                     <constraint firstItem="r7L-uN-oyn" firstAttribute="leading" secondItem="tbX-X9-udE" secondAttribute="leading" constant="12" id="vZd-9A-tfu"/>
                                 </constraints>
