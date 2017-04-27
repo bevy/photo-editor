@@ -167,7 +167,7 @@ extension ViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
 
-        lastTextViewTransform =  view.transform
+        lastTextViewTransform =  textView.transform
         lastTextViewTransCenter = textView.center
         
         ///
