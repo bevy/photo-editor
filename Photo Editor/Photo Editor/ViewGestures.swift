@@ -23,13 +23,27 @@ extension ViewController : UIGestureRecognizerDelegate  {
             view.center = point
             recognizer.setTranslation(CGPoint.zero, in: self.view)
             
-//            if deleteView.frame.contains(point) {
-//                UIView.animate(withDuration: 0.3, animations: {
-//                    view.transform =  view.transform.scaledBy(x: 1.2, y: 1.2)
-//                })
-//            }
-            
+            if let previousPoint = lastPanPoint {
+                //View is going into deleteView
+                if deleteView.frame.contains(point) && !deleteView.frame.contains(previousPoint) {
+                    UIView.animate(withDuration: 0.3, animations: {
+                        view.transform = view.transform.scaledBy(x: 0.5, y: 0.5)
+                        view.center = point
+                    })
+                }
+                    //View is going out of deleteView
+                 else if deleteView.frame.contains(previousPoint) && !deleteView.frame.contains(point) {
+                        //Scale to original Size
+                        UIView.animate(withDuration: 0.3, animations: {
+                            view.transform = view.transform.scaledBy(x: 2, y: 2)
+                            view.center = point
+                        })
+                    }
+            }
+            lastPanPoint = point
+
             if recognizer.state == .ended {
+                lastPanPoint = nil
                 hideToolbar(hide: false)
                 deleteView.isHidden = true
                 let point = recognizer.location(in: self.view)

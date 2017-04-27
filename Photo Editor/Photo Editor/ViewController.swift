@@ -16,11 +16,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomToolbar: UIView!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var deleteView: UIView!
-
+    
     //
     var isDrawing: Bool = false
     var lastPoint: CGPoint!
     var isSwiping: Bool!
+    var lastPanPoint: CGPoint?
     //
 
     override func viewDidLoad() {
