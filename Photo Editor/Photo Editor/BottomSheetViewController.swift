@@ -15,79 +15,95 @@ protocol StickerDelegate {
 class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var holdView: UIView!
-//    @IBOutlet weak var collectioView: UICollectionView!
-
-    var collectioView: UICollectionView!
-    
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    var collectioView: UICollectionView!
+    var emojisCollectioView: UICollectionView!
+    
+    var emojisDelegate: EmojisCollectionViewDelegate!
+
     var stickers : [UIImage] = []
     var stickerDelegate : StickerDelegate?
-    
+
+    let screenSize = UIScreen.main.bounds.size
+
     let fullView: CGFloat = 100 // remainder of screen height
     var partialView: CGFloat {
         return UIScreen.main.bounds.height - 200
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        collectioView.frame = CGRect(x: 0, y: 0,
-                                     width: UIScreen.main.bounds.width,
-                                     height: view.frame.height - 20)
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let frame = CGRect(x: 0, y: 0,
-                           width: UIScreen.main.bounds.width,
-                           height: view.frame.height - 20)
+   
+        configureCollectionViews()
+        scrollView.contentSize = CGSize(width: 2.0 * screenSize.width,
+            height: scrollView.frame.size.height)
         
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: 90, height: 120)
-
-        collectioView = UICollectionView(frame: frame, collectionViewLayout: layout)
-        collectioView.backgroundColor = .clear
-        scrollView.addSubview(collectioView)
-        collectioView.delegate = self
-        collectioView.dataSource = self
-
-        stickers.append(UIImage(named: "crown")!)
-        stickers.append(UIImage(named: "android")!)
-        stickers.append(UIImage(named: "monster")!)
-        stickers.append(UIImage(named: "event")!)
-        stickers.append(UIImage(named: "mustach")!)
-        stickers.append(UIImage(named: "img.jpg")!)
-        stickers.append(UIImage(named: "crown")!)
-        stickers.append(UIImage(named: "android")!)
-        stickers.append(UIImage(named: "monster")!)
-        stickers.append(UIImage(named: "event")!)
-        stickers.append(UIImage(named: "mustach")!)
-        stickers.append(UIImage(named: "img.jpg")!)
+        scrollView.isPagingEnabled = true
         
-       
-        stickers.append(UIImage(named: "crown")!)
-        stickers.append(UIImage(named: "android")!)
-        stickers.append(UIImage(named: "monster")!)
-        stickers.append(UIImage(named: "event")!)
-        stickers.append(UIImage(named: "mustach")!)
-        stickers.append(UIImage(named: "img.jpg")!)
-        stickers.append(UIImage(named: "crown")!)
-        stickers.append(UIImage(named: "android")!)
-        stickers.append(UIImage(named: "monster")!)
-        stickers.append(UIImage(named: "event")!)
-        stickers.append(UIImage(named: "mustach")!)
-        stickers.append(UIImage(named: "img.jpg")!)
-        
+        for _ in 1...3 {
+            stickers.append(UIImage(named: "crown")!)
+            stickers.append(UIImage(named: "android")!)
+            stickers.append(UIImage(named: "monster")!)
+            stickers.append(UIImage(named: "event")!)
+            stickers.append(UIImage(named: "mustach")!)
+            stickers.append(UIImage(named: "img.jpg")!)
+        }
         
         holdView.layer.cornerRadius = 3
         let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(BottomSheetViewController.panGesture))
         gesture.delegate = self
         view.addGestureRecognizer(gesture)
-        
-        let nib = UINib(nibName: "StickerCollectionViewCell", bundle: nil)
-        collectioView.register(nib, forCellWithReuseIdentifier: "StickerCollectionViewCell")
-        
     }
     
+    func configureCollectionViews() {
+
+        let frame = CGRect(x: 0,
+                           y: 0,
+                           width: UIScreen.main.bounds.width,
+                           height: view.frame.height - 20)
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+        let width = (CGFloat) ((screenSize.width - 30) / 3.0)
+        layout.itemSize = CGSize(width: width, height: 100)
+        
+        collectioView = UICollectionView(frame: frame, collectionViewLayout: layout)
+        collectioView.backgroundColor = .clear
+        scrollView.addSubview(collectioView)
+        
+        collectioView.delegate = self
+        collectioView.dataSource = self
+        
+        collectioView.register(
+            UINib(nibName: "StickerCollectionViewCell", bundle: nil),
+            forCellWithReuseIdentifier: "StickerCollectionViewCell")
+        
+        //-----------------------------------
+
+        let emojisFrame = CGRect(x: scrollView.frame.size.width,
+                                 y: 0,
+                                 width: UIScreen.main.bounds.width,
+                                 height: view.frame.height - 20)
+        
+        let emojislayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        emojislayout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+        emojislayout.itemSize = CGSize(width: 60, height: 60)
+
+        emojisCollectioView = UICollectionView(frame: emojisFrame, collectionViewLayout: emojislayout)
+        emojisCollectioView.backgroundColor = .clear
+        scrollView.addSubview(emojisCollectioView)
+        emojisDelegate = EmojisCollectionViewDelegate()
+        emojisDelegate.stickerDelegate = stickerDelegate
+        emojisCollectioView.delegate = emojisDelegate
+        emojisCollectioView.dataSource = emojisDelegate
+        
+        emojisCollectioView.register(
+            UINib(nibName: "EmojiCollectionViewCell", bundle: nil),
+            forCellWithReuseIdentifier: "EmojiCollectionViewCell")
+
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         prepareBackgroundView()
@@ -107,6 +123,20 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectioView.frame = CGRect(x: 0,
+                                     y: 0,
+                                     width: UIScreen.main.bounds.width,
+                                     height: view.frame.height - 20)
+        
+        emojisCollectioView.frame = CGRect(x: scrollView.frame.size.width,
+                                           y: 0,
+                                           width: UIScreen.main.bounds.width,
+                                           height: view.frame.height - 20)
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -182,17 +212,6 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
 
 // MARK: - UICollectionViewDataSource
 extension BottomSheetViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
-        layout.minimumLineSpacing = 20;
-        layout.minimumInteritemSpacing = 20;
-        var screenSize = UIScreen.main.bounds.size
-        screenSize.width = (CGFloat) ((screenSize.width - 30) / 3.0);
-        screenSize.height = 100;
-        return screenSize;
-    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return stickers.count

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		055C05091EB6375800B32735 /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C05071EB6375800B32735 /* EmojiCollectionViewCell.swift */; };
+		055C050A1EB6375800B32735 /* EmojiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055C05081EB6375800B32735 /* EmojiCollectionViewCell.xib */; };
+		055C050C1EB638A500B32735 /* EmojisCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C050B1EB638A500B32735 /* EmojisCollectionViewDelegate.swift */; };
 		056DAAA21EADFEF70007D7F0 /* ViewGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056DAAA11EADFEF70007D7F0 /* ViewGestures.swift */; };
 		0588E6011EB0AEB600BC8300 /* Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0588E6001EB0AEB600BC8300 /* Pencil.swift */; };
 		059EA71D1EACB8790072C0FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EA71C1EACB8790072C0FE /* AppDelegate.swift */; };
@@ -25,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		055C05071EB6375800B32735 /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
+		055C05081EB6375800B32735 /* EmojiCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmojiCollectionViewCell.xib; sourceTree = "<group>"; };
+		055C050B1EB638A500B32735 /* EmojisCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojisCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		056DAAA11EADFEF70007D7F0 /* ViewGestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewGestures.swift; sourceTree = "<group>"; };
 		0588E6001EB0AEB600BC8300 /* Pencil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pencil.swift; sourceTree = "<group>"; };
 		059EA7191EACB8790072C0FE /* Photo Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +95,9 @@
 				059EA7461EAD1B550072C0FE /* StickerCollectionViewCell.xib */,
 				056DAAA11EADFEF70007D7F0 /* ViewGestures.swift */,
 				0588E6001EB0AEB600BC8300 /* Pencil.swift */,
+				055C05071EB6375800B32735 /* EmojiCollectionViewCell.swift */,
+				055C05081EB6375800B32735 /* EmojiCollectionViewCell.xib */,
+				055C050B1EB638A500B32735 /* EmojisCollectionViewDelegate.swift */,
 			);
 			path = "Photo Editor";
 			sourceTree = "<group>";
@@ -169,6 +178,7 @@
 				059EA7481EAD1B550072C0FE /* StickerCollectionViewCell.xib in Resources */,
 				05F986D01EB2151600F51F3B /* Eventtus-Icons.ttf in Resources */,
 				059EA7311EACBBF30072C0FE /* img.jpg in Resources */,
+				055C050A1EB6375800B32735 /* EmojiCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +196,8 @@
 				056DAAA21EADFEF70007D7F0 /* ViewGestures.swift in Sources */,
 				059EA7441EACF4730072C0FE /* UIView+Image.swift in Sources */,
 				059EA73A1EACD9620072C0FE /* BottomSheetViewController.swift in Sources */,
+				055C05091EB6375800B32735 /* EmojiCollectionViewCell.swift in Sources */,
+				055C050C1EB638A500B32735 /* EmojisCollectionViewDelegate.swift in Sources */,
 				059EA71D1EACB8790072C0FE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
