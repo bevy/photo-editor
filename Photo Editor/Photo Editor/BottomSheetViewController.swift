@@ -16,6 +16,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var holdView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     var collectioView: UICollectionView!
     var emojisCollectioView: UICollectionView!
@@ -41,6 +42,9 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
             height: scrollView.frame.size.height)
         
         scrollView.isPagingEnabled = true
+        scrollView.delegate = self
+        pageControl.numberOfPages = 2
+        
         
         for _ in 1...3 {
             stickers.append(UIImage(named: "crown")!)
@@ -62,7 +66,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         let frame = CGRect(x: 0,
                            y: 0,
                            width: UIScreen.main.bounds.width,
-                           height: view.frame.height - 20)
+                           height: view.frame.height - 40)
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
@@ -85,7 +89,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         let emojisFrame = CGRect(x: scrollView.frame.size.width,
                                  y: 0,
                                  width: UIScreen.main.bounds.width,
-                                 height: view.frame.height - 20)
+                                 height: view.frame.height - 40)
         
         let emojislayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         emojislayout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
@@ -128,12 +132,12 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         collectioView.frame = CGRect(x: 0,
                                      y: 0,
                                      width: UIScreen.main.bounds.width,
-                                     height: view.frame.height - 20)
+                                     height: view.frame.height - 40)
         
         emojisCollectioView.frame = CGRect(x: scrollView.frame.size.width,
                                            y: 0,
                                            width: UIScreen.main.bounds.width,
-                                           height: view.frame.height - 20)
+                                           height: view.frame.height - 40)
         
     }
     
@@ -208,6 +212,17 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         view.insertSubview(bluredView, at: 0)
     }
 
+    
+    
+}
+
+extension BottomSheetViewController: UIScrollViewDelegate {
+
+        func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let pageWidth = scrollView.bounds.width
+        let pageFraction = scrollView.contentOffset.x / pageWidth
+        self.pageControl.currentPage = Int(round(pageFraction))
+    }
 }
 
 // MARK: - UICollectionViewDataSource
