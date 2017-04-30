@@ -15,8 +15,11 @@ protocol StickerDelegate {
 class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var holdView: UIView!
-    @IBOutlet weak var collectioView: UICollectionView!
+//    @IBOutlet weak var collectioView: UICollectionView!
 
+    var collectioView: UICollectionView!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     var stickers : [UIImage] = []
     var stickerDelegate : StickerDelegate?
     
@@ -27,6 +30,17 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let frame = CGRect(x: 0, y: 0,
+                           width: UIScreen.main.bounds.width,
+                           height: view.frame.height)
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+        layout.itemSize = CGSize(width: 90, height: 120)
+
+        collectioView = UICollectionView(frame: frame, collectionViewLayout: layout)
+        collectioView.backgroundColor = .clear
+        scrollView.addSubview(collectioView)
         collectioView.delegate = self
         collectioView.dataSource = self
 
@@ -36,6 +50,27 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         stickers.append(UIImage(named: "event")!)
         stickers.append(UIImage(named: "mustach")!)
         stickers.append(UIImage(named: "img.jpg")!)
+        stickers.append(UIImage(named: "crown")!)
+        stickers.append(UIImage(named: "android")!)
+        stickers.append(UIImage(named: "monster")!)
+        stickers.append(UIImage(named: "event")!)
+        stickers.append(UIImage(named: "mustach")!)
+        stickers.append(UIImage(named: "img.jpg")!)
+        
+       
+        stickers.append(UIImage(named: "crown")!)
+        stickers.append(UIImage(named: "android")!)
+        stickers.append(UIImage(named: "monster")!)
+        stickers.append(UIImage(named: "event")!)
+        stickers.append(UIImage(named: "mustach")!)
+        stickers.append(UIImage(named: "img.jpg")!)
+        stickers.append(UIImage(named: "crown")!)
+        stickers.append(UIImage(named: "android")!)
+        stickers.append(UIImage(named: "monster")!)
+        stickers.append(UIImage(named: "event")!)
+        stickers.append(UIImage(named: "mustach")!)
+        stickers.append(UIImage(named: "img.jpg")!)
+        
         
         holdView.layer.cornerRadius = 3
         let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(BottomSheetViewController.panGesture))
