@@ -30,7 +30,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
 
     let fullView: CGFloat = 100 // remainder of screen height
     var partialView: CGFloat {
-        return UIScreen.main.bounds.height - 200
+        return UIScreen.main.bounds.height - 380
     }
 
     
