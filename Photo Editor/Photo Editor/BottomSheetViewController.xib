@@ -46,7 +46,7 @@
                         <constraint firstItem="caC-0e-fET" firstAttribute="centerX" secondItem="Jqb-lC-sL5" secondAttribute="centerX" id="qvF-zt-xDj"/>
                     </constraints>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="389-Pb-g4p">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="389-Pb-g4p">
                     <rect key="frame" x="0.0" y="40" width="375" height="627"/>
                 </scrollView>
             </subviews>
