@@ -28,11 +28,17 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         return UIScreen.main.bounds.height - 200
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectioView.frame = CGRect(x: 0, y: 0,
+                                     width: UIScreen.main.bounds.width,
+                                     height: view.frame.height - 20)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         let frame = CGRect(x: 0, y: 0,
                            width: UIScreen.main.bounds.width,
-                           height: view.frame.height)
+                           height: view.frame.height - 20)
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)

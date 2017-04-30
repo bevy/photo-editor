@@ -37,7 +37,6 @@
                     <constraints>
                         <constraint firstItem="caC-0e-fET" firstAttribute="centerY" secondItem="Jqb-lC-sL5" secondAttribute="centerY" id="If0-hG-e1g"/>
                         <constraint firstAttribute="height" constant="20" id="Tl2-jg-Adq"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="hTI-P3-oxS"/>
                         <constraint firstItem="caC-0e-fET" firstAttribute="centerX" secondItem="Jqb-lC-sL5" secondAttribute="centerX" id="qvF-zt-xDj"/>
                     </constraints>
                 </view>
