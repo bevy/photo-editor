@@ -171,7 +171,7 @@
                                 <rect key="frame" x="162" y="605" width="50" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7t3-Jp-nxf">
-                                        <rect key="frame" x="10" y="10" width="30" height="30"/>
+                                        <rect key="frame" x="10.5" y="10" width="30" height="30"/>
                                         <fontDescription key="fontDescription" name="Eventtus-Icons" family="Eventtus-Icons" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -189,7 +189,7 @@
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mek-F2-K2m">
-                                        <rect key="frame" x="100" y="0.0" width="275" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="s10-lX-XN7"/>
@@ -202,33 +202,13 @@
                                         </collectionViewFlowLayout>
                                         <cells/>
                                     </collectionView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oey-6L-tSs">
-                                        <rect key="frame" x="8" y="5" width="30" height="30"/>
-                                        <size key="titleShadowOffset" width="1" height="1"/>
-                                        <state key="normal" title="Size">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5i-Tu-jy8">
-                                        <rect key="frame" x="38" y="5" width="54" height="30"/>
-                                        <size key="titleShadowOffset" width="1" height="1"/>
-                                        <state key="normal" title="Opacity">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="oey-6L-tSs" firstAttribute="leading" secondItem="Z08-Zt-Kld" secondAttribute="leading" constant="8" id="71y-dA-wt2"/>
                                     <constraint firstAttribute="trailing" secondItem="mek-F2-K2m" secondAttribute="trailing" id="7Hw-dj-3Xs"/>
-                                    <constraint firstItem="mek-F2-K2m" firstAttribute="leading" secondItem="n5i-Tu-jy8" secondAttribute="trailing" constant="8" id="j9C-Z0-vZb"/>
+                                    <constraint firstItem="mek-F2-K2m" firstAttribute="leading" secondItem="Z08-Zt-Kld" secondAttribute="leading" id="kNq-uq-WlG"/>
                                     <constraint firstAttribute="height" constant="50" id="kZr-rF-b96"/>
-                                    <constraint firstItem="oey-6L-tSs" firstAttribute="centerY" secondItem="mek-F2-K2m" secondAttribute="centerY" id="mEq-v5-G55"/>
                                     <constraint firstItem="mek-F2-K2m" firstAttribute="top" secondItem="Z08-Zt-Kld" secondAttribute="top" id="qsk-2y-8sC"/>
-                                    <constraint firstItem="n5i-Tu-jy8" firstAttribute="centerY" secondItem="mek-F2-K2m" secondAttribute="centerY" id="tkw-C4-VvV"/>
-                                    <constraint firstItem="n5i-Tu-jy8" firstAttribute="leading" secondItem="oey-6L-tSs" secondAttribute="trailing" id="wlW-mJ-WCd"/>
                                 </constraints>
                             </view>
                         </subviews>
