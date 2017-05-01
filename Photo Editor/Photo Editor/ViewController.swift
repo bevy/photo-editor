@@ -21,7 +21,8 @@ class ViewController: UIViewController {
     //
     var isDrawing: Bool = false
     var lastPoint: CGPoint!
-    var isSwiping: Bool!
+    var swiped = false
+    var opacity: CGFloat = 1.0
     var lastPanPoint: CGPoint?
     var lastTextViewTransform: CGAffineTransform?
     var lastTextViewTransCenter: CGPoint?

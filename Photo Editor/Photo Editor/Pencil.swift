@@ -14,9 +14,9 @@ extension ViewController {
     override func touchesBegan(_ touches: Set<UITouch>,
                                with event: UIEvent?){
         if isDrawing {
-            isSwiping    = false
-            if let touch = touches.first{
-                lastPoint = touch.location(in: imageView)
+            swiped = false
+            if let touch = touches.first {
+                lastPoint = touch.location(in: self.view)
             }
         }
     }
@@ -24,19 +24,13 @@ extension ViewController {
     override func touchesMoved(_ touches: Set<UITouch>,
                                with event: UIEvent?){
         if isDrawing {
-            isSwiping = true;
-            if let touch = touches.first{
-                let currentPoint = touch.location(in: imageView)
-                UIGraphicsBeginImageContext(self.imageView.frame.size)
-                self.imageView.image?.draw(in: CGRect(x: 0, y: 0, width: self.imageView.frame.size.width, height: self.imageView.frame.size.height))
-                UIGraphicsGetCurrentContext()?.move(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
-                UIGraphicsGetCurrentContext()?.addLine(to: CGPoint(x: currentPoint.x, y: currentPoint.y))
-                UIGraphicsGetCurrentContext()?.setLineCap(CGLineCap.round)
-                UIGraphicsGetCurrentContext()?.setLineWidth(5.0)
-                UIGraphicsGetCurrentContext()?.setStrokeColor(UIColor.black.cgColor)
-                UIGraphicsGetCurrentContext()?.strokePath()
-                self.imageView.image = UIGraphicsGetImageFromCurrentImageContext()
-                UIGraphicsEndImageContext()
+            // 6
+            swiped = true
+            if let touch = touches.first {
+                let currentPoint = touch.location(in: view)
+                drawLineFrom(lastPoint, toPoint: currentPoint)
+                
+                // 7
                 lastPoint = currentPoint
             }
         }
@@ -45,20 +39,43 @@ extension ViewController {
     override func touchesEnded(_ touches: Set<UITouch>,
                                with event: UIEvent?){
         if isDrawing {
-            if(!isSwiping) {
-                // This is a single touch, draw a point
-                UIGraphicsBeginImageContext(self.imageView.frame.size)
-                self.imageView.image?.draw(in: CGRect(x: 0, y: 0, width: self.imageView.frame.size.width, height: self.imageView.frame.size.height))
-                UIGraphicsGetCurrentContext()?.setLineCap(CGLineCap.round)
-                UIGraphicsGetCurrentContext()?.setLineWidth(9.0)
-                UIGraphicsGetCurrentContext()?.setStrokeColor(UIColor.black.cgColor)
-                UIGraphicsGetCurrentContext()?.move(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
-                UIGraphicsGetCurrentContext()?.addLine(to: CGPoint(x: lastPoint.x, y: lastPoint.y))
-                UIGraphicsGetCurrentContext()?.strokePath()
-                self.imageView.image = UIGraphicsGetImageFromCurrentImageContext()
-                UIGraphicsEndImageContext()
+            if !swiped {
+                // draw a single point
+                drawLineFrom(lastPoint, toPoint: lastPoint)
             }
+            
+            // Merge tempImageView into mainImageView
+            UIGraphicsBeginImageContext(imageView.frame.size)
+            imageView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: CGBlendMode.normal, alpha: 1.0)
+            tempImageView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: CGBlendMode.normal, alpha: opacity)
+            imageView.image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            
+            tempImageView.image = nil
         }
         
     }
+    
+    func drawLineFrom(_ fromPoint: CGPoint, toPoint: CGPoint) {
+        // 1
+        UIGraphicsBeginImageContext(imageView.frame.size)
+        if let context = UIGraphicsGetCurrentContext() {
+            tempImageView.image?.draw(in: CGRect(x: 0, y: 0, width: imageView.frame.size.width, height: imageView.frame.size.height))
+            // 2
+            context.move(to: CGPoint(x: fromPoint.x, y: fromPoint.y))
+            context.addLine(to: CGPoint(x: toPoint.x, y: toPoint.y))
+            // 3
+            context.setLineCap( CGLineCap.round)
+            context.setLineWidth(5.0)
+            context.setStrokeColor(UIColor.black.cgColor)
+            context.setBlendMode( CGBlendMode.normal)
+            // 4
+            context.strokePath()
+            // 5
+            tempImageView.image = UIGraphicsGetImageFromCurrentImageContext()
+            tempImageView.alpha = opacity
+            UIGraphicsEndImageContext()
+        }
+    }
+    
 }
