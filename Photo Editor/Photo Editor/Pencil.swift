@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ViewController {
+extension PhotoEditorViewController {
     //MARK: Pencil
     
     override func touchesBegan(_ touches: Set<UITouch>,

@@ -9,7 +9,7 @@
 import UIKit
 
 
-extension ViewController : UIGestureRecognizerDelegate  {
+extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
 //Translation is moving object 
     
     

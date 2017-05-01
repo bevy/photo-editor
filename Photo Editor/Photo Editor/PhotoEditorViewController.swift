@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PhotoEditorViewController: UIViewController {
 
     
     @IBOutlet var imageView: UIImageView!
@@ -86,7 +86,7 @@ class ViewController: UIViewController {
         if self.imageView.image == nil{
             return
         }
-        UIImageWriteToSavedPhotosAlbum(self.imageView.toImage(),self, #selector(ViewController.image(_:withPotentialError:contextInfo:)), nil)
+        UIImageWriteToSavedPhotosAlbum(self.imageView.toImage(),self, #selector(PhotoEditorViewController.image(_:withPotentialError:contextInfo:)), nil)
         
         ///To Share
         //let activity = UIActivityViewController(activityItems: [self.imageView.toImage()], applicationActivities: nil)
@@ -222,7 +222,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: ColorDelegate {
+extension PhotoEditorViewController: ColorDelegate {
     func chosedColor(color: UIColor) {
         if isDrawing {
             self.drawColor = color
@@ -233,7 +233,7 @@ extension ViewController: ColorDelegate {
     }
 }
 
-extension ViewController: UITextViewDelegate {
+extension PhotoEditorViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
        let rotation = atan2(textView.transform.b, textView.transform.a)
         if rotation == 0 {
@@ -270,7 +270,7 @@ extension ViewController: UITextViewDelegate {
     
 }
 
-extension ViewController: StickerDelegate {
+extension PhotoEditorViewController: StickerDelegate {
     
     func viewTapped(view: UIView) {
         let newView = view.toImageView()
@@ -290,23 +290,23 @@ extension ViewController: StickerDelegate {
         view.isUserInteractionEnabled = true
         
         let panGesture = UIPanGestureRecognizer(target: self,
-                                                action: #selector(ViewController.panGesture))
+                                                action: #selector(PhotoEditorViewController.panGesture))
         panGesture.minimumNumberOfTouches = 1
         panGesture.maximumNumberOfTouches = 1
         panGesture.delegate = self
         view.addGestureRecognizer(panGesture)
         
         let pinchGesture = UIPinchGestureRecognizer(target: self,
-                                                    action: #selector(ViewController.pinchGesture))
+                                                    action: #selector(PhotoEditorViewController.pinchGesture))
         pinchGesture.delegate = self
         view.addGestureRecognizer(pinchGesture)
         
         let rotationGestureRecognizer = UIRotationGestureRecognizer(target: self,
-                                                                    action:#selector(ViewController.rotationGesture) )
+                                                                    action:#selector(PhotoEditorViewController.rotationGesture) )
         rotationGestureRecognizer.delegate = self
         view.addGestureRecognizer(rotationGestureRecognizer)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.tapGesture))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(PhotoEditorViewController.tapGesture))
         view.addGestureRecognizer(tapGesture)
 
     }
