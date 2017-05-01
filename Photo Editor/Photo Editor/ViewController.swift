@@ -32,6 +32,8 @@ class ViewController: UIViewController {
 
         
         deleteView.layer.cornerRadius = deleteView.bounds.height / 2
+        deleteView.layer.borderWidth = 2.0
+        deleteView.layer.borderColor = UIColor.white.cgColor
         deleteView.clipsToBounds = true
         
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))

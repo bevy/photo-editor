@@ -130,8 +130,8 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYb-uI-9hZ">
-                                        <rect key="frame" x="313" y="-1" width="50" height="62"/>
-                                        <fontDescription key="fontDescription" name="Eventtus-Icons" family="Eventtus-Icons" pointSize="50"/>
+                                        <rect key="frame" x="318" y="1.5" width="45" height="57"/>
+                                        <fontDescription key="fontDescription" name="Eventtus-Icons" family="Eventtus-Icons" pointSize="45"/>
                                         <size key="titleShadowOffset" width="0.0" height="1"/>
                                         <state key="normal" title="">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -164,10 +164,20 @@
                                     <action selector="doneButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Kt-Xo-yV8"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSz-Wc-G7X">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSz-Wc-G7X">
                                 <rect key="frame" x="162" y="605" width="50" height="50"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7t3-Jp-nxf">
+                                        <rect key="frame" x="10" y="10" width="30" height="30"/>
+                                        <fontDescription key="fontDescription" name="Eventtus-Icons" family="Eventtus-Icons" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="7t3-Jp-nxf" firstAttribute="centerY" secondItem="uSz-Wc-G7X" secondAttribute="centerY" id="2Le-HY-zlc"/>
+                                    <constraint firstItem="7t3-Jp-nxf" firstAttribute="centerX" secondItem="uSz-Wc-G7X" secondAttribute="centerX" id="6CT-Qf-kyX"/>
                                     <constraint firstAttribute="width" constant="50" id="K4L-fc-RIm"/>
                                     <constraint firstAttribute="height" constant="50" id="aD9-YS-YNc"/>
                                 </constraints>
