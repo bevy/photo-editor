@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet weak var tempImageView: UIImageView!
     @IBOutlet weak var topToolbar: UIView!
     @IBOutlet weak var bottomToolbar: UIView!
     @IBOutlet weak var doneButton: UIButton!
@@ -51,6 +52,11 @@ class ViewController: UIViewController {
             return
         }
         UIImageWriteToSavedPhotosAlbum(self.imageView.toImage(),self, #selector(ViewController.image(_:withPotentialError:contextInfo:)), nil)
+        
+        ///To Share
+        //let activity = UIActivityViewController(activityItems: [self.imageView.toImage()], applicationActivities: nil)
+        //present(activity, animated: true, completion: nil)
+        
     }
     
     @IBAction func clearButtonTapped(_ sender: AnyObject) {
