@@ -25,4 +25,22 @@ class ColorCollectionViewCell: UICollectionViewCell {
         colorView.layer.borderColor = UIColor.white.cgColor
     }
 
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                let previouTransform =  colorView.transform
+                UIView.animate(withDuration: 0.2,
+                               animations: {
+                                self.colorView.transform = self.colorView.transform.scaledBy(x: 1.3, y: 1.3)
+                },
+                               completion: { _ in
+                                UIView.animate(withDuration: 0.2) {
+                                    self.colorView.transform  = previouTransform
+                                }
+                })
+            } else {
+                // animate deselection
+            }
+        }
+    }
 }

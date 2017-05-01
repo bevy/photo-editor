@@ -16,9 +16,9 @@ class ColorsCollectionViewDelegate: NSObject, UICollectionViewDataSource, UIColl
     
     var colorDelegate : ColorDelegate?
 
-    let colors = [UIColor.red, UIColor.black, UIColor.cyan, UIColor.red, UIColor.black, UIColor.cyan,
-                  UIColor.red, UIColor.black, UIColor.cyan, UIColor.red, UIColor.black, UIColor.cyan,
-                  UIColor.red, UIColor.black, UIColor.cyan, UIColor.red, UIColor.black, UIColor.cyan]
+    let colors = [UIColor.black, UIColor.darkGray, UIColor.gray,
+                  UIColor.lightGray, UIColor.white, UIColor.blue, UIColor.green, UIColor.red, UIColor.yellow,
+                  UIColor.orange, UIColor.purple, UIColor.cyan, UIColor.brown, UIColor.purple]
     
     override init() {
         super.init()

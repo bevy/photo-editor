@@ -161,7 +161,7 @@ class ViewController: UIViewController {
         //Text Attributes
         textView.textAlignment = .center
         textView.font = UIFont(name: "Helvetica", size: 20)
-        textView.textColor = .white
+        textView.textColor = textColor
         textView.layer.shadowColor = UIColor.black.cgColor
         textView.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
         textView.layer.shadowOpacity = 1.0
