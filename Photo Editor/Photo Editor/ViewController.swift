@@ -26,6 +26,7 @@ class ViewController: UIViewController {
 
     //
     var drawColor: UIColor = UIColor.black
+    var textColor: UIColor = UIColor.white
     var isDrawing: Bool = false
     var lastPoint: CGPoint!
     var swiped = false
@@ -33,6 +34,7 @@ class ViewController: UIViewController {
     var lastPanPoint: CGPoint?
     var lastTextViewTransform: CGAffineTransform?
     var lastTextViewTransCenter: CGPoint?
+    var activeTextView: UITextView?
     //
 
     override func viewDidLoad() {
@@ -222,7 +224,11 @@ class ViewController: UIViewController {
 
 extension ViewController: ColorDelegate {
     func chosedColor(color: UIColor) {
-        self.drawColor = color
+        if isDrawing {
+            self.drawColor = color
+        } else if activeTextView != nil {
+            activeTextView?.textColor = color
+        }
     }
 }
 
@@ -239,7 +245,7 @@ extension ViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         lastTextViewTransform =  textView.transform
         lastTextViewTransCenter = textView.center
-        
+        activeTextView = textView
         UIView.animate(withDuration: 0.4,
                        animations: {
                         textView.transform = CGAffineTransform.identity
@@ -252,6 +258,8 @@ extension ViewController: UITextViewDelegate {
         guard lastTextViewTransform != nil && lastTextViewTransCenter != nil else {
             return
         }
+        activeTextView = nil
+        
         UIView.animate(withDuration: 0.4,
                        animations: {
                         textView.transform = self.lastTextViewTransform!
