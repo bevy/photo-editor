@@ -228,6 +228,7 @@ extension ViewController: ColorDelegate {
             self.drawColor = color
         } else if activeTextView != nil {
             activeTextView?.textColor = color
+            textColor = color
         }
     }
 }
