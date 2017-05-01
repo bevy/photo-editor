@@ -10,8 +10,6 @@
 		055C05091EB6375800B32735 /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C05071EB6375800B32735 /* EmojiCollectionViewCell.swift */; };
 		055C050A1EB6375800B32735 /* EmojiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055C05081EB6375800B32735 /* EmojiCollectionViewCell.xib */; };
 		055C050C1EB638A500B32735 /* EmojisCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C050B1EB638A500B32735 /* EmojisCollectionViewDelegate.swift */; };
-		056DAAA21EADFEF70007D7F0 /* ViewGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056DAAA11EADFEF70007D7F0 /* ViewGestures.swift */; };
-		0588E6011EB0AEB600BC8300 /* Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0588E6001EB0AEB600BC8300 /* Pencil.swift */; };
 		059EA71D1EACB8790072C0FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EA71C1EACB8790072C0FE /* AppDelegate.swift */; };
 		059EA71F1EACB8790072C0FE /* PhotoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EA71E1EACB8790072C0FE /* PhotoEditorViewController.swift */; };
 		059EA7221EACB8790072C0FE /* PhotoEditor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 059EA7201EACB8790072C0FE /* PhotoEditor.storyboard */; };
@@ -27,6 +25,8 @@
 		05E50F8B1EB7488F002A92A0 /* ColorsCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E50F8A1EB7488F002A92A0 /* ColorsCollectionViewDelegate.swift */; };
 		05E50F8E1EB74937002A92A0 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E50F8C1EB74937002A92A0 /* ColorCollectionViewCell.swift */; };
 		05E50F8F1EB74937002A92A0 /* ColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05E50F8D1EB74937002A92A0 /* ColorCollectionViewCell.xib */; };
+		05E50F931EB77EFC002A92A0 /* Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E50F911EB77EFC002A92A0 /* Pencil.swift */; };
+		05E50F941EB77EFC002A92A0 /* ViewGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E50F921EB77EFC002A92A0 /* ViewGestures.swift */; };
 		05F986D01EB2151600F51F3B /* Eventtus-Icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05F986CF1EB214BF00F51F3B /* Eventtus-Icons.ttf */; };
 /* End PBXBuildFile section */
 
@@ -34,8 +34,6 @@
 		055C05071EB6375800B32735 /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
 		055C05081EB6375800B32735 /* EmojiCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmojiCollectionViewCell.xib; sourceTree = "<group>"; };
 		055C050B1EB638A500B32735 /* EmojisCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojisCollectionViewDelegate.swift; sourceTree = "<group>"; };
-		056DAAA11EADFEF70007D7F0 /* ViewGestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewGestures.swift; sourceTree = "<group>"; };
-		0588E6001EB0AEB600BC8300 /* Pencil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pencil.swift; sourceTree = "<group>"; };
 		059EA7191EACB8790072C0FE /* Photo Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		059EA71C1EACB8790072C0FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		059EA71E1EACB8790072C0FE /* PhotoEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditorViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +51,8 @@
 		05E50F8A1EB7488F002A92A0 /* ColorsCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		05E50F8C1EB74937002A92A0 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		05E50F8D1EB74937002A92A0 /* ColorCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorCollectionViewCell.xib; sourceTree = "<group>"; };
+		05E50F911EB77EFC002A92A0 /* Pencil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pencil.swift; sourceTree = "<group>"; };
+		05E50F921EB77EFC002A92A0 /* ViewGestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewGestures.swift; sourceTree = "<group>"; };
 		05F986CF1EB214BF00F51F3B /* Eventtus-Icons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Eventtus-Icons.ttf"; path = "Extensions/Eventtus-Icons.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +86,7 @@
 		059EA71B1EACB8790072C0FE /* Photo Editor */ = {
 			isa = PBXGroup;
 			children = (
+				05E50F901EB77E78002A92A0 /* PhotoEditorExtensions */,
 				05F986CF1EB214BF00F51F3B /* Eventtus-Icons.ttf */,
 				059EA7401EACF4470072C0FE /* Extensions */,
 				059EA71C1EACB8790072C0FE /* AppDelegate.swift */,
@@ -99,8 +100,6 @@
 				059EA7391EACD9620072C0FE /* BottomSheetViewController.xib */,
 				059EA7451EAD1B550072C0FE /* StickerCollectionViewCell.swift */,
 				059EA7461EAD1B550072C0FE /* StickerCollectionViewCell.xib */,
-				056DAAA11EADFEF70007D7F0 /* ViewGestures.swift */,
-				0588E6001EB0AEB600BC8300 /* Pencil.swift */,
 				055C05071EB6375800B32735 /* EmojiCollectionViewCell.swift */,
 				055C05081EB6375800B32735 /* EmojiCollectionViewCell.xib */,
 				055C050B1EB638A500B32735 /* EmojisCollectionViewDelegate.swift */,
@@ -118,6 +117,15 @@
 				059EA7421EACF4730072C0FE /* UIView+Image.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		05E50F901EB77E78002A92A0 /* PhotoEditorExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				05E50F911EB77EFC002A92A0 /* Pencil.swift */,
+				05E50F921EB77EFC002A92A0 /* ViewGestures.swift */,
+			);
+			path = PhotoEditorExtensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,14 +210,14 @@
 				05E50F8B1EB7488F002A92A0 /* ColorsCollectionViewDelegate.swift in Sources */,
 				059EA7471EAD1B550072C0FE /* StickerCollectionViewCell.swift in Sources */,
 				059EA71F1EACB8790072C0FE /* PhotoEditorViewController.swift in Sources */,
-				0588E6011EB0AEB600BC8300 /* Pencil.swift in Sources */,
 				059EA7431EACF4730072C0FE /* GradientView.swift in Sources */,
-				056DAAA21EADFEF70007D7F0 /* ViewGestures.swift in Sources */,
 				05E50F8E1EB74937002A92A0 /* ColorCollectionViewCell.swift in Sources */,
 				059EA7441EACF4730072C0FE /* UIView+Image.swift in Sources */,
 				059EA73A1EACD9620072C0FE /* BottomSheetViewController.swift in Sources */,
 				055C05091EB6375800B32735 /* EmojiCollectionViewCell.swift in Sources */,
+				05E50F941EB77EFC002A92A0 /* ViewGestures.swift in Sources */,
 				055C050C1EB638A500B32735 /* EmojisCollectionViewDelegate.swift in Sources */,
+				05E50F931EB77EFC002A92A0 /* Pencil.swift in Sources */,
 				059EA71D1EACB8790072C0FE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
