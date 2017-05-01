@@ -14,6 +14,7 @@ extension ViewController {
     override func touchesBegan(_ touches: Set<UITouch>,
                                with event: UIEvent?){
         if isDrawing {
+            self.view.bringSubview(toFront: tempImageView)
             swiped = false
             if let touch = touches.first {
                 lastPoint = touch.location(in: self.view)
@@ -52,6 +53,8 @@ extension ViewController {
             UIGraphicsEndImageContext()
             
             tempImageView.image = nil
+            
+            self.view.sendSubview(toBack: tempImageView)
         }
         
     }
