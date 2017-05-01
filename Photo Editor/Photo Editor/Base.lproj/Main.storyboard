@@ -185,45 +185,57 @@
                                     <constraint firstAttribute="height" constant="50" id="aD9-YS-YNc"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z08-Zt-Kld">
-                                <rect key="frame" x="0.0" y="517" width="375" height="50"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z08-Zt-Kld" userLabel="Color Picker">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mek-F2-K2m">
-                                        <rect key="frame" x="165" y="8" width="174" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6DM-KJ-cpd">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mek-F2-K2m">
+                                        <rect key="frame" x="100" y="0.0" width="275" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="s10-lX-XN7"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="N1o-Eb-5ai">
                                             <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xG7-zC-ivf">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </view>
-                                            </collectionViewCell>
-                                        </cells>
+                                        <cells/>
                                     </collectionView>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="izL-Zp-raJ">
-                                        <rect key="frame" x="8" y="11" width="40" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oey-6L-tSs">
+                                        <rect key="frame" x="8" y="5" width="30" height="30"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                        <state key="normal" title="Size">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5i-Tu-jy8">
+                                        <rect key="frame" x="38" y="5" width="54" height="30"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                        <state key="normal" title="Opacity">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="oey-6L-tSs" firstAttribute="leading" secondItem="Z08-Zt-Kld" secondAttribute="leading" constant="8" id="71y-dA-wt2"/>
+                                    <constraint firstAttribute="trailing" secondItem="mek-F2-K2m" secondAttribute="trailing" id="7Hw-dj-3Xs"/>
+                                    <constraint firstItem="mek-F2-K2m" firstAttribute="leading" secondItem="n5i-Tu-jy8" secondAttribute="trailing" constant="8" id="j9C-Z0-vZb"/>
                                     <constraint firstAttribute="height" constant="50" id="kZr-rF-b96"/>
+                                    <constraint firstItem="oey-6L-tSs" firstAttribute="centerY" secondItem="mek-F2-K2m" secondAttribute="centerY" id="mEq-v5-G55"/>
+                                    <constraint firstItem="mek-F2-K2m" firstAttribute="top" secondItem="Z08-Zt-Kld" secondAttribute="top" id="qsk-2y-8sC"/>
+                                    <constraint firstItem="n5i-Tu-jy8" firstAttribute="centerY" secondItem="mek-F2-K2m" secondAttribute="centerY" id="tkw-C4-VvV"/>
+                                    <constraint firstItem="n5i-Tu-jy8" firstAttribute="leading" secondItem="oey-6L-tSs" secondAttribute="trailing" id="wlW-mJ-WCd"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="llw-np-Mdx" firstAttribute="leading" secondItem="lxq-nF-QoP" secondAttribute="leading" id="0It-I5-Y1f"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Z08-Zt-Kld" secondAttribute="bottom" id="E1x-pN-k6s"/>
                             <constraint firstAttribute="trailing" secondItem="tbX-X9-udE" secondAttribute="trailing" id="F6p-zZ-uA4"/>
                             <constraint firstItem="Z08-Zt-Kld" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FVU-Mw-BAh"/>
                             <constraint firstAttribute="bottom" secondItem="lxq-nF-QoP" secondAttribute="bottom" id="GqE-sE-WeU"/>
@@ -243,12 +255,13 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uSz-Wc-G7X" secondAttribute="bottom" constant="12" id="keE-3A-rtx"/>
                             <constraint firstItem="llw-np-Mdx" firstAttribute="top" secondItem="lxq-nF-QoP" secondAttribute="top" id="umI-ny-Tbz"/>
                             <constraint firstAttribute="bottom" secondItem="tbX-X9-udE" secondAttribute="bottom" id="yhV-he-QeJ"/>
-                            <constraint firstAttribute="bottom" secondItem="Z08-Zt-Kld" secondAttribute="bottom" constant="100" id="z2c-XN-a8f"/>
                             <constraint firstItem="cv9-aV-7mo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zG9-qs-g2A"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bottomToolbar" destination="tbX-X9-udE" id="ZT3-z5-UHE"/>
+                        <outlet property="colorPickerView" destination="Z08-Zt-Kld" id="OMR-Zm-Il4"/>
+                        <outlet property="colorsCollectionView" destination="mek-F2-K2m" id="hYQ-Y2-65p"/>
                         <outlet property="deleteView" destination="uSz-Wc-G7X" id="rwA-4x-2OK"/>
                         <outlet property="doneButton" destination="WuD-M1-XFQ" id="6s3-aq-Ec3"/>
                         <outlet property="imageView" destination="lxq-nF-QoP" id="61W-VU-lAw"/>

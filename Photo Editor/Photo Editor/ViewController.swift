@@ -17,8 +17,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomToolbar: UIView!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var deleteView: UIView!
+    @IBOutlet weak var colorsCollectionView: UICollectionView!
     
+    @IBOutlet weak var colorPickerView: UIView!
+    var colorsCollectionViewDelegate: ColorsCollectionViewDelegate!
+
     //
+    var drawColor: UIColor = UIColor.black
     var isDrawing: Bool = false
     var lastPoint: CGPoint!
     var swiped = false
@@ -45,7 +50,27 @@ class ViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
+        configureCollectionView()
 
+    }
+    
+    func configureCollectionView() {
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 30, height: 30)
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        colorsCollectionView.collectionViewLayout = layout
+        colorsCollectionViewDelegate = ColorsCollectionViewDelegate()
+        colorsCollectionViewDelegate.colorDelegate = self
+        colorsCollectionView.delegate = colorsCollectionViewDelegate
+        colorsCollectionView.dataSource = colorsCollectionViewDelegate
+        
+        colorsCollectionView.register(
+            UINib(nibName: "ColorCollectionViewCell", bundle: nil),
+            forCellWithReuseIdentifier: "ColorCollectionViewCell")
+        
     }
     
     @IBAction func saveButtonTapped(_ sender: AnyObject) {
@@ -72,6 +97,7 @@ class ViewController: UIViewController {
     @IBAction func doneButtonTapped(_ sender: Any) {
         view.endEditing(true)
         doneButton.isHidden = true
+        colorPickerView.isHidden = true
         imageView.isUserInteractionEnabled = true
         hideToolbar(hide: false)
         isDrawing = false
@@ -124,6 +150,7 @@ class ViewController: UIViewController {
         isDrawing = true
         imageView.isUserInteractionEnabled = false
         doneButton.isHidden = false
+        colorPickerView.isHidden = false
         hideToolbar(hide: true)
     }
     
@@ -163,6 +190,12 @@ class ViewController: UIViewController {
         bottomToolbar.isHidden = hide
     }
     
+}
+
+extension ViewController: ColorDelegate {
+    func chosedColor(color: UIColor) {
+        self.drawColor = color
+    }
 }
 
 extension ViewController: UITextViewDelegate {

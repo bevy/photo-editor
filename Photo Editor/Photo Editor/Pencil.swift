@@ -70,7 +70,7 @@ extension ViewController {
             // 3
             context.setLineCap( CGLineCap.round)
             context.setLineWidth(5.0)
-            context.setStrokeColor(UIColor.black.cgColor)
+            context.setStrokeColor(drawColor.cgColor)
             context.setBlendMode( CGBlendMode.normal)
             // 4
             context.strokePath()
