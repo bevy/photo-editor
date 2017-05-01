@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Photo Editor/ViewController.swift"
-            timestampString = "515333599.495347"
+            timestampString = "515336662.089391"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
             landmarkName = "chosedColor(color:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -261,6 +261,7 @@
                     <connections>
                         <outlet property="bottomToolbar" destination="tbX-X9-udE" id="ZT3-z5-UHE"/>
                         <outlet property="colorPickerView" destination="Z08-Zt-Kld" id="OMR-Zm-Il4"/>
+                        <outlet property="colorPickerViewBottomConstraint" destination="E1x-pN-k6s" id="AQG-Gd-9Xs"/>
                         <outlet property="colorsCollectionView" destination="mek-F2-K2m" id="hYQ-Y2-65p"/>
                         <outlet property="deleteView" destination="uSz-Wc-G7X" id="rwA-4x-2OK"/>
                         <outlet property="doneButton" destination="WuD-M1-XFQ" id="6s3-aq-Ec3"/>

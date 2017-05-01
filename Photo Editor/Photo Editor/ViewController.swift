@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var colorsCollectionView: UICollectionView!
     
     @IBOutlet weak var colorPickerView: UIView!
+    @IBOutlet weak var colorPickerViewBottomConstraint: NSLayoutConstraint!
+
     var colorsCollectionViewDelegate: ColorsCollectionViewDelegate!
 
     //
@@ -48,8 +50,13 @@ class ViewController: UIViewController {
         edgePan.delegate = self
         self.view.addGestureRecognizer(edgePan)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
+                                               name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
+                                               name: .UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self,selector: #selector(keyboardWillChangeFrame(_:)),
+                                               name: .UIKeyboardWillChangeFrame, object: nil)
+
         configureCollectionView()
 
     }
@@ -105,12 +112,33 @@ class ViewController: UIViewController {
     
     func keyboardWillShow(notification: NSNotification) {
         doneButton.isHidden = false
+        colorPickerView.isHidden = false
         hideToolbar(hide: true)
     }
     
     func keyboardWillHide(notification: NSNotification) {
         doneButton.isHidden = true
         hideToolbar(hide: false)
+    }
+    
+    func keyboardWillChangeFrame(_ notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+            let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+            let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
+            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
+            let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
+            if (endFrame?.origin.y)! >= UIScreen.main.bounds.size.height {
+                self.colorPickerViewBottomConstraint?.constant = 0.0
+            } else {
+                self.colorPickerViewBottomConstraint?.constant = endFrame?.size.height ?? 0.0
+            }
+            UIView.animate(withDuration: duration,
+                           delay: TimeInterval(0),
+                           options: animationCurve,
+                           animations: { self.view.layoutIfNeeded() },
+                           completion: nil)
+        }
     }
     
     func image(_ image: UIImage, withPotentialError error: NSErrorPointer, contextInfo: UnsafeRawPointer) {
