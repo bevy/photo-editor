@@ -24,7 +24,6 @@ class EmojisCollectionViewDelegate: NSObject, UICollectionViewDataSource, UIColl
             for i in range {
                 let c = String(describing: UnicodeScalar(i)!)
                 emojis.append(c)
-                print(c)
             }
         }
     }

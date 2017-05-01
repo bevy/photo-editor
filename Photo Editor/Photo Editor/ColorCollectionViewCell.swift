@@ -18,7 +18,6 @@ class ColorCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        print(colorView.bounds)
         colorView.layer.cornerRadius = colorView.frame.width / 2
         colorView.clipsToBounds = true
         colorView.layer.borderWidth = 1.0
