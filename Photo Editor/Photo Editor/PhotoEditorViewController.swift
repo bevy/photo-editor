@@ -50,7 +50,7 @@ class PhotoEditorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let img = UIImage(named: "portrait.JPG")
+        let img = UIImage(named: "img.jpg")
         image = img?.rotateImage()
         imageView.image = image!
         
@@ -181,12 +181,12 @@ class PhotoEditorViewController: UIViewController {
                                                 width: UIScreen.main.bounds.width, height: 30))
         //Text Attributes
         textView.textAlignment = .center
-        textView.font = UIFont(name: "Helvetica", size: 20)
+        textView.font = UIFont(name: "Helvetica", size: 30)
         textView.textColor = textColor
         textView.layer.shadowColor = UIColor.black.cgColor
-        textView.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        textView.layer.shadowOpacity = 1.0
-        textView.layer.shadowRadius = 2.0
+        textView.layer.shadowOffset = CGSize(width: 1.0, height: 0.0)
+        textView.layer.shadowOpacity = 0.2
+        textView.layer.shadowRadius = 1.0
         textView.layer.backgroundColor = UIColor.clear.cgColor
         //
         textView.autocorrectionType = .no
