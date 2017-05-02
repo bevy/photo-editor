@@ -31,7 +31,14 @@
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lxq-nF-QoP">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cv9-aV-7mo" customClass="GradientView" customModule="Photo_Editor" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jyi-oX-JZf" customClass="GradientView" customModule="Photo_Editor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="QsD-U8-TRF"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cv9-aV-7mo">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="bJY-5j-abz">
@@ -94,13 +101,18 @@
                                     <constraint firstItem="gTx-Eo-0By" firstAttribute="centerY" secondItem="cv9-aV-7mo" secondAttribute="centerY" id="dVn-aQ-hIp"/>
                                     <constraint firstAttribute="trailing" secondItem="bJY-5j-abz" secondAttribute="trailing" constant="12" id="rRL-Np-thq"/>
                                 </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pL5-L8-gdH" customClass="GradientView" customModule="Photo_Editor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="zHL-OO-96d"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientColor">
-                                        <color key="value" red="0.99215686270000003" green="0.6705882353" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="gradientFromtop" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tbX-X9-udE" customClass="GradientView" customModule="Photo_Editor" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tbX-X9-udE">
                                 <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="r7L-uN-oyn">
@@ -133,8 +145,8 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYb-uI-9hZ">
-                                        <rect key="frame" x="318" y="-9" width="45" height="57"/>
-                                        <fontDescription key="fontDescription" name="Eventtus-Icons" family="Eventtus-Icons" pointSize="45"/>
+                                        <rect key="frame" x="313" y="-14" width="50" height="62"/>
+                                        <fontDescription key="fontDescription" name="Eventtus-Icons" family="Eventtus-Icons" pointSize="50"/>
                                         <size key="titleShadowOffset" width="1" height="0.0"/>
                                         <state key="normal" title="">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -151,9 +163,6 @@
                                     <constraint firstAttribute="bottom" secondItem="r7L-uN-oyn" secondAttribute="bottom" constant="8" id="fRW-dw-m9Y"/>
                                     <constraint firstItem="r7L-uN-oyn" firstAttribute="leading" secondItem="tbX-X9-udE" secondAttribute="leading" constant="12" id="vZd-9A-tfu"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="gradientFromtop" value="NO"/>
-                                </userDefinedRuntimeAttributes>
                             </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuD-M1-XFQ">
                                 <rect key="frame" x="323" y="12" width="40" height="32"/>
@@ -217,6 +226,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="llw-np-Mdx" firstAttribute="leading" secondItem="lxq-nF-QoP" secondAttribute="leading" id="0It-I5-Y1f"/>
+                            <constraint firstAttribute="trailing" secondItem="pL5-L8-gdH" secondAttribute="trailing" id="2YY-Ou-pFO"/>
+                            <constraint firstItem="pL5-L8-gdH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9OX-Fy-5Fo"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Z08-Zt-Kld" secondAttribute="bottom" id="E1x-pN-k6s"/>
                             <constraint firstAttribute="trailing" secondItem="tbX-X9-udE" secondAttribute="trailing" id="F6p-zZ-uA4"/>
                             <constraint firstItem="Z08-Zt-Kld" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FVU-Mw-BAh"/>
@@ -232,7 +243,11 @@
                             <constraint firstAttribute="trailing" secondItem="WuD-M1-XFQ" secondAttribute="trailing" constant="12" id="VKi-FC-pga"/>
                             <constraint firstAttribute="trailing" secondItem="Z08-Zt-Kld" secondAttribute="trailing" id="VsV-FC-fYl"/>
                             <constraint firstItem="Z08-Zt-Kld" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W3L-y0-rXX"/>
+                            <constraint firstItem="jyi-oX-JZf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="WaF-Pa-tGH"/>
                             <constraint firstItem="cv9-aV-7mo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="by1-C9-8fv"/>
+                            <constraint firstItem="jyi-oX-JZf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eB3-xJ-iG5"/>
+                            <constraint firstAttribute="trailing" secondItem="jyi-oX-JZf" secondAttribute="trailing" id="eww-FV-BcB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pL5-L8-gdH" secondAttribute="bottom" id="g1D-3z-ALC"/>
                             <constraint firstItem="uSz-Wc-G7X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hg9-cU-pBg"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uSz-Wc-G7X" secondAttribute="bottom" constant="12" id="keE-3A-rtx"/>
                             <constraint firstItem="llw-np-Mdx" firstAttribute="top" secondItem="lxq-nF-QoP" secondAttribute="top" id="umI-ny-Tbz"/>
@@ -241,6 +256,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomGradient" destination="pL5-L8-gdH" id="2I3-J0-iSj"/>
                         <outlet property="bottomToolbar" destination="tbX-X9-udE" id="ZT3-z5-UHE"/>
                         <outlet property="colorPickerView" destination="Z08-Zt-Kld" id="OMR-Zm-Il4"/>
                         <outlet property="colorPickerViewBottomConstraint" destination="E1x-pN-k6s" id="AQG-Gd-9Xs"/>
@@ -249,6 +265,7 @@
                         <outlet property="doneButton" destination="WuD-M1-XFQ" id="6s3-aq-Ec3"/>
                         <outlet property="imageView" destination="lxq-nF-QoP" id="61W-VU-lAw"/>
                         <outlet property="tempImageView" destination="llw-np-Mdx" id="lWf-wJ-SM0"/>
+                        <outlet property="topGradient" destination="jyi-oX-JZf" id="dNY-JX-2HK"/>
                         <outlet property="topToolbar" destination="cv9-aV-7mo" id="VzW-QV-H0c"/>
                     </connections>
                 </viewController>
