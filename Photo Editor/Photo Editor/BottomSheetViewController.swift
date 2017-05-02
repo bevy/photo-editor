@@ -93,7 +93,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         
         let emojislayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         emojislayout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        emojislayout.itemSize = CGSize(width: 60, height: 60)
+        emojislayout.itemSize = CGSize(width: 80, height: 80)
 
         emojisCollectioView = UICollectionView(frame: emojisFrame, collectionViewLayout: emojislayout)
         emojisCollectioView.backgroundColor = .clear

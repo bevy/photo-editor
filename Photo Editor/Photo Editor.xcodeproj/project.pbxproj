@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		054D9D3D1EB8973800CB911D /* portrait.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 054D9D3C1EB8973800CB911D /* portrait.JPG */; };
 		054D9D3F1EB8A92B00CB911D /* UIImage+Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054D9D3E1EB8A92B00CB911D /* UIImage+Rotate.swift */; };
+		054D9D411EB8BCE400CB911D /* Eventtus-Icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 054D9D401EB8BCDC00CB911D /* Eventtus-Icons.ttf */; };
 		055C05091EB6375800B32735 /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C05071EB6375800B32735 /* EmojiCollectionViewCell.swift */; };
 		055C050A1EB6375800B32735 /* EmojiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055C05081EB6375800B32735 /* EmojiCollectionViewCell.xib */; };
 		055C050C1EB638A500B32735 /* EmojisCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C050B1EB638A500B32735 /* EmojisCollectionViewDelegate.swift */; };
@@ -29,12 +30,12 @@
 		05E50F8F1EB74937002A92A0 /* ColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05E50F8D1EB74937002A92A0 /* ColorCollectionViewCell.xib */; };
 		05E50F931EB77EFC002A92A0 /* Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E50F911EB77EFC002A92A0 /* Pencil.swift */; };
 		05E50F941EB77EFC002A92A0 /* ViewGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E50F921EB77EFC002A92A0 /* ViewGestures.swift */; };
-		05F986D01EB2151600F51F3B /* Eventtus-Icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05F986CF1EB214BF00F51F3B /* Eventtus-Icons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		054D9D3C1EB8973800CB911D /* portrait.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portrait.JPG; sourceTree = "<group>"; };
 		054D9D3E1EB8A92B00CB911D /* UIImage+Rotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Rotate.swift"; sourceTree = "<group>"; };
+		054D9D401EB8BCDC00CB911D /* Eventtus-Icons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eventtus-Icons.ttf"; sourceTree = "<group>"; };
 		055C05071EB6375800B32735 /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
 		055C05081EB6375800B32735 /* EmojiCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmojiCollectionViewCell.xib; sourceTree = "<group>"; };
 		055C050B1EB638A500B32735 /* EmojisCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojisCollectionViewDelegate.swift; sourceTree = "<group>"; };
@@ -57,7 +58,6 @@
 		05E50F8D1EB74937002A92A0 /* ColorCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorCollectionViewCell.xib; sourceTree = "<group>"; };
 		05E50F911EB77EFC002A92A0 /* Pencil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pencil.swift; sourceTree = "<group>"; };
 		05E50F921EB77EFC002A92A0 /* ViewGestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewGestures.swift; sourceTree = "<group>"; };
-		05F986CF1EB214BF00F51F3B /* Eventtus-Icons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Eventtus-Icons.ttf"; path = "Extensions/Eventtus-Icons.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				05E50F901EB77E78002A92A0 /* PhotoEditorExtensions */,
-				05F986CF1EB214BF00F51F3B /* Eventtus-Icons.ttf */,
 				059EA7401EACF4470072C0FE /* Extensions */,
 				059EA71C1EACB8790072C0FE /* AppDelegate.swift */,
 				059EA71E1EACB8790072C0FE /* PhotoEditorViewController.swift */,
@@ -130,6 +129,7 @@
 			children = (
 				05E50F911EB77EFC002A92A0 /* Pencil.swift */,
 				05E50F921EB77EFC002A92A0 /* ViewGestures.swift */,
+				054D9D401EB8BCDC00CB911D /* Eventtus-Icons.ttf */,
 			);
 			path = PhotoEditorExtensions;
 			sourceTree = "<group>";
@@ -201,9 +201,9 @@
 				054D9D3D1EB8973800CB911D /* portrait.JPG in Resources */,
 				059EA7221EACB8790072C0FE /* PhotoEditor.storyboard in Resources */,
 				059EA7481EAD1B550072C0FE /* StickerCollectionViewCell.xib in Resources */,
-				05F986D01EB2151600F51F3B /* Eventtus-Icons.ttf in Resources */,
 				059EA7311EACBBF30072C0FE /* img.jpg in Resources */,
 				055C050A1EB6375800B32735 /* EmojiCollectionViewCell.xib in Resources */,
+				054D9D411EB8BCE400CB911D /* Eventtus-Icons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
