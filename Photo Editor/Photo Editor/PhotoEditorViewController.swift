@@ -48,7 +48,8 @@ class PhotoEditorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        image = UIImage(named: "img.jpg")
+        let img = UIImage(named: "portrait.JPG")
+        image = img?.rotateImage()
         imageView.image = image!
         
         deleteView.layer.cornerRadius = deleteView.bounds.height / 2
