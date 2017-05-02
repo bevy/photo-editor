@@ -8,8 +8,13 @@
 
 import UIKit
 
-class PhotoEditorViewController: UIViewController {
+protocol PhotoEditorDelegate {
+    func imageEdited(image: UIImage)
+    func editorCanceled()
+}
 
+class PhotoEditorViewController: UIViewController {
+    
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var tempImageView: UIImageView!
@@ -21,9 +26,12 @@ class PhotoEditorViewController: UIViewController {
     
     @IBOutlet weak var colorPickerView: UIView!
     @IBOutlet weak var colorPickerViewBottomConstraint: NSLayoutConstraint!
-
+    
     var colorsCollectionViewDelegate: ColorsCollectionViewDelegate!
-
+    
+    var image: UIImage?
+    
+    var photoEditorDelegate: PhotoEditorDelegate?
     //
     var drawColor: UIColor = UIColor.black
     var textColor: UIColor = UIColor.white
@@ -36,11 +44,12 @@ class PhotoEditorViewController: UIViewController {
     var lastTextViewTransCenter: CGPoint?
     var activeTextView: UITextView?
     //
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.image = UIImage(named: "img.jpg")
-
+        
+        image = UIImage(named: "img.jpg")
+        imageView.image = image!
         
         deleteView.layer.cornerRadius = deleteView.bounds.height / 2
         deleteView.layer.borderWidth = 2.0
@@ -58,9 +67,9 @@ class PhotoEditorViewController: UIViewController {
                                                name: .UIKeyboardWillHide, object: nil)
         NotificationCenter.default.addObserver(self,selector: #selector(keyboardWillChangeFrame(_:)),
                                                name: .UIKeyboardWillChangeFrame, object: nil)
-
+        
         configureCollectionView()
-
+        
     }
     
     func configureCollectionView() {
@@ -96,7 +105,7 @@ class PhotoEditorViewController: UIViewController {
     
     @IBAction func clearButtonTapped(_ sender: AnyObject) {
         //clear drawing
-        imageView.image = UIImage(named: "img.jpg")
+        imageView.image = image
         //clear stickers and textviews
         for subview in imageView.subviews {
             subview.removeFromSuperview()
@@ -148,7 +157,16 @@ class PhotoEditorViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-
+    
+    @IBAction func continueButtonPressed(_ sender: Any) {
+        photoEditorDelegate?.imageEdited(image: self.imageView.toImage())
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        photoEditorDelegate?.editorCanceled()
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func stickersButtonTapped(_ sender: Any) {
         addBottomSheetView()
@@ -157,7 +175,7 @@ class PhotoEditorViewController: UIViewController {
     @IBAction func textButtonTapped(_ sender: Any) {
         
         let textView = UITextView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height / 2,
-                                                  width: UIScreen.main.bounds.width, height: 30))
+                                                width: UIScreen.main.bounds.width, height: 30))
         //Text Attributes
         textView.textAlignment = .center
         textView.font = UIFont(name: "Helvetica", size: 20)
@@ -184,9 +202,9 @@ class PhotoEditorViewController: UIViewController {
         hideToolbar(hide: true)
     }
     
-
+    
     let bottomSheetVC =  BottomSheetViewController()
-
+    
     func addBottomSheetView() {
         hideToolbar(hide: true)
         
@@ -235,7 +253,7 @@ extension PhotoEditorViewController: ColorDelegate {
 
 extension PhotoEditorViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-       let rotation = atan2(textView.transform.b, textView.transform.a)
+        let rotation = atan2(textView.transform.b, textView.transform.a)
         if rotation == 0 {
             let oldFrame = textView.frame
             let sizeToFit = textView.sizeThatFits(CGSize(width: oldFrame.width, height:CGFloat.greatestFiniteMagnitude))
@@ -252,7 +270,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
                         textView.transform = CGAffineTransform.identity
                         textView.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: 100)
         }, completion: nil)
-
+        
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
@@ -308,7 +326,7 @@ extension PhotoEditorViewController: StickerDelegate {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(PhotoEditorViewController.tapGesture))
         view.addGestureRecognizer(tapGesture)
-
+        
     }
 }
 
