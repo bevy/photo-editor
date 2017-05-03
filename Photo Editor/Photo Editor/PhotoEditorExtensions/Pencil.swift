@@ -14,7 +14,7 @@ extension PhotoEditorViewController {
     override func touchesBegan(_ touches: Set<UITouch>,
                                with event: UIEvent?){
         if isDrawing {
-            self.view.bringSubview(toFront: tempImageView)
+//            self.view.bringSubview(toFront: tempImageView)
             swiped = false
             if let touch = touches.first {
                 lastPoint = touch.location(in: self.view)
@@ -47,14 +47,14 @@ extension PhotoEditorViewController {
             
             // Merge tempImageView into mainImageView
             UIGraphicsBeginImageContext(imageView.frame.size)
-            imageView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: CGBlendMode.normal, alpha: 1.0)
-            tempImageView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: CGBlendMode.normal, alpha: opacity)
-            imageView.image = UIGraphicsGetImageFromCurrentImageContext()
+//            imageView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: CGBlendMode.normal, alpha: 1.0)
+            tempImageView.image?.draw(in: CGRect(x: 0, y: 0, width: tempImageView.frame.size.width, height: tempImageView.frame.size.height), blendMode: CGBlendMode.normal, alpha: opacity)
+            tempImageView.image = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             
-            tempImageView.image = nil
+//            tempImageView.image = nil
             
-            self.view.sendSubview(toBack: tempImageView)
+//            self.view.sendSubview(toBack: tempImageView)
         }
         
     }

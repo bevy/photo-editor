@@ -25,12 +25,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="llw-np-Mdx">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lxq-nF-QoP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HAu-hz-9Kf" userLabel="canvas">
+                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                <subviews>
+                                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lxq-nF-QoP">
+                                        <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                    </imageView>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="llw-np-Mdx">
+                                        <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="llw-np-Mdx" firstAttribute="height" secondItem="HAu-hz-9Kf" secondAttribute="height" id="3Tv-1U-EeO"/>
+                                    <constraint firstItem="llw-np-Mdx" firstAttribute="centerY" secondItem="HAu-hz-9Kf" secondAttribute="centerY" id="Cdp-k5-jQF"/>
+                                    <constraint firstItem="llw-np-Mdx" firstAttribute="centerX" secondItem="HAu-hz-9Kf" secondAttribute="centerX" id="Fvd-JE-pIB"/>
+                                    <constraint firstItem="lxq-nF-QoP" firstAttribute="height" secondItem="HAu-hz-9Kf" secondAttribute="height" id="KxS-eF-Ptv"/>
+                                    <constraint firstItem="lxq-nF-QoP" firstAttribute="centerX" secondItem="HAu-hz-9Kf" secondAttribute="centerX" id="QrE-8y-SgW"/>
+                                    <constraint firstItem="lxq-nF-QoP" firstAttribute="width" secondItem="HAu-hz-9Kf" secondAttribute="width" id="jcm-YS-c4O"/>
+                                    <constraint firstItem="llw-np-Mdx" firstAttribute="width" secondItem="HAu-hz-9Kf" secondAttribute="width" id="qdH-pI-fHu"/>
+                                    <constraint firstItem="lxq-nF-QoP" firstAttribute="centerY" secondItem="HAu-hz-9Kf" secondAttribute="centerY" id="yo1-si-XvO"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jyi-oX-JZf" customClass="GradientView" customModule="Photo_Editor" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -253,18 +269,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="llw-np-Mdx" firstAttribute="leading" secondItem="lxq-nF-QoP" secondAttribute="leading" id="0It-I5-Y1f"/>
                             <constraint firstAttribute="trailing" secondItem="pL5-L8-gdH" secondAttribute="trailing" id="2YY-Ou-pFO"/>
                             <constraint firstItem="pL5-L8-gdH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9OX-Fy-5Fo"/>
+                            <constraint firstItem="HAu-hz-9Kf" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="9bu-EF-BeD"/>
+                            <constraint firstItem="HAu-hz-9Kf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Abj-UW-icf"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Z08-Zt-Kld" secondAttribute="bottom" id="E1x-pN-k6s"/>
                             <constraint firstAttribute="trailing" secondItem="tbX-X9-udE" secondAttribute="trailing" id="F6p-zZ-uA4"/>
                             <constraint firstItem="Z08-Zt-Kld" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FVU-Mw-BAh"/>
-                            <constraint firstAttribute="bottom" secondItem="lxq-nF-QoP" secondAttribute="bottom" id="GqE-sE-WeU"/>
-                            <constraint firstAttribute="trailing" secondItem="lxq-nF-QoP" secondAttribute="trailing" id="H8f-uO-fEX"/>
-                            <constraint firstItem="lxq-nF-QoP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HAc-mc-pIb"/>
-                            <constraint firstItem="llw-np-Mdx" firstAttribute="trailing" secondItem="lxq-nF-QoP" secondAttribute="trailing" id="Hdp-Yo-XAZ"/>
-                            <constraint firstItem="lxq-nF-QoP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Jvp-zt-owj"/>
-                            <constraint firstItem="llw-np-Mdx" firstAttribute="bottom" secondItem="lxq-nF-QoP" secondAttribute="bottom" id="Ri5-Fh-uwb"/>
                             <constraint firstItem="tbX-X9-udE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SGj-w0-JO6"/>
                             <constraint firstAttribute="trailing" secondItem="cv9-aV-7mo" secondAttribute="trailing" id="ScM-jA-Ug7"/>
                             <constraint firstItem="WuD-M1-XFQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="12" id="V9o-s1-paP"/>
@@ -278,7 +289,8 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pL5-L8-gdH" secondAttribute="bottom" id="g1D-3z-ALC"/>
                             <constraint firstItem="uSz-Wc-G7X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hg9-cU-pBg"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uSz-Wc-G7X" secondAttribute="bottom" constant="12" id="keE-3A-rtx"/>
-                            <constraint firstItem="llw-np-Mdx" firstAttribute="top" secondItem="lxq-nF-QoP" secondAttribute="top" id="umI-ny-Tbz"/>
+                            <constraint firstItem="HAu-hz-9Kf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wnP-GP-F2C"/>
+                            <constraint firstItem="HAu-hz-9Kf" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="xGl-ZN-6eK"/>
                             <constraint firstAttribute="bottom" secondItem="tbX-X9-udE" secondAttribute="bottom" id="yhV-he-QeJ"/>
                             <constraint firstItem="cv9-aV-7mo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zG9-qs-g2A"/>
                         </constraints>
@@ -286,6 +298,7 @@
                     <connections>
                         <outlet property="bottomGradient" destination="pL5-L8-gdH" id="2I3-J0-iSj"/>
                         <outlet property="bottomToolbar" destination="tbX-X9-udE" id="ZT3-z5-UHE"/>
+                        <outlet property="canvasView" destination="HAu-hz-9Kf" id="aho-C3-fID"/>
                         <outlet property="colorPickerView" destination="Z08-Zt-Kld" id="OMR-Zm-Il4"/>
                         <outlet property="colorPickerViewBottomConstraint" destination="E1x-pN-k6s" id="AQG-Gd-9Xs"/>
                         <outlet property="colorsCollectionView" destination="mek-F2-K2m" id="hYQ-Y2-65p"/>

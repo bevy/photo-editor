@@ -15,8 +15,10 @@ protocol PhotoEditorDelegate {
 
 class PhotoEditorViewController: UIViewController {
     
-    
+    @IBOutlet weak var canvasView: UIView!
+    //To hold the image
     @IBOutlet var imageView: UIImageView!
+    //To hold the drawings and stickers
     @IBOutlet weak var tempImageView: UIImageView!
     @IBOutlet weak var topToolbar: UIView!
     @IBOutlet weak var topGradient: UIView!
@@ -53,6 +55,8 @@ class PhotoEditorViewController: UIViewController {
         let img = UIImage(named: "img.jpg")
         image = img?.rotateImage()
         imageView.image = image!
+        
+        print(image!.imageOrientation.rawValue)
         
         deleteView.layer.cornerRadius = deleteView.bounds.height / 2
         deleteView.layer.borderWidth = 2.0
@@ -95,10 +99,8 @@ class PhotoEditorViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: AnyObject) {
-        if self.imageView.image == nil{
-            return
-        }
-        UIImageWriteToSavedPhotosAlbum(self.imageView.toImage(),self, #selector(PhotoEditorViewController.image(_:withPotentialError:contextInfo:)), nil)
+
+        UIImageWriteToSavedPhotosAlbum(canvasView.toImage(),self, #selector(PhotoEditorViewController.image(_:withPotentialError:contextInfo:)), nil)
         
         ///To Share
         //let activity = UIActivityViewController(activityItems: [self.imageView.toImage()], applicationActivities: nil)
@@ -109,8 +111,9 @@ class PhotoEditorViewController: UIViewController {
     @IBAction func clearButtonTapped(_ sender: AnyObject) {
         //clear drawing
         imageView.image = image
+        tempImageView.image = nil
         //clear stickers and textviews
-        for subview in imageView.subviews {
+        for subview in tempImageView.subviews {
             subview.removeFromSuperview()
         }
     }
@@ -119,7 +122,7 @@ class PhotoEditorViewController: UIViewController {
         view.endEditing(true)
         doneButton.isHidden = true
         colorPickerView.isHidden = true
-        imageView.isUserInteractionEnabled = true
+        tempImageView.isUserInteractionEnabled = true
         hideToolbar(hide: false)
         isDrawing = false
     }
@@ -192,14 +195,14 @@ class PhotoEditorViewController: UIViewController {
         textView.autocorrectionType = .no
         textView.isScrollEnabled = false
         textView.delegate = self
-        self.imageView.addSubview(textView)
+        self.tempImageView.addSubview(textView)
         addGestures(view: textView)
         textView.becomeFirstResponder()
     }
     
     @IBAction func pencilButtonTapped(_ sender: Any) {
         isDrawing = true
-        imageView.isUserInteractionEnabled = false
+        tempImageView.isUserInteractionEnabled = false
         doneButton.isHidden = false
         colorPickerView.isHidden = false
         hideToolbar(hide: true)
@@ -299,7 +302,7 @@ extension PhotoEditorViewController: StickerDelegate {
         let newView = view.toImageView()
         self.removeBottomSheetView()
         newView.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
-        self.imageView.addSubview(newView)
+        self.tempImageView.addSubview(newView)
         //Gestures
         addGestures(view: newView)
     }
