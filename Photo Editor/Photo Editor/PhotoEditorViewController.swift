@@ -53,11 +53,12 @@ class PhotoEditorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let img = UIImage(named: "img.jpg") // image
-        image = img?.rotateImageIfNeeded()
+        image = UIImage(named: "img.jpg") // image
+        let originalOrientation = image!.imageOrientation
+        image = image?.rotateImageIfNeeded()
         imageView.image = image!
-
-        if img?.imageOrientation != image?.imageOrientation {
+        
+        if image?.imageOrientation != originalOrientation {
             imageRotated = true
         }
         
@@ -221,7 +222,7 @@ class PhotoEditorViewController: UIViewController {
     
     func addBottomSheetView() {
         hideToolbar(hide: true)
-        
+        self.tempImageView.isUserInteractionEnabled = false
         bottomSheetVC.stickerDelegate = self
         self.addChildViewController(bottomSheetVC)
         self.view.addSubview(bottomSheetVC.view)
@@ -232,6 +233,7 @@ class PhotoEditorViewController: UIViewController {
     }
     
     func removeBottomSheetView() {
+        self.tempImageView.isUserInteractionEnabled = true
         UIView.animate(withDuration: 0.3,
                        delay: 0,
                        options: UIViewAnimationOptions.curveEaseIn,
