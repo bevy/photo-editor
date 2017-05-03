@@ -47,16 +47,19 @@ class PhotoEditorViewController: UIViewController {
     var lastTextViewTransform: CGAffineTransform?
     var lastTextViewTransCenter: CGPoint?
     var activeTextView: UITextView?
+    var imageRotated: Bool = false
     //
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let img = UIImage(named: "img.jpg")
-        image = img?.rotateImage()
+        let img = UIImage(named: "img.jpg") // image
+        image = img?.rotateImageIfNeeded()
         imageView.image = image!
-        
-        print(image!.imageOrientation.rawValue)
+
+        if img?.imageOrientation != image?.imageOrientation {
+            imageRotated = true
+        }
         
         deleteView.layer.cornerRadius = deleteView.bounds.height / 2
         deleteView.layer.borderWidth = 2.0
@@ -165,7 +168,12 @@ class PhotoEditorViewController: UIViewController {
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
-        photoEditorDelegate?.imageEdited(image: self.imageView.toImage())
+
+        var img = self.canvasView.toImage()
+        if imageRotated {
+            img = img.rotateImage(orientation: .left)
+        }
+        photoEditorDelegate?.imageEdited(image: img)
         self.dismiss(animated: true, completion: nil)
     }
     

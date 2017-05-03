@@ -10,31 +10,19 @@ import UIKit
 
 public extension UIImage {
     
-    func rotateImage()->UIImage
+    func rotateImageIfNeeded() -> UIImage
     {
-        if size.width > size.height {
-            var rotatedImage = UIImage();
-            switch self.imageOrientation
-            {
-            case UIImageOrientation.right:
-                rotatedImage = UIImage(cgImage:self.cgImage!, scale: 1,
-                                       orientation:UIImageOrientation.down);
-                
-            case UIImageOrientation.down:
-                rotatedImage = UIImage(cgImage:self.cgImage!, scale: 1,
-                                       orientation:UIImageOrientation.left);
-                
-            case UIImageOrientation.left:
-                rotatedImage = UIImage(cgImage:self.cgImage!, scale: 1,
-                                       orientation:UIImageOrientation.up);
-                
-            default:
-                rotatedImage = UIImage(cgImage:self.cgImage!, scale: 1,
-                                       orientation:UIImageOrientation.right);
-            }
-            return rotatedImage;
-        } else {
+        if size.width > size.height { // Landscape
+            return self.rotateImage(orientation: .right)
+        } else { //Portrait
             return self
         }
+    }
+    
+    func rotateImage(orientation: UIImageOrientation) -> UIImage {
+        let rotatedImage = UIImage(cgImage:self.cgImage!,
+                                   scale: 1,
+                                   orientation:orientation);
+        return rotatedImage
     }
 }
