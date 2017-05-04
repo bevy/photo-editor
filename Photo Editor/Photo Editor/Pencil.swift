@@ -44,17 +44,10 @@ extension PhotoEditorViewController {
                 // draw a single point
                 drawLineFrom(lastPoint, toPoint: lastPoint)
             }
-            
-            // Merge tempImageView into mainImageView
             UIGraphicsBeginImageContext(imageView.frame.size)
-//            imageView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: CGBlendMode.normal, alpha: 1.0)
             tempImageView.image?.draw(in: CGRect(x: 0, y: 0, width: tempImageView.frame.size.width, height: tempImageView.frame.size.height), blendMode: CGBlendMode.normal, alpha: opacity)
             tempImageView.image = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
-            
-//            tempImageView.image = nil
-            
-//            self.view.sendSubview(toBack: tempImageView)
         }
         
     }

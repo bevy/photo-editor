@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		054D9D3F1EB8A92B00CB911D /* UIImage+Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054D9D3E1EB8A92B00CB911D /* UIImage+Rotate.swift */; };
-		054D9D411EB8BCE400CB911D /* Eventtus-Icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 054D9D401EB8BCDC00CB911D /* Eventtus-Icons.ttf */; };
 		055C05091EB6375800B32735 /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C05071EB6375800B32735 /* EmojiCollectionViewCell.swift */; };
 		055C050A1EB6375800B32735 /* EmojiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055C05081EB6375800B32735 /* EmojiCollectionViewCell.xib */; };
 		055C050C1EB638A500B32735 /* EmojisCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C050B1EB638A500B32735 /* EmojisCollectionViewDelegate.swift */; };
@@ -20,8 +18,6 @@
 		059EA7311EACBBF30072C0FE /* img.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 059EA7301EACBBF30072C0FE /* img.jpg */; };
 		059EA73A1EACD9620072C0FE /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EA7381EACD9620072C0FE /* BottomSheetViewController.swift */; };
 		059EA73B1EACD9620072C0FE /* BottomSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 059EA7391EACD9620072C0FE /* BottomSheetViewController.xib */; };
-		059EA7431EACF4730072C0FE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EA7411EACF4730072C0FE /* GradientView.swift */; };
-		059EA7441EACF4730072C0FE /* UIView+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EA7421EACF4730072C0FE /* UIView+Image.swift */; };
 		059EA7471EAD1B550072C0FE /* StickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EA7451EAD1B550072C0FE /* StickerCollectionViewCell.swift */; };
 		059EA7481EAD1B550072C0FE /* StickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 059EA7461EAD1B550072C0FE /* StickerCollectionViewCell.xib */; };
 		05CE341E1EBB6DCF0010A758 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 05CE34161EBB6DCF0010A758 /* 2.png */; };
@@ -35,16 +31,18 @@
 		05CE34331EBB6F850010A758 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 05CE34301EBB6F850010A758 /* 9.png */; };
 		05CE34341EBB6F850010A758 /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = 05CE34311EBB6F850010A758 /* 10.png */; };
 		05CE34351EBB6F850010A758 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 05CE34321EBB6F850010A758 /* 8.png */; };
+		05CE343C1EBB792F0010A758 /* Eventtus-Icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05CE34361EBB792F0010A758 /* Eventtus-Icons.ttf */; };
+		05CE343D1EBB792F0010A758 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CE34371EBB792F0010A758 /* GradientView.swift */; };
+		05CE343E1EBB792F0010A758 /* Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CE34381EBB792F0010A758 /* Pencil.swift */; };
+		05CE343F1EBB792F0010A758 /* UIImage+Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CE34391EBB792F0010A758 /* UIImage+Rotate.swift */; };
+		05CE34401EBB792F0010A758 /* UIView+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CE343A1EBB792F0010A758 /* UIView+Image.swift */; };
+		05CE34411EBB792F0010A758 /* ViewGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CE343B1EBB792F0010A758 /* ViewGestures.swift */; };
 		05E50F8B1EB7488F002A92A0 /* ColorsCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E50F8A1EB7488F002A92A0 /* ColorsCollectionViewDelegate.swift */; };
 		05E50F8E1EB74937002A92A0 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E50F8C1EB74937002A92A0 /* ColorCollectionViewCell.swift */; };
 		05E50F8F1EB74937002A92A0 /* ColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05E50F8D1EB74937002A92A0 /* ColorCollectionViewCell.xib */; };
-		05E50F931EB77EFC002A92A0 /* Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E50F911EB77EFC002A92A0 /* Pencil.swift */; };
-		05E50F941EB77EFC002A92A0 /* ViewGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E50F921EB77EFC002A92A0 /* ViewGestures.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		054D9D3E1EB8A92B00CB911D /* UIImage+Rotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Rotate.swift"; sourceTree = "<group>"; };
-		054D9D401EB8BCDC00CB911D /* Eventtus-Icons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eventtus-Icons.ttf"; sourceTree = "<group>"; };
 		055C05071EB6375800B32735 /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
 		055C05081EB6375800B32735 /* EmojiCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmojiCollectionViewCell.xib; sourceTree = "<group>"; };
 		055C050B1EB638A500B32735 /* EmojisCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojisCollectionViewDelegate.swift; sourceTree = "<group>"; };
@@ -58,8 +56,6 @@
 		059EA7301EACBBF30072C0FE /* img.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img.jpg; sourceTree = "<group>"; };
 		059EA7381EACD9620072C0FE /* BottomSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		059EA7391EACD9620072C0FE /* BottomSheetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottomSheetViewController.xib; sourceTree = "<group>"; };
-		059EA7411EACF4730072C0FE /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		059EA7421EACF4730072C0FE /* UIView+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Image.swift"; sourceTree = "<group>"; };
 		059EA7451EAD1B550072C0FE /* StickerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		059EA7461EAD1B550072C0FE /* StickerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StickerCollectionViewCell.xib; sourceTree = "<group>"; };
 		05CE34161EBB6DCF0010A758 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
@@ -73,11 +69,15 @@
 		05CE34301EBB6F850010A758 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
 		05CE34311EBB6F850010A758 /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
 		05CE34321EBB6F850010A758 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
+		05CE34361EBB792F0010A758 /* Eventtus-Icons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eventtus-Icons.ttf"; sourceTree = "<group>"; };
+		05CE34371EBB792F0010A758 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		05CE34381EBB792F0010A758 /* Pencil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pencil.swift; sourceTree = "<group>"; };
+		05CE34391EBB792F0010A758 /* UIImage+Rotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Rotate.swift"; sourceTree = "<group>"; };
+		05CE343A1EBB792F0010A758 /* UIView+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Image.swift"; sourceTree = "<group>"; };
+		05CE343B1EBB792F0010A758 /* ViewGestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewGestures.swift; sourceTree = "<group>"; };
 		05E50F8A1EB7488F002A92A0 /* ColorsCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		05E50F8C1EB74937002A92A0 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		05E50F8D1EB74937002A92A0 /* ColorCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorCollectionViewCell.xib; sourceTree = "<group>"; };
-		05E50F911EB77EFC002A92A0 /* Pencil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pencil.swift; sourceTree = "<group>"; };
-		05E50F921EB77EFC002A92A0 /* ViewGestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewGestures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,9 +110,13 @@
 		059EA71B1EACB8790072C0FE /* Photo Editor */ = {
 			isa = PBXGroup;
 			children = (
+				05CE34361EBB792F0010A758 /* Eventtus-Icons.ttf */,
+				05CE34371EBB792F0010A758 /* GradientView.swift */,
+				05CE34381EBB792F0010A758 /* Pencil.swift */,
+				05CE34391EBB792F0010A758 /* UIImage+Rotate.swift */,
+				05CE343A1EBB792F0010A758 /* UIView+Image.swift */,
+				05CE343B1EBB792F0010A758 /* ViewGestures.swift */,
 				05CE34151EBB6DB30010A758 /* Stickers */,
-				05E50F901EB77E78002A92A0 /* PhotoEditorExtensions */,
-				059EA7401EACF4470072C0FE /* Extensions */,
 				059EA71C1EACB8790072C0FE /* AppDelegate.swift */,
 				059EA71E1EACB8790072C0FE /* PhotoEditorViewController.swift */,
 				059EA7301EACBBF30072C0FE /* img.jpg */,
@@ -134,16 +138,6 @@
 			path = "Photo Editor";
 			sourceTree = "<group>";
 		};
-		059EA7401EACF4470072C0FE /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				059EA7411EACF4730072C0FE /* GradientView.swift */,
-				059EA7421EACF4730072C0FE /* UIView+Image.swift */,
-				054D9D3E1EB8A92B00CB911D /* UIImage+Rotate.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		05CE34151EBB6DB30010A758 /* Stickers */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,16 +154,6 @@
 				05CE34321EBB6F850010A758 /* 8.png */,
 			);
 			name = Stickers;
-			sourceTree = "<group>";
-		};
-		05E50F901EB77E78002A92A0 /* PhotoEditorExtensions */ = {
-			isa = PBXGroup;
-			children = (
-				05E50F911EB77EFC002A92A0 /* Pencil.swift */,
-				05E50F921EB77EFC002A92A0 /* ViewGestures.swift */,
-				054D9D401EB8BCDC00CB911D /* Eventtus-Icons.ttf */,
-			);
-			path = PhotoEditorExtensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +225,7 @@
 				05E50F8F1EB74937002A92A0 /* ColorCollectionViewCell.xib in Resources */,
 				05CE341E1EBB6DCF0010A758 /* 2.png in Resources */,
 				059EA73B1EACD9620072C0FE /* BottomSheetViewController.xib in Resources */,
+				05CE343C1EBB792F0010A758 /* Eventtus-Icons.ttf in Resources */,
 				059EA7241EACB8790072C0FE /* Assets.xcassets in Resources */,
 				05CE34341EBB6F850010A758 /* 10.png in Resources */,
 				05CE34351EBB6F850010A758 /* 8.png in Resources */,
@@ -250,7 +235,6 @@
 				055C050A1EB6375800B32735 /* EmojiCollectionViewCell.xib in Resources */,
 				05CE34231EBB6DCF0010A758 /* 7.png in Resources */,
 				05CE34211EBB6DCF0010A758 /* 5.png in Resources */,
-				054D9D411EB8BCE400CB911D /* Eventtus-Icons.ttf in Resources */,
 				05CE34291EBB6E080010A758 /* 1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,18 +246,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05CE343F1EBB792F0010A758 /* UIImage+Rotate.swift in Sources */,
+				05CE34401EBB792F0010A758 /* UIView+Image.swift in Sources */,
 				05E50F8B1EB7488F002A92A0 /* ColorsCollectionViewDelegate.swift in Sources */,
 				059EA7471EAD1B550072C0FE /* StickerCollectionViewCell.swift in Sources */,
+				05CE343D1EBB792F0010A758 /* GradientView.swift in Sources */,
 				059EA71F1EACB8790072C0FE /* PhotoEditorViewController.swift in Sources */,
-				059EA7431EACF4730072C0FE /* GradientView.swift in Sources */,
 				05E50F8E1EB74937002A92A0 /* ColorCollectionViewCell.swift in Sources */,
-				059EA7441EACF4730072C0FE /* UIView+Image.swift in Sources */,
 				059EA73A1EACD9620072C0FE /* BottomSheetViewController.swift in Sources */,
+				05CE34411EBB792F0010A758 /* ViewGestures.swift in Sources */,
 				055C05091EB6375800B32735 /* EmojiCollectionViewCell.swift in Sources */,
-				054D9D3F1EB8A92B00CB911D /* UIImage+Rotate.swift in Sources */,
-				05E50F941EB77EFC002A92A0 /* ViewGestures.swift in Sources */,
 				055C050C1EB638A500B32735 /* EmojisCollectionViewDelegate.swift in Sources */,
-				05E50F931EB77EFC002A92A0 /* Pencil.swift in Sources */,
+				05CE343E1EBB792F0010A758 /* Pencil.swift in Sources */,
 				059EA71D1EACB8790072C0FE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
