@@ -34,7 +34,8 @@ class PhotoEditorViewController: UIViewController {
     var colorsCollectionViewDelegate: ColorsCollectionViewDelegate!
     
     var image: UIImage?
-    
+    var stickers : [UIImage] = []
+
     var photoEditorDelegate: PhotoEditorDelegate?
     //
     var drawColor: UIColor = UIColor.black
@@ -223,6 +224,17 @@ class PhotoEditorViewController: UIViewController {
         hideToolbar(hide: true)
         self.tempImageView.isUserInteractionEnabled = false
         bottomSheetVC.stickerDelegate = self
+        
+        if self.stickers.isEmpty {
+            for i in 0...10 {
+                bottomSheetVC.stickers.append(UIImage(named: i.description + ".png")!)
+            }
+        } else {
+            for image in self.stickers {
+                bottomSheetVC.stickers.append(image)
+            }
+        }
+        
         self.addChildViewController(bottomSheetVC)
         self.view.addSubview(bottomSheetVC.view)
         bottomSheetVC.didMove(toParentViewController: self)

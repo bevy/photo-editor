@@ -45,11 +45,6 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         scrollView.delegate = self
         pageControl.numberOfPages = 2
         
-        
-        for i in 0...10 {
-            stickers.append(UIImage(named: i.description + ".png")!)
-        }
-        
         holdView.layer.cornerRadius = 3
         let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(BottomSheetViewController.panGesture))
         gesture.delegate = self
