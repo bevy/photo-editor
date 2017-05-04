@@ -46,13 +46,8 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         pageControl.numberOfPages = 2
         
         
-        for _ in 1...3 {
-            stickers.append(UIImage(named: "crown")!)
-            stickers.append(UIImage(named: "android")!)
-            stickers.append(UIImage(named: "monster")!)
-            stickers.append(UIImage(named: "event")!)
-            stickers.append(UIImage(named: "mustach")!)
-            stickers.append(UIImage(named: "img.jpg")!)
+        for i in 0...10 {
+            stickers.append(UIImage(named: i.description + ".png")!)
         }
         
         holdView.layer.cornerRadius = 3

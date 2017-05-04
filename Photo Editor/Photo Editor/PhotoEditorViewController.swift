@@ -52,8 +52,7 @@ class PhotoEditorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        image = UIImage(named: "img.jpg") // image
+        image = UIImage(named: "img.jpg")
         let originalOrientation = image!.imageOrientation
         image = image?.rotateImageIfNeeded()
         imageView.image = image!
