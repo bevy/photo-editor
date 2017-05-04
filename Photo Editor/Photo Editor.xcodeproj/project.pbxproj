@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		054D9D3D1EB8973800CB911D /* portrait.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 054D9D3C1EB8973800CB911D /* portrait.JPG */; };
 		054D9D3F1EB8A92B00CB911D /* UIImage+Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054D9D3E1EB8A92B00CB911D /* UIImage+Rotate.swift */; };
 		054D9D411EB8BCE400CB911D /* Eventtus-Icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 054D9D401EB8BCDC00CB911D /* Eventtus-Icons.ttf */; };
-		054D9D431EB8C38200CB911D /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 054D9D421EB8C38200CB911D /* white.png */; };
 		055C05091EB6375800B32735 /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C05071EB6375800B32735 /* EmojiCollectionViewCell.swift */; };
 		055C050A1EB6375800B32735 /* EmojiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055C05081EB6375800B32735 /* EmojiCollectionViewCell.xib */; };
 		055C050C1EB638A500B32735 /* EmojisCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C050B1EB638A500B32735 /* EmojisCollectionViewDelegate.swift */; };
@@ -34,10 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		054D9D3C1EB8973800CB911D /* portrait.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portrait.JPG; sourceTree = "<group>"; };
 		054D9D3E1EB8A92B00CB911D /* UIImage+Rotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Rotate.swift"; sourceTree = "<group>"; };
 		054D9D401EB8BCDC00CB911D /* Eventtus-Icons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eventtus-Icons.ttf"; sourceTree = "<group>"; };
-		054D9D421EB8C38200CB911D /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
 		055C05071EB6375800B32735 /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
 		055C05081EB6375800B32735 /* EmojiCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmojiCollectionViewCell.xib; sourceTree = "<group>"; };
 		055C050B1EB638A500B32735 /* EmojisCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojisCollectionViewDelegate.swift; sourceTree = "<group>"; };
@@ -97,8 +93,6 @@
 				059EA71C1EACB8790072C0FE /* AppDelegate.swift */,
 				059EA71E1EACB8790072C0FE /* PhotoEditorViewController.swift */,
 				059EA7301EACBBF30072C0FE /* img.jpg */,
-				054D9D421EB8C38200CB911D /* white.png */,
-				054D9D3C1EB8973800CB911D /* portrait.JPG */,
 				059EA7201EACB8790072C0FE /* PhotoEditor.storyboard */,
 				059EA7231EACB8790072C0FE /* Assets.xcassets */,
 				059EA7251EACB8790072C0FE /* LaunchScreen.storyboard */,
@@ -201,10 +195,8 @@
 				05E50F8F1EB74937002A92A0 /* ColorCollectionViewCell.xib in Resources */,
 				059EA73B1EACD9620072C0FE /* BottomSheetViewController.xib in Resources */,
 				059EA7241EACB8790072C0FE /* Assets.xcassets in Resources */,
-				054D9D3D1EB8973800CB911D /* portrait.JPG in Resources */,
 				059EA7221EACB8790072C0FE /* PhotoEditor.storyboard in Resources */,
 				059EA7481EAD1B550072C0FE /* StickerCollectionViewCell.xib in Resources */,
-				054D9D431EB8C38200CB911D /* white.png in Resources */,
 				059EA7311EACBBF30072C0FE /* img.jpg in Resources */,
 				055C050A1EB6375800B32735 /* EmojiCollectionViewCell.xib in Resources */,
 				054D9D411EB8BCE400CB911D /* Eventtus-Icons.ttf in Resources */,
