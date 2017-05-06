@@ -1,5 +1,4 @@
 # iOS Photo Editor
-# Photo editor like Instagram stories 
 
 # Features
 ### Add images -Stickers-
