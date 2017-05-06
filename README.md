@@ -18,4 +18,4 @@
 
 License
 ----
-**Free Software, Hell Yeah!**
+**Open Source, waiting your contribution !!**
