@@ -10,7 +10,7 @@ import UIKit
 
 
 extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
-//Translation is moving object 
+    //Translation is moving object
     
     
     func panGesture(_ recognizer: UIPanGestureRecognizer) {
@@ -36,16 +36,16 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                     })
                 }
                     //View is going out of deleteView
-                 else if deleteView.frame.contains(previousPoint) && !deleteView.frame.contains(point) {
-                        //Scale to original Size
-                        UIView.animate(withDuration: 0.3, animations: {
-                            view.transform = view.transform.scaledBy(x: 4, y: 4)
-                            view.center = point
-                        })
-                    }
+                else if deleteView.frame.contains(previousPoint) && !deleteView.frame.contains(point) {
+                    //Scale to original Size
+                    UIView.animate(withDuration: 0.3, animations: {
+                        view.transform = view.transform.scaledBy(x: 4, y: 4)
+                        view.center = point
+                    })
+                }
             }
             lastPanPoint = point
-
+            
             if recognizer.state == .ended {
                 lastPanPoint = nil
                 hideToolbar(hide: false)
@@ -61,7 +61,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
             }
         }
     }
-
+    
     func pinchGesture(_ recognizer: UIPinchGestureRecognizer) {
         if let view = recognizer.view {
             view.transform = view.transform.scaledBy(x: recognizer.scale, y: recognizer.scale)
@@ -96,15 +96,15 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
         }
     }
     
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
     
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return false
     }
     
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return false
     }
     
@@ -116,7 +116,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
     
     
     // to Override Control Center screen edge pan from bottom
-    override var prefersStatusBarHidden: Bool {
+    override public var prefersStatusBarHidden: Bool {
         return true
     }
     

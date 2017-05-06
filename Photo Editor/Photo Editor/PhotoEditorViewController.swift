@@ -8,12 +8,12 @@
 
 import UIKit
 
-protocol PhotoEditorDelegate {
+public protocol PhotoEditorDelegate {
     func imageEdited(image: UIImage)
     func editorCanceled()
 }
 
-class PhotoEditorViewController: UIViewController {
+public final class PhotoEditorViewController: UIViewController {
     
     @IBOutlet weak var canvasView: UIView!
     //To hold the image
@@ -33,10 +33,10 @@ class PhotoEditorViewController: UIViewController {
     
     var colorsCollectionViewDelegate: ColorsCollectionViewDelegate!
     
-    var image: UIImage?
-    var stickers : [UIImage] = []
-
-    var photoEditorDelegate: PhotoEditorDelegate?
+    public var image: UIImage?
+    public var stickers : [UIImage] = []
+    
+    public var photoEditorDelegate: PhotoEditorDelegate?
     //
     var drawColor: UIColor = UIColor.black
     var textColor: UIColor = UIColor.white
@@ -51,9 +51,8 @@ class PhotoEditorViewController: UIViewController {
     var imageRotated: Bool = false
     //
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
-        image = UIImage(named: "img.jpg")
         let originalOrientation = image!.imageOrientation
         image = image?.rotateImageIfNeeded()
         imageView.image = image!
@@ -80,6 +79,7 @@ class PhotoEditorViewController: UIViewController {
                                                name: .UIKeyboardWillChangeFrame, object: nil)
         
         configureCollectionView()
+        bottomSheetVC = BottomSheetViewController(nibName: "BottomSheetViewController", bundle: Bundle(for: BottomSheetViewController.self))
         
     }
     
@@ -97,13 +97,13 @@ class PhotoEditorViewController: UIViewController {
         colorsCollectionView.dataSource = colorsCollectionViewDelegate
         
         colorsCollectionView.register(
-            UINib(nibName: "ColorCollectionViewCell", bundle: nil),
+            UINib(nibName: "ColorCollectionViewCell", bundle: Bundle(for: ColorCollectionViewCell.self)),
             forCellWithReuseIdentifier: "ColorCollectionViewCell")
         
     }
     
     @IBAction func saveButtonTapped(_ sender: AnyObject) {
-
+        
         UIImageWriteToSavedPhotosAlbum(canvasView.toImage(),self, #selector(PhotoEditorViewController.image(_:withPotentialError:contextInfo:)), nil)
         
         ///To Share
@@ -169,7 +169,7 @@ class PhotoEditorViewController: UIViewController {
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
-
+        
         var img = self.canvasView.toImage()
         if imageRotated {
             img = img.rotateImage(orientation: .left)
@@ -218,23 +218,16 @@ class PhotoEditorViewController: UIViewController {
     }
     
     
-    let bottomSheetVC =  BottomSheetViewController()
+    var bottomSheetVC: BottomSheetViewController!
     
     func addBottomSheetView() {
         hideToolbar(hide: true)
         self.tempImageView.isUserInteractionEnabled = false
         bottomSheetVC.stickerDelegate = self
         
-        if self.stickers.isEmpty {
-            for i in 0...10 {
-                bottomSheetVC.stickers.append(UIImage(named: i.description + ".png")!)
-            }
-        } else {
-            for image in self.stickers {
-                bottomSheetVC.stickers.append(image)
-            }
+        for image in self.stickers {
+            bottomSheetVC.stickers.append(image)
         }
-        
         self.addChildViewController(bottomSheetVC)
         self.view.addSubview(bottomSheetVC.view)
         bottomSheetVC.didMove(toParentViewController: self)
@@ -281,7 +274,7 @@ extension PhotoEditorViewController: ColorDelegate {
 }
 
 extension PhotoEditorViewController: UITextViewDelegate {
-    func textViewDidChange(_ textView: UITextView) {
+    public func textViewDidChange(_ textView: UITextView) {
         let rotation = atan2(textView.transform.b, textView.transform.a)
         if rotation == 0 {
             let oldFrame = textView.frame
@@ -290,7 +283,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
         }
     }
     
-    func textViewDidBeginEditing(_ textView: UITextView) {
+    public func textViewDidBeginEditing(_ textView: UITextView) {
         lastTextViewTransform =  textView.transform
         lastTextViewTransCenter = textView.center
         activeTextView = textView
@@ -302,7 +295,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
         
     }
     
-    func textViewDidEndEditing(_ textView: UITextView) {
+    public func textViewDidEndEditing(_ textView: UITextView) {
         guard lastTextViewTransform != nil && lastTextViewTransCenter != nil else {
             return
         }

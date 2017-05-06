@@ -11,10 +11,10 @@ import UIKit
 extension PhotoEditorViewController {
     //MARK: Pencil
     
-    override func touchesBegan(_ touches: Set<UITouch>,
-                               with event: UIEvent?){
+    override public func touchesBegan(_ touches: Set<UITouch>,
+                                      with event: UIEvent?){
         if isDrawing {
-//            self.view.bringSubview(toFront: tempImageView)
+            //            self.view.bringSubview(toFront: tempImageView)
             swiped = false
             if let touch = touches.first {
                 lastPoint = touch.location(in: self.view)
@@ -22,8 +22,8 @@ extension PhotoEditorViewController {
         }
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>,
-                               with event: UIEvent?){
+    override public func touchesMoved(_ touches: Set<UITouch>,
+                                      with event: UIEvent?){
         if isDrawing {
             // 6
             swiped = true
@@ -37,17 +37,13 @@ extension PhotoEditorViewController {
         }
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>,
-                               with event: UIEvent?){
+    override public func touchesEnded(_ touches: Set<UITouch>,
+                                      with event: UIEvent?){
         if isDrawing {
             if !swiped {
                 // draw a single point
                 drawLineFrom(lastPoint, toPoint: lastPoint)
             }
-            UIGraphicsBeginImageContext(imageView.frame.size)
-            tempImageView.image?.draw(in: CGRect(x: 0, y: 0, width: tempImageView.frame.size.width, height: tempImageView.frame.size.height), blendMode: CGBlendMode.normal, alpha: opacity)
-            tempImageView.image = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
         }
         
     }

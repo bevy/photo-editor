@@ -22,24 +22,24 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
     var emojisCollectioView: UICollectionView!
     
     var emojisDelegate: EmojisCollectionViewDelegate!
-
+    
     var stickers : [UIImage] = []
     var stickerDelegate : StickerDelegate?
-
+    
     let screenSize = UIScreen.main.bounds.size
-
+    
     let fullView: CGFloat = 100 // remainder of screen height
     var partialView: CGFloat {
         return UIScreen.main.bounds.height - 380
     }
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-   
+        
         configureCollectionViews()
         scrollView.contentSize = CGSize(width: 2.0 * screenSize.width,
-            height: scrollView.frame.size.height)
+                                        height: scrollView.frame.size.height)
         
         scrollView.isPagingEnabled = true
         scrollView.delegate = self
@@ -52,7 +52,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func configureCollectionViews() {
-
+        
         let frame = CGRect(x: 0,
                            y: 0,
                            width: UIScreen.main.bounds.width,
@@ -71,11 +71,11 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         collectioView.dataSource = self
         
         collectioView.register(
-            UINib(nibName: "StickerCollectionViewCell", bundle: nil),
+            UINib(nibName: "StickerCollectionViewCell", bundle: Bundle(for: StickerCollectionViewCell.self)),
             forCellWithReuseIdentifier: "StickerCollectionViewCell")
         
         //-----------------------------------
-
+        
         let emojisFrame = CGRect(x: scrollView.frame.size.width,
                                  y: 0,
                                  width: UIScreen.main.bounds.width,
@@ -84,7 +84,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         let emojislayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         emojislayout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
         emojislayout.itemSize = CGSize(width: 60, height: 60)
-
+        
         emojisCollectioView = UICollectionView(frame: emojisFrame, collectionViewLayout: emojislayout)
         emojisCollectioView.backgroundColor = .clear
         scrollView.addSubview(emojisCollectioView)
@@ -94,9 +94,9 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         emojisCollectioView.dataSource = emojisDelegate
         
         emojisCollectioView.register(
-            UINib(nibName: "EmojiCollectionViewCell", bundle: nil),
+            UINib(nibName: "EmojiCollectionViewCell", bundle: Bundle(for: EmojiCollectionViewCell.self)),
             forCellWithReuseIdentifier: "EmojiCollectionViewCell")
-
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -111,12 +111,12 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
             let frame = self.view.frame
             let yComponent = self.partialView
             self.view.frame = CGRect(x: 0,
-                                      y: yComponent,
-                                      width: frame.width,
-                                      height: UIScreen.main.bounds.height - self.partialView)
+                                     y: yComponent,
+                                     width: frame.width,
+                                     height: UIScreen.main.bounds.height - self.partialView)
         }
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectioView.frame = CGRect(x: 0,
@@ -135,13 +135,13 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         super.didReceiveMemoryWarning()
     }
     
-    //MARK: Pan Gesture 
-       
+    //MARK: Pan Gesture
+    
     func panGesture(_ recognizer: UIPanGestureRecognizer) {
         
         let translation = recognizer.translation(in: self.view)
         let velocity = recognizer.velocity(in: self.view)
-
+        
         let y = self.view.frame.minY
         if y + translation.y >= fullView {
             let newMinY = y + translation.y
@@ -201,14 +201,14 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         bluredView.frame = UIScreen.main.bounds
         view.insertSubview(bluredView, at: 0)
     }
-
+    
     
     
 }
 
 extension BottomSheetViewController: UIScrollViewDelegate {
-
-        func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageWidth = scrollView.bounds.width
         let pageFraction = scrollView.contentOffset.x / pageWidth
         self.pageControl.currentPage = Int(round(pageFraction))
@@ -245,6 +245,6 @@ extension BottomSheetViewController: UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-
+    
 }
 

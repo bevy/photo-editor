@@ -9,13 +9,13 @@
 import UIKit
 
 protocol ColorDelegate {
-     func chosedColor(color: UIColor)
+    func chosedColor(color: UIColor)
 }
 
 class ColorsCollectionViewDelegate: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     var colorDelegate : ColorDelegate?
-
+    
     let colors = [UIColor.black, UIColor.darkGray, UIColor.gray,
                   UIColor.lightGray, UIColor.white, UIColor.blue, UIColor.green, UIColor.red, UIColor.yellow,
                   UIColor.orange, UIColor.purple, UIColor.cyan, UIColor.brown, UIColor.purple]

@@ -12,14 +12,14 @@ class EmojisCollectionViewDelegate: NSObject, UICollectionViewDataSource, UIColl
     
     let emojiRanges = [
         0x1F601...0x1F64F, // emoticons
-//        0x1F600...0x1F636,  // Additional emoticons
+        //        0x1F600...0x1F636,  // Additional emoticons
         0x1F30D...0x1F567, // Other additional symbols
         0x1F680...0x1F6C0, // Transport and map symbols
         0x1F681...0x1F6C5 //Additional transport and map symbols
     ]
     
     var emojis: [String] = []
-
+    
     override init() {
         super.init()
         
@@ -32,7 +32,7 @@ class EmojisCollectionViewDelegate: NSObject, UICollectionViewDataSource, UIColl
     }
     
     var stickerDelegate : StickerDelegate?
-
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return emojis.count

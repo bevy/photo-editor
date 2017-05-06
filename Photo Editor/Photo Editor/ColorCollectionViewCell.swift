@@ -9,7 +9,7 @@
 import UIKit
 
 class ColorCollectionViewCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var colorView: UIView!
     
     override func awakeFromNib() {
@@ -23,7 +23,7 @@ class ColorCollectionViewCell: UICollectionViewCell {
         colorView.layer.borderWidth = 1.0
         colorView.layer.borderColor = UIColor.white.cgColor
     }
-
+    
     override var isSelected: Bool {
         didSet {
             if isSelected {
