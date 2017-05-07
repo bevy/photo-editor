@@ -1,12 +1,13 @@
 # iOS Photo Editor
 
 ## Features
-- [x] Add images -Stickers-
-- [x] Add Text -colored- 
-- [x] Draw -colored-
-- [x] Scale and rotate objects 
-- [x] Delete objects 
-- [x] Save to photos 
+- [x] Adding images -Stickers-
+- [x] Adding Text -colored- 
+- [x] Drawing -colored-
+- [x] Scaling and rotating objects 
+- [x] Deleting objects 
+- [x] Saving to photos 
+- [x] Cool animations 
 - [x] Uses iOS Taptic Engine feedback 
 
 
