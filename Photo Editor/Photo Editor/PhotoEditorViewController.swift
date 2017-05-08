@@ -38,6 +38,7 @@ public final class PhotoEditorViewController: UIViewController {
     
     public var photoEditorDelegate: PhotoEditorDelegate?
     //
+    var bottomSheetIsVisible = false
     var drawColor: UIColor = UIColor.black
     var textColor: UIColor = UIColor.white
     var isDrawing: Bool = false
@@ -221,6 +222,7 @@ public final class PhotoEditorViewController: UIViewController {
     var bottomSheetVC: BottomSheetViewController!
     
     func addBottomSheetView() {
+        bottomSheetIsVisible = true
         hideToolbar(hide: true)
         self.tempImageView.isUserInteractionEnabled = false
         bottomSheetVC.stickerDelegate = self
@@ -237,6 +239,7 @@ public final class PhotoEditorViewController: UIViewController {
     }
     
     func removeBottomSheetView() {
+        bottomSheetIsVisible = false
         self.tempImageView.isUserInteractionEnabled = true
         UIView.animate(withDuration: 0.3,
                        delay: 0,
@@ -313,15 +316,27 @@ extension PhotoEditorViewController: UITextViewDelegate {
 extension PhotoEditorViewController: StickerDelegate {
     
     func viewTapped(view: UIView) {
-        let newView = view.toImageView()
         self.removeBottomSheetView()
-        newView.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
-        self.tempImageView.addSubview(newView)
+        view.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
+        self.tempImageView.addSubview(view)
         //Gestures
-        addGestures(view: newView)
+        addGestures(view: view)
+    }
+    func imageTapped(image: UIImage) {
+        self.removeBottomSheetView()
+        
+        let imageView = UIImageView(image: image)
+        imageView.contentMode = .scaleAspectFit
+        imageView.frame.size = CGSize(width: 200, height: 200)
+        imageView.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
+        
+        self.tempImageView.addSubview(imageView)
+        //Gestures
+        addGestures(view: imageView)
     }
     
     func bottomSheetDidDisappear() {
+        bottomSheetIsVisible = false
         hideToolbar(hide: false)
     }
     

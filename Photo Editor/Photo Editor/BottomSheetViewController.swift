@@ -9,6 +9,7 @@ import UIKit
 
 protocol StickerDelegate {
     func viewTapped(view: UIView)
+    func imageTapped(image: UIImage)
     func bottomSheetDidDisappear()
 }
 
@@ -129,6 +130,8 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
                                            width: UIScreen.main.bounds.width,
                                            height: view.frame.height - 40)
         
+        scrollView.contentSize = CGSize(width: 2.0 * screenSize.width,
+                                        height: scrollView.frame.size.height)
     }
     
     override func didReceiveMemoryWarning() {
@@ -223,8 +226,7 @@ extension BottomSheetViewController: UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! StickerCollectionViewCell
-        stickerDelegate?.viewTapped(view: cell.stickerImage)
+        stickerDelegate?.imageTapped(image: stickers[indexPath.item])
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

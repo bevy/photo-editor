@@ -39,8 +39,10 @@ class EmojisCollectionViewDelegate: NSObject, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! EmojiCollectionViewCell
-        stickerDelegate?.viewTapped(view: cell.emojiLabel)
+        let emojiLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 70, height: 70))
+        emojiLabel.text = emojis[indexPath.item]
+        emojiLabel.font = UIFont.systemFont(ofSize: 50)
+        stickerDelegate?.viewTapped(view: emojiLabel)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
