@@ -320,6 +320,18 @@ extension PhotoEditorViewController: StickerDelegate {
         //Gestures
         addGestures(view: newView)
     }
+    func imageTapped(image: UIImage) {
+        self.removeBottomSheetView()
+
+        let imageView = UIImageView(image: image)
+        imageView.contentMode = .scaleAspectFit
+        imageView.frame.size = CGSize(width: 200, height: 200)
+        imageView.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
+        
+        self.tempImageView.addSubview(imageView)
+        //Gestures
+        addGestures(view: imageView)
+    }
     
     func bottomSheetDidDisappear() {
         hideToolbar(hide: false)
