@@ -38,6 +38,7 @@ public final class PhotoEditorViewController: UIViewController {
     
     public var photoEditorDelegate: PhotoEditorDelegate?
     //
+    var bottomSheetIsVisible = false
     var drawColor: UIColor = UIColor.black
     var textColor: UIColor = UIColor.white
     var isDrawing: Bool = false
@@ -221,6 +222,7 @@ public final class PhotoEditorViewController: UIViewController {
     var bottomSheetVC: BottomSheetViewController!
     
     func addBottomSheetView() {
+        bottomSheetIsVisible = true
         hideToolbar(hide: true)
         self.tempImageView.isUserInteractionEnabled = false
         bottomSheetVC.stickerDelegate = self
@@ -237,6 +239,7 @@ public final class PhotoEditorViewController: UIViewController {
     }
     
     func removeBottomSheetView() {
+        bottomSheetIsVisible = false
         self.tempImageView.isUserInteractionEnabled = true
         UIView.animate(withDuration: 0.3,
                        delay: 0,
@@ -333,6 +336,7 @@ extension PhotoEditorViewController: StickerDelegate {
     }
     
     func bottomSheetDidDisappear() {
+        bottomSheetIsVisible = false
         hideToolbar(hide: false)
     }
     
