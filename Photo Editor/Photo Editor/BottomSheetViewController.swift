@@ -9,6 +9,7 @@ import UIKit
 
 protocol StickerDelegate {
     func viewTapped(view: UIView)
+    func imageTapped(image: UIImage)
     func bottomSheetDidDisappear()
 }
 
@@ -223,8 +224,7 @@ extension BottomSheetViewController: UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! StickerCollectionViewCell
-        stickerDelegate?.viewTapped(view: cell.stickerImage)
+        stickerDelegate?.imageTapped(image: stickers[indexPath.item])
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
