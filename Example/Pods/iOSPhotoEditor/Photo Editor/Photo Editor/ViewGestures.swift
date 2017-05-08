@@ -68,13 +68,14 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                 let textView = view as! UITextView
                 let font = UIFont(name: textView.font!.fontName, size: textView.font!.pointSize * recognizer.scale)
                 textView.font = font
-                let oldFrame = textView.frame
-                let sizeToFit = textView.sizeThatFits(CGSize(width: oldFrame.width, height:CGFloat.greatestFiniteMagnitude))
                 
-                textView.frame.size = CGSize(width: oldFrame.width, height: sizeToFit.height)
-//                print("Old \(oldFrame)")
-//                print("frame \(textView.frame)")
+                let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width,
+                                                             height:CGFloat.greatestFiniteMagnitude))
                 
+                textView.bounds.size = CGSize(width: textView.intrinsicContentSize.width,
+                                              height: sizeToFit.height)
+
+                textView.setNeedsDisplay()
             } else {
                 view.transform = view.transform.scaledBy(x: recognizer.scale, y: recognizer.scale)
             }
