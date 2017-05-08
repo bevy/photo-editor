@@ -313,12 +313,11 @@ extension PhotoEditorViewController: UITextViewDelegate {
 extension PhotoEditorViewController: StickerDelegate {
     
     func viewTapped(view: UIView) {
-        let newView = view.toImageView()
         self.removeBottomSheetView()
-        newView.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
-        self.tempImageView.addSubview(newView)
+        view.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
+        self.tempImageView.addSubview(view)
         //Gestures
-        addGestures(view: newView)
+        addGestures(view: view)
     }
     func imageTapped(image: UIImage) {
         self.removeBottomSheetView()
