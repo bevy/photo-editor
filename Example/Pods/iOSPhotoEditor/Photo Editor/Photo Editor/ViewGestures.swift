@@ -8,10 +8,8 @@
 
 import UIKit
 
-
 extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
     //Translation is moving object
-    
     
     func panGesture(_ recognizer: UIPanGestureRecognizer) {
         if let view = recognizer.view {
@@ -92,21 +90,25 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
     
     func tapGesture(_ recognizer: UITapGestureRecognizer) {
         if let view = recognizer.view {
-            view.superview?.bringSubview(toFront: view)
-            if #available(iOS 10.0, *) {
-                let generator = UIImpactFeedbackGenerator(style: .heavy)
-                generator.impactOccurred()
+            if view is UIImageView {
+                //Tap only on visible parts on the image
+                var imageviews: [UIImageView] = []
+                for imageView in tempImageView.subviews {
+                    if imageView is UIImageView {
+                        imageviews.append(imageView as! UIImageView)
+                    }
+                }
+            
+                for imageView in imageviews{
+                    let location = recognizer.location(in: imageView)
+                    let alpha = imageView.alphaAtPoint(location)
+                    if alpha > 0 {
+                        scaleEffect(view: imageView)
+                    }
+                }
+            } else {
+                scaleEffect(view: view)
             }
-            let previouTransform =  view.transform
-            UIView.animate(withDuration: 0.2,
-                           animations: {
-                            view.transform = view.transform.scaledBy(x: 1.2, y: 1.2)
-            },
-                           completion: { _ in
-                            UIView.animate(withDuration: 0.2) {
-                                view.transform  = previouTransform
-                            }
-            })
         }
     }
     
@@ -130,10 +132,29 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
         }
     }
     
-    
     // to Override Control Center screen edge pan from bottom
     override public var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    func scaleEffect(view: UIView) {
+
+        view.superview?.bringSubview(toFront: view)
+
+        if #available(iOS 10.0, *) {
+            let generator = UIImpactFeedbackGenerator(style: .heavy)
+            generator.impactOccurred()
+        }
+        let previouTransform =  view.transform
+        UIView.animate(withDuration: 0.2,
+                       animations: {
+                        view.transform = view.transform.scaledBy(x: 1.2, y: 1.2)
+        },
+                       completion: { _ in
+                        UIView.animate(withDuration: 0.2) {
+                            view.transform  = previouTransform
+                        }
+        })
     }
     
 }
