@@ -50,6 +50,7 @@ public final class PhotoEditorViewController: UIViewController {
     var lastTextViewTransCenter: CGPoint?
     var activeTextView: UITextView?
     var imageRotated: Bool = false
+    var imageViewToPan: UIImageView?
     //
     
     override public func viewDidLoad() {

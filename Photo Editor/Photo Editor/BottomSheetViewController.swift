@@ -61,7 +61,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        let width = (CGFloat) ((screenSize.width - 60) / 3.0)
+        let width = (CGFloat) ((screenSize.width - 30) / 3.0)
         layout.itemSize = CGSize(width: width, height: 100)
         
         collectioView = UICollectionView(frame: frame, collectionViewLayout: layout)
