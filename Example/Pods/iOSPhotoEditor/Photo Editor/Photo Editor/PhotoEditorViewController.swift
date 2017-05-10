@@ -59,7 +59,7 @@ public final class PhotoEditorViewController: UIViewController {
         super.viewDidLoad()
         imageView.image = image!
 
-        let size = imageView.sizeForImage(widthLimit: UIScreen.main.bounds.width, image: image!)
+        let size = image!.sutibleSize(widthLimit: UIScreen.main.bounds.width)
         imageViewHeightConstraint.constant = (size?.height)!
                 
         deleteView.layer.cornerRadius = deleteView.bounds.height / 2

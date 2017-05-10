@@ -29,26 +29,7 @@ extension UIImageView {
         
         return floatAlpha
     }
-    
-    func sizeForImage(heightLimit: CGFloat? = nil,
-                      widthLimit: CGFloat? = nil,
-                      image: UIImage)-> CGSize? {
-        
-        if let height = heightLimit {
-            
-            let width = (height / image.size.height) * image.size.width
-            
-            return CGSize(width: width, height: height)
-        }
-        
-        if let width = widthLimit {
-            let height = (width / image.size.width) * image.size.height
-            return CGSize(width: width, height: height)
-        }
-        
-        return nil
-    }
-    
+
 }
 
 
