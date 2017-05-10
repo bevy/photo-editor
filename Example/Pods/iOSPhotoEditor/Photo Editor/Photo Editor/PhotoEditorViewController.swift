@@ -316,6 +316,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
         lastTextViewTransform =  textView.transform
         lastTextViewTransCenter = textView.center
         activeTextView = textView
+        textView.superview?.bringSubview(toFront: textView)
         UIView.animate(withDuration: 0.4,
                        animations: {
                         textView.transform = CGAffineTransform.identity

@@ -163,12 +163,18 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
             hideToolbar(hide: false)
             deleteView.isHidden = true
             let point = recognizer.location(in: self.view)
-            if deleteView.frame.contains(point) {
+            
+            if deleteView.frame.contains(point) { // Delete the view
                 view.removeFromSuperview()
                 if #available(iOS 10.0, *) {
                     let generator = UINotificationFeedbackGenerator()
                     generator.notificationOccurred(.success)
                 }
+            } else if !tempImageView.bounds.contains(view.center) { //Snap the view back to tempimageview
+                UIView.animate(withDuration: 0.3, animations: {
+                    view.center = self.tempImageView.center
+                })
+
             }
         }
     }
