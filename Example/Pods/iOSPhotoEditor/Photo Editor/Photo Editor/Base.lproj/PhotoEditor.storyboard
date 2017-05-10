@@ -26,27 +26,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HAu-hz-9Kf" userLabel="canvas">
-                                <rect key="frame" x="-0.5" y="0.0" width="375" height="666"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="666"/>
                                 <subviews>
                                     <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lxq-nF-QoP">
-                                        <rect key="frame" x="-0.5" y="0.0" width="375" height="666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="666"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="666" id="xCY-eE-Er1"/>
                                         </constraints>
                                     </imageView>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="llw-np-Mdx">
-                                        <rect key="frame" x="-0.5" y="0.0" width="375" height="666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="666"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="llw-np-Mdx" firstAttribute="width" secondItem="lxq-nF-QoP" secondAttribute="width" id="43L-Ae-SGC"/>
                                     <constraint firstAttribute="height" secondItem="lxq-nF-QoP" secondAttribute="height" id="7ch-y7-vb3"/>
-                                    <constraint firstItem="llw-np-Mdx" firstAttribute="centerY" secondItem="HAu-hz-9Kf" secondAttribute="centerY" id="Cdp-k5-jQF"/>
-                                    <constraint firstItem="llw-np-Mdx" firstAttribute="centerX" secondItem="HAu-hz-9Kf" secondAttribute="centerX" id="Fvd-JE-pIB"/>
+                                    <constraint firstItem="llw-np-Mdx" firstAttribute="top" secondItem="lxq-nF-QoP" secondAttribute="top" id="FVQ-Ny-5vZ"/>
                                     <constraint firstItem="lxq-nF-QoP" firstAttribute="width" secondItem="HAu-hz-9Kf" secondAttribute="width" id="HPv-MH-AFV"/>
-                                    <constraint firstItem="llw-np-Mdx" firstAttribute="height" secondItem="lxq-nF-QoP" secondAttribute="height" id="K0e-i6-GtW"/>
+                                    <constraint firstItem="llw-np-Mdx" firstAttribute="trailing" secondItem="lxq-nF-QoP" secondAttribute="trailing" id="NiP-Vq-4wz"/>
                                     <constraint firstItem="lxq-nF-QoP" firstAttribute="centerX" secondItem="HAu-hz-9Kf" secondAttribute="centerX" id="QrE-8y-SgW"/>
+                                    <constraint firstItem="llw-np-Mdx" firstAttribute="leading" secondItem="lxq-nF-QoP" secondAttribute="leading" id="UAU-2V-lca"/>
+                                    <constraint firstItem="llw-np-Mdx" firstAttribute="width" secondItem="lxq-nF-QoP" secondAttribute="width" id="Xu8-1J-XoW"/>
+                                    <constraint firstItem="llw-np-Mdx" firstAttribute="height" secondItem="lxq-nF-QoP" secondAttribute="height" id="fXt-rp-hQa"/>
                                     <constraint firstItem="lxq-nF-QoP" firstAttribute="centerY" secondItem="HAu-hz-9Kf" secondAttribute="centerY" id="yo1-si-XvO"/>
                                 </constraints>
                             </view>
