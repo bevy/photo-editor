@@ -1,16 +1,16 @@
 //
-//  UIImageView+Alpha.swift
+//  UIImageViewExtenstions.swift
 //  Pods
 //
-//  Created by Mohamed Hamed on 5/9/17.
+//  Created by Mohamed Hamed on 5/10/17.
 //
 //
 
+import Foundation
 import UIKit
 
 extension UIImageView {
     
-    // See: http://stackoverflow.com/questions/27923232/how-to-know-that-if-the-only-visible-area-of-a-png-is-touched-in-xcode-swift-o?rq=1
     func alphaAtPoint(_ point: CGPoint) -> CGFloat {
         
         var pixel: [UInt8] = [0, 0, 0, 0]
@@ -29,5 +29,8 @@ extension UIImageView {
         
         return floatAlpha
     }
-    
+
 }
+
+
+    

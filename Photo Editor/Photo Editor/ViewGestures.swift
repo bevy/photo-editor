@@ -15,7 +15,6 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
         if let view = recognizer.view {
             if view is UIImageView {
                 //Tap only on visible parts on the image
-                
                 if recognizer.state == .began {
                     for imageView in subImageViews(view: tempImageView) {
                         let location = recognizer.location(in: imageView)
@@ -131,32 +130,32 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
         deleteView.isHidden = false
         
         view.superview?.bringSubview(toFront: view)
-        let point = recognizer.location(in: self.view)
+        let point = recognizer.location(in: tempImageView)
+        let pointToSuperView = recognizer.location(in: self.view)
+        
         view.center = point
-        recognizer.setTranslation(CGPoint.zero, in: self.view)
+        recognizer.setTranslation(CGPoint.zero, in: tempImageView)
         
         if let previousPoint = lastPanPoint {
             //View is going into deleteView
-            if deleteView.frame.contains(point) && !deleteView.frame.contains(previousPoint) {
+            if deleteView.frame.contains(pointToSuperView) && !deleteView.frame.contains(previousPoint) {
                 if #available(iOS 10.0, *) {
                     let generator = UIImpactFeedbackGenerator(style: .heavy)
                     generator.impactOccurred()
                 }
                 UIView.animate(withDuration: 0.3, animations: {
                     view.transform = view.transform.scaledBy(x: 0.25, y: 0.25)
-                    view.center = point
                 })
             }
                 //View is going out of deleteView
-            else if deleteView.frame.contains(previousPoint) && !deleteView.frame.contains(point) {
+            else if deleteView.frame.contains(previousPoint) && !deleteView.frame.contains(pointToSuperView) {
                 //Scale to original Size
                 UIView.animate(withDuration: 0.3, animations: {
                     view.transform = view.transform.scaledBy(x: 4, y: 4)
-                    view.center = point
                 })
             }
         }
-        lastPanPoint = point
+        lastPanPoint = pointToSuperView
         
         if recognizer.state == .ended {
             imageViewToPan = nil
@@ -164,12 +163,18 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
             hideToolbar(hide: false)
             deleteView.isHidden = true
             let point = recognizer.location(in: self.view)
-            if deleteView.frame.contains(point) {
+            
+            if deleteView.frame.contains(point) { // Delete the view
                 view.removeFromSuperview()
                 if #available(iOS 10.0, *) {
                     let generator = UINotificationFeedbackGenerator()
                     generator.notificationOccurred(.success)
                 }
+            } else if !tempImageView.bounds.contains(view.center) { //Snap the view back to tempimageview
+                UIView.animate(withDuration: 0.3, animations: {
+                    view.center = self.tempImageView.center
+                })
+                
             }
         }
     }

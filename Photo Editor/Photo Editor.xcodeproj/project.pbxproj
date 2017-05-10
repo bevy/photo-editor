@@ -10,7 +10,6 @@
 		055C05091EB6375800B32735 /* EmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C05071EB6375800B32735 /* EmojiCollectionViewCell.swift */; };
 		055C050A1EB6375800B32735 /* EmojiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055C05081EB6375800B32735 /* EmojiCollectionViewCell.xib */; };
 		055C050C1EB638A500B32735 /* EmojisCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C050B1EB638A500B32735 /* EmojisCollectionViewDelegate.swift */; };
-		057576D91EC2154B00013A57 /* UIImageView+Alpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057576D81EC2154B00013A57 /* UIImageView+Alpha.swift */; };
 		059EA71D1EACB8790072C0FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EA71C1EACB8790072C0FE /* AppDelegate.swift */; };
 		059EA71F1EACB8790072C0FE /* PhotoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EA71E1EACB8790072C0FE /* PhotoEditorViewController.swift */; };
 		059EA7221EACB8790072C0FE /* PhotoEditor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 059EA7201EACB8790072C0FE /* PhotoEditor.storyboard */; };
@@ -23,9 +22,10 @@
 		05CE343C1EBB792F0010A758 /* Eventtus-Icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05CE34361EBB792F0010A758 /* Eventtus-Icons.ttf */; };
 		05CE343D1EBB792F0010A758 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CE34371EBB792F0010A758 /* GradientView.swift */; };
 		05CE343E1EBB792F0010A758 /* Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CE34381EBB792F0010A758 /* Pencil.swift */; };
-		05CE343F1EBB792F0010A758 /* UIImage+Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CE34391EBB792F0010A758 /* UIImage+Rotate.swift */; };
 		05CE34401EBB792F0010A758 /* UIView+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CE343A1EBB792F0010A758 /* UIView+Image.swift */; };
 		05CE34411EBB792F0010A758 /* ViewGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CE343B1EBB792F0010A758 /* ViewGestures.swift */; };
+		05DD7E261EC33BDA005979EC /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DD7E251EC33BDA005979EC /* UIImageViewExtensions.swift */; };
+		05DD7E281EC33C35005979EC /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DD7E271EC33C35005979EC /* UIImageExtensions.swift */; };
 		05E50F8B1EB7488F002A92A0 /* ColorsCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E50F8A1EB7488F002A92A0 /* ColorsCollectionViewDelegate.swift */; };
 		05E50F8E1EB74937002A92A0 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E50F8C1EB74937002A92A0 /* ColorCollectionViewCell.swift */; };
 		05E50F8F1EB74937002A92A0 /* ColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05E50F8D1EB74937002A92A0 /* ColorCollectionViewCell.xib */; };
@@ -35,7 +35,6 @@
 		055C05071EB6375800B32735 /* EmojiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewCell.swift; sourceTree = "<group>"; };
 		055C05081EB6375800B32735 /* EmojiCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmojiCollectionViewCell.xib; sourceTree = "<group>"; };
 		055C050B1EB638A500B32735 /* EmojisCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojisCollectionViewDelegate.swift; sourceTree = "<group>"; };
-		057576D81EC2154B00013A57 /* UIImageView+Alpha.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Alpha.swift"; sourceTree = "<group>"; };
 		059EA7191EACB8790072C0FE /* Photo Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		059EA71C1EACB8790072C0FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		059EA71E1EACB8790072C0FE /* PhotoEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditorViewController.swift; sourceTree = "<group>"; };
@@ -50,9 +49,10 @@
 		05CE34361EBB792F0010A758 /* Eventtus-Icons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eventtus-Icons.ttf"; sourceTree = "<group>"; };
 		05CE34371EBB792F0010A758 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		05CE34381EBB792F0010A758 /* Pencil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pencil.swift; sourceTree = "<group>"; };
-		05CE34391EBB792F0010A758 /* UIImage+Rotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Rotate.swift"; sourceTree = "<group>"; };
 		05CE343A1EBB792F0010A758 /* UIView+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Image.swift"; sourceTree = "<group>"; };
 		05CE343B1EBB792F0010A758 /* ViewGestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewGestures.swift; sourceTree = "<group>"; };
+		05DD7E251EC33BDA005979EC /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
+		05DD7E271EC33C35005979EC /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		05E50F8A1EB7488F002A92A0 /* ColorsCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		05E50F8C1EB74937002A92A0 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		05E50F8D1EB74937002A92A0 /* ColorCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -91,8 +91,8 @@
 				05CE34361EBB792F0010A758 /* Eventtus-Icons.ttf */,
 				05CE34371EBB792F0010A758 /* GradientView.swift */,
 				05CE34381EBB792F0010A758 /* Pencil.swift */,
-				057576D81EC2154B00013A57 /* UIImageView+Alpha.swift */,
-				05CE34391EBB792F0010A758 /* UIImage+Rotate.swift */,
+				05DD7E251EC33BDA005979EC /* UIImageViewExtensions.swift */,
+				05DD7E271EC33C35005979EC /* UIImageExtensions.swift */,
 				05CE343A1EBB792F0010A758 /* UIView+Image.swift */,
 				05CE343B1EBB792F0010A758 /* ViewGestures.swift */,
 				059EA71C1EACB8790072C0FE /* AppDelegate.swift */,
@@ -193,19 +193,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05CE343F1EBB792F0010A758 /* UIImage+Rotate.swift in Sources */,
 				05CE34401EBB792F0010A758 /* UIView+Image.swift in Sources */,
 				05E50F8B1EB7488F002A92A0 /* ColorsCollectionViewDelegate.swift in Sources */,
+				05DD7E281EC33C35005979EC /* UIImageExtensions.swift in Sources */,
 				059EA7471EAD1B550072C0FE /* StickerCollectionViewCell.swift in Sources */,
 				05CE343D1EBB792F0010A758 /* GradientView.swift in Sources */,
 				059EA71F1EACB8790072C0FE /* PhotoEditorViewController.swift in Sources */,
 				05E50F8E1EB74937002A92A0 /* ColorCollectionViewCell.swift in Sources */,
-				057576D91EC2154B00013A57 /* UIImageView+Alpha.swift in Sources */,
 				059EA73A1EACD9620072C0FE /* BottomSheetViewController.swift in Sources */,
 				05CE34411EBB792F0010A758 /* ViewGestures.swift in Sources */,
 				055C05091EB6375800B32735 /* EmojiCollectionViewCell.swift in Sources */,
 				055C050C1EB638A500B32735 /* EmojisCollectionViewDelegate.swift in Sources */,
 				05CE343E1EBB792F0010A758 /* Pencil.swift in Sources */,
+				05DD7E261EC33BDA005979EC /* UIImageViewExtensions.swift in Sources */,
 				059EA71D1EACB8790072C0FE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

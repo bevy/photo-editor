@@ -16,7 +16,7 @@
         <!--Photo Editor View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="PhotoEditorViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="PhotoEditorViewController" customModule="Photo_Editor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoEditorViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="PhotoEditorViewController" customModule="iOSPhotoEditor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -26,28 +26,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HAu-hz-9Kf" userLabel="canvas">
-                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="666"/>
                                 <subviews>
                                     <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lxq-nF-QoP">
-                                        <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="666"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="666" id="xCY-eE-Er1"/>
+                                        </constraints>
                                     </imageView>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="llw-np-Mdx">
-                                        <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="666"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="llw-np-Mdx" firstAttribute="height" secondItem="HAu-hz-9Kf" secondAttribute="height" id="3Tv-1U-EeO"/>
-                                    <constraint firstItem="llw-np-Mdx" firstAttribute="centerY" secondItem="HAu-hz-9Kf" secondAttribute="centerY" id="Cdp-k5-jQF"/>
-                                    <constraint firstItem="llw-np-Mdx" firstAttribute="centerX" secondItem="HAu-hz-9Kf" secondAttribute="centerX" id="Fvd-JE-pIB"/>
-                                    <constraint firstItem="lxq-nF-QoP" firstAttribute="height" secondItem="HAu-hz-9Kf" secondAttribute="height" id="KxS-eF-Ptv"/>
+                                    <constraint firstAttribute="height" secondItem="lxq-nF-QoP" secondAttribute="height" id="7ch-y7-vb3"/>
+                                    <constraint firstItem="llw-np-Mdx" firstAttribute="top" secondItem="lxq-nF-QoP" secondAttribute="top" id="FVQ-Ny-5vZ"/>
+                                    <constraint firstItem="lxq-nF-QoP" firstAttribute="width" secondItem="HAu-hz-9Kf" secondAttribute="width" id="HPv-MH-AFV"/>
+                                    <constraint firstItem="llw-np-Mdx" firstAttribute="trailing" secondItem="lxq-nF-QoP" secondAttribute="trailing" id="NiP-Vq-4wz"/>
                                     <constraint firstItem="lxq-nF-QoP" firstAttribute="centerX" secondItem="HAu-hz-9Kf" secondAttribute="centerX" id="QrE-8y-SgW"/>
-                                    <constraint firstItem="lxq-nF-QoP" firstAttribute="width" secondItem="HAu-hz-9Kf" secondAttribute="width" id="jcm-YS-c4O"/>
-                                    <constraint firstItem="llw-np-Mdx" firstAttribute="width" secondItem="HAu-hz-9Kf" secondAttribute="width" id="qdH-pI-fHu"/>
+                                    <constraint firstItem="llw-np-Mdx" firstAttribute="leading" secondItem="lxq-nF-QoP" secondAttribute="leading" id="UAU-2V-lca"/>
+                                    <constraint firstItem="llw-np-Mdx" firstAttribute="width" secondItem="lxq-nF-QoP" secondAttribute="width" id="Xu8-1J-XoW"/>
+                                    <constraint firstItem="llw-np-Mdx" firstAttribute="height" secondItem="lxq-nF-QoP" secondAttribute="height" id="fXt-rp-hQa"/>
                                     <constraint firstItem="lxq-nF-QoP" firstAttribute="centerY" secondItem="HAu-hz-9Kf" secondAttribute="centerY" id="yo1-si-XvO"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jyi-oX-JZf" customClass="GradientView" customModule="Photo_Editor" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jyi-oX-JZf" customClass="GradientView" customModule="iOSPhotoEditor" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -121,7 +125,7 @@
                                     <constraint firstAttribute="trailing" secondItem="bJY-5j-abz" secondAttribute="trailing" constant="12" id="rRL-Np-thq"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pL5-L8-gdH" customClass="GradientView" customModule="Photo_Editor" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pL5-L8-gdH" customClass="GradientView" customModule="iOSPhotoEditor" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="587" width="375" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -224,7 +228,7 @@
                                 <rect key="frame" x="162" y="605" width="50" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7t3-Jp-nxf">
-                                        <rect key="frame" x="9.5" y="10" width="31" height="30"/>
+                                        <rect key="frame" x="10" y="10" width="31" height="30"/>
                                         <fontDescription key="fontDescription" name="Eventtus-Icons" family="Eventtus-Icons" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -267,7 +271,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="pL5-L8-gdH" secondAttribute="trailing" id="2YY-Ou-pFO"/>
                             <constraint firstItem="pL5-L8-gdH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9OX-Fy-5Fo"/>
@@ -290,7 +294,6 @@
                             <constraint firstItem="uSz-Wc-G7X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hg9-cU-pBg"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uSz-Wc-G7X" secondAttribute="bottom" constant="12" id="keE-3A-rtx"/>
                             <constraint firstItem="HAu-hz-9Kf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wnP-GP-F2C"/>
-                            <constraint firstItem="HAu-hz-9Kf" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="xGl-ZN-6eK"/>
                             <constraint firstAttribute="bottom" secondItem="tbX-X9-udE" secondAttribute="bottom" id="yhV-he-QeJ"/>
                             <constraint firstItem="cv9-aV-7mo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zG9-qs-g2A"/>
                         </constraints>
@@ -305,6 +308,7 @@
                         <outlet property="deleteView" destination="uSz-Wc-G7X" id="rwA-4x-2OK"/>
                         <outlet property="doneButton" destination="WuD-M1-XFQ" id="6s3-aq-Ec3"/>
                         <outlet property="imageView" destination="lxq-nF-QoP" id="61W-VU-lAw"/>
+                        <outlet property="imageViewHeightConstraint" destination="xCY-eE-Er1" id="Yhb-fk-w3m"/>
                         <outlet property="tempImageView" destination="llw-np-Mdx" id="lWf-wJ-SM0"/>
                         <outlet property="topGradient" destination="jyi-oX-JZf" id="dNY-JX-2HK"/>
                         <outlet property="topToolbar" destination="cv9-aV-7mo" id="VzW-QV-H0c"/>

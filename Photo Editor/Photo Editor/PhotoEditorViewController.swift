@@ -18,6 +18,8 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var canvasView: UIView!
     //To hold the image
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
+    
     //To hold the drawings and stickers
     @IBOutlet weak var tempImageView: UIImageView!
     @IBOutlet weak var topToolbar: UIView!
@@ -55,13 +57,10 @@ public final class PhotoEditorViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        let originalOrientation = image!.imageOrientation
-        image = image?.rotateImageIfNeeded()
         imageView.image = image!
         
-        if image?.imageOrientation != originalOrientation {
-            imageRotated = true
-        }
+        let size = image!.sutibleSize(widthLimit: UIScreen.main.bounds.width)
+        imageViewHeightConstraint.constant = (size?.height)!
         
         deleteView.layer.cornerRadius = deleteView.bounds.height / 2
         deleteView.layer.borderWidth = 2.0
@@ -191,8 +190,9 @@ public final class PhotoEditorViewController: UIViewController {
     
     @IBAction func textButtonTapped(_ sender: Any) {
         
-        let textView = UITextView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height / 2,
+        let textView = UITextView(frame: CGRect(x: 0, y: tempImageView.center.y,
                                                 width: UIScreen.main.bounds.width, height: 30))
+        
         //Text Attributes
         textView.textAlignment = .center
         textView.font = UIFont(name: "Helvetica", size: 30)
@@ -291,6 +291,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
         lastTextViewTransform =  textView.transform
         lastTextViewTransCenter = textView.center
         activeTextView = textView
+        textView.superview?.bringSubview(toFront: textView)
         UIView.animate(withDuration: 0.4,
                        animations: {
                         textView.transform = CGAffineTransform.identity
@@ -318,7 +319,8 @@ extension PhotoEditorViewController: StickerDelegate {
     
     func viewTapped(view: UIView) {
         self.removeBottomSheetView()
-        view.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
+        view.center = tempImageView.center
+        
         self.tempImageView.addSubview(view)
         //Gestures
         addGestures(view: view)
@@ -328,8 +330,8 @@ extension PhotoEditorViewController: StickerDelegate {
         
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit
-        imageView.frame.size = CGSize(width: 200, height: 200)
-        imageView.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
+        imageView.frame.size = CGSize(width: 150, height: 150)
+        imageView.center = tempImageView.center
         
         self.tempImageView.addSubview(imageView)
         //Gestures

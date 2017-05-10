@@ -17,7 +17,7 @@ extension PhotoEditorViewController {
             //            self.view.bringSubview(toFront: tempImageView)
             swiped = false
             if let touch = touches.first {
-                lastPoint = touch.location(in: self.view)
+                lastPoint = touch.location(in: self.tempImageView)
             }
         }
     }
@@ -28,7 +28,7 @@ extension PhotoEditorViewController {
             // 6
             swiped = true
             if let touch = touches.first {
-                let currentPoint = touch.location(in: view)
+                let currentPoint = touch.location(in: tempImageView)
                 drawLineFrom(lastPoint, toPoint: currentPoint)
                 
                 // 7
