@@ -18,6 +18,8 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var canvasView: UIView!
     //To hold the image
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
+    
     //To hold the drawings and stickers
     @IBOutlet weak var tempImageView: UIImageView!
     @IBOutlet weak var topToolbar: UIView!
@@ -52,16 +54,38 @@ public final class PhotoEditorViewController: UIViewController {
     var imageRotated: Bool = false
     var imageViewToPan: UIImageView?
     //
+    func imageViewSizeForImage(heightLimit:CGFloat? = nil, orWidthLimit widthLimit:CGFloat?, forImage theImage:UIImage)->CGSize?{
+        
+        if let myHeightLimit = heightLimit {
+            
+            let theWidth = (myHeightLimit/theImage.size.height) * theImage.size.width
+            
+            return CGSize(width: theWidth, height: myHeightLimit)
+        }
+        
+        if let myWidthLimit = widthLimit {
+            
+            let theHeight = (myWidthLimit/theImage.size.width) * theImage.size.height
+            
+            return CGSize(width: myWidthLimit,height: theHeight)
+        }
+        
+        return nil
+    }
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        let originalOrientation = image!.imageOrientation
-        image = image?.rotateImageIfNeeded()
+//        let originalOrientation = image!.imageOrientation
+//        image = image?.rotateImageIfNeeded()
         imageView.image = image!
+
+        let size = imageViewSizeForImage(orWidthLimit: UIScreen.main.bounds.width, forImage: image!)!
+        print(size)
+        imageViewHeightConstraint.constant = size.height
         
-        if image?.imageOrientation != originalOrientation {
-            imageRotated = true
-        }
+//        if image?.imageOrientation != originalOrientation {
+//            imageRotated = true
+//        }
         
         deleteView.layer.cornerRadius = deleteView.bounds.height / 2
         deleteView.layer.borderWidth = 2.0

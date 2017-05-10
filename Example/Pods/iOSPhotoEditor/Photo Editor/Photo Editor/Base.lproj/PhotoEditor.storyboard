@@ -26,24 +26,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HAu-hz-9Kf" userLabel="canvas">
-                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                <rect key="frame" x="-0.5" y="0.0" width="375" height="666"/>
                                 <subviews>
                                     <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lxq-nF-QoP">
-                                        <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                        <rect key="frame" x="-0.5" y="0.0" width="375" height="666"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="666" id="xCY-eE-Er1"/>
+                                        </constraints>
                                     </imageView>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="llw-np-Mdx">
-                                        <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                        <rect key="frame" x="-0.5" y="0.0" width="375" height="666"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="llw-np-Mdx" firstAttribute="height" secondItem="HAu-hz-9Kf" secondAttribute="height" id="3Tv-1U-EeO"/>
+                                    <constraint firstItem="llw-np-Mdx" firstAttribute="width" secondItem="lxq-nF-QoP" secondAttribute="width" id="43L-Ae-SGC"/>
+                                    <constraint firstAttribute="height" secondItem="lxq-nF-QoP" secondAttribute="height" id="7ch-y7-vb3"/>
                                     <constraint firstItem="llw-np-Mdx" firstAttribute="centerY" secondItem="HAu-hz-9Kf" secondAttribute="centerY" id="Cdp-k5-jQF"/>
                                     <constraint firstItem="llw-np-Mdx" firstAttribute="centerX" secondItem="HAu-hz-9Kf" secondAttribute="centerX" id="Fvd-JE-pIB"/>
-                                    <constraint firstItem="lxq-nF-QoP" firstAttribute="height" secondItem="HAu-hz-9Kf" secondAttribute="height" id="KxS-eF-Ptv"/>
+                                    <constraint firstItem="lxq-nF-QoP" firstAttribute="width" secondItem="HAu-hz-9Kf" secondAttribute="width" id="HPv-MH-AFV"/>
+                                    <constraint firstItem="llw-np-Mdx" firstAttribute="height" secondItem="lxq-nF-QoP" secondAttribute="height" id="K0e-i6-GtW"/>
                                     <constraint firstItem="lxq-nF-QoP" firstAttribute="centerX" secondItem="HAu-hz-9Kf" secondAttribute="centerX" id="QrE-8y-SgW"/>
-                                    <constraint firstItem="lxq-nF-QoP" firstAttribute="width" secondItem="HAu-hz-9Kf" secondAttribute="width" id="jcm-YS-c4O"/>
-                                    <constraint firstItem="llw-np-Mdx" firstAttribute="width" secondItem="HAu-hz-9Kf" secondAttribute="width" id="qdH-pI-fHu"/>
                                     <constraint firstItem="lxq-nF-QoP" firstAttribute="centerY" secondItem="HAu-hz-9Kf" secondAttribute="centerY" id="yo1-si-XvO"/>
                                 </constraints>
                             </view>
@@ -267,7 +270,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="pL5-L8-gdH" secondAttribute="trailing" id="2YY-Ou-pFO"/>
                             <constraint firstItem="pL5-L8-gdH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9OX-Fy-5Fo"/>
@@ -290,7 +293,6 @@
                             <constraint firstItem="uSz-Wc-G7X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hg9-cU-pBg"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uSz-Wc-G7X" secondAttribute="bottom" constant="12" id="keE-3A-rtx"/>
                             <constraint firstItem="HAu-hz-9Kf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wnP-GP-F2C"/>
-                            <constraint firstItem="HAu-hz-9Kf" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="xGl-ZN-6eK"/>
                             <constraint firstAttribute="bottom" secondItem="tbX-X9-udE" secondAttribute="bottom" id="yhV-he-QeJ"/>
                             <constraint firstItem="cv9-aV-7mo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zG9-qs-g2A"/>
                         </constraints>
@@ -305,6 +307,7 @@
                         <outlet property="deleteView" destination="uSz-Wc-G7X" id="rwA-4x-2OK"/>
                         <outlet property="doneButton" destination="WuD-M1-XFQ" id="6s3-aq-Ec3"/>
                         <outlet property="imageView" destination="lxq-nF-QoP" id="61W-VU-lAw"/>
+                        <outlet property="imageViewHeightConstraint" destination="xCY-eE-Er1" id="Yhb-fk-w3m"/>
                         <outlet property="tempImageView" destination="llw-np-Mdx" id="lWf-wJ-SM0"/>
                         <outlet property="topGradient" destination="jyi-oX-JZf" id="dNY-JX-2HK"/>
                         <outlet property="topToolbar" destination="cv9-aV-7mo" id="VzW-QV-H0c"/>
