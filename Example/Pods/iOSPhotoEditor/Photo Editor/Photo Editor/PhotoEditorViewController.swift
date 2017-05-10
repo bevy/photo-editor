@@ -215,8 +215,9 @@ public final class PhotoEditorViewController: UIViewController {
     
     @IBAction func textButtonTapped(_ sender: Any) {
         
-        let textView = UITextView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height / 2,
+        let textView = UITextView(frame: CGRect(x: 0, y: tempImageView.center.y,
                                                 width: UIScreen.main.bounds.width, height: 30))
+        
         //Text Attributes
         textView.textAlignment = .center
         textView.font = UIFont(name: "Helvetica", size: 30)
@@ -342,7 +343,8 @@ extension PhotoEditorViewController: StickerDelegate {
     
     func viewTapped(view: UIView) {
         self.removeBottomSheetView()
-        view.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
+        view.center = tempImageView.center
+
         self.tempImageView.addSubview(view)
         //Gestures
         addGestures(view: view)
@@ -353,8 +355,8 @@ extension PhotoEditorViewController: StickerDelegate {
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit
         imageView.frame.size = CGSize(width: 200, height: 200)
-        imageView.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
-        
+        imageView.center = tempImageView.center
+
         self.tempImageView.addSubview(imageView)
         //Gestures
         addGestures(view: imageView)
