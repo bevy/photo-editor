@@ -29,7 +29,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                     moveView(view: imageViewToPan!, recognizer: recognizer)
                 }
             } else {
-                    moveView(view: view, recognizer: recognizer)
+                moveView(view: view, recognizer: recognizer)
             }
         }
     }
@@ -46,7 +46,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                 
                 textView.bounds.size = CGSize(width: textView.intrinsicContentSize.width,
                                               height: sizeToFit.height)
-
+                
                 textView.setNeedsDisplay()
             } else {
                 view.transform = view.transform.scaledBy(x: recognizer.scale, y: recognizer.scale)
@@ -107,7 +107,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
     
     func scaleEffect(view: UIView) {
         view.superview?.bringSubview(toFront: view)
-
+        
         if #available(iOS 10.0, *) {
             let generator = UIImpactFeedbackGenerator(style: .heavy)
             generator.impactOccurred()
@@ -128,7 +128,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
         
         hideToolbar(hide: true)
         deleteView.isHidden = false
-
+        
         view.superview?.bringSubview(toFront: view)
         let point = recognizer.location(in: tempImageView)
         let pointToSuperView = recognizer.location(in: self.view)
@@ -174,7 +174,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                 UIView.animate(withDuration: 0.3, animations: {
                     view.center = self.tempImageView.center
                 })
-
+                
             }
         }
     }

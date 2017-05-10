@@ -58,10 +58,10 @@ public final class PhotoEditorViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = image!
-
+        
         let size = image!.sutibleSize(widthLimit: UIScreen.main.bounds.width)
         imageViewHeightConstraint.constant = (size?.height)!
-                
+        
         deleteView.layer.cornerRadius = deleteView.bounds.height / 2
         deleteView.layer.borderWidth = 2.0
         deleteView.layer.borderColor = UIColor.white.cgColor
@@ -320,19 +320,19 @@ extension PhotoEditorViewController: StickerDelegate {
     func viewTapped(view: UIView) {
         self.removeBottomSheetView()
         view.center = tempImageView.center
-
+        
         self.tempImageView.addSubview(view)
         //Gestures
         addGestures(view: view)
     }
     func imageTapped(image: UIImage) {
         self.removeBottomSheetView()
-
+        
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit
         imageView.frame.size = CGSize(width: 150, height: 150)
         imageView.center = tempImageView.center
-
+        
         self.tempImageView.addSubview(imageView)
         //Gestures
         addGestures(view: imageView)
