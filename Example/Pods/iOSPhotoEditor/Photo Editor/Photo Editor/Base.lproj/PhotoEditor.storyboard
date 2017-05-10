@@ -34,7 +34,7 @@
                                             <constraint firstAttribute="height" constant="666" id="xCY-eE-Er1"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="llw-np-Mdx">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="llw-np-Mdx">
                                         <rect key="frame" x="-0.5" y="0.0" width="375" height="666"/>
                                     </imageView>
                                 </subviews>
