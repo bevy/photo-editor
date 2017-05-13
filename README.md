@@ -73,6 +73,10 @@ func editorCanceled() {
 
 <img src="screenshot.PNG" width="350" height="600" />
 
+# Live Demo appetize.io
+[![Demo](appetize.png)](https://appetize.io/app/jtanmwtzbz1favhvhw5g24n7b0?device=iphone7plus&scale=50&orientation=portrait&osVersion=10.3)
+
+
 # Demo Video 
 [![Demo](https://img.youtube.com/vi/9VeIl9i30dI/0.jpg)](https://youtu.be/9VeIl9i30dI)
 
