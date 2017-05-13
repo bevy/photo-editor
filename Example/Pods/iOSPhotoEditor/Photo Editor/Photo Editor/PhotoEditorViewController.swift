@@ -55,6 +55,12 @@ public final class PhotoEditorViewController: UIViewController {
     var imageViewToPan: UIImageView?
     //
     
+    //Register Custom font before we load XIB
+    public override func loadView() {
+        registerFont()
+        super.loadView()
+    }
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = image!
@@ -367,6 +373,24 @@ extension PhotoEditorViewController: StickerDelegate {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(PhotoEditorViewController.tapGesture))
         view.addGestureRecognizer(tapGesture)
         
+    }
+}
+
+extension PhotoEditorViewController {
+    
+    //Resources don't load in main bundle we have to register the font
+    func registerFont(){
+        let bundle = Bundle(for: PhotoEditorViewController.self)
+        let url =  bundle.url(forResource: "Eventtus-Icons", withExtension: "ttf")
+        
+        guard let fontDataProvider = CGDataProvider(url: url! as CFURL) else {
+            return
+        }
+        let font = CGFont(fontDataProvider)
+        var error: Unmanaged<CFError>?
+        guard CTFontManagerRegisterGraphicsFont(font, &error) else {
+            return
+        }
     }
 }
 
