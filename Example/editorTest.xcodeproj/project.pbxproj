@@ -13,7 +13,6 @@
 		05D951DA1EBB868F00DC2299 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05D951D81EBB868F00DC2299 /* Main.storyboard */; };
 		05D951DC1EBB868F00DC2299 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05D951DB1EBB868F00DC2299 /* Assets.xcassets */; };
 		05D951DF1EBB868F00DC2299 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05D951DD1EBB868F00DC2299 /* LaunchScreen.storyboard */; };
-		05DE203A1EBE1464009981CF /* Eventtus-Icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05DE20381EBE131D009981CF /* Eventtus-Icons.ttf */; };
 		1E8769B2C8BB5791725BA6E1 /* Pods_editorTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523415672FBA91B051BDB5FA /* Pods_editorTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +25,6 @@
 		05D951DB1EBB868F00DC2299 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05D951DE1EBB868F00DC2299 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05D951E01EBB868F00DC2299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		05DE20381EBE131D009981CF /* Eventtus-Icons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Eventtus-Icons.ttf"; sourceTree = "<group>"; };
 		523415672FBA91B051BDB5FA /* Pods_editorTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_editorTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EEB4D5FF7C66761863E5E50 /* Pods-editorTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-editorTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-editorTest/Pods-editorTest.release.xcconfig"; sourceTree = "<group>"; };
 		F2FE6D2857E80A528393FDF8 /* Pods-editorTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-editorTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-editorTest/Pods-editorTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,7 +65,6 @@
 			children = (
 				05D951D41EBB868F00DC2299 /* AppDelegate.swift */,
 				05D951D61EBB868F00DC2299 /* ViewController.swift */,
-				05DE20381EBE131D009981CF /* Eventtus-Icons.ttf */,
 				058A26061EBC5448007256A1 /* img.jpg */,
 				05D951D81EBB868F00DC2299 /* Main.storyboard */,
 				05D951DB1EBB868F00DC2299 /* Assets.xcassets */,
@@ -161,7 +158,6 @@
 				05D951DF1EBB868F00DC2299 /* LaunchScreen.storyboard in Resources */,
 				05D951DC1EBB868F00DC2299 /* Assets.xcassets in Resources */,
 				05D951DA1EBB868F00DC2299 /* Main.storyboard in Resources */,
-				05DE203A1EBE1464009981CF /* Eventtus-Icons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
