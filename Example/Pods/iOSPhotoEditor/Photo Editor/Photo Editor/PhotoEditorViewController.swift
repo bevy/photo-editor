@@ -269,7 +269,8 @@ public final class PhotoEditorViewController: UIViewController {
         bottomToolbar.isHidden = hide
         bottomGradient.isHidden = hide
     }
-    
+    var lastTextViewFont:UIFont?
+
 }
 
 extension PhotoEditorViewController: ColorDelegate {
@@ -292,10 +293,11 @@ extension PhotoEditorViewController: UITextViewDelegate {
             textView.frame.size = CGSize(width: oldFrame.width, height: sizeToFit.height)
         }
     }
-    
     public func textViewDidBeginEditing(_ textView: UITextView) {
         lastTextViewTransform =  textView.transform
         lastTextViewTransCenter = textView.center
+        lastTextViewFont = textView.font!
+        textView.font = UIFont(name: "Helvetica", size: 20)
         activeTextView = textView
         textView.superview?.bringSubview(toFront: textView)
         UIView.animate(withDuration: 0.4,
@@ -316,6 +318,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
                        animations: {
                         textView.transform = self.lastTextViewTransform!
                         textView.center = self.lastTextViewTransCenter!
+                        textView.font = self.lastTextViewFont!
         }, completion: nil)
     }
     
