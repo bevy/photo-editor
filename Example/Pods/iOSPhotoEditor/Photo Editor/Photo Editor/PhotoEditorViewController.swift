@@ -50,6 +50,7 @@ public final class PhotoEditorViewController: UIViewController {
     var lastPanPoint: CGPoint?
     var lastTextViewTransform: CGAffineTransform?
     var lastTextViewTransCenter: CGPoint?
+    var lastTextViewFont:UIFont?
     var activeTextView: UITextView?
     var imageRotated: Bool = false
     var imageViewToPan: UIImageView?
@@ -269,7 +270,6 @@ public final class PhotoEditorViewController: UIViewController {
         bottomToolbar.isHidden = hide
         bottomGradient.isHidden = hide
     }
-    var lastTextViewFont:UIFont?
 
 }
 
@@ -297,10 +297,10 @@ extension PhotoEditorViewController: UITextViewDelegate {
         lastTextViewTransform =  textView.transform
         lastTextViewTransCenter = textView.center
         lastTextViewFont = textView.font!
-        textView.font = UIFont(name: "Helvetica", size: 20)
         activeTextView = textView
         textView.superview?.bringSubview(toFront: textView)
-        UIView.animate(withDuration: 0.4,
+        textView.font = UIFont(name: "Helvetica", size: 30)
+        UIView.animate(withDuration: 0.3,
                        animations: {
                         textView.transform = CGAffineTransform.identity
                         textView.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: 100)
@@ -309,16 +309,16 @@ extension PhotoEditorViewController: UITextViewDelegate {
     }
     
     public func textViewDidEndEditing(_ textView: UITextView) {
-        guard lastTextViewTransform != nil && lastTextViewTransCenter != nil else {
+        guard lastTextViewTransform != nil && lastTextViewTransCenter != nil && lastTextViewFont != nil
+            else {
             return
         }
         activeTextView = nil
-        
-        UIView.animate(withDuration: 0.4,
+        textView.font = self.lastTextViewFont!
+        UIView.animate(withDuration: 0.3,
                        animations: {
                         textView.transform = self.lastTextViewTransform!
                         textView.center = self.lastTextViewTransCenter!
-                        textView.font = self.lastTextViewFont!
         }, completion: nil)
     }
     
