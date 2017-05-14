@@ -50,6 +50,7 @@ public final class PhotoEditorViewController: UIViewController {
     var lastPanPoint: CGPoint?
     var lastTextViewTransform: CGAffineTransform?
     var lastTextViewTransCenter: CGPoint?
+    var lastTextViewFont:UIFont?
     var activeTextView: UITextView?
     var imageRotated: Bool = false
     var imageViewToPan: UIImageView?
@@ -292,13 +293,14 @@ extension PhotoEditorViewController: UITextViewDelegate {
             textView.frame.size = CGSize(width: oldFrame.width, height: sizeToFit.height)
         }
     }
-    
     public func textViewDidBeginEditing(_ textView: UITextView) {
         lastTextViewTransform =  textView.transform
         lastTextViewTransCenter = textView.center
+        lastTextViewFont = textView.font!
         activeTextView = textView
         textView.superview?.bringSubview(toFront: textView)
-        UIView.animate(withDuration: 0.4,
+        textView.font = UIFont(name: "Helvetica", size: 30)
+        UIView.animate(withDuration: 0.3,
                        animations: {
                         textView.transform = CGAffineTransform.identity
                         textView.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: 100)
@@ -307,12 +309,13 @@ extension PhotoEditorViewController: UITextViewDelegate {
     }
     
     public func textViewDidEndEditing(_ textView: UITextView) {
-        guard lastTextViewTransform != nil && lastTextViewTransCenter != nil else {
-            return
+        guard lastTextViewTransform != nil && lastTextViewTransCenter != nil && lastTextViewFont != nil
+            else {
+                return
         }
         activeTextView = nil
-        
-        UIView.animate(withDuration: 0.4,
+        textView.font = self.lastTextViewFont!
+        UIView.animate(withDuration: 0.3,
                        animations: {
                         textView.transform = self.lastTextViewTransform!
                         textView.center = self.lastTextViewTransCenter!
