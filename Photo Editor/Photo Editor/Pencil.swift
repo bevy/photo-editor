@@ -20,6 +20,16 @@ extension PhotoEditorViewController {
                 lastPoint = touch.location(in: self.tempImageView)
             }
         }
+            //Hide BottomSheet if clicked outside it
+        else if bottomSheetIsVisible == true {
+            if let touch = touches.first {
+                let location = touch.location(in: self.view)
+                if !bottomSheetVC.view.frame.contains(location) {
+                    removeBottomSheetView()
+                }
+            }
+        }
+        
     }
     
     override public func touchesMoved(_ touches: Set<UITouch>,
