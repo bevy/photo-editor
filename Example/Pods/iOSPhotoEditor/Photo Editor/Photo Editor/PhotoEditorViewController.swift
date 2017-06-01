@@ -384,7 +384,7 @@ extension PhotoEditorViewController {
     //Resources don't load in main bundle we have to register the font
     func registerFont(){
         let bundle = Bundle(for: PhotoEditorViewController.self)
-        let url =  bundle.url(forResource: "Eventtus-Icons", withExtension: "ttf")
+        let url =  bundle.url(forResource: "icomoon", withExtension: "ttf")
         
         guard let fontDataProvider = CGDataProvider(url: url! as CFURL) else {
             return

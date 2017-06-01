@@ -270,7 +270,7 @@ public final class PhotoEditorViewController: UIViewController {
         bottomToolbar.isHidden = hide
         bottomGradient.isHidden = hide
     }
-    
+
 }
 
 extension PhotoEditorViewController: ColorDelegate {
@@ -311,7 +311,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
     public func textViewDidEndEditing(_ textView: UITextView) {
         guard lastTextViewTransform != nil && lastTextViewTransCenter != nil && lastTextViewFont != nil
             else {
-                return
+            return
         }
         activeTextView = nil
         textView.font = self.lastTextViewFont!
@@ -384,7 +384,7 @@ extension PhotoEditorViewController {
     //Resources don't load in main bundle we have to register the font
     func registerFont(){
         let bundle = Bundle(for: PhotoEditorViewController.self)
-        let url =  bundle.url(forResource: "Eventtus-Icons", withExtension: "ttf")
+        let url =  bundle.url(forResource: "icomoon", withExtension: "ttf")
         
         guard let fontDataProvider = CGDataProvider(url: url! as CFURL) else {
             return
