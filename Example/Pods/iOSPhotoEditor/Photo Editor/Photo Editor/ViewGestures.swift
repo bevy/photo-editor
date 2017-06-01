@@ -130,10 +130,14 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
         deleteView.isHidden = false
         
         view.superview?.bringSubview(toFront: view)
-        let point = recognizer.location(in: tempImageView)
         let pointToSuperView = recognizer.location(in: self.view)
+        //
+        view.center = CGPoint(x: view.center.x + recognizer.translation(in: tempImageView).x,
+                              y: view.center.y + recognizer.translation(in: tempImageView).y)
         
-        view.center = point
+        //        let point = recognizer.location(in: tempImageView)
+        //        view.center = point
+        
         recognizer.setTranslation(CGPoint.zero, in: tempImageView)
         
         if let previousPoint = lastPanPoint {
@@ -145,6 +149,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                 }
                 UIView.animate(withDuration: 0.3, animations: {
                     view.transform = view.transform.scaledBy(x: 0.25, y: 0.25)
+                    view.center = recognizer.location(in: self.tempImageView)
                 })
             }
                 //View is going out of deleteView
@@ -152,6 +157,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                 //Scale to original Size
                 UIView.animate(withDuration: 0.3, animations: {
                     view.transform = view.transform.scaledBy(x: 4, y: 4)
+                    view.center = recognizer.location(in: self.tempImageView)
                 })
             }
         }

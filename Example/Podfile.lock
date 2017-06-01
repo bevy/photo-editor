@@ -1,11 +1,11 @@
 PODS:
-  - iOSPhotoEditor (0.3.5)
+  - iOSPhotoEditor (0.3.6)
 
 DEPENDENCIES:
   - iOSPhotoEditor
 
 SPEC CHECKSUMS:
-  iOSPhotoEditor: eb8943547450afc0c64be027ed5743a95e2c380e
+  iOSPhotoEditor: d9a35d1cab846f7ba64e48f87d6929ee0ba15554
 
 PODFILE CHECKSUM: b3b33da00e571f79c0e6db13cf8c1bf38234ee5b
 
