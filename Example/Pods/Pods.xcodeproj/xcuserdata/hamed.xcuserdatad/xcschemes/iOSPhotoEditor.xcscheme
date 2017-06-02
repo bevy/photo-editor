@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '3503697D8101D1F7042A8C3A6CE37924'
+               BlueprintIdentifier = '1119015C6A46CDD30B88E73755E3EF0E'
                BlueprintName = 'iOSPhotoEditor'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'iOSPhotoEditor.framework'>
