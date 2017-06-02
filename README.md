@@ -1,6 +1,7 @@
 # iOS Photo Editor
 
 ## Features
+- [x] Cropping 
 - [x] Adding images -Stickers-
 - [x] Adding Text -colored- 
 - [x] Drawing -colored-
