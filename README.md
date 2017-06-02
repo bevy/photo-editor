@@ -10,6 +10,11 @@
 - [x] Cool animations 
 - [x] Uses iOS Taptic Engine feedback 
 
+## New Features in V 0.4 
+
+Thanks to https://github.com/sprint84/PhotoCropEditor 
+
+It now supports Cropping 💃🏻
 
 ## Installation
 
