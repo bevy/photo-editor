@@ -19,7 +19,6 @@ public final class PhotoEditorViewController: UIViewController {
     //To hold the image
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
-    
     //To hold the drawings and stickers
     @IBOutlet weak var tempImageView: UIImageView!
     @IBOutlet weak var topToolbar: UIView!
@@ -29,17 +28,14 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var deleteView: UIView!
     @IBOutlet weak var colorsCollectionView: UICollectionView!
-    
     @IBOutlet weak var colorPickerView: UIView!
     @IBOutlet weak var colorPickerViewBottomConstraint: NSLayoutConstraint!
     
-    var colorsCollectionViewDelegate: ColorsCollectionViewDelegate!
-    
     public var image: UIImage?
     public var stickers : [UIImage] = []
-    
     public var photoEditorDelegate: PhotoEditorDelegate?
-    //
+    var colorsCollectionViewDelegate: ColorsCollectionViewDelegate!
+    
     var bottomSheetIsVisible = false
     var drawColor: UIColor = UIColor.black
     var textColor: UIColor = UIColor.white
@@ -53,7 +49,6 @@ public final class PhotoEditorViewController: UIViewController {
     var activeTextView: UITextView?
     var imageRotated: Bool = false
     var imageViewToPan: UIImageView?
-    //
     
     //Register Custom font before we load XIB
     public override func loadView() {
@@ -84,11 +79,9 @@ public final class PhotoEditorViewController: UIViewController {
         
         configureCollectionView()
         bottomSheetVC = BottomSheetViewController(nibName: "BottomSheetViewController", bundle: Bundle(for: BottomSheetViewController.self))
-        
     }
     
     func configureCollectionView() {
-        
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 30, height: 30)
         layout.scrollDirection = .horizontal
@@ -103,21 +96,16 @@ public final class PhotoEditorViewController: UIViewController {
         colorsCollectionView.register(
             UINib(nibName: "ColorCollectionViewCell", bundle: Bundle(for: ColorCollectionViewCell.self)),
             forCellWithReuseIdentifier: "ColorCollectionViewCell")
-        
     }
     
     @IBAction func saveButtonTapped(_ sender: AnyObject) {
-        
         UIImageWriteToSavedPhotosAlbum(canvasView.toImage(),self, #selector(PhotoEditorViewController.image(_:withPotentialError:contextInfo:)), nil)
-        
         ///To Share
         //let activity = UIActivityViewController(activityItems: [self.imageView.toImage()], applicationActivities: nil)
         //present(activity, animated: true, completion: nil)
-        
     }
     
     @IBAction func clearButtonTapped(_ sender: AnyObject) {
-        //imageView.image = image
         //clear drawing
         tempImageView.image = nil
         //clear stickers and textviews
@@ -173,7 +161,6 @@ public final class PhotoEditorViewController: UIViewController {
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
-        
         var img = self.canvasView.toImage()
         if imageRotated {
             img = img.rotateImage(orientation: .left)
@@ -280,7 +267,7 @@ public final class PhotoEditorViewController: UIViewController {
         bottomToolbar.isHidden = hide
         bottomGradient.isHidden = hide
     }
-
+    
 }
 
 extension PhotoEditorViewController: ColorDelegate {
@@ -313,7 +300,8 @@ extension PhotoEditorViewController: UITextViewDelegate {
         UIView.animate(withDuration: 0.3,
                        animations: {
                         textView.transform = CGAffineTransform.identity
-                        textView.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: 100)
+                        textView.center = CGPoint(x: UIScreen.main.bounds.width / 2,
+                                                  y:  UIScreen.main.bounds.height / 5)
         }, completion: nil)
         
     }
@@ -321,7 +309,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
     public func textViewDidEndEditing(_ textView: UITextView) {
         guard lastTextViewTransform != nil && lastTextViewTransCenter != nil && lastTextViewFont != nil
             else {
-            return
+                return
         }
         activeTextView = nil
         textView.font = self.lastTextViewFont!
@@ -409,7 +397,7 @@ extension PhotoEditorViewController {
 
 // MARK: - CropView
 extension PhotoEditorViewController: CropViewControllerDelegate {
-  
+    
     public func cropViewController(_ controller: CropViewController, didFinishCroppingImage image: UIImage, transform: CGAffineTransform, cropRect: CGRect) {
         controller.dismiss(animated: true, completion: nil)
         self.setImageView(image: image)
@@ -418,6 +406,6 @@ extension PhotoEditorViewController: CropViewControllerDelegate {
     public func cropViewControllerDidCancel(_ controller: CropViewController) {
         controller.dismiss(animated: true, completion: nil)
     }
-
+    
 }
 
