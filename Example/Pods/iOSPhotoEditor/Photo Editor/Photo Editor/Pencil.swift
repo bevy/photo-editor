@@ -60,9 +60,9 @@ extension PhotoEditorViewController {
     
     func drawLineFrom(_ fromPoint: CGPoint, toPoint: CGPoint) {
         // 1
-        UIGraphicsBeginImageContext(imageView.frame.size)
+        UIGraphicsBeginImageContext(tempImageView.frame.size)
         if let context = UIGraphicsGetCurrentContext() {
-            tempImageView.image?.draw(in: CGRect(x: 0, y: 0, width: imageView.frame.size.width, height: imageView.frame.size.height))
+            tempImageView.image?.draw(in: CGRect(x: 0, y: 0, width: tempImageView.frame.size.width, height: tempImageView.frame.size.height))
             // 2
             context.move(to: CGPoint(x: fromPoint.x, y: fromPoint.y))
             context.addLine(to: CGPoint(x: toPoint.x, y: toPoint.y))
@@ -75,7 +75,6 @@ extension PhotoEditorViewController {
             context.strokePath()
             // 5
             tempImageView.image = UIGraphicsGetImageFromCurrentImageContext()
-            tempImageView.alpha = opacity
             UIGraphicsEndImageContext()
         }
     }

@@ -46,7 +46,6 @@ public final class PhotoEditorViewController: UIViewController {
     var isDrawing: Bool = false
     var lastPoint: CGPoint!
     var swiped = false
-    var opacity: CGFloat = 1.0
     var lastPanPoint: CGPoint?
     var lastTextViewTransform: CGAffineTransform?
     var lastTextViewTransCenter: CGPoint?
@@ -64,10 +63,7 @@ public final class PhotoEditorViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        imageView.image = image!
-        
-        let size = image!.sutibleSize(widthLimit: UIScreen.main.bounds.width)
-        imageViewHeightConstraint.constant = (size?.height)!
+        self.setImageView(image: image!)
         
         deleteView.layer.cornerRadius = deleteView.bounds.height / 2
         deleteView.layer.borderWidth = 2.0
@@ -121,8 +117,8 @@ public final class PhotoEditorViewController: UIViewController {
     }
     
     @IBAction func clearButtonTapped(_ sender: AnyObject) {
+        //imageView.image = image
         //clear drawing
-        imageView.image = image
         tempImageView.image = nil
         //clear stickers and textviews
         for subview in tempImageView.subviews {
@@ -226,6 +222,20 @@ public final class PhotoEditorViewController: UIViewController {
         hideToolbar(hide: true)
     }
     
+    @IBAction func cropButtonTapped(_ sender: UIButton) {
+        let controller = CropViewController()
+        controller.delegate = self
+        controller.image = image
+        
+        let navController = UINavigationController(rootViewController: controller)
+        present(navController, animated: true, completion: nil)
+    }
+    
+    func setImageView(image: UIImage) {
+        imageView.image = image
+        let size = image.sutibleSize(widthLimit: UIScreen.main.bounds.width)
+        imageViewHeightConstraint.constant = (size?.height)!
+    }
     
     var bottomSheetVC: BottomSheetViewController!
     
@@ -395,5 +405,19 @@ extension PhotoEditorViewController {
             return
         }
     }
+}
+
+// MARK: - CropView
+extension PhotoEditorViewController: CropViewControllerDelegate {
+  
+    public func cropViewController(_ controller: CropViewController, didFinishCroppingImage image: UIImage, transform: CGAffineTransform, cropRect: CGRect) {
+        controller.dismiss(animated: true, completion: nil)
+        self.setImageView(image: image)
+    }
+    
+    public func cropViewControllerDidCancel(_ controller: CropViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+
 }
 
