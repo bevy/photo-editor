@@ -47,7 +47,7 @@ public final class PhotoEditorViewController: UIViewController {
     
     // list of controls to be hidden
     public var hiddenControls : [control] = []
-
+    
     var bottomSheetIsVisible = false
     var drawColor: UIColor = UIColor.black
     var textColor: UIColor = UIColor.white
@@ -307,7 +307,7 @@ public final class PhotoEditorViewController: UIViewController {
             }
         }
     }
-
+    
 }
 
 extension PhotoEditorViewController: ColorDelegate {
@@ -349,7 +349,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
     public func textViewDidEndEditing(_ textView: UITextView) {
         guard lastTextViewTransform != nil && lastTextViewTransCenter != nil && lastTextViewFont != nil
             else {
-            return
+                return
         }
         activeTextView = nil
         textView.font = self.lastTextViewFont!
@@ -437,7 +437,7 @@ extension PhotoEditorViewController {
 
 // MARK: - CropView
 extension PhotoEditorViewController: CropViewControllerDelegate {
-  
+    
     public func cropViewController(_ controller: CropViewController, didFinishCroppingImage image: UIImage, transform: CGAffineTransform, cropRect: CGRect) {
         controller.dismiss(animated: true, completion: nil)
         self.setImageView(image: image)
@@ -446,7 +446,7 @@ extension PhotoEditorViewController: CropViewControllerDelegate {
     public func cropViewControllerDidCancel(_ controller: CropViewController) {
         controller.dismiss(animated: true, completion: nil)
     }
-
+    
 }
 // MARK: - Control
 public enum control {
