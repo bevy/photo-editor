@@ -90,6 +90,6 @@ func editorCanceled() {
 [![Demo](https://img.youtube.com/vi/9VeIl9i30dI/0.jpg)](https://youtu.be/9VeIl9i30dI)
 
 
-License
-----
-**Open Source, waiting your contributions !!**
+## License
+
+Released under the [MIT License](http://www.opensource.org/licenses/MIT).
