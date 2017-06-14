@@ -61,7 +61,7 @@ public final class PhotoEditorViewController: UIViewController {
     var activeTextView: UITextView?
     var imageRotated: Bool = false
     var imageViewToPan: UIImageView?
-    var isAddingText: Bool = false
+    var isTyping: Bool = false
     
     //Register Custom font before we load XIB
     public override func loadView() {
@@ -83,8 +83,8 @@ public final class PhotoEditorViewController: UIViewController {
         edgePan.delegate = self
         self.view.addGestureRecognizer(edgePan)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
-                                               name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow),
+                                               name: .UIKeyboardDidShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
                                                name: .UIKeyboardWillHide, object: nil)
         NotificationCenter.default.addObserver(self,selector: #selector(keyboardWillChangeFrame(_:)),
@@ -142,8 +142,8 @@ public final class PhotoEditorViewController: UIViewController {
         isDrawing = false
     }
     
-    func keyboardWillShow(notification: NSNotification) {
-        if isAddingText {
+    func keyboardDidShow(notification: NSNotification) {
+        if isTyping {
             doneButton.isHidden = false
             colorPickerView.isHidden = false
             hideToolbar(hide: true)
@@ -151,7 +151,7 @@ public final class PhotoEditorViewController: UIViewController {
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        isAddingText = false
+        isTyping = false
         doneButton.isHidden = true
         hideToolbar(hide: false)
     }
@@ -201,7 +201,7 @@ public final class PhotoEditorViewController: UIViewController {
     }
     
     @IBAction func textButtonTapped(_ sender: Any) {
-        isAddingText = true
+        isTyping = true
         let textView = UITextView(frame: CGRect(x: 0, y: tempImageView.center.y,
                                                 width: UIScreen.main.bounds.width, height: 30))
         
@@ -335,7 +335,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
         }
     }
     public func textViewDidBeginEditing(_ textView: UITextView) {
-        isAddingText = true
+        isTyping = true
         lastTextViewTransform =  textView.transform
         lastTextViewTransCenter = textView.center
         lastTextViewFont = textView.font!
