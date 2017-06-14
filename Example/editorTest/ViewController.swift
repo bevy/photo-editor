@@ -56,6 +56,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             photoEditor.stickers.append(UIImage(named: i.description )!)
         }
         
+        photoEditor.hiddenControls = [.crop, .clear, .share]
         present(photoEditor, animated: true, completion: nil)
     }
     

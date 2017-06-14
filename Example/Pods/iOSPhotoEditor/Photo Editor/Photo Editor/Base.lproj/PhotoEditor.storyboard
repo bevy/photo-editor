@@ -152,13 +152,13 @@
                                 <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="r7L-uN-oyn">
-                                        <rect key="frame" x="12" y="0.0" width="93" height="52"/>
+                                        <rect key="frame" x="12" y="0.0" width="114" height="52"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ciu-YA-Rq8">
-                                                <rect key="frame" x="0.0" y="0.0" width="40.5" height="52"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="52"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwx-1K-8Bb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="40.5" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="52"/>
                                                         <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
                                                         <size key="titleShadowOffset" width="1" height="0.0"/>
                                                         <state key="normal" title="">
@@ -169,19 +169,30 @@
                                                             <action selector="saveButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5PZ-Ag-iff"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDA-wW-SoX">
-                                                        <rect key="frame" x="0.0" y="40" width="40.5" height="12"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EZR-EM-UxS">
+                                                <rect key="frame" x="42" y="0.0" width="30" height="52"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etq-4C-Wci">
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="52"/>
+                                                        <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
+                                                        <size key="titleShadowOffset" width="1" height="0.0"/>
+                                                        <state key="normal" title="">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.1532266695" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="shareButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sdL-7B-4vp"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xgn-Mb-qTU">
-                                                <rect key="frame" x="52.5" y="0.0" width="40.5" height="52"/>
+                                                <rect key="frame" x="84" y="0.0" width="30" height="52"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOG-vv-w1s">
-                                                        <rect key="frame" x="0.0" y="0.0" width="40.5" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="52"/>
                                                         <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
                                                         <size key="titleShadowOffset" width="1" height="0.0"/>
                                                         <state key="normal" title="">
@@ -192,12 +203,6 @@
                                                             <action selector="clearButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6CL-Ak-40z"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear All" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zv-c7-Z2b">
-                                                        <rect key="frame" x="0.0" y="40" width="40.5" height="12"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -316,14 +321,21 @@
                         <outlet property="bottomGradient" destination="pL5-L8-gdH" id="2I3-J0-iSj"/>
                         <outlet property="bottomToolbar" destination="tbX-X9-udE" id="ZT3-z5-UHE"/>
                         <outlet property="canvasView" destination="HAu-hz-9Kf" id="aho-C3-fID"/>
+                        <outlet property="clearButton" destination="dOG-vv-w1s" id="bna-jv-zoa"/>
                         <outlet property="colorPickerView" destination="Z08-Zt-Kld" id="OMR-Zm-Il4"/>
                         <outlet property="colorPickerViewBottomConstraint" destination="E1x-pN-k6s" id="AQG-Gd-9Xs"/>
                         <outlet property="colorsCollectionView" destination="mek-F2-K2m" id="hYQ-Y2-65p"/>
+                        <outlet property="cropButton" destination="pra-U5-fq7" id="8hG-Xh-kSn"/>
                         <outlet property="deleteView" destination="uSz-Wc-G7X" id="rwA-4x-2OK"/>
                         <outlet property="doneButton" destination="WuD-M1-XFQ" id="6s3-aq-Ec3"/>
+                        <outlet property="drawButton" destination="GBM-2P-ZnU" id="lJU-iv-kEu"/>
                         <outlet property="imageView" destination="lxq-nF-QoP" id="61W-VU-lAw"/>
                         <outlet property="imageViewHeightConstraint" destination="Onv-fN-2Lb" id="DfX-sA-rJ5"/>
+                        <outlet property="saveButton" destination="fwx-1K-8Bb" id="PF3-RS-qQR"/>
+                        <outlet property="shareButton" destination="etq-4C-Wci" id="POI-j1-Yzp"/>
+                        <outlet property="stickerButton" destination="Fjj-Vy-rYA" id="2t7-tq-Cdv"/>
                         <outlet property="tempImageView" destination="llw-np-Mdx" id="lWf-wJ-SM0"/>
+                        <outlet property="textButton" destination="7qm-ew-B7Y" id="puT-CP-ZPe"/>
                         <outlet property="topGradient" destination="jyi-oX-JZf" id="dNY-JX-2HK"/>
                         <outlet property="topToolbar" destination="cv9-aV-7mo" id="VzW-QV-H0c"/>
                     </connections>

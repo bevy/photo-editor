@@ -31,10 +31,22 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var colorPickerView: UIView!
     @IBOutlet weak var colorPickerViewBottomConstraint: NSLayoutConstraint!
     
+    //Controls
+    @IBOutlet weak var cropButton: UIButton!
+    @IBOutlet weak var stickerButton: UIButton!
+    @IBOutlet weak var drawButton: UIButton!
+    @IBOutlet weak var textButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var clearButton: UIButton!
+    
     public var image: UIImage?
     public var stickers : [UIImage] = []
     public var photoEditorDelegate: PhotoEditorDelegate?
     var colorsCollectionViewDelegate: ColorsCollectionViewDelegate!
+    
+    // list of controls to be hidden
+    public var hiddenControls : [control] = []
     
     var bottomSheetIsVisible = false
     var drawColor: UIColor = UIColor.black
@@ -77,8 +89,10 @@ public final class PhotoEditorViewController: UIViewController {
         NotificationCenter.default.addObserver(self,selector: #selector(keyboardWillChangeFrame(_:)),
                                                name: .UIKeyboardWillChangeFrame, object: nil)
         
+        
         configureCollectionView()
         bottomSheetVC = BottomSheetViewController(nibName: "BottomSheetViewController", bundle: Bundle(for: BottomSheetViewController.self))
+        hideControls()
     }
     
     func configureCollectionView() {
@@ -100,9 +114,13 @@ public final class PhotoEditorViewController: UIViewController {
     
     @IBAction func saveButtonTapped(_ sender: AnyObject) {
         UIImageWriteToSavedPhotosAlbum(canvasView.toImage(),self, #selector(PhotoEditorViewController.image(_:withPotentialError:contextInfo:)), nil)
-        ///To Share
-        //let activity = UIActivityViewController(activityItems: [self.imageView.toImage()], applicationActivities: nil)
-        //present(activity, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func shareButtonTapped(_ sender: UIButton) {
+        let activity = UIActivityViewController(activityItems: [self.imageView.toImage()], applicationActivities: nil)
+        present(activity, animated: true, completion: nil)
+        
     }
     
     @IBAction func clearButtonTapped(_ sender: AnyObject) {
@@ -268,6 +286,28 @@ public final class PhotoEditorViewController: UIViewController {
         bottomGradient.isHidden = hide
     }
     
+    func hideControls() {
+        for control in hiddenControls {
+            switch control {
+                
+            case .clear:
+                clearButton.isHidden = true
+            case .crop:
+                cropButton.isHidden = true
+            case .draw:
+                drawButton.isHidden = true
+            case .save:
+                saveButton.isHidden = true
+            case .share:
+                shareButton.isHidden = true
+            case .sticker:
+                stickerButton.isHidden = true
+            case .text:
+                stickerButton.isHidden = true
+            }
+        }
+    }
+    
 }
 
 extension PhotoEditorViewController: ColorDelegate {
@@ -408,4 +448,15 @@ extension PhotoEditorViewController: CropViewControllerDelegate {
     }
     
 }
+// MARK: - Control
+public enum control {
+    case crop
+    case sticker
+    case draw
+    case text
+    case save
+    case share
+    case clear
+}
+
 

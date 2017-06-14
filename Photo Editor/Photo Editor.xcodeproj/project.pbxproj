@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0517E83F1EE0E30E00B02B3C /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0517E83E1EE0E30E00B02B3C /* icomoon.ttf */; };
 		0517E8481EE0E31B00B02B3C /* CropRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0517E8401EE0E31B00B02B3C /* CropRectView.swift */; };
 		0517E8491EE0E31B00B02B3C /* CropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0517E8411EE0E31B00B02B3C /* CropView.swift */; };
 		0517E84A1EE0E31B00B02B3C /* CropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0517E8421EE0E31B00B02B3C /* CropViewController.swift */; };
@@ -37,10 +36,10 @@
 		05E50F8B1EB7488F002A92A0 /* ColorsCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E50F8A1EB7488F002A92A0 /* ColorsCollectionViewDelegate.swift */; };
 		05E50F8E1EB74937002A92A0 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E50F8C1EB74937002A92A0 /* ColorCollectionViewCell.swift */; };
 		05E50F8F1EB74937002A92A0 /* ColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05E50F8D1EB74937002A92A0 /* ColorCollectionViewCell.xib */; };
+		05F35E4E1EF1BD45005E0CE0 /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05F35E4D1EF1BD3B005E0CE0 /* icomoon.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0517E83E1EE0E30E00B02B3C /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
 		0517E8401EE0E31B00B02B3C /* CropRectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropRectView.swift; sourceTree = "<group>"; };
 		0517E8411EE0E31B00B02B3C /* CropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropView.swift; sourceTree = "<group>"; };
 		0517E8421EE0E31B00B02B3C /* CropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +71,7 @@
 		05E50F8A1EB7488F002A92A0 /* ColorsCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		05E50F8C1EB74937002A92A0 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		05E50F8D1EB74937002A92A0 /* ColorCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorCollectionViewCell.xib; sourceTree = "<group>"; };
+		05F35E4D1EF1BD3B005E0CE0 /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,12 +107,12 @@
 				0517E8401EE0E31B00B02B3C /* CropRectView.swift */,
 				0517E8411EE0E31B00B02B3C /* CropView.swift */,
 				0517E8421EE0E31B00B02B3C /* CropViewController.swift */,
+				05F35E4D1EF1BD3B005E0CE0 /* icomoon.ttf */,
 				0517E8431EE0E31B00B02B3C /* PhotoCropEditorBorder.png */,
 				0517E8441EE0E31B00B02B3C /* PhotoCropEditorBorder@2x.png */,
 				0517E8451EE0E31B00B02B3C /* PhotoCropEditorBorder@3x.png */,
 				0517E8461EE0E31B00B02B3C /* ResizeControl.swift */,
 				0517E8471EE0E31B00B02B3C /* UIImage+Crop.swift */,
-				0517E83E1EE0E30E00B02B3C /* icomoon.ttf */,
 				05CE34371EBB792F0010A758 /* GradientView.swift */,
 				05CE34381EBB792F0010A758 /* Pencil.swift */,
 				05DD7E251EC33BDA005979EC /* UIImageViewExtensions.swift */,
@@ -202,7 +202,6 @@
 				059EA7271EACB8790072C0FE /* LaunchScreen.storyboard in Resources */,
 				05E50F8F1EB74937002A92A0 /* ColorCollectionViewCell.xib in Resources */,
 				059EA73B1EACD9620072C0FE /* BottomSheetViewController.xib in Resources */,
-				0517E83F1EE0E30E00B02B3C /* icomoon.ttf in Resources */,
 				059EA7241EACB8790072C0FE /* Assets.xcassets in Resources */,
 				059EA7221EACB8790072C0FE /* PhotoEditor.storyboard in Resources */,
 				0517E84C1EE0E31B00B02B3C /* PhotoCropEditorBorder@2x.png in Resources */,
@@ -210,6 +209,7 @@
 				0517E84D1EE0E31B00B02B3C /* PhotoCropEditorBorder@3x.png in Resources */,
 				059EA7481EAD1B550072C0FE /* StickerCollectionViewCell.xib in Resources */,
 				055C050A1EB6375800B32735 /* EmojiCollectionViewCell.xib in Resources */,
+				05F35E4E1EF1BD45005E0CE0 /* icomoon.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
