@@ -61,6 +61,7 @@ public final class PhotoEditorViewController: UIViewController {
     var activeTextView: UITextView?
     var imageRotated: Bool = false
     var imageViewToPan: UIImageView?
+    var isAddingText: Bool = false
     
     //Register Custom font before we load XIB
     public override func loadView() {
@@ -142,12 +143,15 @@ public final class PhotoEditorViewController: UIViewController {
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        doneButton.isHidden = false
-        colorPickerView.isHidden = false
-        hideToolbar(hide: true)
+        if isAddingText {
+            doneButton.isHidden = false
+            colorPickerView.isHidden = false
+            hideToolbar(hide: true)
+        }
     }
     
     func keyboardWillHide(notification: NSNotification) {
+        isAddingText = false
         doneButton.isHidden = true
         hideToolbar(hide: false)
     }
@@ -197,7 +201,7 @@ public final class PhotoEditorViewController: UIViewController {
     }
     
     @IBAction func textButtonTapped(_ sender: Any) {
-        
+        isAddingText = true
         let textView = UITextView(frame: CGRect(x: 0, y: tempImageView.center.y,
                                                 width: UIScreen.main.bounds.width, height: 30))
         
@@ -331,6 +335,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
         }
     }
     public func textViewDidBeginEditing(_ textView: UITextView) {
+        isAddingText = true
         lastTextViewTransform =  textView.transform
         lastTextViewTransCenter = textView.center
         lastTextViewFont = textView.font!
