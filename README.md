@@ -7,7 +7,7 @@
 - [x] Drawing wihtcolors
 - [x] Scaling and rotating objects 
 - [x] Deleting objects 
-- [x] Saving to photos 
+- [x] Saving to photos and Sharing 
 - [x] Cool animations 
 - [x] Uses iOS Taptic Engine feedback 
 
@@ -60,6 +60,9 @@ photoEditor.image = image
 
 //Stickers that the user will choose from to add on the image         
 photoEditor.stickers.append(UIImage(named: "sticker" )!)
+
+//To hide controls - array of enum control
+photoEditor.hiddenControls = [.crop, .draw, .share]
 
 //Present the View Controller
 present(photoEditor, animated: true, completion: nil)
