@@ -46,3 +46,9 @@ protocol StickersViewControllerDelegate {
     func stickersViewDidDisappear()
 }
 
+/**
+ - didSelectColor
+ */
+protocol ColorDelegate {
+    func didSelectColor(color: UIColor)
+}

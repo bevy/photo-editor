@@ -51,7 +51,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
 
         photoEditor.photoEditorDelegate = self
         photoEditor.image = image
-        
+//        photoEditor.colors = [.red,.blue,.green]
         for i in 0...10 {
             photoEditor.stickers.append(UIImage(named: i.description )!)
         }

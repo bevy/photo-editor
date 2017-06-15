@@ -36,7 +36,15 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var clearButton: UIButton!
     
     public var image: UIImage?
+    /**
+     Array of Stickers -UIImage- that the user will choose from
+     */
     public var stickers : [UIImage] = []
+    /**
+     Array of Colors that will show while drawing or typing
+     */
+    public var colors  : [UIColor] = []
+    
     public var photoEditorDelegate: PhotoEditorDelegate?
     var colorsCollectionViewDelegate: ColorsCollectionViewDelegate!
     
@@ -100,6 +108,9 @@ public final class PhotoEditorViewController: UIViewController {
         colorsCollectionView.collectionViewLayout = layout
         colorsCollectionViewDelegate = ColorsCollectionViewDelegate()
         colorsCollectionViewDelegate.colorDelegate = self
+        if !colors.isEmpty {
+            colorsCollectionViewDelegate.colors = colors
+        }
         colorsCollectionView.delegate = colorsCollectionViewDelegate
         colorsCollectionView.dataSource = colorsCollectionViewDelegate
         
@@ -310,7 +321,7 @@ public final class PhotoEditorViewController: UIViewController {
 }
 
 extension PhotoEditorViewController: ColorDelegate {
-    func chosedColor(color: UIColor) {
+    func didSelectColor(color: UIColor) {
         if isDrawing {
             self.drawColor = color
         } else if activeTextView != nil {
