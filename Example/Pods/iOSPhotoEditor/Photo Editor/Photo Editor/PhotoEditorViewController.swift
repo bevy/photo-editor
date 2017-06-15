@@ -119,7 +119,7 @@ public final class PhotoEditorViewController: UIViewController {
     }
     
     @IBAction func shareButtonTapped(_ sender: UIButton) {
-        let activity = UIActivityViewController(activityItems: [self.imageView.toImage()], applicationActivities: nil)
+        let activity = UIActivityViewController(activityItems: [canvasView.toImage()], applicationActivities: nil)
         present(activity, animated: true, completion: nil)
         
     }
