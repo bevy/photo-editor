@@ -10,6 +10,7 @@
 		058141911EF3260600B6EFE0 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058141901EF3260600B6EFE0 /* Protocols.swift */; };
 		058843EC1EF34C4D00FAC519 /* PhotoEditor+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058843EB1EF34C4D00FAC519 /* PhotoEditor+Gestures.swift */; };
 		058843EE1EF351F800FAC519 /* PhotoEditor+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058843ED1EF351F800FAC519 /* PhotoEditor+Drawing.swift */; };
+		058843F01EF354F300FAC519 /* PhotoEditor+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058843EF1EF354F300FAC519 /* PhotoEditor+Keyboard.swift */; };
 		0818BF0A427D1AFEA576F2DFE8072958 /* CropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F81CEE3113C102ABE3AA0FB6CF5131 /* CropViewController.swift */; };
 		0BB1AD8EF42D87CBD6CC4293DE5F78E7 /* PhotoCropEditorBorder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7269454D5E40C8094540BED4CD9AA77C /* PhotoCropEditorBorder@2x.png */; };
 		0CF13624341C0C1ED0AD594FC842970B /* PhotoCropEditorBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B626994E0072E798F7C19978B62EA47 /* PhotoCropEditorBorder.png */; };
@@ -58,6 +59,7 @@
 		058141901EF3260600B6EFE0 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		058843EB1EF34C4D00FAC519 /* PhotoEditor+Gestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PhotoEditor+Gestures.swift"; sourceTree = "<group>"; };
 		058843ED1EF351F800FAC519 /* PhotoEditor+Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PhotoEditor+Drawing.swift"; sourceTree = "<group>"; };
+		058843EF1EF354F300FAC519 /* PhotoEditor+Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PhotoEditor+Keyboard.swift"; sourceTree = "<group>"; };
 		0F35B69CEF7111B7305BF1F7563B3F4C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		182E64C9FCF5908D60C51DA4E17E1CEE /* StickerCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StickerCollectionViewCell.swift; path = "Photo Editor/Photo Editor/StickerCollectionViewCell.swift"; sourceTree = "<group>"; };
 		1B626994E0072E798F7C19978B62EA47 /* PhotoCropEditorBorder.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = PhotoCropEditorBorder.png; path = "Photo Editor/Photo Editor/PhotoCropEditorBorder.png"; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				35141E53D23FDF654AB2FD1BC2C5908A /* Support Files */,
 				058843EB1EF34C4D00FAC519 /* PhotoEditor+Gestures.swift */,
 				058843ED1EF351F800FAC519 /* PhotoEditor+Drawing.swift */,
+				058843EF1EF354F300FAC519 /* PhotoEditor+Keyboard.swift */,
 			);
 			path = iOSPhotoEditor;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				B856561476E15D1F6AF8D3C21B287959 /* iOSPhotoEditor-dummy.m in Sources */,
 				32EBAF5B86DAC8AE1271C7E6E68C3269 /* PhotoEditorViewController.swift in Sources */,
 				E00A3DB8121F062D84E1D4DE34DD8759 /* ResizeControl.swift in Sources */,
+				058843F01EF354F300FAC519 /* PhotoEditor+Keyboard.swift in Sources */,
 				823E7EF502BDBFC7991E1563CFCFA1E4 /* StickerCollectionViewCell.swift in Sources */,
 				39CE34A4B505AEA0BDBDC90A5B97891F /* UIImage+Crop.swift in Sources */,
 				058843EC1EF34C4D00FAC519 /* PhotoEditor+Gestures.swift in Sources */,

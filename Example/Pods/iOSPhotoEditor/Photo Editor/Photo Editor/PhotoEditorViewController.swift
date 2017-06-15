@@ -147,40 +147,6 @@ public final class PhotoEditorViewController: UIViewController {
         isDrawing = false
     }
     
-    func keyboardDidShow(notification: NSNotification) {
-        if isTyping {
-            doneButton.isHidden = false
-            colorPickerView.isHidden = false
-            hideToolbar(hide: true)
-        }
-    }
-    
-    func keyboardWillHide(notification: NSNotification) {
-        isTyping = false
-        doneButton.isHidden = true
-        hideToolbar(hide: false)
-    }
-    
-    func keyboardWillChangeFrame(_ notification: NSNotification) {
-        if let userInfo = notification.userInfo {
-            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-            let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
-            let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
-            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
-            let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
-            if (endFrame?.origin.y)! >= UIScreen.main.bounds.size.height {
-                self.colorPickerViewBottomConstraint?.constant = 0.0
-            } else {
-                self.colorPickerViewBottomConstraint?.constant = endFrame?.size.height ?? 0.0
-            }
-            UIView.animate(withDuration: duration,
-                           delay: TimeInterval(0),
-                           options: animationCurve,
-                           animations: { self.view.layoutIfNeeded() },
-                           completion: nil)
-        }
-    }
-    
     func image(_ image: UIImage, withPotentialError error: NSErrorPointer, contextInfo: UnsafeRawPointer) {
         let alert = UIAlertController(title: "Image Saved", message: "Image successfully saved to Photos library", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
@@ -188,7 +154,7 @@ public final class PhotoEditorViewController: UIViewController {
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
-        var img = self.canvasView.toImage()
+        let img = self.canvasView.toImage()
         photoEditorDelegate?.doneEditing(image: img)
         self.dismiss(animated: true, completion: nil)
     }
