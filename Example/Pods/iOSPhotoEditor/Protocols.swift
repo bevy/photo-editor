@@ -9,22 +9,35 @@
 import Foundation
 
 /**
- # Delegate methods for StickersViewController.
- 
- ## Methods
- 
  - didSelectView
  - didSelectImage
  - stickersViewDidDisappear
- 
+ */
+
+public protocol PhotoEditorDelegate {
+    /**
+     - Parameter image: edited Image
+     */
+    func doneEditing(image: UIImage)
+    /**
+     StickersViewController did Disappear
+     */
+    func canceledEditing()
+}
+
+
+/**
+ - didSelectView
+ - didSelectImage
+ - stickersViewDidDisappear
  */
 protocol StickersViewControllerDelegate {
     /**
-     selected view from StickersViewController
+     - Parameter view: selected view from StickersViewController
      */
     func didSelectView(view: UIView)
     /**
-     selected Image from StickersViewController
+     - Parameter image: selected Image from StickersViewController
      */
     func didSelectImage(image: UIImage)
     /**
@@ -32,3 +45,4 @@ protocol StickersViewControllerDelegate {
      */
     func stickersViewDidDisappear()
 }
+

@@ -100,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/iOSPhotoEditor/Photo Editor/Photo Editor/PhotoEditorViewController.swift"
-            timestampString = "519169232.448273"
+            timestampString = "519253298.08891"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "338"
-            endingLineNumber = "338"
+            startingLineNumber = "333"
+            endingLineNumber = "333"
             landmarkName = "textViewDidBeginEditing(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -116,11 +116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/iOSPhotoEditor/Photo Editor/Photo Editor/PhotoEditorViewController.swift"
-            timestampString = "519169234.758008"
+            timestampString = "519253298.08891"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "330"
-            endingLineNumber = "330"
+            startingLineNumber = "325"
+            endingLineNumber = "325"
             landmarkName = "textViewDidChange(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -132,11 +132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/iOSPhotoEditor/Photo Editor/Photo Editor/PhotoEditorViewController.swift"
-            timestampString = "519169310.181165"
+            timestampString = "519253298.08891"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "keyboardDidShow(notification:)"
             landmarkType = "7">
          </BreakpointContent>

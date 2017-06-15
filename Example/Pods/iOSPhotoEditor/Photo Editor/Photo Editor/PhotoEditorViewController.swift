@@ -8,11 +8,6 @@
 
 import UIKit
 
-public protocol PhotoEditorDelegate {
-    func imageEdited(image: UIImage)
-    func editorCanceled()
-}
-
 public final class PhotoEditorViewController: UIViewController {
     
     @IBOutlet weak var canvasView: UIView!
@@ -187,12 +182,12 @@ public final class PhotoEditorViewController: UIViewController {
         if imageRotated {
             img = img.rotateImage(orientation: .left)
         }
-        photoEditorDelegate?.imageEdited(image: img)
+        photoEditorDelegate?.doneEditing(image: img)
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
-        photoEditorDelegate?.editorCanceled()
+        photoEditorDelegate?.canceledEditing()
         self.dismiss(animated: true, completion: nil)
     }
     
