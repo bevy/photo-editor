@@ -89,6 +89,11 @@ func editorCanceled() {
 # Demo Video 
 [![Demo](https://img.youtube.com/vi/9VeIl9i30dI/0.jpg)](https://youtu.be/9VeIl9i30dI)
 
+## Credits
+
+Written by [Mohamed Hamed](https://github.com/M-Hamed).
+
+Initially sponsored by [![Eventtus](http://assets.eventtus.com/logos/eventtus/standard.png)](http://eventtus.com)
 
 ## License
 
