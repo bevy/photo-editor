@@ -65,6 +65,9 @@ public final class PhotoEditorViewController: UIViewController {
     var imageViewToPan: UIImageView?
     var isTyping: Bool = false
     
+    
+    var stickersViewController: StickersViewController!
+
     //Register Custom font before we load XIB
     public override func loadView() {
         registerFont()
@@ -165,7 +168,7 @@ public final class PhotoEditorViewController: UIViewController {
     }
     
     @IBAction func stickersButtonTapped(_ sender: Any) {
-        addBottomSheetView()
+        addStickersViewController()
     }
     
     @IBAction func textButtonTapped(_ sender: Any) {
@@ -214,43 +217,6 @@ public final class PhotoEditorViewController: UIViewController {
         imageViewHeightConstraint.constant = (size?.height)!
     }
     
-    var stickersViewController: StickersViewController!
-    
-    func addBottomSheetView() {
-        stickersVCIsVisible = true
-        hideToolbar(hide: true)
-        self.tempImageView.isUserInteractionEnabled = false
-        stickersViewController.stickersViewControllerDelegate = self
-        
-        for image in self.stickers {
-            stickersViewController.stickers.append(image)
-        }
-        self.addChildViewController(stickersViewController)
-        self.view.addSubview(stickersViewController.view)
-        stickersViewController.didMove(toParentViewController: self)
-        let height = view.frame.height
-        let width  = view.frame.width
-        stickersViewController.view.frame = CGRect(x: 0, y: self.view.frame.maxY , width: width, height: height)
-    }
-    
-    func removeStickersView() {
-        stickersVCIsVisible = false
-        self.tempImageView.isUserInteractionEnabled = true
-        UIView.animate(withDuration: 0.3,
-                       delay: 0,
-                       options: UIViewAnimationOptions.curveEaseIn,
-                       animations: { () -> Void in
-                        var frame = self.stickersViewController.view.frame
-                        frame.origin.y = UIScreen.main.bounds.maxY
-                        self.stickersViewController.view.frame = frame
-                        
-        }, completion: { (finished) -> Void in
-            self.stickersViewController.view.removeFromSuperview()
-            self.stickersViewController.removeFromParentViewController()
-            self.hideToolbar(hide: false)
-        })
-    }
-    
     func hideToolbar(hide: Bool) {
         topToolbar.isHidden = hide
         topGradient.isHidden = hide
@@ -293,103 +259,8 @@ extension PhotoEditorViewController: ColorDelegate {
     }
 }
 
-extension PhotoEditorViewController: UITextViewDelegate {
-    public func textViewDidChange(_ textView: UITextView) {
-        let rotation = atan2(textView.transform.b, textView.transform.a)
-        if rotation == 0 {
-            let oldFrame = textView.frame
-            let sizeToFit = textView.sizeThatFits(CGSize(width: oldFrame.width, height:CGFloat.greatestFiniteMagnitude))
-            textView.frame.size = CGSize(width: oldFrame.width, height: sizeToFit.height)
-        }
-    }
-    public func textViewDidBeginEditing(_ textView: UITextView) {
-        isTyping = true
-        lastTextViewTransform =  textView.transform
-        lastTextViewTransCenter = textView.center
-        lastTextViewFont = textView.font!
-        activeTextView = textView
-        textView.superview?.bringSubview(toFront: textView)
-        textView.font = UIFont(name: "Helvetica", size: 30)
-        UIView.animate(withDuration: 0.3,
-                       animations: {
-                        textView.transform = CGAffineTransform.identity
-                        textView.center = CGPoint(x: UIScreen.main.bounds.width / 2,
-                                                  y:  UIScreen.main.bounds.height / 5)
-        }, completion: nil)
-        
-    }
-    
-    public func textViewDidEndEditing(_ textView: UITextView) {
-        guard lastTextViewTransform != nil && lastTextViewTransCenter != nil && lastTextViewFont != nil
-            else {
-                return
-        }
-        activeTextView = nil
-        textView.font = self.lastTextViewFont!
-        UIView.animate(withDuration: 0.3,
-                       animations: {
-                        textView.transform = self.lastTextViewTransform!
-                        textView.center = self.lastTextViewTransCenter!
-        }, completion: nil)
-    }
-    
-}
 
-extension PhotoEditorViewController: StickersViewControllerDelegate {
-    
-    func didSelectView(view: UIView) {
-        self.removeStickersView()
-        
-        view.center = tempImageView.center
-        self.tempImageView.addSubview(view)
-        //Gestures
-        addGestures(view: view)
-    }
-    
-    func didSelectImage(image: UIImage) {
-        self.removeStickersView()
-    
-        let imageView = UIImageView(image: image)
-        imageView.contentMode = .scaleAspectFit
-        imageView.frame.size = CGSize(width: 150, height: 150)
-        imageView.center = tempImageView.center
-        
-        self.tempImageView.addSubview(imageView)
-        //Gestures
-        addGestures(view: imageView)
-    }
-    
-    func stickersViewDidDisappear() {
-        stickersVCIsVisible = false
-        hideToolbar(hide: false)
-    }
-    
-    func addGestures(view: UIView) {
-        //Gestures
-        view.isUserInteractionEnabled = true
-        
-        let panGesture = UIPanGestureRecognizer(target: self,
-                                                action: #selector(PhotoEditorViewController.panGesture))
-        panGesture.minimumNumberOfTouches = 1
-        panGesture.maximumNumberOfTouches = 1
-        panGesture.delegate = self
-        view.addGestureRecognizer(panGesture)
-        
-        let pinchGesture = UIPinchGestureRecognizer(target: self,
-                                                    action: #selector(PhotoEditorViewController.pinchGesture))
-        pinchGesture.delegate = self
-        view.addGestureRecognizer(pinchGesture)
-        
-        let rotationGestureRecognizer = UIRotationGestureRecognizer(target: self,
-                                                                    action:#selector(PhotoEditorViewController.rotationGesture) )
-        rotationGestureRecognizer.delegate = self
-        view.addGestureRecognizer(rotationGestureRecognizer)
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(PhotoEditorViewController.tapGesture))
-        view.addGestureRecognizer(tapGesture)
-        
-    }
-}
+
 
 extension PhotoEditorViewController {
     

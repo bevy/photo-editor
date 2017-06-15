@@ -123,7 +123,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
     func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
         if recognizer.state == .recognized {
             if !stickersVCIsVisible {
-                addBottomSheetView()
+                addStickersViewController()
             }
         }
     }
