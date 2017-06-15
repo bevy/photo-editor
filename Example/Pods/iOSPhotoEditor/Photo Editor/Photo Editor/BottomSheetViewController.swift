@@ -4,7 +4,7 @@
 //
 //  Created by Mohamed Hamed on 4/23/17.
 //  Copyright © 2017 Mohamed Hamed. All rights reserved.
-//
+//  Credit https://github.com/AhmedElassuty/IOS-BottomSheet
 import UIKit
 
 protocol StickerDelegate {
