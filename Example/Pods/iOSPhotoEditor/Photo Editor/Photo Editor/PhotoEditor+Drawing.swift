@@ -1,5 +1,5 @@
 //
-//  Pencil.swift
+//  PhotoEditor+Drawing.swift
 //  Photo Editor
 //
 //  Created by Mohamed Hamed on 4/26/17.
@@ -9,7 +9,7 @@
 import UIKit
 
 extension PhotoEditorViewController {
-    //MARK: Pencil
+    //MARK: PhotoEditor+Drawing
     
     override public func touchesBegan(_ touches: Set<UITouch>,
                                       with event: UIEvent?){
@@ -20,8 +20,8 @@ extension PhotoEditorViewController {
                 lastPoint = touch.location(in: self.tempImageView)
             }
         }
-            //Hide BottomSheet if clicked outside it
-        else if bottomSheetIsVisible == true {
+            //Hide stickersVCIsVisible if clicked outside it
+        else if stickersVCIsVisible == true {
             if let touch = touches.first {
                 let location = touch.location(in: self.view)
                 if !bottomSheetVC.view.frame.contains(location) {

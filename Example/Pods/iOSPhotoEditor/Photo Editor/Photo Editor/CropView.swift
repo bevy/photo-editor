@@ -4,7 +4,7 @@
 //
 //  Created by Guilherme Moura on 2/25/16.
 //  Copyright © 2016 Reefactor, Inc. All rights reserved.
-//
+// Credit https://github.com/sprint84/PhotoCropEditor
 
 import UIKit
 import AVFoundation

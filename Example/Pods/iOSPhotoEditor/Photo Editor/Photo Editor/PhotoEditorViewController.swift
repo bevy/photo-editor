@@ -51,7 +51,7 @@ public final class PhotoEditorViewController: UIViewController {
     // list of controls to be hidden
     public var hiddenControls : [control] = []
     
-    var bottomSheetIsVisible = false
+    var stickersVCIsVisible = false
     var drawColor: UIColor = UIColor.black
     var textColor: UIColor = UIColor.white
     var isDrawing: Bool = false
@@ -62,7 +62,6 @@ public final class PhotoEditorViewController: UIViewController {
     var lastTextViewTransCenter: CGPoint?
     var lastTextViewFont:UIFont?
     var activeTextView: UITextView?
-    var imageRotated: Bool = false
     var imageViewToPan: UIImageView?
     var isTyping: Bool = false
     
@@ -190,9 +189,6 @@ public final class PhotoEditorViewController: UIViewController {
     
     @IBAction func continueButtonPressed(_ sender: Any) {
         var img = self.canvasView.toImage()
-        if imageRotated {
-            img = img.rotateImage(orientation: .left)
-        }
         photoEditorDelegate?.doneEditing(image: img)
         self.dismiss(animated: true, completion: nil)
     }
@@ -248,14 +244,14 @@ public final class PhotoEditorViewController: UIViewController {
     
     func setImageView(image: UIImage) {
         imageView.image = image
-        let size = image.sutibleSize(widthLimit: UIScreen.main.bounds.width)
+        let size = image.suitableSize(widthLimit: UIScreen.main.bounds.width)
         imageViewHeightConstraint.constant = (size?.height)!
     }
     
     var bottomSheetVC: StickersViewController!
     
     func addBottomSheetView() {
-        bottomSheetIsVisible = true
+        stickersVCIsVisible = true
         hideToolbar(hide: true)
         self.tempImageView.isUserInteractionEnabled = false
         bottomSheetVC.stickersViewControllerDelegate = self
@@ -272,7 +268,7 @@ public final class PhotoEditorViewController: UIViewController {
     }
     
     func removeBottomSheetView() {
-        bottomSheetIsVisible = false
+        stickersVCIsVisible = false
         self.tempImageView.isUserInteractionEnabled = true
         UIView.animate(withDuration: 0.3,
                        delay: 0,
@@ -397,7 +393,7 @@ extension PhotoEditorViewController: StickersViewControllerDelegate {
     }
     
     func stickersViewDidDisappear() {
-        bottomSheetIsVisible = false
+        stickersVCIsVisible = false
         hideToolbar(hide: false)
     }
     

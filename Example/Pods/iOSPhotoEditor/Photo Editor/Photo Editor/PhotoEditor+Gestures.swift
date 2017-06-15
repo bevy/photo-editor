@@ -1,5 +1,5 @@
 //
-//  ViewGestures.swift
+//  PhotoEditor+Gestures.swift
 //  Photo Editor
 //
 //  Created by Mohamed Hamed on 4/24/17.
@@ -101,7 +101,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
     
     func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
         if recognizer.state == .recognized {
-            if !bottomSheetIsVisible {
+            if !stickersVCIsVisible {
                 addBottomSheetView()
             }
         }

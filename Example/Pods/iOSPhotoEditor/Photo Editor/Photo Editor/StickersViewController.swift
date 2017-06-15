@@ -5,6 +5,7 @@
 //  Created by Mohamed Hamed on 4/23/17.
 //  Copyright © 2017 Mohamed Hamed. All rights reserved.
 //  Credit https://github.com/AhmedElassuty/IOS-BottomSheet
+
 import UIKit
 
 class StickersViewController: UIViewController, UIGestureRecognizerDelegate {
@@ -78,7 +79,7 @@ class StickersViewController: UIViewController, UIGestureRecognizerDelegate {
         
         let emojislayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         emojislayout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        emojislayout.itemSize = CGSize(width: 60, height: 60)
+        emojislayout.itemSize = CGSize(width: 70, height: 70)
         
         emojisCollectioView = UICollectionView(frame: emojisFrame, collectionViewLayout: emojislayout)
         emojisCollectioView.backgroundColor = .clear

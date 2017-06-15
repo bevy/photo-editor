@@ -1,5 +1,5 @@
 //
-//  UIImage+Rotate.swift
+//  UIImage+Size.swift
 //  Photo Editor
 //
 //  Created by Mohamed Hamed on 5/2/17.
@@ -10,23 +10,7 @@ import UIKit
 
 public extension UIImage {
     
-    func rotateImageIfNeeded() -> UIImage
-    {
-        if size.width > size.height { // Landscape
-            return self.rotateImage(orientation: .right)
-        } else { //Portrait
-            return self
-        }
-    }
-    
-    func rotateImage(orientation: UIImageOrientation) -> UIImage {
-        let rotatedImage = UIImage(cgImage:self.cgImage!,
-                                   scale: 1,
-                                   orientation:orientation);
-        return rotatedImage
-    }
-    
-    func sutibleSize(heightLimit: CGFloat? = nil,
+    func suitableSize(heightLimit: CGFloat? = nil,
                              widthLimit: CGFloat? = nil )-> CGSize? {
         
         if let height = heightLimit {
@@ -43,5 +27,4 @@ public extension UIImage {
         
         return nil
     }
-
 }

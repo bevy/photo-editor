@@ -14,7 +14,6 @@ class GradientView: UIView {
     
     var gradientLayer = CAGradientLayer()
 
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         if gradientFromtop == false {

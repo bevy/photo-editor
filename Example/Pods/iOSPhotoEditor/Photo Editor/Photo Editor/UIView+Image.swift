@@ -17,12 +17,4 @@ extension UIView {
         UIGraphicsEndImageContext()
         return snapshotImageFromMyView!
     }
-    
-    func toImageView() -> UIImageView {
-        let imageView = UIImageView()
-        imageView.image = toImage()
-        imageView.frame = frame
-        imageView.contentMode = .scaleAspectFit
-        return imageView
-    }
 }

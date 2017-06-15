@@ -4,7 +4,7 @@
 //
 //  Created by Guilherme Moura on 2/26/16.
 //  Copyright © 2016 Reefactor, Inc. All rights reserved.
-//
+// Credit https://github.com/sprint84/PhotoCropEditor
 
 import UIKit
 
