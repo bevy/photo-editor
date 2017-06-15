@@ -94,7 +94,7 @@ public final class PhotoEditorViewController: UIViewController {
         
         
         configureCollectionView()
-        bottomSheetVC = StickersViewController(nibName: "StickersViewController", bundle: Bundle(for: StickersViewController.self))
+        stickersViewController = StickersViewController(nibName: "StickersViewController", bundle: Bundle(for: StickersViewController.self))
         hideControls()
     }
     
@@ -248,39 +248,39 @@ public final class PhotoEditorViewController: UIViewController {
         imageViewHeightConstraint.constant = (size?.height)!
     }
     
-    var bottomSheetVC: StickersViewController!
+    var stickersViewController: StickersViewController!
     
     func addBottomSheetView() {
         stickersVCIsVisible = true
         hideToolbar(hide: true)
         self.tempImageView.isUserInteractionEnabled = false
-        bottomSheetVC.stickersViewControllerDelegate = self
+        stickersViewController.stickersViewControllerDelegate = self
         
         for image in self.stickers {
-            bottomSheetVC.stickers.append(image)
+            stickersViewController.stickers.append(image)
         }
-        self.addChildViewController(bottomSheetVC)
-        self.view.addSubview(bottomSheetVC.view)
-        bottomSheetVC.didMove(toParentViewController: self)
+        self.addChildViewController(stickersViewController)
+        self.view.addSubview(stickersViewController.view)
+        stickersViewController.didMove(toParentViewController: self)
         let height = view.frame.height
         let width  = view.frame.width
-        bottomSheetVC.view.frame = CGRect(x: 0, y: self.view.frame.maxY , width: width, height: height)
+        stickersViewController.view.frame = CGRect(x: 0, y: self.view.frame.maxY , width: width, height: height)
     }
     
-    func removeBottomSheetView() {
+    func removeStickersView() {
         stickersVCIsVisible = false
         self.tempImageView.isUserInteractionEnabled = true
         UIView.animate(withDuration: 0.3,
                        delay: 0,
                        options: UIViewAnimationOptions.curveEaseIn,
                        animations: { () -> Void in
-                        var frame = self.bottomSheetVC.view.frame
+                        var frame = self.stickersViewController.view.frame
                         frame.origin.y = UIScreen.main.bounds.maxY
-                        self.bottomSheetVC.view.frame = frame
+                        self.stickersViewController.view.frame = frame
                         
         }, completion: { (finished) -> Void in
-            self.bottomSheetVC.view.removeFromSuperview()
-            self.bottomSheetVC.removeFromParentViewController()
+            self.stickersViewController.view.removeFromSuperview()
+            self.stickersViewController.removeFromParentViewController()
             self.hideToolbar(hide: false)
         })
     }
@@ -372,15 +372,16 @@ extension PhotoEditorViewController: UITextViewDelegate {
 extension PhotoEditorViewController: StickersViewControllerDelegate {
     
     func didSelectView(view: UIView) {
-        self.removeBottomSheetView()
+        self.removeStickersView()
         
         view.center = tempImageView.center
         self.tempImageView.addSubview(view)
         //Gestures
         addGestures(view: view)
     }
+    
     func didSelectImage(image: UIImage) {
-        self.removeBottomSheetView()
+        self.removeStickersView()
     
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit

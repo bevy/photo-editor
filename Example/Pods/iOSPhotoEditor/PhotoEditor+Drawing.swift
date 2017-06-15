@@ -2,30 +2,28 @@
 //  PhotoEditor+Drawing.swift
 //  Photo Editor
 //
-//  Created by Mohamed Hamed on 4/26/17.
-//  Copyright © 2017 Mohamed Hamed. All rights reserved.
+//  Created by Mohamed Hamed on 6/16/17.
+//
 //
 
 import UIKit
 
 extension PhotoEditorViewController {
-    //MARK: PhotoEditor+Drawing
     
     override public func touchesBegan(_ touches: Set<UITouch>,
                                       with event: UIEvent?){
         if isDrawing {
-            //            self.view.bringSubview(toFront: tempImageView)
             swiped = false
             if let touch = touches.first {
                 lastPoint = touch.location(in: self.tempImageView)
             }
         }
-            //Hide stickersVCIsVisible if clicked outside it
+            //Hide stickersVC if clicked outside it
         else if stickersVCIsVisible == true {
             if let touch = touches.first {
                 let location = touch.location(in: self.view)
-                if !bottomSheetVC.view.frame.contains(location) {
-                    removeBottomSheetView()
+                if !stickersViewController.view.frame.contains(location) {
+                    removeStickersView()
                 }
             }
         }
