@@ -1,5 +1,5 @@
 //
-//  BottomSheetViewController.swift
+//  StickersViewController.swift
 //  Photo Editor
 //
 //  Created by Mohamed Hamed on 4/23/17.
@@ -7,13 +7,7 @@
 //  Credit https://github.com/AhmedElassuty/IOS-BottomSheet
 import UIKit
 
-protocol StickerDelegate {
-    func viewTapped(view: UIView)
-    func imageTapped(image: UIImage)
-    func bottomSheetDidDisappear()
-}
-
-class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
+class StickersViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var holdView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -25,7 +19,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
     var emojisDelegate: EmojisCollectionViewDelegate!
     
     var stickers : [UIImage] = []
-    var stickerDelegate : StickerDelegate?
+    var stickersViewControllerDelegate : StickersViewControllerDelegate?
     
     let screenSize = UIScreen.main.bounds.size
     
@@ -47,7 +41,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         pageControl.numberOfPages = 2
         
         holdView.layer.cornerRadius = 3
-        let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(BottomSheetViewController.panGesture))
+        let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(StickersViewController.panGesture))
         gesture.delegate = self
         view.addGestureRecognizer(gesture)
     }
@@ -90,7 +84,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         emojisCollectioView.backgroundColor = .clear
         scrollView.addSubview(emojisCollectioView)
         emojisDelegate = EmojisCollectionViewDelegate()
-        emojisDelegate.stickerDelegate = stickerDelegate
+        emojisDelegate.stickersViewControllerDelegate = stickersViewControllerDelegate
         emojisCollectioView.delegate = emojisDelegate
         emojisCollectioView.dataSource = emojisDelegate
         
@@ -191,7 +185,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
         }, completion: { (finished) -> Void in
             self.view.removeFromSuperview()
             self.removeFromParentViewController()
-            self.stickerDelegate?.bottomSheetDidDisappear()
+            self.stickersViewControllerDelegate?.stickersViewDidDisappear()
         })
     }
     
@@ -209,7 +203,7 @@ class BottomSheetViewController: UIViewController, UIGestureRecognizerDelegate {
     
 }
 
-extension BottomSheetViewController: UIScrollViewDelegate {
+extension StickersViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageWidth = scrollView.bounds.width
@@ -219,14 +213,14 @@ extension BottomSheetViewController: UIScrollViewDelegate {
 }
 
 // MARK: - UICollectionViewDataSource
-extension BottomSheetViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension StickersViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return stickers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        stickerDelegate?.imageTapped(image: stickers[indexPath.item])
+        stickersViewControllerDelegate?.didSelectImage(image: stickers[indexPath.item])
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

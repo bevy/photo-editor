@@ -92,7 +92,7 @@ public final class PhotoEditorViewController: UIViewController {
         
         
         configureCollectionView()
-        bottomSheetVC = BottomSheetViewController(nibName: "BottomSheetViewController", bundle: Bundle(for: BottomSheetViewController.self))
+        bottomSheetVC = StickersViewController(nibName: "StickersViewController", bundle: Bundle(for: StickersViewController.self))
         hideControls()
     }
     
@@ -246,13 +246,13 @@ public final class PhotoEditorViewController: UIViewController {
         imageViewHeightConstraint.constant = (size?.height)!
     }
     
-    var bottomSheetVC: BottomSheetViewController!
+    var bottomSheetVC: StickersViewController!
     
     func addBottomSheetView() {
         bottomSheetIsVisible = true
         hideToolbar(hide: true)
         self.tempImageView.isUserInteractionEnabled = false
-        bottomSheetVC.stickerDelegate = self
+        bottomSheetVC.stickersViewControllerDelegate = self
         
         for image in self.stickers {
             bottomSheetVC.stickers.append(image)
@@ -367,19 +367,19 @@ extension PhotoEditorViewController: UITextViewDelegate {
     
 }
 
-extension PhotoEditorViewController: StickerDelegate {
+extension PhotoEditorViewController: StickersViewControllerDelegate {
     
-    func viewTapped(view: UIView) {
+    func didSelectView(view: UIView) {
         self.removeBottomSheetView()
-        view.center = tempImageView.center
         
+        view.center = tempImageView.center
         self.tempImageView.addSubview(view)
         //Gestures
         addGestures(view: view)
     }
-    func imageTapped(image: UIImage) {
+    func didSelectImage(image: UIImage) {
         self.removeBottomSheetView()
-        
+    
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit
         imageView.frame.size = CGSize(width: 150, height: 150)
@@ -390,7 +390,7 @@ extension PhotoEditorViewController: StickerDelegate {
         addGestures(view: imageView)
     }
     
-    func bottomSheetDidDisappear() {
+    func stickersViewDidDisappear() {
         bottomSheetIsVisible = false
         hideToolbar(hide: false)
     }

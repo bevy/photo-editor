@@ -13,6 +13,7 @@ class StickerCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        let stickersViewControllerDelegate : StickersViewControllerDelegate
     }
 
 }
