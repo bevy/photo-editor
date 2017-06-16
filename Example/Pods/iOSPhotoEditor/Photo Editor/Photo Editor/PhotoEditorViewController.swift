@@ -123,7 +123,12 @@ public final class PhotoEditorViewController: UIViewController {
     
     @IBAction func saveButtonTapped(_ sender: AnyObject) {
         UIImageWriteToSavedPhotosAlbum(canvasView.toImage(),self, #selector(PhotoEditorViewController.image(_:withPotentialError:contextInfo:)), nil)
-        
+    }
+    
+    func image(_ image: UIImage, withPotentialError error: NSErrorPointer, contextInfo: UnsafeRawPointer) {
+        let alert = UIAlertController(title: "Image Saved", message: "Image successfully saved to Photos library", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func shareButtonTapped(_ sender: UIButton) {
@@ -150,11 +155,7 @@ public final class PhotoEditorViewController: UIViewController {
         isDrawing = false
     }
     
-    func image(_ image: UIImage, withPotentialError error: NSErrorPointer, contextInfo: UnsafeRawPointer) {
-        let alert = UIAlertController(title: "Image Saved", message: "Image successfully saved to Photos library", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
+    
     
     @IBAction func continueButtonPressed(_ sender: Any) {
         let img = self.canvasView.toImage()
@@ -223,8 +224,6 @@ public final class PhotoEditorViewController: UIViewController {
         bottomToolbar.isHidden = hide
         bottomGradient.isHidden = hide
     }
-    
-    
 }
 
 extension PhotoEditorViewController: ColorDelegate {
@@ -238,23 +237,6 @@ extension PhotoEditorViewController: ColorDelegate {
     }
 }
 
-extension PhotoEditorViewController {
-    
-    //Resources don't load in main bundle we have to register the font
-    func registerFont(){
-        let bundle = Bundle(for: PhotoEditorViewController.self)
-        let url =  bundle.url(forResource: "icomoon", withExtension: "ttf")
-        
-        guard let fontDataProvider = CGDataProvider(url: url! as CFURL) else {
-            return
-        }
-        let font = CGFont(fontDataProvider)
-        var error: Unmanaged<CFError>?
-        guard CTFontManagerRegisterGraphicsFont(font, &error) else {
-            return
-        }
-    }
-}
 
 
 
