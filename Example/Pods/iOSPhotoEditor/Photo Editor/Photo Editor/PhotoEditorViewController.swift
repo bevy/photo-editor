@@ -224,27 +224,6 @@ public final class PhotoEditorViewController: UIViewController {
         bottomGradient.isHidden = hide
     }
     
-    func hideControls() {
-        for control in hiddenControls {
-            switch control {
-                
-            case .clear:
-                clearButton.isHidden = true
-            case .crop:
-                cropButton.isHidden = true
-            case .draw:
-                drawButton.isHidden = true
-            case .save:
-                saveButton.isHidden = true
-            case .share:
-                shareButton.isHidden = true
-            case .sticker:
-                stickerButton.isHidden = true
-            case .text:
-                stickerButton.isHidden = true
-            }
-        }
-    }
     
 }
 
@@ -258,9 +237,6 @@ extension PhotoEditorViewController: ColorDelegate {
         }
     }
 }
-
-
-
 
 extension PhotoEditorViewController {
     
@@ -280,28 +256,6 @@ extension PhotoEditorViewController {
     }
 }
 
-// MARK: - CropView
-extension PhotoEditorViewController: CropViewControllerDelegate {
-    
-    public func cropViewController(_ controller: CropViewController, didFinishCroppingImage image: UIImage, transform: CGAffineTransform, cropRect: CGRect) {
-        controller.dismiss(animated: true, completion: nil)
-        self.setImageView(image: image)
-    }
-    
-    public func cropViewControllerDidCancel(_ controller: CropViewController) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-    
-}
-// MARK: - Control
-public enum control {
-    case crop
-    case sticker
-    case draw
-    case text
-    case save
-    case share
-    case clear
-}
+
 
 
