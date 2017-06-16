@@ -10,16 +10,20 @@ import UIKit
 
 public final class PhotoEditorViewController: UIViewController {
     
+    /** holding the 2 imageViews original image and drawing & stickers */
     @IBOutlet weak var canvasView: UIView!
     //To hold the image
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
     //To hold the drawings and stickers
-    @IBOutlet weak var tempImageView: UIImageView!
+    @IBOutlet weak var canvasImageView: UIImageView!
+
     @IBOutlet weak var topToolbar: UIView!
-    @IBOutlet weak var topGradient: UIView!
     @IBOutlet weak var bottomToolbar: UIView!
+
+    @IBOutlet weak var topGradient: UIView!
     @IBOutlet weak var bottomGradient: UIView!
+    
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var deleteView: UIView!
     @IBOutlet weak var colorsCollectionView: UICollectionView!
@@ -119,97 +123,6 @@ public final class PhotoEditorViewController: UIViewController {
         colorsCollectionView.register(
             UINib(nibName: "ColorCollectionViewCell", bundle: Bundle(for: ColorCollectionViewCell.self)),
             forCellWithReuseIdentifier: "ColorCollectionViewCell")
-    }
-    
-    @IBAction func saveButtonTapped(_ sender: AnyObject) {
-        UIImageWriteToSavedPhotosAlbum(canvasView.toImage(),self, #selector(PhotoEditorViewController.image(_:withPotentialError:contextInfo:)), nil)
-    }
-    
-    func image(_ image: UIImage, withPotentialError error: NSErrorPointer, contextInfo: UnsafeRawPointer) {
-        let alert = UIAlertController(title: "Image Saved", message: "Image successfully saved to Photos library", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    @IBAction func shareButtonTapped(_ sender: UIButton) {
-        let activity = UIActivityViewController(activityItems: [canvasView.toImage()], applicationActivities: nil)
-        present(activity, animated: true, completion: nil)
-        
-    }
-    
-    @IBAction func clearButtonTapped(_ sender: AnyObject) {
-        //clear drawing
-        tempImageView.image = nil
-        //clear stickers and textviews
-        for subview in tempImageView.subviews {
-            subview.removeFromSuperview()
-        }
-    }
-    
-    @IBAction func doneButtonTapped(_ sender: Any) {
-        view.endEditing(true)
-        doneButton.isHidden = true
-        colorPickerView.isHidden = true
-        tempImageView.isUserInteractionEnabled = true
-        hideToolbar(hide: false)
-        isDrawing = false
-    }
-    
-    
-    
-    @IBAction func continueButtonPressed(_ sender: Any) {
-        let img = self.canvasView.toImage()
-        photoEditorDelegate?.doneEditing(image: img)
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func cancelButtonTapped(_ sender: Any) {
-        photoEditorDelegate?.canceledEditing()
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func stickersButtonTapped(_ sender: Any) {
-        addStickersViewController()
-    }
-    
-    @IBAction func textButtonTapped(_ sender: Any) {
-        isTyping = true
-        let textView = UITextView(frame: CGRect(x: 0, y: tempImageView.center.y,
-                                                width: UIScreen.main.bounds.width, height: 30))
-        
-        //Text Attributes
-        textView.textAlignment = .center
-        textView.font = UIFont(name: "Helvetica", size: 30)
-        textView.textColor = textColor
-        textView.layer.shadowColor = UIColor.black.cgColor
-        textView.layer.shadowOffset = CGSize(width: 1.0, height: 0.0)
-        textView.layer.shadowOpacity = 0.2
-        textView.layer.shadowRadius = 1.0
-        textView.layer.backgroundColor = UIColor.clear.cgColor
-        //
-        textView.autocorrectionType = .no
-        textView.isScrollEnabled = false
-        textView.delegate = self
-        self.tempImageView.addSubview(textView)
-        addGestures(view: textView)
-        textView.becomeFirstResponder()
-    }
-    
-    @IBAction func pencilButtonTapped(_ sender: Any) {
-        isDrawing = true
-        tempImageView.isUserInteractionEnabled = false
-        doneButton.isHidden = false
-        colorPickerView.isHidden = false
-        hideToolbar(hide: true)
-    }
-    
-    @IBAction func cropButtonTapped(_ sender: UIButton) {
-        let controller = CropViewController()
-        controller.delegate = self
-        controller.image = image
-        
-        let navController = UINavigationController(rootViewController: controller)
-        present(navController, animated: true, completion: nil)
     }
     
     func setImageView(image: UIImage) {

@@ -22,7 +22,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
             if view is UIImageView {
                 //Tap only on visible parts on the image
                 if recognizer.state == .began {
-                    for imageView in subImageViews(view: tempImageView) {
+                    for imageView in subImageViews(view: canvasImageView) {
                         let location = recognizer.location(in: imageView)
                         let alpha = imageView.alphaAtPoint(location)
                         if alpha > 0 {
@@ -91,7 +91,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
         if let view = recognizer.view {
             if view is UIImageView {
                 //Tap only on visible parts on the image
-                for imageView in subImageViews(view: tempImageView) {
+                for imageView in subImageViews(view: canvasImageView) {
                     let location = recognizer.location(in: imageView)
                     let alpha = imageView.alphaAtPoint(location)
                     if alpha > 0 {
@@ -169,10 +169,10 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
         view.superview?.bringSubview(toFront: view)
         let pointToSuperView = recognizer.location(in: self.view)
 
-        view.center = CGPoint(x: view.center.x + recognizer.translation(in: tempImageView).x,
-                              y: view.center.y + recognizer.translation(in: tempImageView).y)
+        view.center = CGPoint(x: view.center.x + recognizer.translation(in: canvasImageView).x,
+                              y: view.center.y + recognizer.translation(in: canvasImageView).y)
         
-        recognizer.setTranslation(CGPoint.zero, in: tempImageView)
+        recognizer.setTranslation(CGPoint.zero, in: canvasImageView)
         
         if let previousPoint = lastPanPoint {
             //View is going into deleteView
@@ -183,7 +183,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                 }
                 UIView.animate(withDuration: 0.3, animations: {
                     view.transform = view.transform.scaledBy(x: 0.25, y: 0.25)
-                    view.center = recognizer.location(in: self.tempImageView)
+                    view.center = recognizer.location(in: self.canvasImageView)
                 })
             }
                 //View is going out of deleteView
@@ -191,7 +191,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                 //Scale to original Size
                 UIView.animate(withDuration: 0.3, animations: {
                     view.transform = view.transform.scaledBy(x: 4, y: 4)
-                    view.center = recognizer.location(in: self.tempImageView)
+                    view.center = recognizer.location(in: self.canvasImageView)
                 })
             }
         }
@@ -210,9 +210,9 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                     let generator = UINotificationFeedbackGenerator()
                     generator.notificationOccurred(.success)
                 }
-            } else if !tempImageView.bounds.contains(view.center) { //Snap the view back to tempimageview
+            } else if !canvasImageView.bounds.contains(view.center) { //Snap the view back to canvasImageView
                 UIView.animate(withDuration: 0.3, animations: {
-                    view.center = self.tempImageView.center
+                    view.center = self.canvasImageView.center
                 })
                 
             }

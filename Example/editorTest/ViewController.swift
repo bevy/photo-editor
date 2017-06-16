@@ -47,16 +47,18 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         }
         picker.dismiss(animated: true, completion: nil)
         
-        let photoEditor = UIStoryboard(name: "PhotoEditor", bundle: Bundle(for: PhotoEditorViewController.self)).instantiateViewController(withIdentifier: "PhotoEditorViewController") as! PhotoEditorViewController
+        let photoEditor = PhotoEditorViewController(nibName:"PhotoEditorViewController",bundle: Bundle(for: PhotoEditorViewController.self))
+            
+//            UIStoryboard(name: "PhotoEditor", bundle: Bundle(for: PhotoEditorViewController.self)).instantiateViewController(withIdentifier: "PhotoEditorViewController") as! PhotoEditorViewController
 
         photoEditor.photoEditorDelegate = self
         photoEditor.image = image
-//        photoEditor.colors = [.red,.blue,.green]
+        photoEditor.colors = [.red,.blue,.green]
         for i in 0...10 {
             photoEditor.stickers.append(UIImage(named: i.description )!)
         }
         
-//        photoEditor.hiddenControls = [.crop, .draw, .share]
+        photoEditor.hiddenControls = [.crop, .draw, .share]
         present(photoEditor, animated: true, completion: nil)
     }
     

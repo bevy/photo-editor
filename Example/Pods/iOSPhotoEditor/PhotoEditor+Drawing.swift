@@ -15,7 +15,7 @@ extension PhotoEditorViewController {
         if isDrawing {
             swiped = false
             if let touch = touches.first {
-                lastPoint = touch.location(in: self.tempImageView)
+                lastPoint = touch.location(in: self.canvasImageView)
             }
         }
             //Hide stickersVC if clicked outside it
@@ -36,7 +36,7 @@ extension PhotoEditorViewController {
             // 6
             swiped = true
             if let touch = touches.first {
-                let currentPoint = touch.location(in: tempImageView)
+                let currentPoint = touch.location(in: canvasImageView)
                 drawLineFrom(lastPoint, toPoint: currentPoint)
                 
                 // 7
@@ -58,9 +58,9 @@ extension PhotoEditorViewController {
     
     func drawLineFrom(_ fromPoint: CGPoint, toPoint: CGPoint) {
         // 1
-        UIGraphicsBeginImageContext(tempImageView.frame.size)
+        UIGraphicsBeginImageContext(canvasImageView.frame.size)
         if let context = UIGraphicsGetCurrentContext() {
-            tempImageView.image?.draw(in: CGRect(x: 0, y: 0, width: tempImageView.frame.size.width, height: tempImageView.frame.size.height))
+            canvasImageView.image?.draw(in: CGRect(x: 0, y: 0, width: canvasImageView.frame.size.width, height: canvasImageView.frame.size.height))
             // 2
             context.move(to: CGPoint(x: fromPoint.x, y: fromPoint.y))
             context.addLine(to: CGPoint(x: toPoint.x, y: toPoint.y))
@@ -72,7 +72,7 @@ extension PhotoEditorViewController {
             // 4
             context.strokePath()
             // 5
-            tempImageView.image = UIGraphicsGetImageFromCurrentImageContext()
+            canvasImageView.image = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
         }
     }
