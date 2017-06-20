@@ -1,15 +1,21 @@
 # iOS Photo Editor
 
 ## Features
+- [x] Cropping 
 - [x] Adding images -Stickers-
-- [x] Adding Text -colored- 
-- [x] Drawing -colored-
+- [x] Adding Text with colors
+- [x] Drawing wihtcolors
 - [x] Scaling and rotating objects 
 - [x] Deleting objects 
-- [x] Saving to photos 
+- [x] Saving to photos and Sharing 
 - [x] Cool animations 
 - [x] Uses iOS Taptic Engine feedback 
 
+## New Features in V 0.4 
+
+Thanks to https://github.com/sprint84/PhotoCropEditor 
+
+It now supports Cropping 💃🏻
 
 ## Installation
 
@@ -44,7 +50,7 @@ $ pod install
 The `PhotoEditorViewController`.
 
 ```swift
-let photoEditor = UIStoryboard(name: "PhotoEditor", bundle: Bundle(for: PhotoEditorViewController.self)).instantiateViewController(withIdentifier: "PhotoEditorViewController") as! PhotoEditorViewController
+let photoEditor = PhotoEditorViewController(nibName:"PhotoEditorViewController",bundle: Bundle(for: PhotoEditorViewController.self))
 
 //PhotoEditorDelegate
 photoEditor.photoEditorDelegate = self
@@ -55,17 +61,23 @@ photoEditor.image = image
 //Stickers that the user will choose from to add on the image         
 photoEditor.stickers.append(UIImage(named: "sticker" )!)
 
+//Optional: To hide controls - array of enum control
+photoEditor.hiddenControls = [.crop, .draw, .share]
+
+//Optional: Colors for drawing and Text, If not set default values will be used
+photoEditor.colors = [.red,.blue,.green]
+
 //Present the View Controller
 present(photoEditor, animated: true, completion: nil)
 ```
 The `PhotoEditorDelegate` methods.
 
 ```swift
-func imageEdited(image: UIImage) {
+func doneEditing(image: UIImage) {
     // the edited image
 }
     
-func editorCanceled() {
+func canceledEditing() {
     print("Canceled")
 }
 
@@ -80,7 +92,12 @@ func editorCanceled() {
 # Demo Video 
 [![Demo](https://img.youtube.com/vi/9VeIl9i30dI/0.jpg)](https://youtu.be/9VeIl9i30dI)
 
+## Credits
 
-License
-----
-**Open Source, waiting your contributions !!**
+Written by [Mohamed Hamed](https://github.com/M-Hamed).
+
+Initially sponsored by [![Eventtus](http://assets.eventtus.com/logos/eventtus/standard.png)](http://eventtus.com)
+
+## License
+
+Released under the [MIT License](http://www.opensource.org/licenses/MIT).
