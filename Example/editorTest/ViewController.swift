@@ -27,11 +27,11 @@ class ViewController: UIViewController {
 
 extension ViewController: PhotoEditorDelegate {
     
-    func imageEdited(image: UIImage) {
+    func doneEditing(image: UIImage) {
         imageView.image = image
     }
     
-    func editorCanceled() {
+    func canceledEditing() {
         print("Canceled")
     }
 }
@@ -47,14 +47,23 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         }
         picker.dismiss(animated: true, completion: nil)
         
-        let photoEditor = UIStoryboard(name: "PhotoEditor", bundle: Bundle(for: PhotoEditorViewController.self)).instantiateViewController(withIdentifier: "PhotoEditorViewController") as! PhotoEditorViewController
-
+        
+        let photoEditor = PhotoEditorViewController(nibName:"PhotoEditorViewController",bundle: Bundle(for: PhotoEditorViewController.self))
+            
         photoEditor.photoEditorDelegate = self
+        
         photoEditor.image = image
         
+        //Colors for drawing and Text, If not set default values will be used
+//        photoEditor.colors = [.red,.blue,.green]
+        
+        //Stickers that the user will choose from to add on the image
         for i in 0...10 {
             photoEditor.stickers.append(UIImage(named: i.description )!)
         }
+        
+        //To hide controls - array of enum control
+//        photoEditor.hiddenControls = [.crop, .draw, .share]
         
         present(photoEditor, animated: true, completion: nil)
     }

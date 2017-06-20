@@ -1,15 +1,21 @@
 # iOS Photo Editor
 
 ## Features
+- [x] Cropping 
 - [x] Adding images -Stickers-
-- [x] Adding Text -colored- 
-- [x] Drawing -colored-
+- [x] Adding Text with colors
+- [x] Drawing wihtcolors
 - [x] Scaling and rotating objects 
 - [x] Deleting objects 
-- [x] Saving to photos 
+- [x] Saving to photos and Sharing 
 - [x] Cool animations 
 - [x] Uses iOS Taptic Engine feedback 
 
+## New Features in V 0.4 
+
+Thanks to https://github.com/sprint84/PhotoCropEditor 
+
+It now supports Cropping 💃🏻
 
 ## Installation
 
@@ -55,6 +61,9 @@ photoEditor.image = image
 //Stickers that the user will choose from to add on the image         
 photoEditor.stickers.append(UIImage(named: "sticker" )!)
 
+//To hide controls - array of enum control
+photoEditor.hiddenControls = [.crop, .draw, .share]
+
 //Present the View Controller
 present(photoEditor, animated: true, completion: nil)
 ```
@@ -80,7 +89,12 @@ func editorCanceled() {
 # Demo Video 
 [![Demo](https://img.youtube.com/vi/9VeIl9i30dI/0.jpg)](https://youtu.be/9VeIl9i30dI)
 
+## Credits
 
-License
-----
-**Open Source, waiting your contributions !!**
+Written by [Mohamed Hamed](https://github.com/M-Hamed).
+
+Initially sponsored by [![Eventtus](http://assets.eventtus.com/logos/eventtus/standard.png)](http://eventtus.com)
+
+## License
+
+Released under the [MIT License](http://www.opensource.org/licenses/MIT).

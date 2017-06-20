@@ -9,20 +9,14 @@
 import UIKit
 
 extension UIView {
-    
+    /**
+     Convert UIView to UIImage
+     */
     func toImage() -> UIImage {
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.isOpaque, 0.0)
         self.drawHierarchy(in: self.bounds, afterScreenUpdates: false)
         let snapshotImageFromMyView = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return snapshotImageFromMyView!
-    }
-    
-    func toImageView() -> UIImageView {
-        let imageView = UIImageView()
-        imageView.image = toImage()
-        imageView.frame = frame
-        imageView.contentMode = .scaleAspectFit
-        return imageView
     }
 }

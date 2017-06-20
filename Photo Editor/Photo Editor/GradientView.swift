@@ -1,9 +1,9 @@
 //
 //  GradientView.swift
-//  EventtusWhiteLabel
+//  Photo Editor
 //
 //  Created by Mohamed Hamed on 4/11/17.
-//  Copyright © 2017 Eventtus. All rights reserved.
+//  Copyright © 2017 Mohamed Hamed. All rights reserved.
 //
 
 import UIKit
@@ -14,7 +14,6 @@ class GradientView: UIView {
     
     var gradientLayer = CAGradientLayer()
 
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         if gradientFromtop == false {
