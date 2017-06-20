@@ -44,7 +44,7 @@ $ pod install
 The `PhotoEditorViewController`.
 
 ```swift
-let photoEditor = UIStoryboard(name: "PhotoEditor", bundle: Bundle(for: PhotoEditorViewController.self)).instantiateViewController(withIdentifier: "PhotoEditorViewController") as! PhotoEditorViewController
+let photoEditor = PhotoEditorViewController(nibName: "PhotoEditorViewController", bundle: Bundle(for: PhotoEditorViewController.self))
 
 //PhotoEditorDelegate
 photoEditor.photoEditorDelegate = self
