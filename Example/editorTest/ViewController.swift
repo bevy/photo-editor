@@ -47,7 +47,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         }
         picker.dismiss(animated: true, completion: nil)
         
-        let photoEditor = UIStoryboard(name: "PhotoEditor", bundle: Bundle(for: PhotoEditorViewController.self)).instantiateViewController(withIdentifier: "PhotoEditorViewController") as! PhotoEditorViewController
+        let photoEditor = PhotoEditorViewController(nibName: "PhotoEditorViewController", bundle: Bundle(for: PhotoEditorViewController.self))
 
         photoEditor.photoEditorDelegate = self
         photoEditor.image = image
