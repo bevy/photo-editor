@@ -1,31 +1,29 @@
 //
-//  Pencil.swift
+//  PhotoEditor+Drawing.swift
 //  Photo Editor
 //
-//  Created by Mohamed Hamed on 4/26/17.
-//  Copyright © 2017 Mohamed Hamed. All rights reserved.
+//  Created by Mohamed Hamed on 6/16/17.
+//
 //
 
 import UIKit
 
 extension PhotoEditorViewController {
-    //MARK: Pencil
     
     override public func touchesBegan(_ touches: Set<UITouch>,
                                       with event: UIEvent?){
         if isDrawing {
-            //            self.view.bringSubview(toFront: tempImageView)
             swiped = false
             if let touch = touches.first {
-                lastPoint = touch.location(in: self.tempImageView)
+                lastPoint = touch.location(in: self.canvasImageView)
             }
         }
-        //Hide BottomSheet if clicked outside it
-        else if bottomSheetIsVisible == true {
+            //Hide stickersVC if clicked outside it
+        else if stickersVCIsVisible == true {
             if let touch = touches.first {
                 let location = touch.location(in: self.view)
-                if !bottomSheetVC.view.frame.contains(location) {
-                    removeBottomSheetView()
+                if !stickersViewController.view.frame.contains(location) {
+                    removeStickersView()
                 }
             }
         }
@@ -38,7 +36,7 @@ extension PhotoEditorViewController {
             // 6
             swiped = true
             if let touch = touches.first {
-                let currentPoint = touch.location(in: tempImageView)
+                let currentPoint = touch.location(in: canvasImageView)
                 drawLineFrom(lastPoint, toPoint: currentPoint)
                 
                 // 7
@@ -60,9 +58,9 @@ extension PhotoEditorViewController {
     
     func drawLineFrom(_ fromPoint: CGPoint, toPoint: CGPoint) {
         // 1
-        UIGraphicsBeginImageContext(imageView.frame.size)
+        UIGraphicsBeginImageContext(canvasImageView.frame.size)
         if let context = UIGraphicsGetCurrentContext() {
-            tempImageView.image?.draw(in: CGRect(x: 0, y: 0, width: imageView.frame.size.width, height: imageView.frame.size.height))
+            canvasImageView.image?.draw(in: CGRect(x: 0, y: 0, width: canvasImageView.frame.size.width, height: canvasImageView.frame.size.height))
             // 2
             context.move(to: CGPoint(x: fromPoint.x, y: fromPoint.y))
             context.addLine(to: CGPoint(x: toPoint.x, y: toPoint.y))
@@ -74,8 +72,7 @@ extension PhotoEditorViewController {
             // 4
             context.strokePath()
             // 5
-            tempImageView.image = UIGraphicsGetImageFromCurrentImageContext()
-            tempImageView.alpha = opacity
+            canvasImageView.image = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
         }
     }

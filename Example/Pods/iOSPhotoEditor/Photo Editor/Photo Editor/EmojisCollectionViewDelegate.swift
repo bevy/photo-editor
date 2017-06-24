@@ -9,10 +9,11 @@
 import UIKit
 
 class EmojisCollectionViewDelegate: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
+
+    var stickersViewControllerDelegate : StickersViewControllerDelegate?
+
     let emojiRanges = [
         0x1F601...0x1F64F, // emoticons
-        //        0x1F600...0x1F636,  // Additional emoticons
         0x1F30D...0x1F567, // Other additional symbols
         0x1F680...0x1F6C0, // Transport and map symbols
         0x1F681...0x1F6C5 //Additional transport and map symbols
@@ -31,18 +32,16 @@ class EmojisCollectionViewDelegate: NSObject, UICollectionViewDataSource, UIColl
         }
     }
     
-    var stickerDelegate : StickerDelegate?
-    
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return emojis.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let emojiLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 70, height: 70))
+        let emojiLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 90, height: 90))
+        emojiLabel.textAlignment = .center
         emojiLabel.text = emojis[indexPath.item]
-        emojiLabel.font = UIFont.systemFont(ofSize: 50)
-        stickerDelegate?.viewTapped(view: emojiLabel)
+        emojiLabel.font = UIFont.systemFont(ofSize: 70)
+        stickersViewControllerDelegate?.didSelectView(view: emojiLabel)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
