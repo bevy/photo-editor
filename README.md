@@ -1,14 +1,21 @@
 # iOS Photo Editor
 
 ## Features
+- [x] Cropping 
 - [x] Adding images -Stickers-
 - [x] Adding Text with colors
 - [x] Drawing wihtcolors
 - [x] Scaling and rotating objects 
 - [x] Deleting objects 
-- [x] Saving to photos
+- [x] Saving to photos and Sharing 
 - [x] Cool animations 
 - [x] Uses iOS Taptic Engine feedback 
+
+## New Features in V 0.4 
+
+Thanks to https://github.com/sprint84/PhotoCropEditor 
+
+It now supports Cropping 💃🏻
 
 ## Installation
 

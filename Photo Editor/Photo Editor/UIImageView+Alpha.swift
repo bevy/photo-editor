@@ -1,6 +1,6 @@
 //
 //  UIImageViewExtenstions.swift
-//  Pods
+//  Photo Editor
 //
 //  Created by Mohamed Hamed on 5/10/17.
 //
