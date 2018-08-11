@@ -10,7 +10,7 @@ import UIKit
 
 class EmojisCollectionViewDelegate: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
-    var stickersViewControllerDelegate : StickersViewControllerDelegate?
+    weak var stickersViewControllerDelegate : StickersViewControllerDelegate?
 
     let emojiRanges = [
         0x1F601...0x1F64F, // emoticons

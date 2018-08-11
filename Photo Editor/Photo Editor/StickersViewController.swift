@@ -17,10 +17,10 @@ class StickersViewController: UIViewController, UIGestureRecognizerDelegate {
     var collectioView: UICollectionView!
     var emojisCollectioView: UICollectionView!
     
-    var emojisDelegate: EmojisCollectionViewDelegate!
+    var emojisDelegate: EmojisCollectionViewDelegate?
     
     var stickers : [UIImage] = []
-    var stickersViewControllerDelegate : StickersViewControllerDelegate?
+    weak var stickersViewControllerDelegate : StickersViewControllerDelegate?
     
     let screenSize = UIScreen.main.bounds.size
     
@@ -85,7 +85,9 @@ class StickersViewController: UIViewController, UIGestureRecognizerDelegate {
         emojisCollectioView.backgroundColor = .clear
         scrollView.addSubview(emojisCollectioView)
         emojisDelegate = EmojisCollectionViewDelegate()
-        emojisDelegate.stickersViewControllerDelegate = stickersViewControllerDelegate
+        if emojisDelegate != nil {
+            emojisDelegate!.stickersViewControllerDelegate = stickersViewControllerDelegate
+        }
         emojisCollectioView.delegate = emojisDelegate
         emojisCollectioView.dataSource = emojisDelegate
         
