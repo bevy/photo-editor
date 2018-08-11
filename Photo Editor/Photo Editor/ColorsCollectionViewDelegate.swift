@@ -9,9 +9,9 @@
 import UIKit
 
 class ColorsCollectionViewDelegate: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
-    var colorDelegate : ColorDelegate?
-    
+
+    weak var colorDelegate : ColorDelegate?
+
     /**
      Array of Colors that will show while drawing or typing
      */

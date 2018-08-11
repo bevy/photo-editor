@@ -49,7 +49,7 @@ public final class PhotoEditorViewController: UIViewController {
      */
     public var colors  : [UIColor] = []
     
-    public var photoEditorDelegate: PhotoEditorDelegate?
+    public weak var photoEditorDelegate: PhotoEditorDelegate?
     var colorsCollectionViewDelegate: ColorsCollectionViewDelegate!
     
     // list of controls to be hidden
@@ -113,9 +113,11 @@ public final class PhotoEditorViewController: UIViewController {
         layout.minimumLineSpacing = 0
         colorsCollectionView.collectionViewLayout = layout
         colorsCollectionViewDelegate = ColorsCollectionViewDelegate()
-        colorsCollectionViewDelegate.colorDelegate = self
-        if !colors.isEmpty {
-            colorsCollectionViewDelegate.colors = colors
+        if colorsCollectionViewDelegate != nil {
+            colorsCollectionViewDelegate!.colorDelegate = self
+            if !colors.isEmpty {
+                colorsCollectionViewDelegate!.colors = colors
+            }
         }
         colorsCollectionView.delegate = colorsCollectionViewDelegate
         colorsCollectionView.dataSource = colorsCollectionViewDelegate

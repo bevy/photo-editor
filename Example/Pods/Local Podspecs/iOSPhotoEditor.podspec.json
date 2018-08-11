@@ -1,6 +1,6 @@
 {
   "name": "iOSPhotoEditor",
-  "version": "0.5",
+  "version": "0.5.1",
   "summary": "Photo Editor supports drawing, writing text and adding stickers and emojis",
   "description": "Photo Editor supports drawing, writing text and adding stickers and emojis\nwith the ability to scale and rotate objects",
   "homepage": "https://github.com/M-Hamed/photo-editor",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/M-Hamed/photo-editor.git",
-    "tag": "0.5"
+    "tag": "0.5.1"
   },
   "platforms": {
     "ios": "9.0"

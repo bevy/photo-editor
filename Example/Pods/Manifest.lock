@@ -1,5 +1,5 @@
 PODS:
-  - iOSPhotoEditor (0.5)
+  - iOSPhotoEditor (0.5.1)
 
 DEPENDENCIES:
   - iOSPhotoEditor (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  iOSPhotoEditor: dd8420b77b0c14a160fc4d6584ad4707246a8db7
+  iOSPhotoEditor: 9089672fa58eb5bbfd6c8ed27be532504d73e19b
 
 PODFILE CHECKSUM: 01caa5bdc3b56815841a7c7bede876416625235a
 
