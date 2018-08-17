@@ -14,7 +14,7 @@ import UIKit
  - stickersViewDidDisappear
  */
 
-public protocol PhotoEditorDelegate {
+public protocol PhotoEditorDelegate: class {
     /**
      - Parameter image: edited Image
      */
