@@ -85,9 +85,9 @@ class StickersViewController: UIViewController, UIGestureRecognizerDelegate {
         emojisCollectioView.backgroundColor = .clear
         scrollView.addSubview(emojisCollectioView)
         emojisDelegate = EmojisCollectionViewDelegate()
-        if emojisDelegate != nil {
-            emojisDelegate!.stickersViewControllerDelegate = stickersViewControllerDelegate
-        }
+
+        emojisDelegate?.stickersViewControllerDelegate = stickersViewControllerDelegate
+        
         emojisCollectioView.delegate = emojisDelegate
         emojisCollectioView.dataSource = emojisDelegate
         
