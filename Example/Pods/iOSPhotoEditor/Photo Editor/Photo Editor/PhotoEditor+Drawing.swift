@@ -59,7 +59,7 @@ extension PhotoEditorViewController {
     func drawLineFrom(_ fromPoint: CGPoint, toPoint: CGPoint) {
         // 1
 		let canvasSize = canvasImageView.frame.integral.size
-        UIGraphicsBeginImageContext(canvasSize)
+		UIGraphicsBeginImageContextWithOptions(canvasSize, false, 0)
         if let context = UIGraphicsGetCurrentContext() {
             canvasImageView.image?.draw(in: CGRect(x: 0, y: 0, width: canvasSize.width, height: canvasSize.height))
             // 2
