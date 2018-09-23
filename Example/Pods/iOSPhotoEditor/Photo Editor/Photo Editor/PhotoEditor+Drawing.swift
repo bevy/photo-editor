@@ -73,8 +73,8 @@ extension PhotoEditorViewController {
             context.strokePath()
             // 5
             canvasImageView.image = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
         }
+		UIGraphicsEndImageContext()
     }
     
 }
