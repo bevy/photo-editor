@@ -16,10 +16,11 @@ extension PhotoEditorViewController {
         let bundle = Bundle(for: PhotoEditorViewController.self)
         let url =  bundle.url(forResource: "icomoon", withExtension: "ttf")
         
-        guard let fontDataProvider = CGDataProvider(url: url! as CFURL) else {
+        guard let fontDataProvider = CGDataProvider(url: url! as CFURL),
+                let font = CGFont(fontDataProvider) else {
             return
         }
-        let font = CGFont(fontDataProvider)
+
         var error: Unmanaged<CFError>?
         guard CTFontManagerRegisterGraphicsFont(font, &error) else {
             return
