@@ -12,7 +12,24 @@ import UIKit
 extension PhotoEditorViewController: UITextViewDelegate {
     
     @IBAction func textSizeButtonTapped(_ sender: Any) {
-        print("TEXT SIZE BUTTON TAPPED")
+        if let textView = activeTextView, let font = textView.font {
+            var newFontSize: CGFloat = 30
+            
+            if font.pointSize < 45 {
+                newFontSize = 50
+            }
+            else if font.pointSize < 75 {
+                newFontSize = 80
+            }
+            
+            let font = UIFont(name: font.fontName, size: newFontSize)
+            textView.font = font
+            lastTextViewFont = textView.font
+            let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width,
+                                                         height:CGFloat.greatestFiniteMagnitude))
+            textView.bounds.size = CGSize(width: textView.intrinsicContentSize.width,
+                                          height: sizeToFit.height)
+        }
     }
     
     public func textViewDidChange(_ textView: UITextView) {
