@@ -29,6 +29,9 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var colorsCollectionView: UICollectionView!
     @IBOutlet weak var colorPickerView: UIView!
     @IBOutlet weak var colorPickerViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var textSizeButton: UIButton!
+    @IBOutlet weak var undoButton: UIButton!
+    
     
     //Controls
     @IBOutlet weak var cropButton: UIButton!
@@ -68,6 +71,7 @@ public final class PhotoEditorViewController: UIViewController {
     var activeTextView: UITextView?
     var imageViewToPan: UIImageView?
     var isTyping: Bool = false
+    var drawItems: [DrawItem] = []
     
     
     var stickersViewController: StickersViewController!
@@ -130,7 +134,7 @@ public final class PhotoEditorViewController: UIViewController {
         let size = image.suitableSize(widthLimit: UIScreen.main.bounds.width)
         imageViewHeightConstraint.constant = (size?.height)!
     }
-    
+
     func hideToolbar(hide: Bool) {
         topToolbar.isHidden = hide
         topGradient.isHidden = hide

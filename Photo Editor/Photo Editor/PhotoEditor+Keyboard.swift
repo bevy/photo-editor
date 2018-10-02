@@ -15,6 +15,7 @@ extension PhotoEditorViewController {
         if isTyping {
             doneButton.isHidden = false
             colorPickerView.isHidden = false
+            textSizeButton.isHidden = false
             hideToolbar(hide: true)
         }
     }

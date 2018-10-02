@@ -10,6 +10,40 @@ import UIKit
 
 extension PhotoEditorViewController {
     
+    @IBAction func undoButtonTapped(_ sender: Any) {
+        guard 0 < drawItems.count else {
+            return
+        }
+        
+        canvasImageView.image = nil
+        
+        //remove last item from array
+        _ = drawItems.removeLast()
+        
+        //loop remaining items to redraw
+        UIGraphicsBeginImageContext(canvasImageView.frame.size)
+        if let context = UIGraphicsGetCurrentContext() {
+            canvasImageView.image?.draw(in: CGRect(x: 0, y: 0, width: canvasImageView.frame.size.width, height: canvasImageView.frame.size.height))
+            for drawItem in drawItems {
+                for drawItemSegment in drawItem.segments {
+                    // 2
+                    context.move(to: drawItemSegment.fromPoint)
+                    context.addLine(to: drawItemSegment.toPoint)
+                    // 3
+                    context.setLineCap(CGLineCap.round)
+                    context.setLineWidth(5.0)
+                    context.setStrokeColor(drawItem.color)
+                    context.setBlendMode(CGBlendMode.normal)
+                    // 4
+                    context.strokePath()
+                }
+            }
+            // 5
+            canvasImageView.image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+        }
+    }
+    
     override public func touchesBegan(_ touches: Set<UITouch>,
                                       with event: UIEvent?){
         if isDrawing {
@@ -17,8 +51,10 @@ extension PhotoEditorViewController {
             if let touch = touches.first {
                 lastPoint = touch.location(in: self.canvasImageView)
             }
+            let newDrawItem = DrawItem(drawColor.cgColor)
+            drawItems.append(newDrawItem)
         }
-            //Hide stickersVC if clicked outside it
+        //Hide stickersVC if clicked outside it
         else if stickersVCIsVisible == true {
             if let touch = touches.first {
                 let location = touch.location(in: self.view)
@@ -57,6 +93,11 @@ extension PhotoEditorViewController {
     }
     
     func drawLineFrom(_ fromPoint: CGPoint, toPoint: CGPoint) {
+        if 0 < drawItems.count {
+            let drawItemSegment = DrawItemSegment(fromPoint, toPoint)
+            drawItems[drawItems.count - 1].segments.append(drawItemSegment)
+        }
+        
         // 1
         UIGraphicsBeginImageContext(canvasImageView.frame.size)
         if let context = UIGraphicsGetCurrentContext() {

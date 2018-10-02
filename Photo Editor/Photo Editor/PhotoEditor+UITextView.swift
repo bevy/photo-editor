@@ -11,6 +11,10 @@ import UIKit
 
 extension PhotoEditorViewController: UITextViewDelegate {
     
+    @IBAction func textSizeButtonTapped(_ sender: Any) {
+        print("TEXT SIZE BUTTON TAPPED")
+    }
+    
     public func textViewDidChange(_ textView: UITextView) {
         let rotation = atan2(textView.transform.b, textView.transform.a)
         if rotation == 0 {

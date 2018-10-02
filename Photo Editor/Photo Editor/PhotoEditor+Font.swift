@@ -13,17 +13,19 @@ extension PhotoEditorViewController {
     
     //Resources don't load in main bundle we have to register the font
     func registerFont(){
-        let bundle = Bundle(for: PhotoEditorViewController.self)
-        let url =  bundle.url(forResource: "icomoon", withExtension: "ttf")
+        for fontName in ["icomoon", "icomoon-additions"] {
+            let bundle = Bundle(for: PhotoEditorViewController.self)
+            let url =  bundle.url(forResource: fontName, withExtension: "ttf")
         
-        guard let fontDataProvider = CGDataProvider(url: url! as CFURL),
+            guard let fontDataProvider = CGDataProvider(url: url! as CFURL),
                 let font = CGFont(fontDataProvider) else {
-            return
-        }
+                    return
+            }
 
-        var error: Unmanaged<CFError>?
-        guard CTFontManagerRegisterGraphicsFont(font, &error) else {
-            return
+            var error: Unmanaged<CFError>?
+            guard CTFontManagerRegisterGraphicsFont(font, &error) else {
+                return
+            }
         }
     }
 }

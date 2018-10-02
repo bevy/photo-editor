@@ -52,6 +52,9 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                 if textView.font!.pointSize * recognizer.scale < 90 {
                     let font = UIFont(name: textView.font!.fontName, size: textView.font!.pointSize * recognizer.scale)
                     textView.font = font
+                    if isTyping {
+                        lastTextViewFont = textView.font
+                    }
                     let sizeToFit = textView.sizeThatFits(CGSize(width: UIScreen.main.bounds.size.width,
                                                                  height:CGFloat.greatestFiniteMagnitude))
                     textView.bounds.size = CGSize(width: textView.intrinsicContentSize.width,
@@ -67,6 +70,9 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                 textView.setNeedsDisplay()
             } else {
                 view.transform = view.transform.scaledBy(x: recognizer.scale, y: recognizer.scale)
+                if isTyping {
+                    lastTextViewTransform = view.transform
+                }
             }
             recognizer.scale = 1
         }
@@ -78,6 +84,9 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
     @objc func rotationGesture(_ recognizer: UIRotationGestureRecognizer) {
         if let view = recognizer.view {
             view.transform = view.transform.rotated(by: recognizer.rotation)
+            if isTyping {
+                lastTextViewTransform = view.transform
+            }
             recognizer.rotation = 0
         }
     }
@@ -200,7 +209,9 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
         if recognizer.state == .ended {
             imageViewToPan = nil
             lastPanPoint = nil
-            hideToolbar(hide: false)
+            if !isTyping {
+                hideToolbar(hide: false)
+            }
             deleteView.isHidden = true
             let point = recognizer.location(in: self.view)
             
@@ -211,10 +222,48 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                     generator.notificationOccurred(.success)
                 }
             } else if !canvasImageView.bounds.contains(view.center) { //Snap the view back to canvasImageView
-                UIView.animate(withDuration: 0.3, animations: {
-                    view.center = self.canvasImageView.center
-                })
+                var frame = view.frame
+                var newCenter = view.center
                 
+                print("maxX: \(canvasImageView.bounds.maxX) \(frame.maxX)")
+                print("maxY: \(canvasImageView.bounds.maxY) \(frame.maxY)")
+                print("minX: \(canvasImageView.bounds.minX) \(frame.minX)")
+                print("minY: \(canvasImageView.bounds.minY) \(frame.minY)")
+                
+                if canvasImageView.bounds.maxX < frame.maxX {
+                    newCenter.x += canvasImageView.bounds.maxX - frame.maxX
+                    frame = frame.offsetBy(dx: canvasImageView.bounds.maxX - frame.maxX, dy: 0)
+                }
+                
+                if canvasImageView.bounds.maxY < frame.maxY {
+                    newCenter.y += canvasImageView.bounds.maxY - frame.maxY
+                    frame = frame.offsetBy(dx: 0, dy: canvasImageView.bounds.maxY - frame.maxY)
+                }
+                
+                if frame.minX < canvasImageView.bounds.minX {
+                    newCenter.x += canvasImageView.bounds.minX - frame.minX
+                    frame = frame.offsetBy(dx: canvasImageView.bounds.minX - frame.minX, dy: 0)
+                }
+                
+                if frame.minY < canvasImageView.bounds.minY {
+                    newCenter.y += canvasImageView.bounds.minY - frame.minY
+                    frame = frame.offsetBy(dx: 0, dy: canvasImageView.bounds.minY - frame.minY)
+                }
+                
+                print("center: \(view.center), \(newCenter)")
+                
+                if isTyping {
+                    lastTextViewTransCenter = newCenter
+                }
+                
+                //self.canvasImageView.center
+                UIView.animate(withDuration: 0.3, animations: {
+                    view.center = newCenter
+                })
+            } else {
+                if isTyping {
+                    lastTextViewTransCenter = view.center
+                }
             }
         }
     }
