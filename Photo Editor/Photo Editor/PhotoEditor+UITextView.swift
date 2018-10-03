@@ -40,14 +40,15 @@ extension PhotoEditorViewController: UITextViewDelegate {
             textView.frame.size = CGSize(width: oldFrame.width, height: sizeToFit.height)
         }
     }
+    
     public func textViewDidBeginEditing(_ textView: UITextView) {
         isTyping = true
-        lastTextViewTransform =  textView.transform
+        lastTextViewTransform = textView.transform
         lastTextViewTransCenter = textView.center
         lastTextViewFont = textView.font!
         activeTextView = textView
         textView.superview?.bringSubview(toFront: textView)
-        textView.font = UIFont(name: "Helvetica", size: 30)
+        //textView.font = UIFont(name: "Helvetica", size: 30)
         UIView.animate(withDuration: 0.3,
                        animations: {
                         textView.transform = CGAffineTransform.identity
