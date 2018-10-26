@@ -5,7 +5,6 @@
 //  Created by Mohamed Hamed on 6/16/17.
 //
 //
-
 import UIKit
 
 extension PhotoEditorViewController {
@@ -58,9 +57,10 @@ extension PhotoEditorViewController {
     
     func drawLineFrom(_ fromPoint: CGPoint, toPoint: CGPoint) {
         // 1
-        UIGraphicsBeginImageContext(canvasImageView.frame.size)
+        let canvasSize = canvasImageView.frame.integral.size
+        UIGraphicsBeginImageContextWithOptions(canvasSize, false, 0)
         if let context = UIGraphicsGetCurrentContext() {
-            canvasImageView.image?.draw(in: CGRect(x: 0, y: 0, width: canvasImageView.frame.size.width, height: canvasImageView.frame.size.height))
+            canvasImageView.image?.draw(in: CGRect(x: 0, y: 0, width: canvasSize.width, height: canvasSize.height))
             // 2
             context.move(to: CGPoint(x: fromPoint.x, y: fromPoint.y))
             context.addLine(to: CGPoint(x: toPoint.x, y: toPoint.y))
@@ -73,8 +73,8 @@ extension PhotoEditorViewController {
             context.strokePath()
             // 5
             canvasImageView.image = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
         }
+        UIGraphicsEndImageContext()
     }
     
 }
