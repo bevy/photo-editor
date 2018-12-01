@@ -127,11 +127,11 @@ open class CropViewController: UIViewController {
         cropView?.resetCropRectAnimated(animated)
     }
     
-    func cancel(_ sender: UIBarButtonItem) {
+    @objc func cancel(_ sender: UIBarButtonItem) {
         delegate?.cropViewControllerDidCancel(self)
     }
     
-    func done(_ sender: UIBarButtonItem) {
+    @objc func done(_ sender: UIBarButtonItem) {
         if let image = cropView?.croppedImage {
             guard let rotation = cropView?.rotation else {
                 return
@@ -143,7 +143,7 @@ open class CropViewController: UIViewController {
         }
     }
     
-    func constrain(_ sender: UIBarButtonItem) {
+    @objc func constrain(_ sender: UIBarButtonItem) {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let original = UIAlertAction(title: "Original", style: .default) { [unowned self] action in
             guard let image = self.cropView?.image else {
