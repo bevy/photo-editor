@@ -11,7 +11,7 @@ import UIKit
 
 extension PhotoEditorViewController {
     
-    func keyboardDidShow(notification: NSNotification) {
+    @objc func keyboardDidShow(notification: NSNotification) {
         if isTyping {
             doneButton.isHidden = false
             colorPickerView.isHidden = false
@@ -19,13 +19,13 @@ extension PhotoEditorViewController {
         }
     }
     
-    func keyboardWillHide(notification: NSNotification) {
+    @objc func keyboardWillHide(notification: NSNotification) {
         isTyping = false
         doneButton.isHidden = true
         hideToolbar(hide: false)
     }
     
-    func keyboardWillChangeFrame(_ notification: NSNotification) {
+    @objc func keyboardWillChangeFrame(_ notification: NSNotification) {
         if let userInfo = notification.userInfo {
             let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
             let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0

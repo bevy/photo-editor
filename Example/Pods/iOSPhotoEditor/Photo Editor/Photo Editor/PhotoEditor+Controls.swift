@@ -82,7 +82,7 @@ extension PhotoEditorViewController {
     //MARK: Bottom Toolbar
     
     @IBAction func saveButtonTapped(_ sender: AnyObject) {
-        UIImageWriteToSavedPhotosAlbum(canvasView.toImage(),self, #selector(PhotoEditorViewController.image(_:withPotentialError:contextInfo:)), nil)
+        UIImageWriteToSavedPhotosAlbum(canvasView.toImage(),self, #selector(PhotoEditorViewController.image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
     @IBAction func shareButtonTapped(_ sender: UIButton) {
@@ -108,8 +108,18 @@ extension PhotoEditorViewController {
 
     //MAKR: helper methods
     
-    func image(_ image: UIImage, withPotentialError error: NSErrorPointer, contextInfo: UnsafeRawPointer) {
-        let alert = UIAlertController(title: "Image Saved", message: "Image successfully saved to Photos library", preferredStyle: UIAlertControllerStyle.alert)
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
+        var title = ""
+        var message = ""
+        if let error = error {
+            title = "Image not saved!"
+            message = error.localizedDescription
+        } else {
+            title = "Image Saved"
+            message = "Image successfully saved to Photos library"
+        }
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
