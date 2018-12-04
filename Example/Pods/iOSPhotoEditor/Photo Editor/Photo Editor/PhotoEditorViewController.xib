@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -80,11 +80,14 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3MS-N5-3xY">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Doi-2Z-r5q">
-                            <rect key="frame" x="198" y="0.0" width="165" height="60"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VxA-LU-a7L">
+                            <rect key="frame" x="171" y="0.0" width="192" height="60"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghm-bq-BmY">
-                                    <rect key="frame" x="0.0" y="0.0" width="30" height="60"/>
+                                    <rect key="frame" x="0.0" y="11.5" width="44" height="37"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="44" id="dpN-td-hr0"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
                                     <size key="titleShadowOffset" width="1" height="0.0"/>
                                     <state key="normal" title="">
@@ -96,7 +99,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLX-iy-2Rc">
-                                    <rect key="frame" x="45" y="0.0" width="30" height="60"/>
+                                    <rect key="frame" x="48" y="11.5" width="44" height="37"/>
                                     <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
                                     <size key="titleShadowOffset" width="1" height="0.0"/>
                                     <state key="normal" title="">
@@ -108,7 +111,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qm4-f6-DBr">
-                                    <rect key="frame" x="90" y="0.0" width="30" height="60"/>
+                                    <rect key="frame" x="96" y="11.5" width="44" height="37"/>
                                     <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
                                     <size key="titleShadowOffset" width="1" height="0.0"/>
                                     <state key="normal" title="">
@@ -120,7 +123,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wH-LJ-SyD">
-                                    <rect key="frame" x="135" y="0.0" width="30" height="60"/>
+                                    <rect key="frame" x="144" y="11.5" width="44" height="37"/>
                                     <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
                                     <size key="titleShadowOffset" width="1" height="0.0"/>
                                     <state key="normal" title="">
@@ -132,7 +135,22 @@
                                     </connections>
                                 </button>
                             </subviews>
-                        </stackView>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="Qm4-f6-DBr" firstAttribute="leading" secondItem="PLX-iy-2Rc" secondAttribute="trailing" constant="4" id="09A-01-t4y"/>
+                                <constraint firstItem="PLX-iy-2Rc" firstAttribute="width" secondItem="Ghm-bq-BmY" secondAttribute="width" id="3Yg-Re-kuK"/>
+                                <constraint firstItem="Qm4-f6-DBr" firstAttribute="centerY" secondItem="PLX-iy-2Rc" secondAttribute="centerY" id="4WN-nW-jp9"/>
+                                <constraint firstItem="PLX-iy-2Rc" firstAttribute="centerY" secondItem="Ghm-bq-BmY" secondAttribute="centerY" id="AQC-N6-tOk"/>
+                                <constraint firstItem="0wH-LJ-SyD" firstAttribute="leading" secondItem="Qm4-f6-DBr" secondAttribute="trailing" constant="4" id="BTa-Jb-co6"/>
+                                <constraint firstItem="0wH-LJ-SyD" firstAttribute="centerY" secondItem="Qm4-f6-DBr" secondAttribute="centerY" id="Chi-Hc-Zod"/>
+                                <constraint firstItem="Qm4-f6-DBr" firstAttribute="width" secondItem="PLX-iy-2Rc" secondAttribute="width" id="Pmm-8E-odu"/>
+                                <constraint firstItem="PLX-iy-2Rc" firstAttribute="leading" secondItem="Ghm-bq-BmY" secondAttribute="trailing" constant="4" id="SIN-aJ-OKA"/>
+                                <constraint firstItem="0wH-LJ-SyD" firstAttribute="width" secondItem="Qm4-f6-DBr" secondAttribute="width" id="UyC-zE-dFQ"/>
+                                <constraint firstItem="Ghm-bq-BmY" firstAttribute="centerY" secondItem="VxA-LU-a7L" secondAttribute="centerY" id="b5V-6H-dkc"/>
+                                <constraint firstItem="Ghm-bq-BmY" firstAttribute="leading" secondItem="VxA-LU-a7L" secondAttribute="leading" id="jDD-iE-Tzg"/>
+                                <constraint firstAttribute="trailing" secondItem="0wH-LJ-SyD" secondAttribute="trailing" constant="4" id="mpF-wP-2gV"/>
+                            </constraints>
+                        </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9an-1W-thw">
                             <rect key="frame" x="12" y="11.5" width="30" height="37"/>
                             <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
@@ -149,10 +167,10 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="9an-1W-thw" firstAttribute="centerY" secondItem="3MS-N5-3xY" secondAttribute="centerY" id="1bY-xX-lhc"/>
-                        <constraint firstAttribute="bottom" secondItem="Doi-2Z-r5q" secondAttribute="bottom" id="5UH-pm-VlP"/>
-                        <constraint firstAttribute="trailing" secondItem="Doi-2Z-r5q" secondAttribute="trailing" constant="12" id="Ank-Rs-hHo"/>
                         <constraint firstAttribute="height" constant="60" id="RSV-Dw-76F"/>
-                        <constraint firstItem="Doi-2Z-r5q" firstAttribute="top" secondItem="3MS-N5-3xY" secondAttribute="top" id="YMJ-5J-baj"/>
+                        <constraint firstAttribute="bottom" secondItem="VxA-LU-a7L" secondAttribute="bottom" id="Rd6-do-nCx"/>
+                        <constraint firstAttribute="trailing" secondItem="VxA-LU-a7L" secondAttribute="trailing" constant="12" id="all-aM-MzK"/>
+                        <constraint firstItem="VxA-LU-a7L" firstAttribute="top" secondItem="3MS-N5-3xY" secondAttribute="top" id="g7E-1j-9co"/>
                         <constraint firstItem="9an-1W-thw" firstAttribute="leading" secondItem="3MS-N5-3xY" secondAttribute="leading" constant="12" id="lPL-cU-BVr"/>
                     </constraints>
                 </view>
@@ -169,11 +187,14 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="87h-1G-t5q">
                     <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ZRl-89-gRO">
-                            <rect key="frame" x="12" y="0.0" width="120" height="52"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OjH-xQ-xfH">
+                            <rect key="frame" x="8" y="0.0" width="136" height="52"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mW4-Jz-sic">
-                                    <rect key="frame" x="0.0" y="0.0" width="30" height="52"/>
+                                    <rect key="frame" x="0.0" y="7.5" width="44" height="37"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="44" id="FY1-73-sFP"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
                                     <size key="titleShadowOffset" width="1" height="0.0"/>
                                     <state key="normal" title="">
@@ -185,7 +206,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlw-H0-WcJ">
-                                    <rect key="frame" x="45" y="0.0" width="30" height="52"/>
+                                    <rect key="frame" x="40" y="7.5" width="44" height="37"/>
                                     <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
                                     <size key="titleShadowOffset" width="1" height="0.0"/>
                                     <state key="normal" title="">
@@ -197,7 +218,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kpe-Ez-Cio">
-                                    <rect key="frame" x="90" y="0.0" width="30" height="52"/>
+                                    <rect key="frame" x="88" y="7.5" width="44" height="37"/>
                                     <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
                                     <size key="titleShadowOffset" width="1" height="0.0"/>
                                     <state key="normal" title="">
@@ -209,7 +230,19 @@
                                     </connections>
                                 </button>
                             </subviews>
-                        </stackView>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="mW4-Jz-sic" firstAttribute="centerY" secondItem="OjH-xQ-xfH" secondAttribute="centerY" id="4pZ-cz-JVj"/>
+                                <constraint firstItem="mW4-Jz-sic" firstAttribute="trailing" secondItem="zlw-H0-WcJ" secondAttribute="leading" constant="4" id="8oU-lA-ERk"/>
+                                <constraint firstItem="zlw-H0-WcJ" firstAttribute="centerY" secondItem="mW4-Jz-sic" secondAttribute="centerY" id="BPo-4y-ZSq"/>
+                                <constraint firstItem="Kpe-Ez-Cio" firstAttribute="width" secondItem="zlw-H0-WcJ" secondAttribute="width" id="YSa-UZ-xle"/>
+                                <constraint firstItem="mW4-Jz-sic" firstAttribute="leading" secondItem="OjH-xQ-xfH" secondAttribute="leading" id="aYo-ZS-CNH"/>
+                                <constraint firstItem="zlw-H0-WcJ" firstAttribute="width" secondItem="mW4-Jz-sic" secondAttribute="width" id="dJc-r4-Eo4"/>
+                                <constraint firstItem="Kpe-Ez-Cio" firstAttribute="centerY" secondItem="zlw-H0-WcJ" secondAttribute="centerY" id="gf1-PN-Jz0"/>
+                                <constraint firstAttribute="trailing" secondItem="Kpe-Ez-Cio" secondAttribute="trailing" constant="4" id="oNj-1E-Q1v"/>
+                                <constraint firstItem="Kpe-Ez-Cio" firstAttribute="leading" secondItem="zlw-H0-WcJ" secondAttribute="trailing" constant="4" id="zqg-1e-6cy"/>
+                            </constraints>
+                        </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNH-TU-KxG">
                             <rect key="frame" x="313" y="-14" width="50" height="62"/>
                             <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="50"/>
@@ -226,11 +259,11 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="7QB-HT-iOq"/>
-                        <constraint firstAttribute="bottom" secondItem="ZRl-89-gRO" secondAttribute="bottom" constant="8" id="Bdt-cg-dLR"/>
+                        <constraint firstItem="OjH-xQ-xfH" firstAttribute="leading" secondItem="87h-1G-t5q" secondAttribute="leading" constant="8" id="JOE-rM-ma5"/>
                         <constraint firstAttribute="bottom" secondItem="wNH-TU-KxG" secondAttribute="bottom" constant="12" id="MHF-pQ-8R0"/>
                         <constraint firstAttribute="trailing" secondItem="wNH-TU-KxG" secondAttribute="trailing" constant="12" id="dUX-Z1-0Ev"/>
-                        <constraint firstItem="ZRl-89-gRO" firstAttribute="top" secondItem="87h-1G-t5q" secondAttribute="top" id="jMd-Og-yCn"/>
-                        <constraint firstItem="ZRl-89-gRO" firstAttribute="leading" secondItem="87h-1G-t5q" secondAttribute="leading" constant="12" id="mn5-Hu-M5A"/>
+                        <constraint firstItem="OjH-xQ-xfH" firstAttribute="top" secondItem="87h-1G-t5q" secondAttribute="top" id="guu-nz-mq8"/>
+                        <constraint firstAttribute="bottom" secondItem="OjH-xQ-xfH" secondAttribute="bottom" constant="8" id="hg7-mX-U15"/>
                     </constraints>
                 </view>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KxU-y4-Jwh">
@@ -249,7 +282,7 @@
                     <rect key="frame" x="162" y="605" width="50" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqh-uS-U1m">
-                            <rect key="frame" x="9.5" y="10" width="31" height="30"/>
+                            <rect key="frame" x="10" y="10" width="31" height="30"/>
                             <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="30"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -319,6 +352,7 @@
                 <constraint firstItem="S1Y-ZS-dct" firstAttribute="centerX" secondItem="HPk-Bg-V0q" secondAttribute="centerX" id="uyk-kx-vrC"/>
                 <constraint firstItem="3MS-N5-3xY" firstAttribute="leading" secondItem="HPk-Bg-V0q" secondAttribute="leading" id="zYw-cX-ezI"/>
             </constraints>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>
 </document>

@@ -200,7 +200,18 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
         if recognizer.state == .ended {
             imageViewToPan = nil
             lastPanPoint = nil
-            hideToolbar(hide: false)
+            var isInTextEditMode = false
+            for v in self.canvasImageView.subviews {
+                if v.isFirstResponder && v is UITextView {
+                    isInTextEditMode = true
+                    break
+                }
+            }
+            if isInTextEditMode {
+                hideToolbar(hide: true)
+            } else {
+                hideToolbar(hide: false)
+            }
             deleteView.isHidden = true
             let point = recognizer.location(in: self.view)
             
