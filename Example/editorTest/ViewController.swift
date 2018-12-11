@@ -10,7 +10,7 @@ import UIKit
 import iOSPhotoEditor
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
@@ -49,13 +49,10 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         
         
         let photoEditor = PhotoEditorViewController(nibName:"PhotoEditorViewController",bundle: Bundle(for: PhotoEditorViewController.self))
-            
         photoEditor.photoEditorDelegate = self
-        
         photoEditor.image = image
-        
         //Colors for drawing and Text, If not set default values will be used
-//        photoEditor.colors = [.red,.blue,.green]
+        //photoEditor.colors = [.red, .blue, .green]
         
         //Stickers that the user will choose from to add on the image
         for i in 0...10 {
@@ -63,7 +60,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         }
         
         //To hide controls - array of enum control
-//        photoEditor.hiddenControls = [.crop, .draw, .share]
+        //photoEditor.hiddenControls = [.crop, .draw, .share]
         
         present(photoEditor, animated: true, completion: nil)
     }

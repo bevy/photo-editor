@@ -20,9 +20,9 @@ extension PhotoEditorViewController {
         for image in self.stickers {
             stickersViewController.stickers.append(image)
         }
-        self.addChildViewController(stickersViewController)
+        self.addChild(stickersViewController)
         self.view.addSubview(stickersViewController.view)
-        stickersViewController.didMove(toParentViewController: self)
+        stickersViewController.didMove(toParent: self)
         let height = view.frame.height
         let width  = view.frame.width
         stickersViewController.view.frame = CGRect(x: 0, y: self.view.frame.maxY , width: width, height: height)
@@ -33,7 +33,7 @@ extension PhotoEditorViewController {
         self.canvasImageView.isUserInteractionEnabled = true
         UIView.animate(withDuration: 0.3,
                        delay: 0,
-                       options: UIViewAnimationOptions.curveEaseIn,
+                       options: UIView.AnimationOptions.curveEaseIn,
                        animations: { () -> Void in
                         var frame = self.stickersViewController.view.frame
                         frame.origin.y = UIScreen.main.bounds.maxY
@@ -41,7 +41,7 @@ extension PhotoEditorViewController {
                         
         }, completion: { (finished) -> Void in
             self.stickersViewController.view.removeFromSuperview()
-            self.stickersViewController.removeFromParentViewController()
+            self.stickersViewController.removeFromParent()
             self.hideToolbar(hide: false)
         })
     }    

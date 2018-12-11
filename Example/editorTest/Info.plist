@@ -39,5 +39,7 @@
     <string>This app does not require access to the microphone.</string>
     <key>NSPhotoLibraryUsageDescription</key>
     <string>This app requires access to the photo library.</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>This app requires access to write photos to the photo library</string>
 </dict>
 </plist>

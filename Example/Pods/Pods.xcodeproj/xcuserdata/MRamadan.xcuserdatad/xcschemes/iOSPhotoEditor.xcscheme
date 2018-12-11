@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1010"
+   LastUpgradeVersion = "0940"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "059EA7181EACB8790072C0FE"
-               BuildableName = "Photo Editor.app"
-               BlueprintName = "Photo Editor"
-               ReferencedContainer = "container:Photo Editor.xcodeproj">
+               BlueprintIdentifier = "EEFA0C43D4FA150B0F6A42226C6C6F88"
+               BuildableName = "iOSPhotoEditor.framework"
+               BlueprintName = "iOSPhotoEditor"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "059EA7181EACB8790072C0FE"
-            BuildableName = "Photo Editor.app"
-            BlueprintName = "Photo Editor"
-            ReferencedContainer = "container:Photo Editor.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -51,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "059EA7181EACB8790072C0FE"
-            BuildableName = "Photo Editor.app"
-            BlueprintName = "Photo Editor"
-            ReferencedContainer = "container:Photo Editor.xcodeproj">
+            BlueprintIdentifier = "EEFA0C43D4FA150B0F6A42226C6C6F88"
+            BuildableName = "iOSPhotoEditor.framework"
+            BlueprintName = "iOSPhotoEditor"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -70,16 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "059EA7181EACB8790072C0FE"
-            BuildableName = "Photo Editor.app"
-            BlueprintName = "Photo Editor"
-            ReferencedContainer = "container:Photo Editor.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
