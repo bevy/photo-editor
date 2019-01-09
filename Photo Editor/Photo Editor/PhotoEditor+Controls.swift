@@ -40,7 +40,17 @@ extension PhotoEditorViewController {
     @IBAction func stickersButtonTapped(_ sender: Any) {
         addStickersViewController()
     }
-
+    
+    @IBAction func eraserButtonTapped(_ sender: UIButton) {
+        debugPrint(#function)
+        isDrawing = true
+        isErasing = true
+        canvasImageView.isUserInteractionEnabled = false
+        doneButton.isHidden = false
+        colorPickerView.isHidden = false
+        hideToolbar(hide: true)
+    }
+    
     @IBAction func drawButtonTapped(_ sender: Any) {
         isDrawing = true
         canvasImageView.isUserInteractionEnabled = false

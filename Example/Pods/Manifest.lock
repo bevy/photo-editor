@@ -1,16 +1,16 @@
 PODS:
-  - iOSPhotoEditor (0.5)
+  - iOSPhotoEditor (0.6)
 
 DEPENDENCIES:
-  - iOSPhotoEditor
+  - iOSPhotoEditor (from `../Photo Editor`)
 
-SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - iOSPhotoEditor
+EXTERNAL SOURCES:
+  iOSPhotoEditor:
+    :path: "../Photo Editor"
 
 SPEC CHECKSUMS:
-  iOSPhotoEditor: 0ddc84bcef9fe73fe8cc45ac999b89e0aa207aea
+  iOSPhotoEditor: f20c417ddd6e3f164c6cf088b369eec49eafcc38
 
-PODFILE CHECKSUM: b3b33da00e571f79c0e6db13cf8c1bf38234ee5b
+PODFILE CHECKSUM: f0916a6e5adb1ff6ba1ebc8eb42f8e7ae032842b
 
 COCOAPODS: 1.5.0

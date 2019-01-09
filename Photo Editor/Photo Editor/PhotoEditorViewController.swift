@@ -34,6 +34,7 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var cropButton: UIButton!
     @IBOutlet weak var stickerButton: UIButton!
     @IBOutlet weak var drawButton: UIButton!
+    @IBOutlet weak var eraserButton: UIButton!
     @IBOutlet weak var textButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
@@ -59,6 +60,7 @@ public final class PhotoEditorViewController: UIViewController {
     var drawColor: UIColor = UIColor.black
     var textColor: UIColor = UIColor.white
     var isDrawing: Bool = false
+    var isErasing: Bool = false
     var lastPoint: CGPoint!
     var swiped = false
     var lastPanPoint: CGPoint?
