@@ -38,7 +38,17 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var continueButton: UIButton!
     
+    public var cropButtonImage: UIImage?
+    public var stickerButtonImage: UIImage?
+    public var drawButtonImage: UIImage?
+    public var textButtonImage: UIImage?
+    public var saveButtonImage: UIImage?
+    public var shareButtonImage: UIImage?
+    public var clearButtonImage: UIImage?
+    public var continueButtonImage: UIImage?
+
     public var image: UIImage?
     /**
      Array of Stickers -UIImage- that the user will choose from
@@ -81,7 +91,7 @@ public final class PhotoEditorViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.setImageView(image: image!)
-        
+        setCustomImages()
         deleteView.layer.cornerRadius = deleteView.bounds.height / 2
         deleteView.layer.borderWidth = 2.0
         deleteView.layer.borderColor = UIColor.white.cgColor
@@ -131,6 +141,24 @@ public final class PhotoEditorViewController: UIViewController {
         imageViewHeightConstraint.constant = (size?.height)!
     }
     
+    func setCustomImages() {
+        setImage(cropButtonImage, forButton: cropButton)
+        setImage(stickerButtonImage, forButton: stickerButton)
+        setImage(drawButtonImage, forButton: drawButton)
+        setImage(textButtonImage, forButton: textButton)
+        setImage(saveButtonImage, forButton: saveButton)
+        setImage(shareButtonImage, forButton: shareButton)
+        setImage(clearButtonImage, forButton: clearButton)
+        setImage(continueButtonImage, forButton: continueButton)
+    }
+    
+    func setImage(_ image: UIImage?, forButton button: UIButton) {
+        guard let image = image else { return }
+        button.setTitle(nil, for: .normal)
+        button.setImage(image.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.tintColor = .white
+    }
+
     func hideToolbar(hide: Bool) {
         topToolbar.isHidden = hide
         topGradient.isHidden = hide
