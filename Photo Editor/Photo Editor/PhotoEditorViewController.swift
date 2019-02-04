@@ -39,6 +39,7 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     public var cropButtonImage: UIImage?
     public var stickerButtonImage: UIImage?
@@ -48,6 +49,7 @@ public final class PhotoEditorViewController: UIViewController {
     public var shareButtonImage: UIImage?
     public var clearButtonImage: UIImage?
     public var continueButtonImage: UIImage?
+    public var cancelButtonImage: UIImage?
 
     public var image: UIImage?
     /**
@@ -150,6 +152,7 @@ public final class PhotoEditorViewController: UIViewController {
         setImage(shareButtonImage, forButton: shareButton)
         setImage(clearButtonImage, forButton: clearButton)
         setImage(continueButtonImage, forButton: continueButton)
+        setImage(cancelButtonImage, forButton: cancelButton)
     }
     
     func setImage(_ image: UIImage?, forButton button: UIButton) {
