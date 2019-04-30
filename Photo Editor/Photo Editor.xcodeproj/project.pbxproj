@@ -25,7 +25,6 @@
 		056513281EF489B4009EA38F /* UIImage+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056513171EF489B4009EA38F /* UIImage+Crop.swift */; };
 		056513291EF489B4009EA38F /* ResizeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056513181EF489B4009EA38F /* ResizeControl.swift */; };
 		056513341EF489C0009EA38F /* StickersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0565132A1EF489C0009EA38F /* StickersViewController.xib */; };
-		056513351EF489C0009EA38F /* ColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0565132B1EF489C0009EA38F /* ColorCollectionViewCell.xib */; };
 		056513361EF489C0009EA38F /* EmojiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0565132C1EF489C0009EA38F /* EmojiCollectionViewCell.xib */; };
 		056513371EF489C0009EA38F /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0565132D1EF489C0009EA38F /* icomoon.ttf */; };
 		056513381EF489C0009EA38F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0565132E1EF489C0009EA38F /* LaunchScreen.storyboard */; };
@@ -45,6 +44,7 @@
 		059EA71D1EACB8790072C0FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EA71C1EACB8790072C0FE /* AppDelegate.swift */; };
 		059EA7241EACB8790072C0FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 059EA7231EACB8790072C0FE /* Assets.xcassets */; };
 		059EA7271EACB8790072C0FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 059EA7251EACB8790072C0FE /* LaunchScreen.storyboard */; };
+		445841672278B75600536E23 /* ColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0565132B1EF489C0009EA38F /* ColorCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -206,6 +206,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -228,13 +229,13 @@
 				0565133B1EF489C0009EA38F /* PhotoCropEditorBorder@3x.png in Resources */,
 				0565133D1EF489C0009EA38F /* PhotoEditorViewController.xib in Resources */,
 				059EA7241EACB8790072C0FE /* Assets.xcassets in Resources */,
-				056513351EF489C0009EA38F /* ColorCollectionViewCell.xib in Resources */,
 				0565133A1EF489C0009EA38F /* PhotoCropEditorBorder@2x.png in Resources */,
 				0565133C1EF489C0009EA38F /* StickerCollectionViewCell.xib in Resources */,
 				056513371EF489C0009EA38F /* icomoon.ttf in Resources */,
 				056513381EF489C0009EA38F /* LaunchScreen.storyboard in Resources */,
 				056513341EF489C0009EA38F /* StickersViewController.xib in Resources */,
 				056513361EF489C0009EA38F /* EmojiCollectionViewCell.xib in Resources */,
+				445841672278B75600536E23 /* ColorCollectionViewCell.xib in Resources */,
 				056513391EF489C0009EA38F /* PhotoCropEditorBorder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +323,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -380,6 +382,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -402,11 +405,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = B8BKM8368H;
 				INFOPLIST_FILE = "Photo Editor/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hamed.Photo-Editor";
+				PRODUCT_MODULE_NAME = iOSPhotoEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
@@ -417,11 +422,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = B8BKM8368H;
 				INFOPLIST_FILE = "Photo Editor/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hamed.Photo-Editor";
+				PRODUCT_MODULE_NAME = iOSPhotoEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;

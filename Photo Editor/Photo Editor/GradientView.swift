@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GradientView: UIView {
+@objcMembers class GradientView: UIView {
     
     @IBInspectable public var gradientFromtop: Bool = true
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StickersViewController: UIViewController, UIGestureRecognizerDelegate {
+@objcMembers class StickersViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var holdView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!

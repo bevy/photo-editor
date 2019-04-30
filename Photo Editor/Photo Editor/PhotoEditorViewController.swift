@@ -8,7 +8,7 @@
 
 import UIKit
 
-public final class PhotoEditorViewController: UIViewController {
+@objcMembers public final class PhotoEditorViewController: UIViewController {
     
     /** holding the 2 imageViews original image and drawing & stickers */
     @IBOutlet weak var canvasView: UIView!
