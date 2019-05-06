@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-open class CropView: UIView, UIScrollViewDelegate, UIGestureRecognizerDelegate, CropRectViewDelegate {
+@objcMembers open class CropView: UIView, UIScrollViewDelegate, UIGestureRecognizerDelegate, CropRectViewDelegate {
     open var image: UIImage? {
         didSet {
             if image != nil {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EmojisCollectionViewDelegate: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+@objcMembers class EmojisCollectionViewDelegate: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     var stickersViewControllerDelegate : StickersViewControllerDelegate?
 

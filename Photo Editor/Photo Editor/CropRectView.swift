@@ -9,13 +9,13 @@
 
 import UIKit
 
-protocol CropRectViewDelegate: class {
+@objc protocol CropRectViewDelegate: class {
     func cropRectViewDidBeginEditing(_ view: CropRectView)
     func cropRectViewDidChange(_ view: CropRectView)
     func cropRectViewDidEndEditing(_ view: CropRectView)
 }
 
-class CropRectView: UIView, ResizeControlDelegate {
+@objcMembers class CropRectView: UIView, ResizeControlDelegate {
     weak var delegate: CropRectViewDelegate?
     var showsGridMajor = true {
         didSet {
