@@ -8,13 +8,13 @@
 
 import UIKit
 
-@objc protocol ResizeControlDelegate: class {
+protocol ResizeControlDelegate: class {
     func resizeControlDidBeginResizing(_ control: ResizeControl)
     func resizeControlDidResize(_ control: ResizeControl)
     func resizeControlDidEndResizing(_ control: ResizeControl)
 }
 
-@objcMembers class ResizeControl: UIView {
+class ResizeControl: UIView {
     weak var delegate: ResizeControlDelegate?
     var translation = CGPoint.zero
     var enabled = true

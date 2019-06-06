@@ -32,10 +32,10 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                     }
                 }
                 if imageViewToPan != nil {
-                    moveView(view: imageViewToPan!, recognizer: recognizer)
+                    moveView(viewLocal: imageViewToPan!, recognizer: recognizer)
                 }
             } else {
-                moveView(view: view, recognizer: recognizer)
+                moveView(viewLocal: view, recognizer: recognizer)
             }
         }
     }
@@ -161,16 +161,18 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
      Snap the view back if it's out of the canvas
      */
 
-    func moveView(view: UIView, recognizer: UIPanGestureRecognizer)  {
-        
+    func moveView(viewLocal: UIView, recognizer: UIPanGestureRecognizer)  {
+        if recognizer.isKind(of: UIPinchGestureRecognizer.classForCoder()) {
+            return
+        }
         hideToolbar(hide: true)
         deleteView.isHidden = false
         
-        view.superview?.bringSubviewToFront(view)
+        viewLocal.superview?.bringSubviewToFront(viewLocal)
         let pointToSuperView = recognizer.location(in: self.view)
-
-        view.center = CGPoint(x: view.center.x + recognizer.translation(in: canvasImageView).x,
-                              y: view.center.y + recognizer.translation(in: canvasImageView).y)
+        
+        viewLocal.center = CGPoint(x: viewLocal.center.x + recognizer.translation(in: canvasImageView).x,
+                              y: viewLocal.center.y + recognizer.translation(in: canvasImageView).y)
         
         recognizer.setTranslation(CGPoint.zero, in: canvasImageView)
         
@@ -182,16 +184,16 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                     generator.impactOccurred()
                 }
                 UIView.animate(withDuration: 0.3, animations: {
-                    view.transform = view.transform.scaledBy(x: 0.25, y: 0.25)
-                    view.center = recognizer.location(in: self.canvasImageView)
+                    viewLocal.transform = viewLocal.transform.scaledBy(x: 0.25, y: 0.25)
+                    viewLocal.center = recognizer.location(in: self.canvasImageView)
                 })
             }
                 //View is going out of deleteView
             else if deleteView.frame.contains(previousPoint) && !deleteView.frame.contains(pointToSuperView) {
                 //Scale to original Size
                 UIView.animate(withDuration: 0.3, animations: {
-                    view.transform = view.transform.scaledBy(x: 4, y: 4)
-                    view.center = recognizer.location(in: self.canvasImageView)
+                    viewLocal.transform = viewLocal.transform.scaledBy(x: 4, y: 4)
+                    viewLocal.center = CGPoint(x:self.canvasImageView.frame.width / 2, y: self.canvasImageView.frame.height / 2)
                 })
             }
         }
@@ -200,26 +202,19 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
         if recognizer.state == .ended {
             imageViewToPan = nil
             lastPanPoint = nil
-
-            if isTyping == true {
-                hideToolbar(hide: true)
-            } else {
-                hideToolbar(hide: false)
-            }
-            
+            hideToolbar(hide: false)
             deleteView.isHidden = true
-
             let point = recognizer.location(in: self.view)
             
             if deleteView.frame.contains(point) { // Delete the view
-                view.removeFromSuperview()
+                viewLocal.removeFromSuperview()
                 if #available(iOS 10.0, *) {
                     let generator = UINotificationFeedbackGenerator()
                     generator.notificationOccurred(.success)
                 }
-            } else if !canvasImageView.bounds.contains(view.center) { //Snap the view back to canvasImageView
+            } else if !canvasImageView.bounds.contains(viewLocal.center) { //Snap the view back to canvasImageView
                 UIView.animate(withDuration: 0.3, animations: {
-                    view.center = self.canvasImageView.center
+                    viewLocal.center = CGPoint(x: self.canvasImageView.size.width / 2, y: self.canvasImageView.size.height / 2)
                 })
                 
             }
