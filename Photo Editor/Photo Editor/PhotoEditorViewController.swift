@@ -359,22 +359,108 @@ extension PhotoEditorViewController: ColorDelegate {
 
 
 
-//struct AppUtility {
-//
-//    static func lockOrientation(_ orientation: UIInterfaceOrientationMask) {
-//
-//        if let delegate = UIApplication.shared.delegate as? AppDelegate {
+struct AppUtility {
+    
+    static func lockOrientation(_ orientation: UIInterfaceOrientationMask) {
+        
+        if let delegate = UIApplication.shared.delegate  {
+            (delegate as? AnyObject)?.setValue(orientation, forKey: "orientationLock")
 //            delegate.orientationLock = orientation
-//        }
-//    }
-//
-//    /// OPTIONAL Added method to adjust lock and rotate to the desired orientation
-//    static func lockOrientation(_ orientation: UIInterfaceOrientationMask, andRotateTo rotateOrientation:UIInterfaceOrientation) {
-//
-//        self.lockOrientation(orientation)
-//
-//        UIDevice.current.setValue(rotateOrientation.rawValue, forKey: "orientation")
-//        UINavigationController.attemptRotationToDeviceOrientation()
-//    }
-//
-//}
+        }
+    }
+    
+    /// OPTIONAL Added method to adjust lock and rotate to the desired orientation
+    static func lockOrientation(_ orientation: UIInterfaceOrientationMask, andRotateTo rotateOrientation:UIInterfaceOrientation) {
+        
+        self.lockOrientation(orientation)
+        
+        UIDevice.current.setValue(rotateOrientation.rawValue, forKey: "orientation")
+        UINavigationController.attemptRotationToDeviceOrientation()
+    }
+    
+}
+
+
+extension UIView {
+    
+    func setRoundCorner(radius:CGFloat) {
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
+    }
+    
+    func setBorder(color:UIColor = UIColor.clear, size:CGFloat = 1) {
+        self.layer.borderColor = color.cgColor
+        self.layer.borderWidth = size
+    }
+    
+    func setRoundBorder(radius:CGFloat, color:UIColor = UIColor.clear, size:CGFloat = 1) {
+        self.setRoundCorner(radius: radius)
+        self.setBorder(color: color, size: size)
+    }
+    
+    func addTapGesture(target:AnyObject?, action:Selector) {
+        let tapGesture = UITapGestureRecognizer(target: target, action: action)
+        tapGesture.numberOfTapsRequired = 1
+        tapGesture.numberOfTouchesRequired = 1
+        self.addGestureRecognizer(tapGesture)
+    }
+    
+    func addDoubleTapGesture(target:AnyObject?, actionDouble:Selector, actionSingle:Selector) {
+        let tapGestureSingle = UITapGestureRecognizer(target: target, action: actionSingle)
+        tapGestureSingle.numberOfTapsRequired = 1
+        self.addGestureRecognizer(tapGestureSingle)
+        
+        let tapGesture = UITapGestureRecognizer(target: target, action: actionDouble)
+        tapGesture.numberOfTapsRequired = 2
+        self.addGestureRecognizer(tapGesture)
+        
+        tapGestureSingle.require(toFail: tapGesture)
+    }
+    
+    func addDoubleTapGesture(target:AnyObject?, actionDouble:Selector) {
+        let tapGesture = UITapGestureRecognizer(target: target, action: actionDouble)
+        tapGesture.numberOfTapsRequired = 2
+        self.addGestureRecognizer(tapGesture)
+    }
+    
+    func roundCorners(corners:UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        self.layer.mask = mask
+    }
+    
+    // Adds a view as a subview of another view with anchors at all sides
+    func addToView(view: UIView) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(self)
+        
+        self.topAnchor.constraint(equalTo:    view.topAnchor).isActive = true
+        self.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        self.leftAnchor.constraint(equalTo:   view.leftAnchor).isActive = true
+        self.rightAnchor.constraint(equalTo:  view.rightAnchor).isActive = true
+    }
+    
+    func addBottomViewToView(view: UIView) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(self)
+        let margins = view.layoutMarginsGuide
+        NSLayoutConstraint.activate([
+            self.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            self.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            self.bottomAnchor.constraint(equalTo: margins.bottomAnchor)
+            ])
+        self.heightAnchor.constraint(equalToConstant: 60).isActive = true
+    }
+    
+    // Instantiate from a xib
+    class func fromNib<T : UIView>() -> T {
+        return Bundle.main.loadNibNamed(String(describing: T.self), owner: nil, options: nil)!.first as! T
+    }
+}
+extension String{
+    func localized() -> String{
+        return NSLocalizedString(self, comment: self)
+    }
+}
