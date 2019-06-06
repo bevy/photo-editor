@@ -8,7 +8,7 @@
 
 import UIKit
 
-public final class PhotoEditorViewController: UIViewController {
+public class PhotoEditorViewController: UIViewController {
     var selectedView: UIView?
      var inputToolbar: UIView!
      var textView: GrowingTextView!
@@ -54,7 +54,7 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet var  imageView: UIImageView!
     @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageViewWidthConstraint: NSLayoutConstraint!
-    //To hold the drawings and stickers
+    //To hold the drawings and stistrcackers
     @IBOutlet weak var canvasImageView: UIImageView!
 
     @IBOutlet weak var topToolbar: UIView!
