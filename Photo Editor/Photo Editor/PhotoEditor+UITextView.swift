@@ -46,8 +46,36 @@ extension PhotoEditorViewController: UITextViewDelegate {
         UIView.animate(withDuration: 0.3,
                        animations: {
                         textView.transform = self.lastTextViewTransform!
-                        textView.center = self.lastTextViewTransCenter!
+                        //textView.center = self.lastTextViewTransCenter!
         }, completion: nil)
+    }
+    public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if textView == self.textView {
+            if text == "\n" {
+                textView.resignFirstResponder()
+            }
+        }
+        return true
+    }
+    
+    func addDoneButtonOnKeyboard(_ textView: UITextView) {
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        doneToolbar.barStyle       = UIBarStyle.default
+        let flexSpace              = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem  = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(PhotoEditorViewController.doneButtonAction))
+        
+        var items = [UIBarButtonItem]()
+        items.append(flexSpace)
+        items.append(done)
+        
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        textView.inputAccessoryView = doneToolbar
+    }
+    
+    @objc func doneButtonAction() {
+        self.view.endEditing(true)
     }
     
 }

@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-@objcMembers open class CropView: UIView, UIScrollViewDelegate, UIGestureRecognizerDelegate, CropRectViewDelegate {
+open class CropView: UIView, UIScrollViewDelegate, UIGestureRecognizerDelegate, CropRectViewDelegate {
     open var image: UIImage? {
         didSet {
             if image != nil {
@@ -187,6 +187,7 @@ import AVFoundation
         setupEditingRect()
 
         if imageView == nil {
+            
             if interfaceOrientation.isPortrait {
                 insetRect = bounds.insetBy(dx: MarginLeft, dy: MarginTop)
             } else {
@@ -245,7 +246,7 @@ import AVFoundation
         let contentSize = scrollView.contentSize
         let initialRect = CGRect(x: 0, y: 0, width: contentSize.width, height: contentSize.height)
         scrollView.zoom(to: initialRect, animated: false)
-        
+
         layoutCropRectViewWithCropRect(scrollView.bounds)
         
         if animated {
@@ -347,7 +348,11 @@ import AVFoundation
         bottomOverlayView.frame = CGRect(x: 0, y: cropRect.maxY, width: bounds.width, height: bounds.height - cropRect.maxY)
     }
     
-    fileprivate func zoomToCropRect(_ toRect: CGRect) {
+//    fileprivate func zoomToCropRect(_ toRect: CGRect) {
+//        zoomToCropRect(toRect, shouldCenter: false, animated: true)
+//    }
+    
+    open func zoomToCropRect(_ toRect: CGRect) {
         zoomToCropRect(toRect, shouldCenter: false, animated: true)
     }
     

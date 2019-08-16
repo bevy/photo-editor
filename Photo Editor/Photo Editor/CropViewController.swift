@@ -8,12 +8,12 @@
 
 import UIKit
 
-@objc public protocol CropViewControllerDelegate: class {
+public protocol CropViewControllerDelegate: class {
     func cropViewController(_ controller: CropViewController, didFinishCroppingImage image: UIImage, transform: CGAffineTransform, cropRect: CGRect)
     func cropViewControllerDidCancel(_ controller: CropViewController)
 }
 
-@objcMembers open class CropViewController: UIViewController {
+open class CropViewController: UIViewController {
     open weak var delegate: CropViewControllerDelegate?
     open var image: UIImage? {
         didSet {
@@ -120,6 +120,7 @@ import UIKit
     }
     
     open func resetCropRect() {
+//        delegate?.cropViewControllerDidCancel(self)
         cropView?.resetCropRect()
     }
     
@@ -217,10 +218,6 @@ import UIKit
             self.dismiss(animated: true, completion: nil)
         }
         actionSheet.addAction(cancel)
-        
-        if let popoverController = actionSheet.popoverPresentationController {
-            popoverController.barButtonItem = sender
-        }
         
         present(actionSheet, animated: true, completion: nil)
     }

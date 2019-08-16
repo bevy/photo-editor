@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StickersViewController" customModule="iOSPhotoEditor" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StickersViewController" customModule="JoinPods" customModuleProvider="target">
             <connections>
                 <outlet property="headerView" destination="Jqb-lC-sL5" id="2Bt-iO-hyv"/>
                 <outlet property="holdView" destination="caC-0e-fET" id="T8J-gB-ag8"/>
@@ -23,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jqb-lC-sL5">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                    <rect key="frame" x="0.0" y="20" width="375" height="40"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="caC-0e-fET">
                             <rect key="frame" x="162.5" y="8" width="50" height="5"/>
@@ -47,12 +49,12 @@
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="389-Pb-g4p">
-                    <rect key="frame" x="0.0" y="40" width="375" height="627"/>
+                    <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Jqb-lC-sL5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="534-wp-qUu"/>
+                <constraint firstItem="Jqb-lC-sL5" firstAttribute="top" secondItem="oBB-Lc-BEU" secondAttribute="top" id="6Cf-lT-AG3"/>
                 <constraint firstAttribute="bottom" secondItem="389-Pb-g4p" secondAttribute="bottom" id="alT-c1-6ub"/>
                 <constraint firstItem="389-Pb-g4p" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="eu1-LX-lYG"/>
                 <constraint firstItem="Jqb-lC-sL5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fvh-Gm-lz3"/>
@@ -61,6 +63,7 @@
                 <constraint firstAttribute="trailing" secondItem="Jqb-lC-sL5" secondAttribute="trailing" id="tYL-lr-Vzj"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
+            <viewLayoutGuide key="safeArea" id="oBB-Lc-BEU"/>
             <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>

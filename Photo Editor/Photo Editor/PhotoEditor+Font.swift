@@ -19,10 +19,12 @@ extension PhotoEditorViewController {
         guard let fontDataProvider = CGDataProvider(url: url! as CFURL) else {
             return
         }
-        guard let font = CGFont(fontDataProvider) else {return}
+        let font = CGFont(fontDataProvider)
         var error: Unmanaged<CFError>?
-        guard CTFontManagerRegisterGraphicsFont(font, &error) else {
-            return
+        if font != nil {
+            guard CTFontManagerRegisterGraphicsFont(font!, &error) else {
+                return
+            }
         }
     }
 }
