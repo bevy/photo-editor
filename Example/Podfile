@@ -6,6 +6,7 @@ target 'editorTest' do
   use_frameworks!
 
   # Pods for editorTest
-  pod 'iOSPhotoEditor' 
+#  pod 'iOSPhotoEditor'
+  pod 'iOSPhotoEditor', :path => '../'
 
 end
