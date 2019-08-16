@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:editorTest.xcodeproj">
+      location = "group:/Users/mohamedm/Desktop/Projects/Github/photo-editor/Example/Example.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
