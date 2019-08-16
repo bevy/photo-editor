@@ -20,7 +20,7 @@ import UIKit
     var emojisDelegate: EmojisCollectionViewDelegate!
     
     var stickers : [UIImage] = []
-    var stickersViewControllerDelegate : StickersViewControllerDelegate?
+    weak var stickersViewControllerDelegate : StickersViewControllerDelegate?
     
     let screenSize = UIScreen.main.bounds.size
     
