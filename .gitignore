@@ -1,5 +1,5 @@
-/Example/editorTest.xcodeproj/xcuserdata/joe.xcuserdatad
-/Example/editorTest.xcworkspace/xcuserdata/joe.xcuserdatad
-/Example/Pods/Pods.xcodeproj/xcuserdata/joe.xcuserdatad
-/Photo Editor/.DS_Store
-/Photo Editor/Photo Editor.xcodeproj/project.xcworkspace/xcuserdata/joe.xcuserdatad
+.DS_Store
+/.build
+/Packages
+/*.xcodeproj
+xcuserdata/
