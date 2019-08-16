@@ -50,7 +50,7 @@ $ pod install
 The `PhotoEditorViewController`.
 
 ```swift
-let photoEditor = UIStoryboard(name: "PhotoEditor", bundle: Bundle(for: PhotoEditorViewController.self)).instantiateViewController(withIdentifier: "PhotoEditorViewController") as! PhotoEditorViewController
+let photoEditor = PhotoEditorViewController(nibName:"PhotoEditorViewController",bundle: Bundle(for: PhotoEditorViewController.self))
 
 //PhotoEditorDelegate
 photoEditor.photoEditorDelegate = self
@@ -61,8 +61,11 @@ photoEditor.image = image
 //Stickers that the user will choose from to add on the image         
 photoEditor.stickers.append(UIImage(named: "sticker" )!)
 
-//To hide controls - array of enum control
+//Optional: To hide controls - array of enum control
 photoEditor.hiddenControls = [.crop, .draw, .share]
+
+//Optional: Colors for drawing and Text, If not set default values will be used
+photoEditor.colors = [.red,.blue,.green]
 
 //Present the View Controller
 present(photoEditor, animated: true, completion: nil)
@@ -70,11 +73,11 @@ present(photoEditor, animated: true, completion: nil)
 The `PhotoEditorDelegate` methods.
 
 ```swift
-func imageEdited(image: UIImage) {
+func doneEditing(image: UIImage) {
     // the edited image
 }
     
-func editorCanceled() {
+func canceledEditing() {
     print("Canceled")
 }
 
