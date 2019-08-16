@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'iOSPhotoEditor'
-  s.version          = '0.6.1'
+  s.version          = '0.7.0'
   s.summary          = 'Photo Editor supports drawing, writing text and adding stickers and emojis'
 
   s.description      = <<-DESC
@@ -12,7 +12,7 @@ with the ability to scale and rotate objects
   s.license          = { :type => 'MIT', :file => 'LICENSE.md' }
   s.author           = { 'Mohamed Hamed' => 'mohamed.hamed.ibrahem@gmail.com' }
   s.source           = { :git => 'https://github.com/M-Hamed/photo-editor.git', :tag => s.version.to_s }
-  s.swift_version    = '4.2'
+  s.swift_version    = '5.0'
 
   s.ios.deployment_target = '9.0'
   s.source_files = "Photo Editor/**/*.{swift}"
