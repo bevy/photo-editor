@@ -77,10 +77,10 @@ func canceledEditing() {
 
 ```
 
-<img src="screenshot.PNG" width="350" height="600" />
+<img src="Assets/screenshot.PNG" width="350" height="600" />
 
 # Live Demo appetize.io
-[![Demo](appetize.png)](https://appetize.io/app/jtanmwtzbz1favhvhw5g24n7b0?device=iphone7plus&scale=50&orientation=portrait&osVersion=10.3)
+[![Demo](Assets/appetize.png)](https://appetize.io/app/jtanmwtzbz1favhvhw5g24n7b0?device=iphone7plus&scale=50&orientation=portrait&osVersion=10.3)
 
 
 # Demo Video 
