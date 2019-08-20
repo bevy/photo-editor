@@ -19,8 +19,8 @@
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "Sources/**/*.{swift}",
-  "exclude_files": "Tests/**/*.{swift}",
-  "resources": "Sources/**/*.{png,jpeg,jpg,storyboard,xib,ttf}",
+  "source_files": "iOSPhotoEditor/**/*.{swift}",
+  "exclude_files": "",
+  "resources": "iOSPhotoEditor/**/*.{png,jpeg,jpg,storyboard,xib,ttf}",
   "swift_version": "5.0"
 }
