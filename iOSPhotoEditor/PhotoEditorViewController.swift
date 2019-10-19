@@ -105,6 +105,15 @@ public final class PhotoEditorViewController: UIViewController {
         hideControls()
     }
     
+    override public func viewDidDisappear(_ animated: Bool) {
+        // Cleanup
+        colorsCollectionViewDelegate.colorDelegate = nil;
+        colorsCollectionViewDelegate = nil;
+        
+        stickersViewController.stickersViewControllerDelegate = nil;
+        stickersViewController = nil;
+    }
+    
     func configureCollectionView() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 30, height: 30)

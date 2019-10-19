@@ -13,6 +13,10 @@ extension PhotoEditorViewController {
     
     //Resources don't load in main bundle we have to register the font
     func registerFont() {
+        if (UIFont.fontNames(forFamilyName: "icomoon").count != 0) {
+            return;
+        }
+        
         let bundle = Bundle(for: PhotoEditorViewController.self)
             let url =  bundle.url(forResource: "icomoon", withExtension: "ttf")
             
