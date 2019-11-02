@@ -65,6 +65,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         //To hide controls - array of enum control
         //photoEditor.hiddenControls = [.crop, .draw, .share]
         
+        photoEditor.modalPresentationStyle = .fullScreen
         present(photoEditor, animated: true, completion: nil)
     }
     
