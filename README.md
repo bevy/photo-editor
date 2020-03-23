@@ -4,18 +4,12 @@
 - [x] Cropping 
 - [x] Adding images -Stickers-
 - [x] Adding Text with colors
-- [x] Drawing wihtcolors
+- [x] Drawing with colors
 - [x] Scaling and rotating objects 
 - [x] Deleting objects 
 - [x] Saving to photos and Sharing 
 - [x] Cool animations 
 - [x] Uses iOS Taptic Engine feedback 
-
-## New Features in V 0.4 
-
-Thanks to https://github.com/sprint84/PhotoCropEditor 
-
-It now supports Cropping 💃🏻
 
 ## Installation
 
@@ -83,10 +77,10 @@ func canceledEditing() {
 
 ```
 
-<img src="screenshot.PNG" width="350" height="600" />
+<img src="Assets/screenshot.PNG" width="350" height="600" />
 
 # Live Demo appetize.io
-[![Demo](appetize.png)](https://appetize.io/app/jtanmwtzbz1favhvhw5g24n7b0?device=iphone7plus&scale=50&orientation=portrait&osVersion=10.3)
+[![Demo](Assets/appetize.png)](https://appetize.io/app/jtanmwtzbz1favhvhw5g24n7b0?device=iphone7plus&scale=50&orientation=portrait&osVersion=10.3)
 
 
 # Demo Video 

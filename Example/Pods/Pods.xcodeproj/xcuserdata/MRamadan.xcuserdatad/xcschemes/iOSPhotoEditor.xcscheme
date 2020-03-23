@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "0940"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D00945AA4C0B4EF006017796DEC748DF"
-               BuildableName = "Pods_editorTest.framework"
-               BlueprintName = "Pods-editorTest"
+               BlueprintIdentifier = "EEFA0C43D4FA150B0F6A42226C6C6F88"
+               BuildableName = "iOSPhotoEditor.framework"
+               BlueprintName = "iOSPhotoEditor"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D00945AA4C0B4EF006017796DEC748DF"
-            BuildableName = "Pods_editorTest.framework"
-            BlueprintName = "Pods-editorTest"
+            BlueprintIdentifier = "EEFA0C43D4FA150B0F6A42226C6C6F88"
+            BuildableName = "iOSPhotoEditor.framework"
+            BlueprintName = "iOSPhotoEditor"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
