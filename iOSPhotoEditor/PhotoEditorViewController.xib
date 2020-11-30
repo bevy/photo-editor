@@ -23,6 +23,7 @@
                 <outlet property="colorPickerView" destination="Cy8-ap-fH9" id="KJx-KY-rfM"/>
                 <outlet property="colorPickerViewBottomConstraint" destination="mok-x4-xHA" id="SKq-N5-bcn"/>
                 <outlet property="colorsCollectionView" destination="GaQ-XR-asZ" id="1rf-hU-0nn"/>
+                <outlet property="continueButton" destination="wNH-TU-KxG" id="U42-gu-gts"/>
                 <outlet property="cropButton" destination="Ghm-bq-BmY" id="f2D-02-o1D"/>
                 <outlet property="deleteView" destination="yAt-sK-1nK" id="0Jn-1A-WAT"/>
                 <outlet property="doneButton" destination="KxU-y4-Jwh" id="19z-FV-eWC"/>
