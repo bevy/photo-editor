@@ -1,5 +1,8 @@
 # iOS Photo Editor
 
+# Making changes to this read me document to back to remote or Github
+
+
 ## Features
 - [x] Cropping 
 - [x] Adding images -Stickers-
