@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +20,6 @@
                 <outlet property="canvasView" destination="S1Y-ZS-dct" id="p6I-kg-UUU"/>
                 <outlet property="clearButton" destination="Kpe-Ez-Cio" id="C0i-3L-kLI"/>
                 <outlet property="colorPickerView" destination="Cy8-ap-fH9" id="KJx-KY-rfM"/>
-                <outlet property="colorPickerViewBottomConstraint" destination="mok-x4-xHA" id="SKq-N5-bcn"/>
                 <outlet property="colorsCollectionView" destination="GaQ-XR-asZ" id="1rf-hU-0nn"/>
                 <outlet property="cropButton" destination="Ghm-bq-BmY" id="f2D-02-o1D"/>
                 <outlet property="deleteView" destination="yAt-sK-1nK" id="0Jn-1A-WAT"/>
@@ -85,7 +81,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Doi-2Z-r5q">
                             <rect key="frame" x="237" y="0.0" width="165" height="60"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghm-bq-BmY">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghm-bq-BmY">
                                     <rect key="frame" x="0.0" y="0.0" width="30" height="60"/>
                                     <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
                                     <size key="titleShadowOffset" width="1" height="0.0"/>
@@ -97,7 +93,7 @@
                                         <action selector="cropButtonTapped:" destination="-1" eventType="touchUpInside" id="fa9-jd-guk"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLX-iy-2Rc">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLX-iy-2Rc">
                                     <rect key="frame" x="45" y="0.0" width="30" height="60"/>
                                     <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
                                     <size key="titleShadowOffset" width="1" height="0.0"/>
@@ -109,7 +105,7 @@
                                         <action selector="stickersButtonTapped:" destination="-1" eventType="touchUpInside" id="snI-Px-Ngx"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qm4-f6-DBr">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qm4-f6-DBr">
                                     <rect key="frame" x="90" y="0.0" width="30" height="60"/>
                                     <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
                                     <size key="titleShadowOffset" width="1" height="0.0"/>
@@ -121,7 +117,7 @@
                                         <action selector="drawButtonTapped:" destination="-1" eventType="touchUpInside" id="uts-mM-XHI"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wH-LJ-SyD">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wH-LJ-SyD">
                                     <rect key="frame" x="135" y="0.0" width="30" height="60"/>
                                     <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
                                     <size key="titleShadowOffset" width="1" height="0.0"/>
@@ -135,7 +131,7 @@
                                 </button>
                             </subviews>
                         </stackView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9an-1W-thw">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9an-1W-thw">
                             <rect key="frame" x="12" y="11.666666666666664" width="30" height="37"/>
                             <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
                             <size key="titleShadowOffset" width="1" height="0.0"/>
@@ -174,7 +170,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ZRl-89-gRO">
                             <rect key="frame" x="12" y="0.0" width="120" height="52"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mW4-Jz-sic">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mW4-Jz-sic">
                                     <rect key="frame" x="0.0" y="0.0" width="30" height="52"/>
                                     <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
                                     <size key="titleShadowOffset" width="1" height="0.0"/>
@@ -186,7 +182,7 @@
                                         <action selector="saveButtonTapped:" destination="-1" eventType="touchUpInside" id="Sc7-Zy-r4v"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlw-H0-WcJ">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlw-H0-WcJ">
                                     <rect key="frame" x="45" y="0.0" width="30" height="52"/>
                                     <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
                                     <size key="titleShadowOffset" width="1" height="0.0"/>
@@ -198,7 +194,7 @@
                                         <action selector="shareButtonTapped:" destination="-1" eventType="touchUpInside" id="ZTG-wV-jfh"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kpe-Ez-Cio">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kpe-Ez-Cio">
                                     <rect key="frame" x="90" y="0.0" width="30" height="52"/>
                                     <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
                                     <size key="titleShadowOffset" width="1" height="0.0"/>
@@ -212,7 +208,7 @@
                                 </button>
                             </subviews>
                         </stackView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNH-TU-KxG">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNH-TU-KxG">
                             <rect key="frame" x="352" y="-14" width="50" height="62"/>
                             <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="50"/>
                             <size key="titleShadowOffset" width="1" height="0.0"/>
@@ -235,7 +231,7 @@
                         <constraint firstItem="ZRl-89-gRO" firstAttribute="leading" secondItem="87h-1G-t5q" secondAttribute="leading" constant="12" id="mn5-Hu-M5A"/>
                     </constraints>
                 </view>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KxU-y4-Jwh">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KxU-y4-Jwh">
                     <rect key="frame" x="362" y="60" width="40" height="32"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                     <size key="titleShadowOffset" width="1" height="0.0"/>
@@ -268,7 +264,7 @@
                     </constraints>
                 </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cy8-ap-fH9" userLabel="Color Picker">
-                    <rect key="frame" x="0.0" y="846" width="414" height="50"/>
+                    <rect key="frame" x="0.0" y="812" width="414" height="50"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GaQ-XR-asZ">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
@@ -294,6 +290,7 @@
                     </constraints>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="ymm-th-TTo"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="87h-1G-t5q" firstAttribute="leading" secondItem="HPk-Bg-V0q" secondAttribute="leading" id="0ft-JY-szV"/>
@@ -301,6 +298,7 @@
                 <constraint firstItem="Cy8-ap-fH9" firstAttribute="centerX" secondItem="HPk-Bg-V0q" secondAttribute="centerX" id="24Z-2f-Tyk"/>
                 <constraint firstItem="S1Y-ZS-dct" firstAttribute="leading" secondItem="HPk-Bg-V0q" secondAttribute="leading" id="2tC-2e-oA6"/>
                 <constraint firstItem="Cy8-ap-fH9" firstAttribute="leading" secondItem="HPk-Bg-V0q" secondAttribute="leading" id="6eK-mF-0OL"/>
+                <constraint firstItem="ymm-th-TTo" firstAttribute="bottom" secondItem="Cy8-ap-fH9" secondAttribute="bottom" id="B6a-hY-YHo"/>
                 <constraint firstItem="3MS-N5-3xY" firstAttribute="top" secondItem="ymm-th-TTo" secondAttribute="top" id="Fj6-PW-wbF"/>
                 <constraint firstAttribute="trailing" secondItem="3MS-N5-3xY" secondAttribute="trailing" id="M86-Ia-XcZ"/>
                 <constraint firstItem="rLz-36-0xz" firstAttribute="top" secondItem="ymm-th-TTo" secondAttribute="top" id="RYD-1T-XNJ"/>
@@ -314,14 +312,12 @@
                 <constraint firstAttribute="trailing" secondItem="87h-1G-t5q" secondAttribute="trailing" id="kaD-bR-ZZt"/>
                 <constraint firstItem="S1Y-ZS-dct" firstAttribute="centerY" secondItem="HPk-Bg-V0q" secondAttribute="centerY" id="lCZ-Hj-EUs"/>
                 <constraint firstAttribute="trailing" secondItem="rLz-36-0xz" secondAttribute="trailing" id="moc-tG-rwG"/>
-                <constraint firstAttribute="bottom" secondItem="Cy8-ap-fH9" secondAttribute="bottom" id="mok-x4-xHA"/>
                 <constraint firstItem="ymm-th-TTo" firstAttribute="bottom" secondItem="yAt-sK-1nK" secondAttribute="bottom" constant="12" id="of3-AC-FQE"/>
                 <constraint firstItem="rLz-36-0xz" firstAttribute="leading" secondItem="HPk-Bg-V0q" secondAttribute="leading" id="orL-eE-RPq"/>
                 <constraint firstItem="ymm-th-TTo" firstAttribute="bottom" secondItem="ZGa-1B-gkO" secondAttribute="bottom" id="uXH-MJ-Z8t"/>
                 <constraint firstItem="S1Y-ZS-dct" firstAttribute="centerX" secondItem="HPk-Bg-V0q" secondAttribute="centerX" id="uyk-kx-vrC"/>
                 <constraint firstItem="3MS-N5-3xY" firstAttribute="leading" secondItem="HPk-Bg-V0q" secondAttribute="leading" id="zYw-cX-ezI"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ymm-th-TTo"/>
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
         </view>
     </objects>
