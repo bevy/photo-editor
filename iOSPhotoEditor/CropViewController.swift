@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol CropViewControllerDelegate: class {
+public protocol CropViewControllerDelegate: AnyObject {
     func cropViewController(_ controller: CropViewController, didFinishCroppingImage image: UIImage, transform: CGAffineTransform, cropRect: CGRect)
     func cropViewControllerDidCancel(_ controller: CropViewController)
 }

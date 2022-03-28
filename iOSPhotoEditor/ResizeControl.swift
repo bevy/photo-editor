@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ResizeControlDelegate: class {
+protocol ResizeControlDelegate: AnyObject {
     func resizeControlDidBeginResizing(_ control: ResizeControl)
     func resizeControlDidResize(_ control: ResizeControl)
     func resizeControlDidEndResizing(_ control: ResizeControl)
