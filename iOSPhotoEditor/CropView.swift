@@ -257,7 +257,7 @@ open class CropView: UIView, UIScrollViewDelegate, UIGestureRecognizerDelegate, 
         let cropRect = convert(scrollView.frame, to: zoomingView)
         var ratio: CGFloat = 1.0
         let orientation = UIApplication.shared.statusBarOrientation
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad || orientation.isPortrait) {
+        if (UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad || orientation.isPortrait) {
             ratio = AVMakeRect(aspectRatio: imageSize, insideRect: insetRect).width / imageSize.width
         } else {
             ratio = AVMakeRect(aspectRatio: imageSize, insideRect: insetRect).height / imageSize.height
